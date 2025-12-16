@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聯繫 | 隙光實驗室</title>
+    <meta name="description" content="有問題想討論？有專案想合作？歡迎透過表單或 Email 聯繫我。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 導航 -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-text">隙光實驗室</span>
+            </a>
+            <button class="nav-toggle" aria-label="開啟選單">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="about.html">關於</a></li>
+                <li><a href="products.html">產品</a></li>
+                <li><a href="services.html">服務</a></li>
+                <li><a href="blog.html">筆記</a></li>
+                <li><a href="contact.html" class="active">聯繫</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 頁面標題 -->
+    <header class="page-header">
+        <div class="container">
+            <h1>聯繫我</h1>
+            <p>有問題想討論？有專案想合作？歡迎聯繫。</p>
+        </div>
+    </header>
+
+    <!-- 聯繫內容 -->
+    <section class="content-section">
+        <div class="container">
+            <div class="contact-grid">
+                
+                <!-- 左側說明 -->
+                <div class="contact-info">
+                    <h3>我能幫你什麼？</h3>
+                    <p>
+                        如果你對我的數位產品、接案服務有興趣，或是想討論 AI 創業相關的問題，都歡迎透過右側表單聯繫我。
+                    </p>
+                    <p>
+                        我會在 <strong>2 個工作天內</strong> 回覆你的訊息。
+                    </p>
+                    
+                    <h3 style="margin-top: var(--spacing-xl);">其他聯繫方式</h3>
+                    <p>
+                        <strong>Email:</strong><br>
+                        <a href="mailto:hello@spacebetweenhealing.com" style="color: var(--color-accent-dark);">hello@spacebetweenhealing.com</a>
+                    </p>
+                    
+                    <div style="margin-top: var(--spacing-xl); padding: var(--spacing-md); background: var(--color-bg-alt);">
+                        <p style="font-size: 0.95rem; color: var(--color-text-light); margin-bottom: 0;">
+                            💡 <strong>小提醒</strong><br>
+                            作為內向者，我選擇非同步溝通方式。請透過表單或 Email 聯繫，我目前沒有開放電話諮詢或即時通訊。
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- 右側表單 -->
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" action="#" method="post">
+                        <div class="form-group">
+                            <label for="name">你的名字 *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">主旨</label>
+                            <select id="subject" name="subject">
+                                <option value="">請選擇...</option>
+                                <option value="product">數位產品相關</option>
+                                <option value="service">接案服務諮詢</option>
+                                <option value="consultation">AI 工具諮詢</option>
+                                <option value="collaboration">合作提案</option>
+                                <option value="other">其他問題</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="budget">預算範圍（如為專案諮詢）</label>
+                            <select id="budget" name="budget">
+                                <option value="">請選擇...</option>
+                                <option value="under-15k">NT$ 15,000 以下</option>
+                                <option value="15k-30k">NT$ 15,000 - 30,000</option>
+                                <option value="30k-50k">NT$ 30,000 - 50,000</option>
+                                <option value="over-50k">NT$ 50,000 以上</option>
+                                <option value="not-sure">尚未確定</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">你的訊息 *</label>
+                            <textarea id="message" name="message" placeholder="請簡單描述你的需求或問題..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label style="display: flex; align-items: flex-start; gap: var(--spacing-xs); cursor: pointer;">
+                                <input type="checkbox" name="subscribe" style="margin-top: 0.3rem; width: auto;">
+                                <span style="font-size: 0.875rem; color: var(--color-text-light);">
+                                    同時訂閱電子報，收到 AI 創業實戰心得與產品上架通知
+                                </span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">發送訊息</button>
+                        
+                        <p style="font-size: 0.8rem; color: var(--color-text-muted); text-align: center; margin-top: var(--spacing-sm);">
+                            送出即表示你同意我使用你的資料回覆訊息。我不會將你的資料分享給第三方。
+                        </p>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="values" style="padding: var(--spacing-xl) 0;">
+        <div class="container">
+            <div class="content-narrow">
+                <h2 style="text-align: center; margin-bottom: var(--spacing-xl);">聯繫前常見問題</h2>
+                
+                <h3>我可以直接問 AI 工具的使用問題嗎？</h3>
+                <p style="color: var(--color-text-light);">
+                    可以！但如果是比較深入的問題，建議預約 1 對 1 諮詢，這樣我能更完整地回答。簡單的問題我會盡量在 Email 中回覆。
+                </p>
+                
+                <h3 style="margin-top: var(--spacing-lg);">我想合作但預算有限怎麼辦？</h3>
+                <p style="color: var(--color-text-light);">
+                    可以考慮購買我的數位產品（教程、模板），自己動手會是成本最低的方式。或者等我的產品上架後，會有適合不同預算的選項。
+                </p>
+                
+                <h3 style="margin-top: var(--spacing-lg);">你會接所有類型的專案嗎？</h3>
+                <p style="color: var(--color-text-light);">
+                    不會。我目前專注在個人品牌網站和商業視覺設計。如果你的專案不在這個範圍，我會坦白告訴你，也許能推薦其他合適的人選。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-text">隙光實驗室</span>
+                    <p>AI 時代的內向創業筆記</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>導覽</h4>
+                        <ul>
+                            <li><a href="about.html">關於我</a></li>
+                            <li><a href="products.html">數位產品</a></li>
+                            <li><a href="services.html">接案服務</a></li>
+                            <li><a href="blog.html">實戰筆記</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>聯繫</h4>
+                        <ul>
+                            <li><a href="contact.html">聯絡方式</a></li>
+                            <li><a href="mailto:hello@spacebetweenhealing.com">Email</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 隙光實驗室. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
