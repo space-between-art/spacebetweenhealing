@@ -1,5 +1,6 @@
 /* ====================================
-   隙光實驗室 - 主要 JavaScript
+   隙光工作室 - Space Between Healing
+   Main JavaScript
    ==================================== */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -25,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Navbar scroll effect
     const nav = document.querySelector('.nav');
-    let lastScroll = 0;
     
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
@@ -35,8 +35,6 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             nav.style.boxShadow = 'none';
         }
-        
-        lastScroll = currentScroll;
     });
     
     // Smooth scroll for anchor links
@@ -69,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
     
     // Observe elements for animation
-    document.querySelectorAll('.value-card, .service-card, .post-card, .product-card, .tool-item').forEach(el => {
+    document.querySelectorAll('.value-card, .service-card, .service-detail-card, .process-step, .audience-item').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -87,33 +85,12 @@ document.addEventListener('DOMContentLoaded', function() {
     `);
     
     // Stagger animation for grid items
-    document.querySelectorAll('.values-grid, .services-grid, .posts-grid, .tools-list').forEach(grid => {
+    document.querySelectorAll('.values-grid, .services-grid, .process-steps, .audience-list').forEach(grid => {
         const items = grid.children;
         Array.from(items).forEach((item, index) => {
             item.style.transitionDelay = `${index * 0.1}s`;
         });
     });
-    
-    // Form submission handling
-    const subscribeForm = document.querySelector('.subscribe-form');
-    if (subscribeForm) {
-        subscribeForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = this.querySelector('input[type="email"]').value;
-            
-            // Show success message (replace with actual form handling)
-            const button = this.querySelector('button');
-            const originalText = button.textContent;
-            button.textContent = '感謝訂閱！';
-            button.disabled = true;
-            
-            setTimeout(() => {
-                button.textContent = originalText;
-                button.disabled = false;
-                this.reset();
-            }, 3000);
-        });
-    }
     
     // Contact form handling
     const contactForm = document.querySelector('.contact-form');
@@ -128,12 +105,12 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Simulate form submission (replace with actual handling)
             setTimeout(() => {
-                button.textContent = '已發送！';
+                button.textContent = '已發送！我們會盡快回覆你。';
                 setTimeout(() => {
                     button.textContent = originalText;
                     button.disabled = false;
                     this.reset();
-                }, 2000);
+                }, 3000);
             }, 1500);
         });
     }
