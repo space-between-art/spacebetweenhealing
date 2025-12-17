@@ -1,6 +1,5 @@
 /* ====================================
-   隙光工作室 - Space Between Healing
-   Main JavaScript
+   隙光工作室 - Main JavaScript
    ==================================== */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -15,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
             navToggle.classList.toggle('active');
         });
         
-        // Close menu when clicking a link
         navMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navMenu.classList.remove('active');
@@ -28,9 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const nav = document.querySelector('.nav');
     
     window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll > 100) {
+        if (window.pageYOffset > 100) {
             nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
         } else {
             nav.style.boxShadow = 'none';
@@ -66,11 +62,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
     
-    // Observe elements for animation
-    document.querySelectorAll('.value-card, .service-card, .service-detail-card, .process-step, .audience-item').forEach(el => {
+    // Observe elements
+    const animateElements = document.querySelectorAll('.pain-card, .solution-item, .service-card, .service-detail-card, .process-step, .why-card, .faq-item');
+    animateElements.forEach((el, index) => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        el.style.transition = `opacity 0.6s ease ${index * 0.05}s, transform 0.6s ease ${index * 0.05}s`;
         observer.observe(el);
     });
     
@@ -84,14 +81,6 @@ document.addEventListener('DOMContentLoaded', function() {
         </style>
     `);
     
-    // Stagger animation for grid items
-    document.querySelectorAll('.values-grid, .services-grid, .process-steps, .audience-list').forEach(grid => {
-        const items = grid.children;
-        Array.from(items).forEach((item, index) => {
-            item.style.transitionDelay = `${index * 0.1}s`;
-        });
-    });
-    
     // Contact form handling
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
@@ -103,11 +92,13 @@ document.addEventListener('DOMContentLoaded', function() {
             button.textContent = '發送中...';
             button.disabled = true;
             
-            // Simulate form submission (replace with actual handling)
+            // Simulate form submission
             setTimeout(() => {
-                button.textContent = '已發送！我們會盡快回覆你。';
+                button.textContent = '✓ 已發送！我們會盡快回覆你。';
+                button.style.background = '#4A7C59';
                 setTimeout(() => {
                     button.textContent = originalText;
+                    button.style.background = '';
                     button.disabled = false;
                     this.reset();
                 }, 3000);
