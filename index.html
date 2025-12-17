@@ -35,9 +35,16 @@
 
     <!-- 主視覺區 -->
     <header class="hero">
-        <div class="hero-bg"></div>
+        <div class="hero-bg">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
         <div class="hero-content">
-            <p class="hero-tagline">每月限量接案 · 專注獨立品牌與小型企業</p>
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                每月限量 3 個專案
+            </div>
             <h1 class="hero-title">
                 讓你的品牌，<br>
                 <span class="highlight">一眼被記住</span>
@@ -47,7 +54,7 @@
                 我們幫你打造專業的品牌形象——從 Logo 到網站，讓客戶第一眼就信任你。
             </p>
             <div class="hero-cta">
-                <a href="contact.html" class="btn btn-primary">預約免費諮詢</a>
+                <a href="contact.html" class="btn btn-primary btn-glow">預約免費諮詢</a>
                 <a href="services.html" class="btn btn-secondary">瞭解服務</a>
             </div>
         </div>
@@ -117,6 +124,49 @@
         </div>
     </section>
 
+    <!-- 精選作品 -->
+    <section class="featured-work">
+        <div class="container">
+            <h2 class="section-title">精選作品</h2>
+            <p class="section-subtitle">我們為客戶打造的品牌形象</p>
+            <div class="work-showcase">
+                <a href="https://www.space-between.art" target="_blank" rel="noopener" class="work-card">
+                    <div class="work-image">
+                        <div class="work-preview">
+                            <div class="preview-browser">
+                                <span class="browser-dot"></span>
+                                <span class="browser-dot"></span>
+                                <span class="browser-dot"></span>
+                            </div>
+                            <div class="preview-site">
+                                <div class="preview-nav">隙光文學</div>
+                                <div class="preview-hero-text">在縫隙中<br>尋找光芒</div>
+                                <div class="preview-cards">
+                                    <div class="preview-card"></div>
+                                    <div class="preview-card"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="work-overlay">
+                            <span class="work-view">查看網站 →</span>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <div class="work-tags">
+                            <span class="work-tag">品牌網站</span>
+                            <span class="work-tag">視覺設計</span>
+                        </div>
+                        <h3>隙光文學 Space Between Art</h3>
+                        <p>都市療癒奇幻文學創作平台。以「在縫隙中尋找光芒」為核心理念，打造沉浸式的閱讀體驗。</p>
+                    </div>
+                </a>
+            </div>
+            <div class="work-cta">
+                <a href="portfolio.html" class="btn btn-secondary">查看更多作品 →</a>
+            </div>
+        </div>
+    </section>
+
     <!-- 服務概覽 -->
     <section class="services-preview">
         <div class="container">
@@ -124,21 +174,28 @@
             <p class="section-subtitle">一站式品牌解決方案</p>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-number">01</div>
+                    <div class="service-image">
+                        <img src="images/services-web.png" alt="品牌網站設計">
+                    </div>
+                    <div class="service-icon">🌐</div>
                     <h3>品牌網站設計</h3>
                     <p>專業的線上門面，響應式設計，讓客戶隨時隨地都能找到你、信任你。</p>
                     <p class="service-price">HK$ 8,000 起</p>
                     <a href="services.html" class="service-link">瞭解更多 →</a>
                 </div>
                 <div class="service-card">
-                    <div class="service-number">02</div>
+                    <div class="service-image">
+                        <img src="images/services-visual.png" alt="視覺識別設計">
+                    </div>
+                    <div class="service-icon">✨</div>
                     <h3>視覺識別設計</h3>
                     <p>Logo、名片、品牌色彩規範，建立統一而專業的形象，讓人一眼記住。</p>
                     <p class="service-price">HK$ 4,500 起</p>
                     <a href="services.html" class="service-link">瞭解更多 →</a>
                 </div>
-                <div class="service-card">
-                    <div class="service-number">03</div>
+                <div class="service-card popular">
+                    <div class="popular-badge">最受歡迎</div>
+                    <div class="service-icon">🚀</div>
                     <h3>品牌全方位方案</h3>
                     <p>網站 + 視覺識別的完整解決方案，一次搞定，從零到一建立品牌。</p>
                     <p class="service-price">HK$ 15,000 起</p>
@@ -179,22 +236,22 @@
             <p class="section-subtitle">簡單四步，輕鬆擁有專業品牌</p>
             <div class="process-steps">
                 <div class="process-step">
-                    <div class="step-number">01</div>
+                    <div class="step-icon">💬</div>
                     <h3>免費諮詢</h3>
                     <p>30 分鐘視訊，了解你的需求與目標</p>
                 </div>
                 <div class="process-step">
-                    <div class="step-number">02</div>
+                    <div class="step-icon">📋</div>
                     <h3>報價確認</h3>
                     <p>48 小時內提供詳細報價與時程</p>
                 </div>
                 <div class="process-step">
-                    <div class="step-number">03</div>
+                    <div class="step-icon">🎨</div>
                     <h3>設計製作</h3>
                     <p>定期更新進度，隨時接受反饋</p>
                 </div>
                 <div class="process-step">
-                    <div class="step-number">04</div>
+                    <div class="step-icon">🎉</div>
                     <h3>交付上線</h3>
                     <p>修改到滿意，正式交付使用</p>
                 </div>
@@ -206,9 +263,10 @@
     <section class="cta">
         <div class="container">
             <div class="cta-content">
+                <div class="cta-badge pulse">本月尚餘名額</div>
                 <h2>準備好讓品牌升級了嗎？</h2>
                 <p>每月只接 3 個專案，預約你的專屬諮詢時段。</p>
-                <a href="contact.html" class="btn btn-primary">預約免費諮詢</a>
+                <a href="contact.html" class="btn btn-primary btn-glow">預約免費諮詢</a>
                 <p class="cta-note">諮詢完全免費，沒有任何壓力</p>
             </div>
         </div>
