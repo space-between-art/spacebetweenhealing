@@ -6,9 +6,9 @@
 :root {
     --color-primary: #2C2826;
     --color-primary-light: #4A4543;
-    --color-accent: #C9A66B;
-    --color-accent-light: #DFC697;
-    --color-accent-dark: #A68845;
+    --color-accent: #B8935A;
+    --color-accent-light: #D4B17A;
+    --color-accent-dark: #8C6D3F;
     
     --color-bg: #FAF9F7;
     --color-bg-alt: #F3F1ED;
@@ -24,7 +24,7 @@
     --color-success: #4A7C59;
     --color-error: #B54B4B;
     
-    --gradient-gold: linear-gradient(135deg, #C9A66B 0%, #DFC697 50%, #C9A66B 100%);
+    --gradient-gold: linear-gradient(135deg, #9A7B4A 0%, #C9A66B 50%, #9A7B4A 100%);
     --gradient-dark: linear-gradient(135deg, #2C2826 0%, #4A4543 100%);
     
     --font-serif: 'Noto Serif TC', 'Cormorant Garamond', Georgia, serif;
