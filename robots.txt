@@ -1,5 +1,5 @@
 # robots.txt for spacebetweenhealing.com
-# 隙光工作室 Space Between Healing
+# 隙光設計 Space Between Healing
 
 User-agent: *
 Allow: /
