@@ -1,1 +1,186 @@
+        }
+        
+        // ===== API Call =====
+        async function sendToAPI(userMessage) {
+            conversationHistory.push({ role: 'user', content: userMessage });
+            
+            try {
+                const response = await fetch('https://api.anthropic.com/v1/messages', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        model: 'claude-sonnet-4-20250514',
+                        max_tokens: 1000,
+                        system: SYSTEM_PROMPT,
+                        messages: conversationHistory
+                    })
+                });
+                
+                const data = await response.json();
+                const assistantMessage = data.content[0].text;
+                conversationHistory.push({ role: 'assistant', content: assistantMessage });
+                
+                return assistantMessage;
+            } catch (error) {
+                console.error('API Error:', error);
+                return '抱歉，我暫時無法回應。請稍後再試，或直接聯繫我們：hello@spacebetweenhealing.com 💌';
+            }
+        }
+        
+        // ===== Message Handling =====
+        async function sendMessage(text = null) {
+            const message = text || messageInput.value.trim();
+            if (!message) return;
+            
+            // Add user message
+            const userMsgEl = createMessageElement(message, 'user');
+            chatContainer.appendChild(userMsgEl);
+            
+            // Clear input
+            messageInput.value = '';
+            autoResizeTextarea();
+            sendBtn.disabled = true;
+            
+            // Show typing indicator
+            const typingEl = createTypingIndicator();
+            chatContainer.appendChild(typingEl);
+            scrollToBottom();
+            
+            // Get AI response
+            const response = await sendToAPI(message);
+            
+            // Remove typing indicator
+            typingEl.remove();
+            
+            // Add assistant message
+            const assistantMsgEl = createMessageElement(response, 'assistant');
+            chatContainer.appendChild(assistantMsgEl);
+            scrollToBottom();
+        }
+        
+        function sendQuickReply(text) {
+            sendMessage(text);
+        }
+        
+        // ===== Submit Summary =====
+        async function submitSummary() {
+            const name = document.getElementById('contactName').value.trim();
+            const email = document.getElementById('contactEmail').value.trim();
+            const phone = document.getElementById('contactPhone').value.trim();
+            
+            if (!name || !email) {
+                alert('請填寫名字和 Email');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('請輸入有效的 Email 地址');
+                return;
+            }
+            
+            const submitBtn = document.querySelector('.submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span>送出中...</span>';
+            
+            // Prepare the summary data
+            const summaryCard = document.getElementById('summaryCard');
+            const summaryItems = summaryCard.querySelectorAll('.summary-item');
+            let summaryText = '';
+            summaryItems.forEach(item => {
+                const label = item.querySelector('.summary-label').textContent;
+                const value = item.querySelector('.summary-value').textContent;
+                summaryText += `${label}: ${value}\n`;
+            });
+            
+            // Prepare conversation log
+            const conversationLog = conversationHistory.map(msg => 
+                `[${msg.role === 'user' ? '訪客' : '光光'}]: ${msg.content}`
+            ).join('\n\n');
+            
+            // Create mailto link or use form submission
+            const subject = encodeURIComponent(`[光光轉介] 新諮詢需求 - ${name}`);
+            const body = encodeURIComponent(`
+=== 訪客資料 ===
+姓名：${name}
+Email：${email}
+電話：${phone || '未提供'}
 
+=== 需求摘要 ===
+${summaryText}
+
+=== 對話紀錄 ===
+${conversationLog}
+
+---
+此訊息由光光 AI 小助理自動整理
+            `);
+            
+            // Option 1: Open email client
+            window.location.href = `mailto:hello@spacebetweenhealing.com?subject=${subject}&body=${body}`;
+            
+            // Show success state
+            setTimeout(() => {
+                summaryCard.innerHTML = `
+                    <div class="success-message">
+                        <div class="success-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+                        </div>
+                        <h4>已準備好送出！</h4>
+                        <p>請在 Email 應用程式中點擊「送出」。<br>設計師會在 1-2 個工作天內回覆你 ✨</p>
+                    </div>
+                `;
+                scrollToBottom();
+            }, 500);
+        }
+        
+        // ===== Initial Message =====
+        function showInitialMessage() {
+            const welcomeMsg = `你好！我是光光 ✨
+
+歡迎來到隙光設計的會客室～
+
+我是這裡的 AI 小助理，可以幫你：
+• 聊聊品牌上遇到的困擾
+• 釐清你想要的方向
+• 回答關於我們服務的問題
+
+聊完之後，我會整理重點讓設計師跟進。
+
+有什麼想聊的嗎？`;
+            
+            const quickReplies = [
+                '我的品牌好像有點問題...',
+                '想了解你們的服務',
+                '不太確定自己需要什麼'
+            ];
+            
+            const msgEl = createMessageElement(welcomeMsg, 'assistant', { quickReplies });
+            chatContainer.appendChild(msgEl);
+        }
+        
+        // ===== Event Listeners =====
+        messageInput.addEventListener('input', () => {
+            autoResizeTextarea();
+            sendBtn.disabled = !messageInput.value.trim();
+        });
+        
+        messageInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                if (messageInput.value.trim()) {
+                    sendMessage();
+                }
+            }
+        });
+        
+        sendBtn.addEventListener('click', () => sendMessage());
+        
+        // ===== Initialize =====
+        showInitialMessage();
+    </script>
+</body>
+</html>
