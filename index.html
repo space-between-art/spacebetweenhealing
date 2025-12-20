@@ -115,6 +115,203 @@
     
     <!-- 樣式 -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- AI Assistant 樣式 -->
+    <style>
+        /* AI Assistant Entry - Homepage Version */
+        .ai-entry-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #FAF8F5 0%, #F0EBE3 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .ai-entry-section::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 50%;
+            height: 160%;
+            background: radial-gradient(ellipse, rgba(139, 90, 43, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .ai-entry-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .ai-entry-card {
+            background: linear-gradient(135deg, #8B5A2B 0%, #6B4423 100%);
+            border-radius: 24px;
+            padding: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(107, 68, 35, 0.25);
+        }
+        .ai-entry-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 60%;
+            height: 200%;
+            background: radial-gradient(ellipse, rgba(201, 169, 98, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .ai-entry-avatar {
+            flex-shrink: 0;
+            position: relative;
+        }
+        .ai-entry-avatar-inner {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        .ai-entry-avatar-inner::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #C9A962, transparent);
+            z-index: -1;
+            animation: rotate-glow 8s linear infinite;
+        }
+        @keyframes rotate-glow {
+            to { transform: rotate(360deg); }
+        }
+        .ai-entry-avatar-inner svg {
+            width: 50px;
+            height: 50px;
+            stroke: white;
+            stroke-width: 1.5;
+        }
+        .ai-entry-status {
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
+            width: 20px;
+            height: 20px;
+            background: #22c55e;
+            border-radius: 50%;
+            border: 3px solid #8B5A2B;
+            animation: pulse-glow 2s infinite;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+            50% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+        }
+        .ai-entry-content {
+            flex: 1;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+        .ai-entry-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.15);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+            backdrop-filter: blur(10px);
+        }
+        .ai-entry-badge svg {
+            width: 14px;
+            height: 14px;
+        }
+        .ai-entry-content h2 {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+        .ai-entry-content h2 span {
+            color: #C9A962;
+        }
+        .ai-entry-content > p {
+            opacity: 0.9;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+        .ai-entry-features {
+            display: flex;
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .ai-entry-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+        .ai-entry-feature svg {
+            width: 16px;
+            height: 16px;
+            opacity: 0.7;
+        }
+        .ai-entry-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: white;
+            color: #8B5A2B;
+            padding: 0.875rem 1.75rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        .ai-entry-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+        }
+        .ai-entry-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .ai-entry-section { padding: 60px 0; }
+            .ai-entry-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem 1.5rem;
+                gap: 1.5rem;
+            }
+            .ai-entry-avatar-inner {
+                width: 100px;
+                height: 100px;
+            }
+            .ai-entry-avatar-inner svg {
+                width: 42px;
+                height: 42px;
+            }
+            .ai-entry-content h2 {
+                font-size: 1.4rem;
+            }
+            .ai-entry-features {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- 導航 -->
@@ -222,6 +419,54 @@
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>
                     </div>
                     <p>找過設計師，但溝通困難、結果不滿意</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI 小助理入口 -->
+    <section class="ai-entry-section">
+        <div class="ai-entry-container">
+            <div class="ai-entry-card">
+                <div class="ai-entry-avatar">
+                    <div class="ai-entry-avatar-inner">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="4"/>
+                            <path d="M12 2v2"/><path d="M12 20v2"/>
+                            <path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/>
+                            <path d="M2 12h2"/><path d="M20 12h2"/>
+                            <path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+                        </svg>
+                    </div>
+                    <span class="ai-entry-status"></span>
+                </div>
+                <div class="ai-entry-content">
+                    <span class="ai-entry-badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3Z"/></svg>
+                        AI 品牌小助理
+                    </span>
+                    <h2>不確定需要什麼？<br>跟<span>光光</span>聊聊</h2>
+                    <p>光光是我們的 AI 小助理，可以 24 小時陪你聊品牌困擾。她會幫你釐清想法、整理需求，然後讓設計師親自跟進。</p>
+                    <div class="ai-entry-features">
+                        <span class="ai-entry-feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            24 小時在線
+                        </span>
+                        <span class="ai-entry-feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
+                            對話不公開
+                        </span>
+                        <span class="ai-entry-feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v5Z"/></svg>
+                            無壓力
+                        </span>
+                    </div>
+                    <a href="lounge/chat.html" class="ai-entry-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
+                        </svg>
+                        與光光聊天
+                    </a>
                 </div>
             </div>
         </div>
