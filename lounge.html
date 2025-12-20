@@ -30,136 +30,177 @@
         .professional-note .note-label svg { width: 16px; height: 16px; }
         .professional-note p { color: rgba(255,255,255,0.85); font-size: 0.95rem; line-height: 1.7; margin: 0; }
         
-        /* AI Assistant Section */
+        /* AI Assistant Section - 柔和溫暖配色 */
         .ai-assistant-section {
             padding: 60px 0;
-            background: linear-gradient(135deg, #8B5A2B 0%, #6B4423 100%);
+            background: linear-gradient(180deg, #FAF8F5 0%, #F5F0E8 100%);
             position: relative;
             overflow: hidden;
         }
         .ai-assistant-section::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 60%;
-            height: 200%;
-            background: radial-gradient(ellipse, rgba(201, 169, 98, 0.15) 0%, transparent 70%);
+            top: -30%;
+            right: -15%;
+            width: 50%;
+            height: 160%;
+            background: radial-gradient(ellipse, rgba(196, 168, 124, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .ai-assistant-section::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -10%;
+            width: 40%;
+            height: 120%;
+            background: radial-gradient(ellipse, rgba(139, 115, 85, 0.08) 0%, transparent 70%);
             pointer-events: none;
         }
         .ai-assistant-card {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 0 1.5rem;
+        }
+        .ai-card-inner {
+            background: #FFFFFF;
+            border-radius: 24px;
+            padding: 3rem;
             display: flex;
             align-items: center;
             gap: 3rem;
             position: relative;
-            z-index: 1;
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(139, 115, 85, 0.1), 0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid rgba(196, 168, 124, 0.2);
+        }
+        .ai-card-inner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, rgba(250, 248, 245, 0.8) 100%);
+            pointer-events: none;
         }
         .ai-avatar-container {
             flex-shrink: 0;
+            position: relative;
         }
         .ai-avatar {
-            width: 140px;
-            height: 140px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #8B7355 0%, #6B5A47 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            box-shadow: 0 12px 32px rgba(139, 115, 85, 0.25);
         }
         .ai-avatar::before {
             content: '';
             position: absolute;
             inset: -3px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #C9A962, transparent);
+            background: linear-gradient(135deg, #C4A87C, rgba(196, 168, 124, 0.3));
             z-index: -1;
+            animation: rotate-glow 10s linear infinite;
+        }
+        @keyframes rotate-glow {
+            to { transform: rotate(360deg); }
         }
         .ai-avatar svg {
-            width: 60px;
-            height: 60px;
-            stroke: white;
+            width: 50px;
+            height: 50px;
+            stroke: #FAF8F5;
+            stroke-width: 1.5;
         }
         .ai-status {
             position: absolute;
-            bottom: 10px;
-            right: 10px;
-            width: 24px;
-            height: 24px;
-            background: #22c55e;
+            bottom: 8px;
+            right: 8px;
+            width: 20px;
+            height: 20px;
+            background: #5A9E6F;
             border-radius: 50%;
-            border: 3px solid #8B5A2B;
+            border: 3px solid #FFFFFF;
+            box-shadow: 0 2px 8px rgba(90, 158, 111, 0.4);
             animation: pulse-status 2s infinite;
         }
         @keyframes pulse-status {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
-            50% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+            0%, 100% { box-shadow: 0 2px 8px rgba(90, 158, 111, 0.4); }
+            50% { box-shadow: 0 2px 8px rgba(90, 158, 111, 0.4), 0 0 0 6px rgba(90, 158, 111, 0.15); }
         }
         .ai-content {
-            color: white;
             flex: 1;
+            position: relative;
+            z-index: 1;
         }
         .ai-badge {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: rgba(255,255,255,0.15);
-            padding: 0.4rem 1rem;
+            background: linear-gradient(135deg, #FAF8F5, #F5F0E8);
+            padding: 0.5rem 1rem;
             border-radius: 20px;
             font-size: 0.8rem;
             margin-bottom: 1rem;
+            color: #8B7355;
+            border: 1px solid rgba(196, 168, 124, 0.3);
         }
-        .ai-badge svg { width: 14px; height: 14px; }
+        .ai-badge svg { width: 14px; height: 14px; stroke: #C4A87C; }
         .ai-content h2 {
             font-family: 'Noto Serif TC', serif;
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+            color: #2D2926;
         }
         .ai-content h2 span {
-            color: #C9A962;
+            color: #8B7355;
         }
         .ai-content > p {
-            opacity: 0.9;
+            color: #5A5550;
             line-height: 1.8;
             margin-bottom: 1.5rem;
+            font-size: 0.95rem;
         }
         .ai-features {
             display: flex;
             gap: 1.5rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.75rem;
             flex-wrap: wrap;
         }
         .ai-feature {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 0.9rem;
-            opacity: 0.85;
+            font-size: 0.85rem;
+            color: #6B635B;
         }
-        .ai-feature svg { width: 18px; height: 18px; opacity: 0.7; }
+        .ai-feature svg { width: 16px; height: 16px; stroke: #8B7355; }
         .chat-btn {
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            background: white;
-            color: #8B5A2B;
-            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #8B7355 0%, #6B5A47 100%);
+            color: #FAF8F5;
+            padding: 0.95rem 1.85rem;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 20px rgba(139, 115, 85, 0.25);
         }
         .chat-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(139, 115, 85, 0.3);
         }
-        .chat-btn svg { width: 20px; height: 20px; }
+        .chat-btn svg { width: 18px; height: 18px; }
         
         .series-section { padding: 80px 0; background: white; }
         .series-header { text-align: center; margin-bottom: 3rem; }
@@ -185,17 +226,24 @@
         .social-link { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.1); color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.2); }
         .social-link:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
         .social-link svg { width: 20px; height: 20px; }
+        .social-link.highlight { background: rgba(196, 168, 124, 0.3); border-color: rgba(196, 168, 124, 0.5); }
         
         @media (max-width: 768px) { 
             .lounge-hero { padding: 100px 1.5rem 60px; } 
             .lounge-hero h1 { font-size: 2rem; } 
             .lounge-intro { margin: 0 1.5rem; } 
             .articles-grid { grid-template-columns: 1fr; }
-            .ai-assistant-card { flex-direction: column; text-align: center; gap: 2rem; }
-            .ai-avatar { width: 120px; height: 120px; }
-            .ai-avatar svg { width: 50px; height: 50px; }
+            .ai-assistant-section { padding: 50px 0; }
+            .ai-card-inner { 
+                flex-direction: column; 
+                text-align: center; 
+                padding: 2rem 1.5rem;
+                gap: 1.5rem;
+            }
+            .ai-avatar { width: 100px; height: 100px; }
+            .ai-avatar svg { width: 42px; height: 42px; }
             .ai-features { justify-content: center; }
-            .ai-content h2 { font-size: 1.5rem; }
+            .ai-content h2 { font-size: 1.4rem; }
         }
     </style>
 </head>
@@ -234,48 +282,50 @@
         </div>
     </section>
 
-    <!-- AI Assistant Section -->
+    <!-- AI Assistant Section - 柔和溫暖版 -->
     <section class="ai-assistant-section">
         <div class="ai-assistant-card">
-            <div class="ai-avatar-container">
-                <div class="ai-avatar">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="4"/>
-                        <path d="M12 2v2"/><path d="M12 20v2"/>
-                        <path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/>
-                        <path d="M2 12h2"/><path d="M20 12h2"/>
-                        <path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
-                    </svg>
-                    <span class="ai-status"></span>
+            <div class="ai-card-inner">
+                <div class="ai-avatar-container">
+                    <div class="ai-avatar">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="4"/>
+                            <path d="M12 2v2"/><path d="M12 20v2"/>
+                            <path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/>
+                            <path d="M2 12h2"/><path d="M20 12h2"/>
+                            <path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+                        </svg>
+                        <span class="ai-status"></span>
+                    </div>
                 </div>
-            </div>
-            <div class="ai-content">
-                <span class="ai-badge">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3Z"/></svg>
-                    AI 品牌小助理
-                </span>
-                <h2>有品牌困擾？<br>跟<span>光光</span>聊聊吧</h2>
-                <p>光光是我們的 AI 小助理，可以隨時陪你聊品牌上遇到的問題。她會幫你釐清想法、整理重點，然後讓設計師親自跟進。</p>
-                <div class="ai-features">
-                    <span class="ai-feature">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
-                        對話不會公開
+                <div class="ai-content">
+                    <span class="ai-badge">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3Z"/></svg>
+                        AI 品牌小助理
                     </span>
-                    <span class="ai-feature">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                        24 小時在線
-                    </span>
-                    <span class="ai-feature">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v5Z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg>
-                        無壓力對話
-                    </span>
+                    <h2>有品牌困擾？<br>跟<span>光光</span>聊聊吧</h2>
+                    <p>光光是我們的 AI 小助理，可以隨時陪你聊品牌上遇到的問題。她會幫你釐清想法、整理重點，然後讓設計師親自跟進。</p>
+                    <div class="ai-features">
+                        <span class="ai-feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            24 小時在線
+                        </span>
+                        <span class="ai-feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
+                            對話不公開
+                        </span>
+                        <span class="ai-feature">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v5Z"/></svg>
+                            無壓力
+                        </span>
+                    </div>
+                    <a href="lounge/chat.html" class="chat-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
+                        </svg>
+                        開始聊天
+                    </a>
                 </div>
-                <a href="lounge/chat.html" class="chat-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
-                    </svg>
-                    開始聊天
-                </a>
             </div>
         </div>
     </section>
@@ -322,7 +372,7 @@
             <h2>想聊聊你的品牌困擾？</h2>
             <p>歡迎在社交平台私訊我，或預約一次免費諮詢，讓我們一起找出品牌的方向。</p>
             <div class="social-links">
-                <a href="lounge/chat.html" class="social-link" style="background: rgba(201, 169, 98, 0.3); border-color: rgba(201, 169, 98, 0.5);">
+                <a href="lounge/chat.html" class="social-link highlight">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/></svg>
                     <span>與光光聊天</span>
                 </a>
