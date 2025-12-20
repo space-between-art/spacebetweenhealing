@@ -1,0 +1,30 @@
+# 光光 AI 小助理 - Cloudflare Worker 配置
+# 隙光設計 Space Between Healing
+
+name = "guangguang-ai"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+# 自訂網域（部署後設定）
+# routes = [
+#   { pattern = "api.spacebetweenhealing.com/*", zone_name = "spacebetweenhealing.com" }
+# ]
+
+# KV 命名空間（用於 Rate Limiting 和對話記錄）
+# 部署前需要先建立：
+# wrangler kv:namespace create "RATE_LIMIT"
+# wrangler kv:namespace create "CHAT_LOGS"
+
+# [[kv_namespaces]]
+# binding = "RATE_LIMIT"
+# id = "your-rate-limit-namespace-id"
+
+# [[kv_namespaces]]
+# binding = "CHAT_LOGS"  
+# id = "your-chat-logs-namespace-id"
+
+# 環境變數（敏感資料用 secrets）
+# wrangler secret put ANTHROPIC_API_KEY
+
+[vars]
+ENVIRONMENT = "production"
