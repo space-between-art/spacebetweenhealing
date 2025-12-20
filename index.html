@@ -116,12 +116,12 @@
     <!-- 樣式 -->
     <link rel="stylesheet" href="css/style.css">
     
-    <!-- AI Assistant 樣式 -->
+    <!-- AI Assistant 樣式 - 柔和溫暖版 -->
     <style>
-        /* AI Assistant Entry - Homepage Version */
+        /* AI Assistant Entry - 柔和溫暖配色 */
         .ai-entry-section {
             padding: 80px 0;
-            background: linear-gradient(135deg, #FAF8F5 0%, #F0EBE3 100%);
+            background: linear-gradient(180deg, #FAF8F5 0%, #F5F0E8 100%);
             position: relative;
             overflow: hidden;
         }
@@ -129,10 +129,20 @@
             content: '';
             position: absolute;
             top: -30%;
-            right: -10%;
+            right: -15%;
             width: 50%;
             height: 160%;
-            background: radial-gradient(ellipse, rgba(139, 90, 43, 0.06) 0%, transparent 70%);
+            background: radial-gradient(ellipse, rgba(196, 168, 124, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .ai-entry-section::after {
+            content: '';
+            position: absolute;
+            bottom: -20%;
+            left: -10%;
+            width: 40%;
+            height: 120%;
+            background: radial-gradient(ellipse, rgba(139, 115, 85, 0.08) 0%, transparent 70%);
             pointer-events: none;
         }
         .ai-entry-container {
@@ -141,7 +151,7 @@
             padding: 0 1.5rem;
         }
         .ai-entry-card {
-            background: linear-gradient(135deg, #8B5A2B 0%, #6B4423 100%);
+            background: #FFFFFF;
             border-radius: 24px;
             padding: 3rem;
             display: flex;
@@ -149,16 +159,17 @@
             gap: 3rem;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 20px 60px rgba(107, 68, 35, 0.25);
+            box-shadow: 0 8px 40px rgba(139, 115, 85, 0.1), 0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid rgba(196, 168, 124, 0.2);
         }
         .ai-entry-card::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 60%;
-            height: 200%;
-            background: radial-gradient(ellipse, rgba(201, 169, 98, 0.15) 0%, transparent 70%);
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, rgba(250, 248, 245, 0.8) 100%);
             pointer-events: none;
         }
         .ai-entry-avatar {
@@ -168,22 +179,22 @@
         .ai-entry-avatar-inner {
             width: 120px;
             height: 120px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+            background: linear-gradient(135deg, #8B7355 0%, #6B5A47 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 12px 32px rgba(139, 115, 85, 0.25);
         }
         .ai-entry-avatar-inner::before {
             content: '';
             position: absolute;
             inset: -3px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #C9A962, transparent);
+            background: linear-gradient(135deg, #C4A87C, rgba(196, 168, 124, 0.3));
             z-index: -1;
-            animation: rotate-glow 8s linear infinite;
+            animation: rotate-glow 10s linear infinite;
         }
         @keyframes rotate-glow {
             to { transform: rotate(360deg); }
@@ -191,7 +202,7 @@
         .ai-entry-avatar-inner svg {
             width: 50px;
             height: 50px;
-            stroke: white;
+            stroke: #FAF8F5;
             stroke-width: 1.5;
         }
         .ai-entry-status {
@@ -200,18 +211,18 @@
             right: 8px;
             width: 20px;
             height: 20px;
-            background: #22c55e;
+            background: #5A9E6F;
             border-radius: 50%;
-            border: 3px solid #8B5A2B;
+            border: 3px solid #FFFFFF;
+            box-shadow: 0 2px 8px rgba(90, 158, 111, 0.4);
             animation: pulse-glow 2s infinite;
         }
         @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
-            50% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+            0%, 100% { box-shadow: 0 2px 8px rgba(90, 158, 111, 0.4); }
+            50% { box-shadow: 0 2px 8px rgba(90, 158, 111, 0.4), 0 0 0 6px rgba(90, 158, 111, 0.15); }
         }
         .ai-entry-content {
             flex: 1;
-            color: white;
             position: relative;
             z-index: 1;
         }
@@ -219,16 +230,18 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: rgba(255,255,255,0.15);
-            padding: 0.4rem 1rem;
+            background: linear-gradient(135deg, #FAF8F5, #F5F0E8);
+            padding: 0.5rem 1rem;
             border-radius: 20px;
             font-size: 0.8rem;
             margin-bottom: 1rem;
-            backdrop-filter: blur(10px);
+            color: #8B7355;
+            border: 1px solid rgba(196, 168, 124, 0.3);
         }
         .ai-entry-badge svg {
             width: 14px;
             height: 14px;
+            stroke: #C4A87C;
         }
         .ai-entry-content h2 {
             font-family: 'Noto Serif TC', serif;
@@ -236,51 +249,52 @@
             font-weight: 600;
             margin-bottom: 0.75rem;
             line-height: 1.4;
+            color: #2D2926;
         }
         .ai-entry-content h2 span {
-            color: #C9A962;
+            color: #8B7355;
         }
         .ai-entry-content > p {
-            opacity: 0.9;
+            color: #5A5550;
             line-height: 1.8;
             margin-bottom: 1.5rem;
             font-size: 0.95rem;
         }
         .ai-entry-features {
             display: flex;
-            gap: 1.25rem;
-            margin-bottom: 1.5rem;
+            gap: 1.5rem;
+            margin-bottom: 1.75rem;
             flex-wrap: wrap;
         }
         .ai-entry-feature {
             display: flex;
             align-items: center;
-            gap: 0.4rem;
+            gap: 0.5rem;
             font-size: 0.85rem;
-            opacity: 0.8;
+            color: #6B635B;
         }
         .ai-entry-feature svg {
             width: 16px;
             height: 16px;
-            opacity: 0.7;
+            stroke: #8B7355;
         }
         .ai-entry-btn {
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            background: white;
-            color: #8B5A2B;
-            padding: 0.875rem 1.75rem;
+            background: linear-gradient(135deg, #8B7355 0%, #6B5A47 100%);
+            color: #FAF8F5;
+            padding: 0.95rem 1.85rem;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.95rem;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 20px rgba(139, 115, 85, 0.25);
         }
         .ai-entry-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(139, 115, 85, 0.3);
         }
         .ai-entry-btn svg {
             width: 18px;
@@ -424,7 +438,7 @@
         </div>
     </section>
 
-    <!-- AI 小助理入口 -->
+    <!-- AI 小助理入口 - 柔和溫暖版 -->
     <section class="ai-entry-section">
         <div class="ai-entry-container">
             <div class="ai-entry-card">
