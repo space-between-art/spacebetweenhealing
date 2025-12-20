@@ -228,6 +228,16 @@
         .social-link svg { width: 20px; height: 20px; }
         .social-link.highlight { background: rgba(196, 168, 124, 0.3); border-color: rgba(196, 168, 124, 0.5); }
         
+        /* 免責聲明 */
+        .disclaimer-note {
+            max-width: 720px;
+            margin: 40px auto 0;
+            font-size: 0.85rem;
+            color: #8a847c;
+            line-height: 1.6;
+            text-align: center;
+        }
+        
         @media (max-width: 768px) { 
             .lounge-hero { padding: 100px 1.5rem 60px; } 
             .lounge-hero h1 { font-size: 2rem; } 
@@ -244,6 +254,7 @@
             .ai-avatar svg { width: 42px; height: 42px; }
             .ai-features { justify-content: center; }
             .ai-content h2 { font-size: 1.4rem; }
+            .disclaimer-note { margin: 30px 1.5rem 0; }
         }
     </style>
 </head>
@@ -270,13 +281,19 @@
     <section class="lounge-hero">
         <div class="container">
             <h1>會客室</h1>
-            <p class="subtitle">歡迎來坐坐。<br>這裡是關於品牌的療癒對話——<br>專為正在摸索品牌方向的你而寫。</p>
+            <!-- 【修正1】Hero Subtitle -->
+            <p class="subtitle">
+                歡迎來坐坐。<br>
+                這裡是關於品牌的整理與對話空間——<br>
+                專為正在摸索品牌方向的你而設。
+            </p>
             <div class="lounge-intro">
                 <p>作為獨立創業者，你可能花了很多時間打磨產品或服務，卻不知道如何讓別人記住你、信任你。</p>
                 <p>品牌不只是 Logo 或漂亮的設計，更是你與世界連結的方式。在這裡，我會分享一些品牌思維，幫助你找到屬於自己的品牌聲音。</p>
                 <div class="professional-note">
                     <div class="note-label"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>設計師觀點</div>
-                    <p>每篇文章都會從兩個角度出發：先用溫和的方式探討你可能正在經歷的品牌困擾，再從專業設計的角度提供具體的分析與方向。療癒是入口，專業是基礎。</p>
+                    <!-- 【修正2】Professional Note - 加入免責說明 -->
+                    <p>每篇文章都會從兩個角度出發：先用溫和的方式探討你可能正在經歷的品牌困擾，再從專業設計的角度提供具體的分析與方向。療癒作為比喻性的入口，實際內容屬品牌思維與設計專業範疇，並非心理或醫療服務。</p>
                 </div>
             </div>
         </div>
@@ -304,7 +321,8 @@
                         AI 品牌小助理
                     </span>
                     <h2>有品牌困擾？<br>跟<span>光光</span>聊聊吧</h2>
-                    <p>光光是我們的 AI 小助理，可以隨時陪你聊品牌上遇到的問題。她會幫你釐清想法、整理重點，然後讓設計師親自跟進。</p>
+                    <!-- 【修正3】AI 區塊主文案 -->
+                    <p>光光是我們的 AI 小助理，能協助進行初步釐清與重點整理，並把需求摘要交由設計師親自跟進。</p>
                     <div class="ai-features">
                         <span class="ai-feature">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -314,9 +332,10 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
                             對話不公開
                         </span>
+                        <!-- 【修正4】AI Features -->
                         <span class="ai-feature">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v5Z"/></svg>
-                            無壓力
+                            無銷售壓力對話
                         </span>
                     </div>
                     <a href="lounge/chat.html" class="chat-btn">
@@ -363,6 +382,11 @@
                     <h3>品牌不是 Logo<br>——重新認識你的事業面貌</h3>
                     <p>完整的品牌包含核心、性格、聲音、視覺、體驗五個層面——Logo 只是其中一環。</p>
                 </div>
+            </div>
+            
+            <!-- 【修正5】頁底免責聲明 -->
+            <div class="disclaimer-note">
+                會客室為品牌與創意交流空間，內容屬創意服務與設計思維分享，並不構成任何形式的心理治療、輔導或醫療服務。
             </div>
         </div>
     </section>

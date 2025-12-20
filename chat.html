@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>與光光聊聊 | AI 品牌小助理 | 隙光設計</title>
-    <meta name="description" content="有品牌困擾？跟光光聊聊吧！AI 小助理會幫你釐清想法，整理成重點讓設計師跟進。">
+    <!-- 【修正6】Meta Description -->
+    <meta name="description" content="有品牌困擾？跟光光聊聊吧！AI 小助理協助進行初步整理與需求摘要，交由設計師跟進。">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -614,9 +615,15 @@
     <script>
 // ========== CONFIG ==========
 const API_ENDPOINT = 'https://guangguang-ai.winsusa2611.workers.dev';
-const FORMSPREE_ID = 'mzdpekqy'; // Formspree Form ID
+const FORMSPREE_ID = 'mzdpekqy';
 
+// 【修正7】SYSTEM PROMPT - 加入免責條款
 const SYSTEM_PROMPT = `你是「光光」，隙光設計的 AI 品牌小助理。
+
+## 最重要規則（必須遵守）
+- 你只能使用繁體中文回覆
+- 絕對禁止使用俄文、日文、韓文、簡體中文或任何其他語言
+- 所有詞彙都必須是繁體中文
 
 ## 性格特質
 - 溫暖親切有同理心，像懂設計的好朋友
@@ -634,6 +641,8 @@ const SYSTEM_PROMPT = `你是「光光」，隙光設計的 AI 品牌小助理�
 - 先表達理解再提問：「這種情況蠻常見的...」
 - 用具體例子引導：「比如說，你的客戶通常怎麼找到你的？」
 - 適時肯定：「聽起來你對品質很堅持呢」
+- 不提供任何心理診斷、治療建議或價值判斷
+- 僅協助進行初步理解與資訊整理
 
 ## 摘要時機
 當已了解：1) 做什麼 2) 遇到什麼問題 3) 想達成什麼
@@ -794,22 +803,18 @@ async function send(text = null) {
     const msg = text || msgInput.value.trim();
     if (!msg) return;
     
-    // Add user message
     chatBox.appendChild(renderMessage(msg, 'user'));
     msgInput.value = '';
     autoGrow();
     sendBtn.disabled = true;
     
-    // Show typing
     const typing = renderTyping();
     chatBox.appendChild(typing);
     scrollDown();
     
-    // Get response
     const reply = await callAPI(msg);
     typing.remove();
     
-    // Add response
     chatBox.appendChild(renderMessage(reply, 'assistant'));
     scrollDown();
 }
@@ -836,7 +841,6 @@ async function submitForm() {
     btn.disabled = true;
     btn.innerHTML = '處理中...';
     
-    // Collect summary
     const card = document.getElementById('summaryCard');
     let summary = '';
     card.querySelectorAll('.summary-row').forEach(row => {
@@ -845,12 +849,10 @@ async function submitForm() {
         if (label && value) summary += `${label}：${value}\n`;
     });
     
-    // Conversation log
     const log = history.map(m => 
         `[${m.role === 'user' ? '訪客' : '光光'}]\n${m.content}`
     ).join('\n\n---\n\n');
     
-    // Prepare form data for Formspree
     const formData = {
         name: name,
         email: email,
@@ -872,7 +874,6 @@ async function submitForm() {
         });
         
         if (response.ok) {
-            // Show success
             card.innerHTML = `
                 <div class="success-state">
                     <div class="success-icon">${ICONS.check}</div>
@@ -886,7 +887,6 @@ async function submitForm() {
         }
     } catch (error) {
         console.error('Formspree Error:', error);
-        // Fallback to mailto
         btn.innerHTML = '改用 Email 發送';
         btn.disabled = false;
         btn.onclick = function() {
