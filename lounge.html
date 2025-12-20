@@ -29,6 +29,138 @@
         .professional-note .note-label { display: inline-flex; align-items: center; gap: 0.5rem; color: #c4a87c; font-size: 0.85rem; font-weight: 500; margin-bottom: 0.75rem; letter-spacing: 0.5px; }
         .professional-note .note-label svg { width: 16px; height: 16px; }
         .professional-note p { color: rgba(255,255,255,0.85); font-size: 0.95rem; line-height: 1.7; margin: 0; }
+        
+        /* AI Assistant Section */
+        .ai-assistant-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #8B5A2B 0%, #6B4423 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .ai-assistant-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 60%;
+            height: 200%;
+            background: radial-gradient(ellipse, rgba(201, 169, 98, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .ai-assistant-card {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+        .ai-avatar-container {
+            flex-shrink: 0;
+        }
+        .ai-avatar {
+            width: 140px;
+            height: 140px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        }
+        .ai-avatar::before {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #C9A962, transparent);
+            z-index: -1;
+        }
+        .ai-avatar svg {
+            width: 60px;
+            height: 60px;
+            stroke: white;
+        }
+        .ai-status {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 24px;
+            height: 24px;
+            background: #22c55e;
+            border-radius: 50%;
+            border: 3px solid #8B5A2B;
+            animation: pulse-status 2s infinite;
+        }
+        @keyframes pulse-status {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+            50% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+        }
+        .ai-content {
+            color: white;
+            flex: 1;
+        }
+        .ai-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.15);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        .ai-badge svg { width: 14px; height: 14px; }
+        .ai-content h2 {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        .ai-content h2 span {
+            color: #C9A962;
+        }
+        .ai-content > p {
+            opacity: 0.9;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        .ai-features {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .ai-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            opacity: 0.85;
+        }
+        .ai-feature svg { width: 18px; height: 18px; opacity: 0.7; }
+        .chat-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: white;
+            color: #8B5A2B;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        .chat-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        .chat-btn svg { width: 20px; height: 20px; }
+        
         .series-section { padding: 80px 0; background: white; }
         .series-header { text-align: center; margin-bottom: 3rem; }
         .series-label { display: inline-block; background: #e8e4df; color: #6b635b; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; margin-bottom: 1rem; }
@@ -53,7 +185,18 @@
         .social-link { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.1); color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.2); }
         .social-link:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
         .social-link svg { width: 20px; height: 20px; }
-        @media (max-width: 768px) { .lounge-hero { padding: 100px 1.5rem 60px; } .lounge-hero h1 { font-size: 2rem; } .lounge-intro { margin: 0 1.5rem; } .articles-grid { grid-template-columns: 1fr; } }
+        
+        @media (max-width: 768px) { 
+            .lounge-hero { padding: 100px 1.5rem 60px; } 
+            .lounge-hero h1 { font-size: 2rem; } 
+            .lounge-intro { margin: 0 1.5rem; } 
+            .articles-grid { grid-template-columns: 1fr; }
+            .ai-assistant-card { flex-direction: column; text-align: center; gap: 2rem; }
+            .ai-avatar { width: 120px; height: 120px; }
+            .ai-avatar svg { width: 50px; height: 50px; }
+            .ai-features { justify-content: center; }
+            .ai-content h2 { font-size: 1.5rem; }
+        }
     </style>
 </head>
 <body>
@@ -87,6 +230,52 @@
                     <div class="note-label"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>設計師觀點</div>
                     <p>每篇文章都會從兩個角度出發：先用溫和的方式探討你可能正在經歷的品牌困擾，再從專業設計的角度提供具體的分析與方向。療癒是入口，專業是基礎。</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Assistant Section -->
+    <section class="ai-assistant-section">
+        <div class="ai-assistant-card">
+            <div class="ai-avatar-container">
+                <div class="ai-avatar">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2"/><path d="M12 20v2"/>
+                        <path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/>
+                        <path d="M2 12h2"/><path d="M20 12h2"/>
+                        <path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+                    </svg>
+                    <span class="ai-status"></span>
+                </div>
+            </div>
+            <div class="ai-content">
+                <span class="ai-badge">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3Z"/></svg>
+                    AI 品牌小助理
+                </span>
+                <h2>有品牌困擾？<br>跟<span>光光</span>聊聊吧</h2>
+                <p>光光是我們的 AI 小助理，可以隨時陪你聊品牌上遇到的問題。她會幫你釐清想法、整理重點，然後讓設計師親自跟進。</p>
+                <div class="ai-features">
+                    <span class="ai-feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
+                        對話不會公開
+                    </span>
+                    <span class="ai-feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        24 小時在線
+                    </span>
+                    <span class="ai-feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v5Z"/><path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1"/></svg>
+                        無壓力對話
+                    </span>
+                </div>
+                <a href="lounge/chat.html" class="chat-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
+                    </svg>
+                    開始聊天
+                </a>
             </div>
         </div>
     </section>
@@ -133,8 +322,12 @@
             <h2>想聊聊你的品牌困擾？</h2>
             <p>歡迎在社交平台私訊我，或預約一次免費諮詢，讓我們一起找出品牌的方向。</p>
             <div class="social-links">
+                <a href="lounge/chat.html" class="social-link" style="background: rgba(201, 169, 98, 0.3); border-color: rgba(201, 169, 98, 0.5);">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/></svg>
+                    <span>與光光聊天</span>
+                </a>
                 <a href="https://www.instagram.com/spacebetweenhealing" target="_blank" rel="noopener" class="social-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg><span>Instagram</span></a>
-                <a href="contact.html" class="social-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg><span>預約諮詢</span></a>
+                <a href="contact.html" class="social-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg><span>預約諮詢</span></a>
             </div>
         </div>
     </section>
