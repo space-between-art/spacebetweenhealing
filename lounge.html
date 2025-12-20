@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會客室 | 品牌思維分享 | 隙光設計</title>
+    <meta name="description" content="品牌療癒入門——專為獨立創業者打造的品牌思維分享。從情緒切入，以專業收尾，幫助你找到品牌方向。">
+    
+    <meta property="og:title" content="會客室 | 隙光設計">
+    <meta property="og:description" content="品牌療癒入門——從情緒切入，以專業收尾">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://spacebetweenhealing.com/lounge.html">
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .lounge-hero { padding: 120px 0 80px; background: linear-gradient(135deg, #faf9f7 0%, #f5f3f0 100%); text-align: center; }
+        .lounge-hero h1 { font-family: 'Noto Serif TC', serif; font-size: 2.8rem; color: #2d2926; margin-bottom: 1rem; }
+        .lounge-hero .subtitle { font-size: 1.1rem; color: #6b635b; max-width: 600px; margin: 0 auto 2rem; line-height: 1.8; }
+        .lounge-intro { background: white; border-radius: 12px; padding: 2rem; max-width: 720px; margin: 0 auto; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+        .lounge-intro p { color: #4a4543; line-height: 1.9; margin-bottom: 1rem; }
+        .lounge-intro p:last-child { margin-bottom: 0; }
+        .professional-note { background: linear-gradient(135deg, #2d2926 0%, #3d3a36 100%); border-radius: 8px; padding: 1.5rem; margin-top: 1.5rem; }
+        .professional-note .note-label { display: inline-flex; align-items: center; gap: 0.5rem; color: #c4a87c; font-size: 0.85rem; font-weight: 500; margin-bottom: 0.75rem; letter-spacing: 0.5px; }
+        .professional-note .note-label svg { width: 16px; height: 16px; }
+        .professional-note p { color: rgba(255,255,255,0.85); font-size: 0.95rem; line-height: 1.7; margin: 0; }
+        .series-section { padding: 80px 0; background: white; }
+        .series-header { text-align: center; margin-bottom: 3rem; }
+        .series-label { display: inline-block; background: #e8e4df; color: #6b635b; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; margin-bottom: 1rem; }
+        .series-header h2 { font-family: 'Noto Serif TC', serif; font-size: 2rem; color: #2d2926; margin-bottom: 0.5rem; }
+        .series-header p { color: #6b635b; }
+        .series-description { max-width: 640px; margin: 0 auto 2.5rem; text-align: center; color: #5a5550; line-height: 1.8; }
+        .articles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
+        .article-card { background: #faf9f7; border-radius: 12px; padding: 2rem; transition: all 0.3s ease; border: 1px solid transparent; text-decoration: none; display: block; }
+        .article-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.08); border-color: #d4cfc8; }
+        .article-card .number { display: inline-block; width: 32px; height: 32px; background: #2d2926; color: white; border-radius: 50%; text-align: center; line-height: 32px; font-size: 0.9rem; margin-bottom: 1rem; }
+        .article-card h3 { font-size: 1.2rem; color: #2d2926; margin-bottom: 0.75rem; line-height: 1.5; }
+        .article-card p { color: #6b635b; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem; }
+        .article-card .read-more { color: #8b7355; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem; }
+        .article-card .read-more svg { width: 16px; height: 16px; transition: transform 0.2s ease; }
+        .article-card:hover .read-more svg { transform: translateX(4px); }
+        .article-card.coming-soon { opacity: 0.6; pointer-events: none; }
+        .article-card.coming-soon .coming-tag { display: inline-block; background: #e8e4df; color: #6b635b; padding: 0.25rem 0.75rem; border-radius: 12px; font-size: 0.8rem; margin-bottom: 1rem; }
+        .lounge-cta { padding: 80px 0; background: linear-gradient(135deg, #2d2926 0%, #3d3a36 100%); text-align: center; }
+        .lounge-cta h2 { font-family: 'Noto Serif TC', serif; font-size: 1.8rem; color: white; margin-bottom: 1rem; }
+        .lounge-cta p { color: rgba(255,255,255,0.8); margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .social-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        .social-link { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.1); color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.2); }
+        .social-link:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+        .social-link svg { width: 20px; height: 20px; }
+        @media (max-width: 768px) { .lounge-hero { padding: 100px 1.5rem 60px; } .lounge-hero h1 { font-size: 2rem; } .lounge-intro { margin: 0 1.5rem; } .articles-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <div class="logo-icon-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></div>
+                <div class="logo-text-group"><span class="logo-text">隙光設計</span><span class="logo-subtext">Space Between Healing</span></div>
+            </a>
+            <button class="nav-toggle" aria-label="開啟選單"><span></span><span></span><span></span></button>
+            <ul class="nav-menu">
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="about.html">關於</a></li>
+                <li><a href="services.html">服務</a></li>
+                <li><a href="portfolio.html">作品</a></li>
+                <li><a href="case-studies.html">示範案例</a></li>
+                <li><a href="lounge.html" class="active">會客室</a></li>
+            </ul>
+            <a href="collaboration.html" class="nav-cta">合作邀請<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        </div>
+    </nav>
+
+    <section class="lounge-hero">
+        <div class="container">
+            <h1>會客室</h1>
+            <p class="subtitle">歡迎來坐坐。<br>這裡是關於品牌的療癒對話——<br>專為正在摸索品牌方向的你而寫。</p>
+            <div class="lounge-intro">
+                <p>作為獨立創業者，你可能花了很多時間打磨產品或服務，卻不知道如何讓別人記住你、信任你。</p>
+                <p>品牌不只是 Logo 或漂亮的設計，更是你與世界連結的方式。在這裡，我會分享一些品牌思維，幫助你找到屬於自己的品牌聲音。</p>
+                <div class="professional-note">
+                    <div class="note-label"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>設計師觀點</div>
+                    <p>每篇文章都會從兩個角度出發：先用溫和的方式探討你可能正在經歷的品牌困擾，再從專業設計的角度提供具體的分析與方向。療癒是入口，專業是基礎。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="series-section">
+        <div class="container">
+            <div class="series-header">
+                <span class="series-label">系列一</span>
+                <h2>品牌療癒入門</h2>
+                <p>4 篇文章，帶你重新認識你的品牌</p>
+            </div>
+            <p class="series-description">這個系列會從「情緒」切入，幫助你察覺品牌可能正在經歷的問題；同時從「設計」角度，解釋這些問題背後的專業原理——品牌定位、視覺識別、品牌聲音。</p>
+            <div class="articles-grid">
+                <a href="lounge/brand-symptoms.html" class="article-card">
+                    <span class="number">1</span>
+                    <h3>你的品牌需要療癒嗎？<br>5 個徵兆自我檢測</h3>
+                    <p>品牌也會生病——這 5 個徵兆對應的是品牌核心三要素的缺失：定位、聲音、視覺一致性。</p>
+                    <span class="read-more">閱讀文章 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+                </a>
+                <div class="article-card coming-soon">
+                    <span class="coming-tag">即將推出</span>
+                    <span class="number">2</span>
+                    <h3>為什麼你的品牌<br>總是「不像自己」？</h3>
+                    <p>品牌與創辦人之間的斷裂感，往往源於品牌定位（Brand Positioning）的模糊。</p>
+                </div>
+                <div class="article-card coming-soon">
+                    <span class="coming-tag">即將推出</span>
+                    <span class="number">3</span>
+                    <h3>獨立創業者<br>最常犯的品牌迷思</h3>
+                    <p>那些「應該」正在消耗你——從品牌策略的角度拆解 5 個常見誤區。</p>
+                </div>
+                <div class="article-card coming-soon">
+                    <span class="coming-tag">即將推出</span>
+                    <span class="number">4</span>
+                    <h3>品牌不是 Logo<br>——重新認識你的事業面貌</h3>
+                    <p>完整的品牌包含核心、性格、聲音、視覺、體驗五個層面——Logo 只是其中一環。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="lounge-cta">
+        <div class="container">
+            <h2>想聊聊你的品牌困擾？</h2>
+            <p>歡迎在社交平台私訊我，或預約一次免費諮詢，讓我們一起找出品牌的方向。</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/spacebetweenhealing" target="_blank" rel="noopener" class="social-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg><span>Instagram</span></a>
+                <a href="contact.html" class="social-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg><span>預約諮詢</span></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-text">隙光 Space Between Studio</span>
+                    <span class="logo-subtext">創意設計工作室</span>
+                    <p class="footer-tagline">讓你的品牌，一眼被記住</p>
+                    <div class="footer-sub-brands">
+                        <p class="sub-brands-title">旗下品牌</p>
+                        <a href="https://spacebetweenhealing.com" class="sub-brand-link active"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>隙光設計｜品牌設計服務</a>
+                        <a href="https://www.space-between.art" class="sub-brand-link" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>隙光創作｜療癒文學平台</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>導覽</h4>
+                        <ul>
+                            <li><a href="about.html">關於我們</a></li>
+                            <li><a href="services.html">服務項目</a></li>
+                            <li><a href="portfolio.html">作品集</a></li>
+                            <li><a href="case-studies.html">示範案例</a></li>
+                            <li><a href="lounge.html">會客室</a></li>
+                            <li><a href="collaboration.html">合作邀請</a></li>
+                            <li><a href="contact.html">聯繫我們</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>聯繫</h4>
+                        <ul><li><a href="mailto:hello@spacebetweenhealing.com"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>hello@spacebetweenhealing.com</a></li></ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 隙光 Space Between Studio. All rights reserved.</p>
+                <p>隙光設計 Space Between Healing 為隙光 Space Between Studio（獨資業務）旗下品牌。</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
