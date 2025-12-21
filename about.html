@@ -3,42 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- 基本 SEO -->
-    <title>關於隙光設計 | 香港品牌設計團隊 | 每月限量接案</title>
-    <meta name="description" content="了解隙光設計的設計理念與服務承諾。我們專注為獨立創業者與小型企業打造專業品牌形象，每月限量 3 個專案，一對一深度溝通，修改到滿意為止。">
-    <meta name="keywords" content="隙光設計, 品牌設計團隊, 香港設計師, 設計理念, 品牌顧問">
-    <meta name="robots" content="index, follow">
+    <title>關於隙光設計 | 療癒設計哲學 · 香港品牌設計團隊</title>
+    <meta name="description" content="了解隙光設計的療癒設計哲學與服務承諾。我們相信設計能為混亂的品牌帶來秩序的平靜。">
     <link rel="canonical" href="https://spacebetweenhealing.com/about.html">
-    
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://spacebetweenhealing.com/about.html">
-    <meta property="og:title" content="關於隙光設計 | 香港品牌設計團隊">
-    <meta property="og:description" content="了解隙光設計的設計理念與服務承諾。每月限量接案，只做讓我們驕傲的作品。">
-    <meta property="og:image" content="https://spacebetweenhealing.com/images/og-image.png">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <style>
+        .healing-philosophy { background: linear-gradient(180deg, #FAF8F5 0%, #F5F0E8 100%); padding: 5rem 0; position: relative; overflow: hidden; }
+        .healing-philosophy::before { content: ''; position: absolute; top: -20%; right: -10%; width: 40%; height: 140%; background: radial-gradient(ellipse, rgba(196, 168, 124, 0.1) 0%, transparent 70%); pointer-events: none; }
+        .philosophy-header { text-align: center; margin-bottom: 3rem; }
+        .philosophy-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(139, 90, 43, 0.1); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; color: var(--color-primary); margin-bottom: 1rem; }
+        .philosophy-badge svg { width: 16px; height: 16px; }
+        .philosophy-header h2 { font-family: 'Noto Serif TC', serif; font-size: 2rem; color: var(--color-primary); margin-bottom: 0.75rem; }
+        .philosophy-header p { color: var(--color-text-light); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        .philosophy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .philosophy-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border-radius: 16px; padding: 2rem; border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 4px 24px rgba(139, 115, 85, 0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .philosophy-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(139, 115, 85, 0.12); }
+        .philosophy-icon { width: 56px; height: 56px; background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light)); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
+        .philosophy-icon svg { width: 28px; height: 28px; stroke: white; }
+        .philosophy-card h3 { font-family: 'Noto Serif TC', serif; font-size: 1.25rem; color: var(--color-primary); margin-bottom: 0.75rem; }
+        .philosophy-card p { color: var(--color-text-light); line-height: 1.7; font-size: 0.95rem; }
+        .methodology { background: linear-gradient(135deg, var(--color-primary) 0%, #3a3632 100%); padding: 4rem 0; color: white; }
+        .methodology-content { max-width: 800px; margin: 0 auto; text-align: center; }
+        .methodology h2 { font-family: 'Noto Serif TC', serif; font-size: 1.75rem; margin-bottom: 1.5rem; color: var(--color-accent-light); }
+        .methodology-steps { display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap; }
+        .method-step { flex: 1; min-width: 200px; max-width: 250px; text-align: center; }
+        .method-number { width: 48px; height: 48px; background: rgba(196, 168, 124, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--color-accent-light); }
+        .method-step h4 { color: var(--color-accent-light); margin-bottom: 0.5rem; font-size: 1.1rem; }
+        .method-step p { color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; line-height: 1.6; }
+        .partner-note { background: rgba(196, 168, 124, 0.1); border-left: 3px solid var(--color-accent); padding: 1.5rem 2rem; border-radius: 0 12px 12px 0; margin-top: 2rem; }
+        .partner-note h4 { color: var(--color-primary); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        .partner-note h4 svg { width: 20px; height: 20px; stroke: var(--color-accent); }
+        .partner-note p { color: var(--color-text-light); font-size: 0.95rem; line-height: 1.6; margin: 0; }
+    </style>
 </head>
 <body>
     <nav class="nav">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
-                <div class="logo-icon-box">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
-                </div>
-                <div class="logo-text-group">
-                    <span class="logo-text">隙光設計</span>
-                    <span class="logo-subtext">Space Between Healing</span>
-                </div>
+                <div class="logo-icon-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></div>
+                <div class="logo-text-group"><span class="logo-text">隙光設計</span><span class="logo-subtext">Space Between Healing</span></div>
             </a>
             <button class="nav-toggle" aria-label="開啟選單"><span></span><span></span><span></span></button>
             <ul class="nav-menu">
@@ -47,26 +54,58 @@
                 <li><a href="services.html">服務</a></li>
                 <li><a href="portfolio.html">作品</a></li>
                 <li><a href="case-studies.html">示範案例</a></li>
-                <li><a href="lounge.html">會客室</a></li>
+                <li><a href="lounge.html">療癒實驗室</a></li>
             </ul>
-            <a href="collaboration.html" class="nav-cta">
-                合作邀請
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
+            <a href="collaboration.html" class="nav-cta">合作邀請<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
         </div>
     </nav>
 
-    <header class="page-header">
+    <header class="page-header"><div class="container"><h1>關於隙光</h1><p>療癒設計，讓品牌找回平靜的力量</p></div></header>
+
+    <section class="healing-philosophy">
         <div class="container">
-            <h1>關於隙光</h1>
-            <p>每月限量接案，只做讓我們驕傲的作品</p>
+            <div class="philosophy-header">
+                <span class="philosophy-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3Z"/></svg>療癒設計哲學</span>
+                <h2>設計如何帶來療癒</h2>
+                <p>「療癒」不只是我們的名字，而是貫穿每個項目的設計信念</p>
+            </div>
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <div class="philosophy-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg></div>
+                    <h3>品牌的「病」</h3>
+                    <p>形象混亂、定位模糊、視覺不一致——這些都是品牌常見的「症狀」。就像身體不舒服需要診斷，品牌也需要專業的檢視。</p>
+                </div>
+                <div class="philosophy-card">
+                    <div class="philosophy-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></div>
+                    <h3>設計的「藥」</h3>
+                    <p>好的設計為混亂帶來秩序，為模糊帶來清晰。當品牌形象統一、溝通一致，你和客戶都會感到一種平靜的安心感。</p>
+                </div>
+                <div class="philosophy-card">
+                    <div class="philosophy-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/></svg></div>
+                    <h3>隙光的「療癒」</h3>
+                    <p>我們相信光線穿過縫隙時最柔和。不浮誇、不過度，用最適合的方式，讓你的品牌找到自己的光芒。</p>
+                </div>
+            </div>
         </div>
-    </header>
+    </section>
+
+    <section class="methodology">
+        <div class="container">
+            <div class="methodology-content">
+                <h2>療癒設計方法論 Healing Design Methodology</h2>
+                <p style="color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto;">每個項目都遵循這套方法，確保設計不只好看，更能解決問題</p>
+                <div class="methodology-steps">
+                    <div class="method-step"><div class="method-number">1</div><h4>診斷 Diagnose</h4><p>深入了解品牌現況，找出「症狀」背後的真正問題</p></div>
+                    <div class="method-step"><div class="method-number">2</div><h4>處方 Prescribe</h4><p>根據診斷結果，制定專屬的設計策略與方向</p></div>
+                    <div class="method-step"><div class="method-number">3</div><h4>療癒 Heal</h4><p>執行設計，為品牌注入平靜的力量與專業的形象</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="content-section">
         <div class="container">
             <div class="content-narrow">
-                
                 <h2>我們相信的事</h2>
                 <p><strong>好的品牌形象，是最值得的投資。</strong></p>
                 <p>你可能有很棒的產品、專業的服務，但如果品牌形象不到位，客戶很難在第一時間信任你。我們見過太多優秀的創業者，因為「看起來不夠專業」而流失客戶。</p>
@@ -74,12 +113,17 @@
                 
                 <h2>為什麼叫「隙光」？</h2>
                 <p>「隙光」是光線穿過縫隙時產生的柔和光芒。不刺眼，卻足以照亮方向。</p>
-                <p>我們相信好的品牌設計也應該如此——不浮誇、不過度，但讓人印象深刻。用最適合的方式，呈現你品牌最好的樣子。</p>
+                <p>這個名字承載了我們對設計的信念——不浮誇、不過度，但讓人印象深刻。用最適合的方式，呈現你品牌最好的樣子。這就是「療癒設計」的核心：為混亂帶來秩序的平靜。</p>
                 
                 <h2>我們的做法</h2>
-                <p><strong>限量接案。</strong>每月只接 3 個專案。不是為了製造稀缺感，而是確保每個專案都能獲得 100% 的專注。我們不想做流水線作業，只想做讓自己驕傲的作品。</p>
+                <p><strong>限量接案。</strong>每月只接 3 個專案。不是為了製造稀缺感，而是確保每個專案都能獲得 100% 的專注。</p>
                 <p><strong>一對一服務。</strong>從諮詢到交付，全程同一人負責。不轉手、不外包，確保完全理解你的需求。</p>
                 <p><strong>修改到滿意。</strong>我們的目標是交出你真正喜歡的作品。不滿意就改，直到你滿意為止。</p>
+                
+                <div class="partner-note">
+                    <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>合作夥伴網絡</h4>
+                    <p>雖然核心團隊精簡，但我們擁有可靠的合作夥伴網絡——攝影師、文案寫手、網站工程師、印刷廠商——確保每個項目都有足夠的專業支援，按時高質量交付。</p>
+                </div>
                 
                 <h2>適合找我們的人</h2>
                 <p><strong>獨立創業者</strong>——剛起步的個人品牌，需要專業形象建立信任。</p>
@@ -88,15 +132,9 @@
                 <p><strong>品牌升級者</strong>——現有品牌老舊，準備煥然一新。</p>
                 
                 <div style="margin-top: 3rem; padding: 2rem; background: var(--color-bg-alt); border-radius: 12px; text-align: center;">
-                    <p style="font-size: 1.25rem; color: var(--color-primary); margin-bottom: var(--spacing-md);">
-                        「不做 100 個普通的專案，<br>只做 30 個讓我們驕傲的作品。」
-                    </p>
-                    <a href="contact.html" class="btn btn-accent">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
-                        預約免費諮詢
-                    </a>
+                    <p style="font-size: 1.25rem; color: var(--color-primary); margin-bottom: var(--spacing-md);">「不做 100 個普通的專案，<br>只做 30 個讓我們驕傲的作品。」</p>
+                    <a href="lounge.html" class="btn btn-accent"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>免費品牌診斷</a>
                 </div>
-                
             </div>
         </div>
     </section>
@@ -104,88 +142,28 @@
     <section class="content-section about-studio" style="background: linear-gradient(135deg, var(--color-bg-alt) 0%, rgba(139, 90, 43, 0.05) 100%);">
         <div class="container">
             <div class="content-narrow">
-                
                 <h2 style="color: var(--color-primary); margin-bottom: 1.5rem;">關於隙光 Space Between Studio</h2>
                 <p>隙光工作室成立於 2025 年，是一間專注「品牌敘事」的創意設計工作室。</p>
                 <p>我們相信，好的品牌不只是好看——它應該能說故事、建立信任、讓對的人一眼就看見你。</p>
-                
                 <div style="margin-top: 2.5rem;">
                     <h3 style="color: var(--color-accent); font-size: 1.1rem; margin-bottom: 1.5rem;">工作室旗下品牌</h3>
-                    
                     <div style="display: grid; gap: 1.5rem; margin-top: 1rem;">
                         <div style="background: white; padding: 1.5rem 2rem; border-radius: 12px; border-left: 4px solid var(--color-accent);">
                             <h4 style="color: var(--color-primary); margin-bottom: 0.5rem; font-size: 1.1rem;">隙光設計 Space Between Healing</h4>
                             <p style="margin: 0; opacity: 0.8;">品牌設計服務｜為獨立創業者打造專業形象</p>
                         </div>
-                        
                         <div style="background: white; padding: 1.5rem 2rem; border-radius: 12px; border-left: 4px solid var(--color-secondary);">
                             <h4 style="color: var(--color-primary); margin-bottom: 0.5rem; font-size: 1.1rem;">隙光創作 Space Between Art</h4>
                             <p style="margin: 0 0 1rem 0; opacity: 0.8;">都市奇幻文學｜用故事讓每一個需要被看見的人找到光</p>
-                            <a href="https://www.space-between.art" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--color-accent); text-decoration: none; font-weight: 500;">
-                                探索創作 
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                            </a>
+                            <a href="https://www.space-between.art" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; color: var(--color-accent); text-decoration: none; font-weight: 500;">探索創作 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
                         </div>
                     </div>
                 </div>
-                
             </div>
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <span class="logo-text">隙光 Space Between Studio</span>
-                    <span class="logo-subtext">創意設計工作室</span>
-                    <p class="footer-tagline">讓你的品牌，一眼被記住</p>
-                    
-                    <div class="footer-sub-brands">
-                        <p class="sub-brands-title">旗下品牌</p>
-                        <a href="https://spacebetweenhealing.com" class="sub-brand-link active">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
-                            隙光設計｜品牌設計服務
-                        </a>
-                        <a href="https://www.space-between.art" class="sub-brand-link" target="_blank">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
-                            隙光創作｜療癒文學平台
-                        </a>
-                    </div>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>導覽</h4>
-                        <ul>
-                            <li><a href="about.html">關於我們</a></li>
-                            <li><a href="services.html">服務項目</a></li>
-                            <li><a href="portfolio.html">作品集</a></li>
-                            <li><a href="case-studies.html">示範案例</a></li>
-                            <li><a href="lounge.html">會客室</a></li>
-                            <li><a href="collaboration.html">合作邀請</a></li>
-                            <li><a href="contact.html">聯繫我們</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>聯繫</h4>
-                        <ul>
-                            <li>
-                                <a href="mailto:hello@spacebetweenhealing.com">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                                    hello@spacebetweenhealing.com
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2025 隙光 Space Between Studio. All rights reserved.</p>
-                <p>隙光設計 Space Between Healing 為隙光 Space Between Studio（獨資業務）旗下品牌。</p>
-            </div>
-        </div>
-    </footer>
-
+    <footer class="footer"><div class="container"><div class="footer-content"><div class="footer-brand"><span class="logo-text">隙光 Space Between Studio</span><span class="logo-subtext">創意設計工作室</span><p class="footer-tagline">讓你的品牌，一眼被記住</p><div class="footer-sub-brands"><p class="sub-brands-title">旗下品牌</p><a href="https://spacebetweenhealing.com" class="sub-brand-link active"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>隙光設計｜品牌設計服務</a><a href="https://www.space-between.art" class="sub-brand-link" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>隙光創作｜療癒文學平台</a></div></div><div class="footer-links"><div class="footer-column"><h4>導覽</h4><ul><li><a href="about.html">關於我們</a></li><li><a href="services.html">服務項目</a></li><li><a href="portfolio.html">作品集</a></li><li><a href="case-studies.html">示範案例</a></li><li><a href="lounge.html">療癒實驗室</a></li><li><a href="collaboration.html">合作邀請</a></li><li><a href="contact.html">聯繫我們</a></li></ul></div><div class="footer-column"><h4>聯繫</h4><ul><li><a href="mailto:hello@spacebetweenhealing.com"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>hello@spacebetweenhealing.com</a></li></ul></div></div></div><div class="footer-bottom"><p>© 2025 隙光 Space Between Studio. All rights reserved.</p><p>隙光設計 Space Between Healing 為隙光 Space Between Studio（獨資業務）旗下品牌。</p></div></div></footer>
     <script src="js/main.js"></script>
 </body>
 </html>

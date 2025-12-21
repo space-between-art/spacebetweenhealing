@@ -3,14 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>作品集 | 品牌設計案例 · 網站設計作品 | 隙光設計</title>
-    <meta name="description" content="瀏覽隙光設計的設計作品集。包括品牌網站設計、Logo設計、視覺識別系統等成功案例。">
+    <title>作品集 | 商業設計 · 文化項目 | 隙光設計</title>
+    <meta name="description" content="瀏覽隙光設計的設計作品集。包括商業品牌設計、文化項目與創意平台案例。">
     <link rel="canonical" href="https://spacebetweenhealing.com/portfolio.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        .portfolio-categories { display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap; }
+        .category-tab { padding: 0.75rem 1.5rem; border-radius: 25px; background: var(--color-bg-alt); color: var(--color-text-light); font-weight: 500; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease; }
+        .category-tab:hover { border-color: var(--color-accent); }
+        .category-tab.active { background: var(--color-primary); color: white; }
+        .cultural-badge { display: inline-flex; align-items: center; gap: 0.4rem; background: linear-gradient(135deg, #2D2926, #3a3632); color: var(--color-accent-light); padding: 0.4rem 0.8rem; border-radius: 15px; font-size: 0.75rem; font-weight: 500; margin-bottom: 0.75rem; }
+        .cultural-badge svg { width: 14px; height: 14px; }
+        .portfolio-impact { background: linear-gradient(135deg, var(--color-bg-alt), rgba(196,168,124,0.1)); padding: 1.5rem; border-radius: 12px; margin-top: 1.5rem; }
+        .portfolio-impact h4 { font-size: 0.9rem; color: var(--color-primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem; }
+        .portfolio-impact h4 svg { width: 18px; height: 18px; stroke: var(--color-accent); }
+        .impact-stats { display: flex; gap: 2rem; flex-wrap: wrap; }
+        .impact-stat { text-align: center; }
+        .impact-stat .number { font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; color: var(--color-primary); font-weight: 600; }
+        .impact-stat .label { font-size: 0.8rem; color: var(--color-text-light); }
+    </style>
 </head>
 <body>
     <nav class="nav">
@@ -26,14 +41,24 @@
                 <li><a href="services.html">服務</a></li>
                 <li><a href="portfolio.html" class="active">作品</a></li>
                 <li><a href="case-studies.html">示範案例</a></li>
-                <li><a href="lounge.html">會客室</a></li>
+                <li><a href="lounge.html">療癒實驗室</a></li>
             </ul>
             <a href="collaboration.html" class="nav-cta">合作邀請<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
         </div>
     </nav>
-    <header class="page-header"><div class="container"><h1>作品集</h1><p>我們為客戶打造的品牌形象</p></div></header>
+    
+    <header class="page-header"><div class="container"><h1>作品集</h1><p>商業設計與文化項目</p></div></header>
+    
     <section class="portfolio-section">
         <div class="container">
+            <!-- 分類標籤 -->
+            <div class="portfolio-categories">
+                <span class="category-tab active">全部作品</span>
+                <span class="category-tab">商業項目</span>
+                <span class="category-tab">文化項目</span>
+            </div>
+            
+            <!-- 文化旗艦項目 -->
             <div class="portfolio-featured">
                 <a href="https://www.space-between.art" target="_blank" rel="noopener" class="portfolio-item featured">
                     <div class="portfolio-image">
@@ -44,17 +69,31 @@
                         <div class="portfolio-overlay"><span class="portfolio-view">查看網站<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg></span></div>
                     </div>
                     <div class="portfolio-info">
+                        <span class="cultural-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>文化項目</span>
                         <div class="portfolio-tags"><span class="portfolio-tag">品牌網站</span><span class="portfolio-tag">視覺設計</span><span class="portfolio-tag">響應式設計</span></div>
                         <h2>隙光創作 Space Between Art</h2>
                         <p>工作室旗下文學品牌。都市療癒奇幻文學創作平台，以「在縫隙中尋找光芒」為核心理念，打造沉浸式的閱讀體驗。網站採用優雅的深色調設計，營造適合閱讀的氛圍。</p>
                         <div class="portfolio-details"><div class="detail-item"><span class="detail-label">服務項目</span><span class="detail-value">品牌網站設計、視覺識別</span></div><div class="detail-item"><span class="detail-label">製作時間</span><span class="detail-value">3 週</span></div></div>
+                        
+                        <!-- 影響力數據 -->
+                        <div class="portfolio-impact">
+                            <h4><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>項目影響力</h4>
+                            <div class="impact-stats">
+                                <div class="impact-stat"><div class="number">5+</div><div class="label">原創長篇作品</div></div>
+                                <div class="impact-stat"><div class="number">40萬+</div><div class="label">總字數</div></div>
+                                <div class="impact-stat"><div class="number">∞</div><div class="label">療癒故事持續更新</div></div>
+                            </div>
+                        </div>
                     </div>
                 </a>
             </div>
+            
+            <!-- 更多作品即將推出 -->
             <div class="portfolio-coming">
                 <div class="coming-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.555C21.965 6.012 17.461 2 12 2z"/></svg></div>
-                <div class="coming-content"><h3>更多作品即將推出</h3><p>我們正在整理更多精彩的專案作品。<br>想了解更多？歡迎預約諮詢，我們會分享更多案例。</p></div>
+                <div class="coming-content"><h3>更多商業項目即將推出</h3><p>我們正在整理更多精彩的商業專案作品。<br>想了解更多？歡迎預約諮詢，我們會分享更多案例。</p></div>
             </div>
+            
             <div class="portfolio-services">
                 <h3>我們提供的服務</h3>
                 <div class="service-tags">
@@ -68,8 +107,10 @@
             </div>
         </div>
     </section>
-    <section class="cta"><div class="container"><div class="cta-content"><h2>想成為我們的下一個作品？</h2><p>預約諮詢，讓我們聽聽你的品牌故事。</p><a href="contact.html" class="btn btn-accent"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>預約免費諮詢</a></div></div></section>
-    <footer class="footer"><div class="container"><div class="footer-content"><div class="footer-brand"><span class="logo-text">隙光 Space Between Studio</span><span class="logo-subtext">創意設計工作室</span><p class="footer-tagline">讓你的品牌，一眼被記住</p><div class="footer-sub-brands"><p class="sub-brands-title">旗下品牌</p><a href="https://spacebetweenhealing.com" class="sub-brand-link active"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>隙光設計｜品牌設計服務</a><a href="https://www.space-between.art" class="sub-brand-link" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>隙光創作｜療癒文學平台</a></div></div><div class="footer-links"><div class="footer-column"><h4>導覽</h4><ul><li><a href="about.html">關於我們</a></li><li><a href="services.html">服務項目</a></li><li><a href="portfolio.html">作品集</a></li><li><a href="case-studies.html">示範案例</a></li><li><a href="lounge.html">會客室</a></li><li><a href="collaboration.html">合作邀請</a></li><li><a href="contact.html">聯繫我們</a></li></ul></div><div class="footer-column"><h4>聯繫</h4><ul><li><a href="mailto:hello@spacebetweenhealing.com"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>hello@spacebetweenhealing.com</a></li></ul></div></div></div><div class="footer-bottom"><p>© 2025 隙光 Space Between Studio. All rights reserved.</p><p>隙光設計 Space Between Healing 為隙光 Space Between Studio（獨資業務）旗下品牌。</p></div></div></footer>
+    
+    <section class="cta"><div class="container"><div class="cta-content"><h2>想成為我們的下一個作品？</h2><p>先讓 AI 幫你做品牌健康診斷，了解品牌現況。</p><a href="lounge.html" class="btn btn-accent"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>開始免費診斷</a></div></div></section>
+    
+    <footer class="footer"><div class="container"><div class="footer-content"><div class="footer-brand"><span class="logo-text">隙光 Space Between Studio</span><span class="logo-subtext">創意設計工作室</span><p class="footer-tagline">讓你的品牌，一眼被記住</p><div class="footer-sub-brands"><p class="sub-brands-title">旗下品牌</p><a href="https://spacebetweenhealing.com" class="sub-brand-link active"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>隙光設計｜品牌設計服務</a><a href="https://www.space-between.art" class="sub-brand-link" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>隙光創作｜療癒文學平台</a></div></div><div class="footer-links"><div class="footer-column"><h4>導覽</h4><ul><li><a href="about.html">關於我們</a></li><li><a href="services.html">服務項目</a></li><li><a href="portfolio.html">作品集</a></li><li><a href="case-studies.html">示範案例</a></li><li><a href="lounge.html">療癒實驗室</a></li><li><a href="collaboration.html">合作邀請</a></li><li><a href="contact.html">聯繫我們</a></li></ul></div><div class="footer-column"><h4>聯繫</h4><ul><li><a href="mailto:hello@spacebetweenhealing.com"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>hello@spacebetweenhealing.com</a></li></ul></div></div></div><div class="footer-bottom"><p>© 2025 隙光 Space Between Studio. All rights reserved.</p><p>隙光設計 Space Between Healing 為隙光 Space Between Studio（獨資業務）旗下品牌。</p></div></div></footer>
     <script src="js/main.js"></script>
 </body>
 </html>

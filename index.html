@@ -7,7 +7,7 @@
     <!-- 基本 SEO -->
     <title>隙光設計 | 香港品牌設計 · Logo設計 · 網站設計 | 讓你的品牌一眼被記住</title>
     <meta name="description" content="香港專業品牌設計工作室，為獨立創業者與小型企業打造專業形象。提供 Logo 設計、品牌視覺識別、響應式網站設計。每月限量 3 個專案，一對一深度溝通，修改到滿意為止。">
-    <meta name="keywords" content="品牌設計, Logo設計, 網站設計, 香港設計, 品牌形象, 視覺識別, 響應式網站, 小型企業品牌, 創業品牌設計, 隙光設計">
+    <meta name="keywords" content="品牌設計, Logo設計, 網站設計, 香港設計, 品牌形象, 視覺識別, 響應式網站, 小型企業品牌, 創業品牌設計, 隙光設計, 療癒設計">
     <meta name="author" content="隙光設計 Space Between Healing">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://spacebetweenhealing.com/">
@@ -116,9 +116,9 @@
     <!-- 樣式 -->
     <link rel="stylesheet" href="css/style.css">
     
-    <!-- AI Assistant 樣式 - 柔和溫暖版 -->
+    <!-- AI Assistant 樣式 - 升級版 -->
     <style>
-        /* AI Assistant Entry - 柔和溫暖配色 */
+        /* AI Diagnostic Entry - Glassmorphism */
         .ai-entry-section {
             padding: 80px 0;
             background: linear-gradient(180deg, #FAF8F5 0%, #F5F0E8 100%);
@@ -151,7 +151,9 @@
             padding: 0 1.5rem;
         }
         .ai-entry-card {
-            background: #FFFFFF;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border-radius: 24px;
             padding: 3rem;
             display: flex;
@@ -160,7 +162,7 @@
             position: relative;
             overflow: hidden;
             box-shadow: 0 8px 40px rgba(139, 115, 85, 0.1), 0 2px 8px rgba(0,0,0,0.04);
-            border: 1px solid rgba(196, 168, 124, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.6);
         }
         .ai-entry-card::before {
             content: '';
@@ -169,7 +171,7 @@
             right: 0;
             width: 40%;
             height: 100%;
-            background: linear-gradient(135deg, transparent 0%, rgba(250, 248, 245, 0.8) 100%);
+            background: linear-gradient(135deg, transparent 0%, rgba(250, 248, 245, 0.5) 100%);
             pointer-events: none;
         }
         .ai-entry-avatar {
@@ -192,7 +194,7 @@
             position: absolute;
             inset: -3px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #C4A87C, rgba(196, 168, 124, 0.3));
+            background: conic-gradient(from 0deg, #C4A87C, rgba(196, 168, 124, 0.3), #C4A87C);
             z-index: -1;
             animation: rotate-glow 10s linear infinite;
         }
@@ -230,7 +232,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: linear-gradient(135deg, #FAF8F5, #F5F0E8);
+            background: linear-gradient(135deg, rgba(139, 115, 85, 0.1), rgba(196, 168, 124, 0.15));
             padding: 0.5rem 1rem;
             border-radius: 20px;
             font-size: 0.8rem;
@@ -242,6 +244,15 @@
             width: 14px;
             height: 14px;
             stroke: #C4A87C;
+        }
+        .ai-entry-badge .beta-tag {
+            background: linear-gradient(135deg, #C4A87C, #A68B5B);
+            color: white;
+            font-size: 0.65rem;
+            padding: 0.15rem 0.4rem;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-left: 0.25rem;
         }
         .ai-entry-content h2 {
             font-family: 'Noto Serif TC', serif;
@@ -301,6 +312,87 @@
             height: 18px;
         }
         
+        /* Cultural Project Highlight */
+        .cultural-highlight {
+            background: linear-gradient(135deg, #2D2926 0%, #3a3632 100%);
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .cultural-highlight::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 60%;
+            height: 200%;
+            background: radial-gradient(ellipse, rgba(196, 168, 124, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .cultural-highlight .container {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .cultural-icon {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(196, 168, 124, 0.2), rgba(196, 168, 124, 0.1));
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .cultural-icon svg {
+            width: 40px;
+            height: 40px;
+            stroke: #C4A87C;
+        }
+        .cultural-content {
+            flex: 1;
+        }
+        .cultural-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            color: #C4A87C;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+        .cultural-content h3 {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.5rem;
+            color: #FAF8F5;
+            margin-bottom: 0.5rem;
+        }
+        .cultural-content p {
+            color: rgba(250, 248, 245, 0.7);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .cultural-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #C4A87C;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            transition: all 0.2s ease;
+        }
+        .cultural-link:hover {
+            color: #D4BC7D;
+        }
+        .cultural-link svg {
+            width: 16px;
+            height: 16px;
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .ai-entry-section { padding: 60px 0; }
@@ -323,6 +415,10 @@
             }
             .ai-entry-features {
                 justify-content: center;
+            }
+            .cultural-highlight .container {
+                flex-direction: column;
+                text-align: center;
             }
         }
     </style>
@@ -351,7 +447,7 @@
                 <li><a href="services.html">服務</a></li>
                 <li><a href="portfolio.html">作品</a></li>
                 <li><a href="case-studies.html">示範案例</a></li>
-                <li><a href="lounge.html">會客室</a></li>
+                <li><a href="lounge.html">療癒實驗室</a></li>
             </ul>
             <a href="collaboration.html" class="nav-cta">
                 合作邀請
@@ -370,20 +466,20 @@
         <div class="hero-content">
             <div class="hero-badge">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
-                每月限量 3 個專案
+                療癒設計 · 每月限量 3 個專案
             </div>
             <h1 class="hero-title">
                 讓你的品牌，<br>
                 <span class="highlight">一眼被記住</span>
             </h1>
             <p class="hero-description">
-                你有好的產品或服務，卻苦於無法讓人留下印象？<br>
-                我們幫你打造專業的品牌形象——從 Logo 到網站，讓客戶第一眼就信任你。
+                品牌混亂、形象模糊、網站老舊？這些問題我們可以一起解決。<br>
+                隙光設計用「療癒」的方式，為你的品牌注入平靜的力量。
             </p>
             <div class="hero-cta">
-                <a href="contact.html" class="btn btn-accent">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
-                    預約免費諮詢
+                <a href="lounge.html" class="btn btn-accent">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+                    免費品牌診斷
                 </a>
                 <a href="services.html" class="btn btn-secondary">
                     瞭解服務
@@ -399,15 +495,18 @@
         </div>
     </header>
 
-    <!-- 痛點區塊 -->
+    <!-- 痛點區塊 - 共情語氣升級 -->
     <section class="pain-points">
         <div class="container">
             <div class="section-header">
                 <span class="section-eyebrow">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-                    常見困擾
+                    品牌困擾
                 </span>
-                <h2 class="section-title">你是否也有這些困擾？</h2>
+                <h2 class="section-title">這些問題，你並不孤單</h2>
+                <p style="color: var(--color-text-light); max-width: 600px; margin: 1rem auto 0; text-align: center;">
+                    很多創業者都經歷過這些困境。好消息是，這些問題都有解決方案。
+                </p>
             </div>
             <div class="pain-grid">
                 <div class="pain-card">
@@ -438,7 +537,7 @@
         </div>
     </section>
 
-    <!-- AI 小助理入口 - 柔和溫暖版 -->
+    <!-- AI 品牌診斷入口 - 升級為「智能診斷系統」 -->
     <section class="ai-entry-section">
         <div class="ai-entry-container">
             <div class="ai-entry-card">
@@ -457,10 +556,11 @@
                 <div class="ai-entry-content">
                     <span class="ai-entry-badge">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3Z"/></svg>
-                        AI 品牌小助理
+                        智能品牌情緒診斷系統
+                        <span class="beta-tag">BETA</span>
                     </span>
-                    <h2>不確定需要什麼？<br>跟<span>光光</span>聊聊</h2>
-                    <p>光光是我們的 AI 小助理，可以 24 小時陪你聊品牌困擾。她會幫你釐清想法、整理需求，然後讓設計師親自跟進。</p>
+                    <h2>不確定問題在哪？<br>讓 <span>AI</span> 幫你診斷</h2>
+                    <p>光光是我們的 AI 品牌診斷助理。透過對話，她會幫你釐清品牌的「症狀」，分析可能的問題維度，再由設計師親自跟進。</p>
                     <div class="ai-entry-features">
                         <span class="ai-entry-feature">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
@@ -471,17 +571,35 @@
                             對話不公開
                         </span>
                         <span class="ai-entry-feature">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4c0-1.1.9-2 2-2h8a2 2 0 0 1 2 2v5Z"/></svg>
-                            無壓力
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12h6M9 16h6M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/></svg>
+                            AI 驅動的品牌初步分析
                         </span>
                     </div>
                     <a href="lounge/chat.html" class="ai-entry-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
                         </svg>
-                        與光光聊天
+                        開始品牌健康診斷
                     </a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 文化項目亮點 - 新增區塊 -->
+    <section class="cultural-highlight">
+        <div class="container">
+            <div class="cultural-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/></svg>
+            </div>
+            <div class="cultural-content">
+                <span class="cultural-label">文化項目</span>
+                <h3>隙光創作 Space Between Art</h3>
+                <p>工作室旗下文學品牌，以「在縫隙中尋找光芒」為核心，創作都市療癒奇幻文學，讓每一個需要被看見的人找到光。</p>
+                <a href="https://www.space-between.art" target="_blank" class="cultural-link">
+                    探索創作平台
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+                </a>
             </div>
         </div>
     </section>
@@ -493,12 +611,13 @@
                 <div class="section-header">
                     <span class="section-eyebrow" style="color: var(--color-accent-light);">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
-                        解決方案
+                        療癒設計
                     </span>
-                    <h2 class="section-title" style="color: var(--color-bg);">我們幫你解決</h2>
+                    <h2 class="section-title" style="color: var(--color-bg);">設計如何帶來療癒</h2>
                 </div>
                 <p class="solution-lead">
-                    隙光設計專注為<strong>獨立創業者、小型企業、專業服務者</strong>打造品牌形象。
+                    「療癒」不只是名稱，而是我們的設計哲學。<br>
+                    為混亂的品牌帶來秩序的平靜，這就是隙光設計的核心信念。
                 </p>
                 <div class="solution-list">
                     <div class="solution-item">
@@ -572,6 +691,7 @@
                         <div class="work-tags">
                             <span class="work-tag">品牌網站</span>
                             <span class="work-tag">視覺設計</span>
+                            <span class="work-tag">文化項目</span>
                         </div>
                         <h3>隙光創作 Space Between Art</h3>
                         <p>工作室旗下文學品牌。都市療癒奇幻文學創作平台，以「在縫隙中尋找光芒」為核心理念，打造沉浸式的閱讀體驗。</p>
@@ -639,7 +759,7 @@
         </div>
     </section>
 
-    <!-- 為什麼選擇我們 -->
+    <!-- 為什麼選擇我們 - 強調合作夥伴網絡 -->
     <section class="why-us">
         <div class="container">
             <div class="section-header">
@@ -658,7 +778,7 @@
                 <div class="why-card">
                     <div class="why-number">1</div>
                     <h3>一對一深度溝通</h3>
-                    <p>不轉手、不外包。從頭到尾同一人服務，確保理解你的需求。</p>
+                    <p>從頭到尾同一人負責。如需額外專業，我們有攝影師、文案、工程師等合作夥伴網絡支援。</p>
                 </div>
                 <div class="why-card">
                     <div class="why-number">∞</div>
@@ -681,8 +801,8 @@
                     <div class="step-icon-box">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
                     </div>
-                    <h3>免費諮詢</h3>
-                    <p>30 分鐘視訊，了解你的需求與目標</p>
+                    <h3>免費診斷</h3>
+                    <p>AI 品牌診斷 + 30 分鐘視訊諮詢</p>
                 </div>
                 <div class="process-step">
                     <div class="step-icon-box">
@@ -718,12 +838,12 @@
                     本月尚餘名額
                 </div>
                 <h2>準備好讓品牌升級了嗎？</h2>
-                <p>每月只接 3 個專案，預約你的專屬諮詢時段。</p>
-                <a href="contact.html" class="btn btn-accent">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
-                    預約免費諮詢
+                <p>先讓 AI 幫你做品牌健康診斷，再預約設計師諮詢。</p>
+                <a href="lounge.html" class="btn btn-accent">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+                    開始免費診斷
                 </a>
-                <p class="cta-note">諮詢完全免費，沒有任何壓力</p>
+                <p class="cta-note">診斷完全免費，沒有任何壓力</p>
             </div>
         </div>
     </section>
@@ -757,7 +877,7 @@
                             <li><a href="services.html">服務項目</a></li>
                             <li><a href="portfolio.html">作品集</a></li>
                             <li><a href="case-studies.html">示範案例</a></li>
-                            <li><a href="lounge.html">會客室</a></li>
+                            <li><a href="lounge.html">療癒實驗室</a></li>
                             <li><a href="collaboration.html">合作邀請</a></li>
                             <li><a href="contact.html">聯繫我們</a></li>
                         </ul>
