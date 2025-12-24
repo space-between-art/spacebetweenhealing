@@ -3,267 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>退款政策 | Refund Policy | 隙光設計</title>
-    <meta name="description" content="隙光設計退款政策 - 了解我們的退款條件、流程及時間安排。">
-    <link rel="canonical" href="https://spacebetweenhealing.com/refund.html">
+    <title>Refund Policy | Space Between Healing</title>
+    <meta name="description" content="Space Between Healing 的退款政策 - 了解我們的退款條件、流程及時間安排。">
+    <link rel="canonical" href="https://spacebetweenhealing.com/refund">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Outfit:wght@300;400;500;600&family=Noto+Serif+TC:wght@300;400;500&family=Noto+Serif+SC:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        .lang-selector { position: relative; margin-left: 1rem; }
-        .lang-btn { display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 1rem; background: rgba(139, 90, 43, 0.1); border: 1px solid rgba(139, 90, 43, 0.2); border-radius: 100px; color: var(--color-accent); font-size: 0.8rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease; font-family: inherit; }
-        .lang-btn:hover { background: rgba(139, 90, 43, 0.15); border-color: var(--color-accent); }
-        .lang-btn svg { width: 12px; height: 12px; transition: transform 0.3s ease; }
-        .lang-selector.open .lang-btn svg { transform: rotate(180deg); }
-        .lang-dropdown { position: absolute; top: calc(100% + 8px); right: 0; min-width: 150px; background: white; border: 1px solid rgba(139, 90, 43, 0.15); border-radius: 12px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); overflow: hidden; opacity: 0; visibility: hidden; transform: translateY(-10px); transition: all 0.3s ease; z-index: 1000; }
-        .lang-selector.open .lang-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
-        .lang-option { display: flex; align-items: center; gap: 0.5rem; width: 100%; padding: 0.85rem 1.25rem; background: none; border: none; color: var(--color-text-light); font-size: 0.9rem; text-align: left; cursor: pointer; transition: all 0.2s ease; font-family: inherit; }
-        .lang-option:hover { background: rgba(139, 90, 43, 0.08); color: var(--color-accent); }
-        .lang-option.active { color: var(--color-accent); font-weight: 500; }
-        .lang-content { display: none; }
-        .lang-content.active { display: block; }
-        [data-lang="zh-CN"] { font-family: 'Noto Serif SC', 'Noto Sans SC', serif; }
-        
-        .legal-content { max-width: 800px; margin: 0 auto; padding: 3rem 1.5rem; }
-        .legal-content .last-updated { color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 2rem; }
-        .legal-content h2 { font-size: 1.25rem; color: var(--color-primary); margin-top: 2rem; margin-bottom: 1rem; }
-        .legal-content p, .legal-content li { color: var(--color-text-light); line-height: 1.8; margin-bottom: 1rem; }
-        .legal-content ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }
-        .legal-content li { margin-bottom: 0.5rem; }
-        .refund-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
-        .refund-table th, .refund-table td { padding: 1rem; text-align: left; border-bottom: 1px solid rgba(139, 90, 43, 0.1); }
-        .refund-table th { background: var(--color-bg-alt); color: var(--color-primary); font-weight: 600; }
-        .refund-table td { color: var(--color-text-light); }
-        .contact-box { background: var(--color-bg-alt); padding: 1.5rem; border-radius: 12px; margin-top: 2rem; }
-        .contact-box h3 { font-size: 1rem; color: var(--color-primary); margin-bottom: 0.5rem; }
-        .contact-box a { color: var(--color-accent); }
-        .highlight-box { background: linear-gradient(135deg, rgba(196, 168, 124, 0.1), rgba(139, 90, 43, 0.05)); border-left: 4px solid var(--color-accent); padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0; margin: 1.5rem 0; }
-        .highlight-box p { margin: 0; }
+        :root{--bg-deep:#0a0a0a;--bg-dark:#111;--bg-card:#161616;--gold:#d4a574;--gold-light:#e8c9a0;--sage:#a0b89c;--cream:#f5efe6;--text-primary:#f5efe6;--text-secondary:rgba(245,239,230,0.7);--text-muted:rgba(245,239,230,0.45);--font-display:'Cormorant Garamond',serif;--font-body:'Outfit',sans-serif;--font-zh:'Noto Serif TC',serif;--font-zh-sc:'Noto Serif SC',serif;--ease:cubic-bezier(0.16,1,0.3,1)}*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--bg-deep);color:var(--text-primary);line-height:1.7}[data-lang="zh-TW"] .zh{font-family:var(--font-zh)}[data-lang="zh-CN"] .zh{font-family:var(--font-zh-sc)}.lang-content{display:none}.lang-content.active{display:block}
+        .nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.25rem 4vw;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,10,0.9);backdrop-filter:blur(20px)}.nav-logo{font-family:var(--font-display);font-size:1rem;letter-spacing:0.2em;color:var(--gold);text-decoration:none}.nav-right{display:flex;align-items:center;gap:2rem}.lang-selector{position:relative}.lang-btn{display:flex;align-items:center;gap:0.4rem;padding:0.5rem 1rem;background:rgba(212,165,116,0.1);border:1px solid rgba(212,165,116,0.2);border-radius:100px;color:var(--gold);font-size:0.75rem;cursor:pointer;transition:all 0.3s;font-family:inherit}.lang-btn:hover{background:rgba(212,165,116,0.15);border-color:var(--gold)}.lang-btn svg{width:12px;height:12px;transition:transform 0.3s}.lang-selector.open .lang-btn svg{transform:rotate(180deg)}.lang-dropdown{position:absolute;top:calc(100% + 8px);right:0;min-width:140px;background:var(--bg-card);border:1px solid rgba(212,165,116,0.15);border-radius:12px;overflow:hidden;opacity:0;visibility:hidden;transform:translateY(-10px);transition:all 0.3s var(--ease);z-index:100}.lang-selector.open .lang-dropdown{opacity:1;visibility:visible;transform:translateY(0)}.lang-option{display:flex;align-items:center;gap:0.5rem;width:100%;padding:0.75rem 1rem;background:none;border:none;color:var(--text-secondary);font-size:0.85rem;text-align:left;cursor:pointer;transition:all 0.2s;font-family:inherit}.lang-option:hover{background:rgba(212,165,116,0.1);color:var(--gold)}.lang-option.active{color:var(--gold)}.back-link{font-size:0.85rem;color:var(--text-secondary);text-decoration:none;transition:color 0.3s}.back-link:hover{color:var(--gold)}
+        .legal-page{padding:8rem 4vw 4rem;min-height:100vh}.legal-container{max-width:800px;margin:0 auto}.legal-header{margin-bottom:3rem}.legal-tag{display:inline-flex;align-items:center;gap:0.75rem;margin-bottom:1rem}.legal-tag-line{width:30px;height:1px;background:var(--gold)}.legal-tag-text{font-size:0.65rem;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold)}.legal-title{font-family:var(--font-display);font-size:clamp(2rem,5vw,3rem);font-weight:300;margin-bottom:0.5rem}.legal-updated{font-size:0.85rem;color:var(--text-muted)}.legal-content h2{font-family:var(--font-display);font-size:1.4rem;font-weight:400;color:var(--gold);margin:2.5rem 0 1rem}.legal-content p{color:var(--text-secondary);margin-bottom:1rem;line-height:1.8}.legal-content ul{padding-left:1.5rem;margin-bottom:1.5rem}.legal-content li{color:var(--text-secondary);margin-bottom:0.5rem;line-height:1.7}
+        .highlight-box{background:linear-gradient(135deg,rgba(212,165,116,0.08),rgba(160,184,156,0.05));border-left:3px solid var(--gold);padding:1.5rem;border-radius:0 12px 12px 0;margin:2rem 0}.highlight-box p{margin:0;color:var(--cream)}.highlight-box strong{color:var(--gold)}
+        .refund-table{width:100%;border-collapse:collapse;margin:1.5rem 0}.refund-table th,.refund-table td{padding:1rem;text-align:left;border-bottom:1px solid rgba(212,165,116,0.1)}.refund-table th{color:var(--gold);font-weight:500}.refund-table td{color:var(--text-secondary)}
+        .contact-box{background:var(--bg-card);border:1px solid rgba(212,165,116,0.15);border-radius:16px;padding:2rem;margin-top:3rem}.contact-box h3{font-family:var(--font-display);font-size:1.2rem;color:var(--gold);margin-bottom:0.5rem}.contact-box a{color:var(--gold)}
+        .footer{padding:3rem 4vw;background:var(--bg-dark);border-top:1px solid rgba(212,165,116,0.08)}.footer-content{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}.footer-logo{font-family:var(--font-display);font-size:0.95rem;letter-spacing:0.15em;color:var(--gold)}.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap}.footer-links a{font-size:0.8rem;color:var(--text-muted);text-decoration:none;transition:color 0.3s}.footer-links a:hover{color:var(--gold)}.footer-copy{font-size:0.75rem;color:var(--text-muted)}
+        @media(max-width:768px){.legal-page{padding:6rem 1.5rem 3rem}.footer-content{flex-direction:column;text-align:center}.refund-table{font-size:0.85rem}}
     </style>
 </head>
 <body data-lang="zh-TW">
     <nav class="nav">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <div class="logo-icon-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/></svg></div>
-                <div class="logo-text-group"><span class="logo-text">隙光設計</span><span class="logo-subtext">Space Between Healing</span></div>
-            </a>
-            <button class="nav-toggle" aria-label="開啟選單"><span></span><span></span><span></span></button>
-            <ul class="nav-menu">
-                <li><a href="index.html">首頁</a></li>
-                <li><a href="about.html">關於</a></li>
-                <li><a href="services.html">服務</a></li>
-                <li><a href="portfolio.html">作品</a></li>
-                <li><a href="lounge.html">療癒實驗室</a></li>
-            </ul>
-            <div class="nav-right-group" style="display:flex;align-items:center;gap:1rem;">
-                <div class="lang-selector">
-                    <button class="lang-btn"><span class="current-lang">繁中</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
-                    <div class="lang-dropdown">
-                        <button class="lang-option active" data-lang="zh-TW">🇭🇰 繁體中文</button>
-                        <button class="lang-option" data-lang="zh-CN">🇨🇳 简体中文</button>
-                        <button class="lang-option" data-lang="en">🌍 English</button>
-                    </div>
+        <a href="/" class="nav-logo">Space Between</a>
+        <div class="nav-right">
+            <a href="/" class="back-link">← Back to Home</a>
+            <div class="lang-selector">
+                <button class="lang-btn"><span class="current-lang">繁中</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="lang-dropdown">
+                    <button class="lang-option active" data-lang="zh-TW">🇭🇰 繁體中文</button>
+                    <button class="lang-option" data-lang="zh-CN">🇨🇳 简体中文</button>
+                    <button class="lang-option" data-lang="en">🌍 English</button>
                 </div>
-                <a href="collaboration.html" class="nav-cta">合作邀請</a>
             </div>
         </div>
     </nav>
 
-    <header class="page-header"><div class="container">
-        <h1>
-            <span class="lang-content active" data-lang-content="zh-TW">退款政策</span>
-            <span class="lang-content" data-lang-content="zh-CN">退款政策</span>
-            <span class="lang-content" data-lang-content="en">Refund Policy</span>
-        </h1>
-    </div></header>
+    <main class="legal-page">
+        <div class="legal-container">
+            <header class="legal-header">
+                <div class="legal-tag"><span class="legal-tag-line"></span><span class="legal-tag-text">Legal</span><span class="legal-tag-line"></span></div>
+                <h1 class="legal-title">
+                    <span class="lang-content active" data-lang-content="zh-TW">退款政策</span>
+                    <span class="lang-content" data-lang-content="zh-CN">退款政策</span>
+                    <span class="lang-content" data-lang-content="en">Refund Policy</span>
+                </h1>
+                <p class="legal-updated">
+                    <span class="lang-content active" data-lang-content="zh-TW">最後更新：2025 年 1 月</span>
+                    <span class="lang-content" data-lang-content="zh-CN">最后更新：2025 年 1 月</span>
+                    <span class="lang-content" data-lang-content="en">Last Updated: January 2025</span>
+                </p>
+            </header>
 
-    <main class="legal-content">
-        <!-- 繁體中文版本 -->
-        <div class="lang-content active" data-lang-content="zh-TW">
-            <p class="last-updated">最後更新：2025 年 1 月</p>
-            
-            <div class="highlight-box">
-                <p><strong>我們的承諾：</strong>修改到你滿意為止。在大多數情況下，我們會透過修改來解決問題，而非退款。</p>
-            </div>
-            
-            <h2>1. 退款條件</h2>
-            <p>以下情況可申請退款：</p>
-            <ul>
-                <li>專案尚未開始設計工作（僅收取訂金後 48 小時內）</li>
-                <li>因我方原因無法按時交付且無法協商解決</li>
-                <li>交付成品與確認的報價單內容嚴重不符</li>
-            </ul>
-            
-            <h2>2. 退款比例</h2>
-            <table class="refund-table">
-                <tr><th>專案階段</th><th>可退款比例</th></tr>
-                <tr><td>支付訂金後 48 小時內（未開工）</td><td>100% 訂金</td></tr>
-                <tr><td>設計進行中（初稿前）</td><td>50% 訂金</td></tr>
-                <tr><td>初稿已提交</td><td>不予退款</td></tr>
-                <tr><td>專案已完成交付</td><td>不予退款</td></tr>
-            </table>
-            
-            <h2>3. 不適用退款的情況</h2>
-            <ul>
-                <li>客戶因自身原因中途取消專案</li>
-                <li>客戶未能在約定時間內提供所需資料導致延誤</li>
-                <li>設計風格偏好改變（我們會透過修改來解決）</li>
-                <li>專案已完成並交付所有檔案</li>
-            </ul>
-            
-            <h2>4. 退款流程</h2>
-            <ul>
-                <li>發送電郵至 hello@spacebetweenhealing.com 申請退款</li>
-                <li>說明退款原因及相關訂單資料</li>
-                <li>我們會在 5 個工作天內回覆</li>
-                <li>批准後，退款會在 7-14 個工作天內處理</li>
-            </ul>
-            
-            <h2>5. 退款方式</h2>
-            <p>退款將以原支付方式退回。如使用 Wise 或其他國際支付，可能會產生手續費，該費用由客戶承擔。</p>
-            
-            <div class="contact-box">
-                <h3>需要協助？</h3>
-                <p>如有任何問題或需要討論特殊情況：<a href="mailto:hello@spacebetweenhealing.com">hello@spacebetweenhealing.com</a></p>
-            </div>
-        </div>
-        
-        <!-- 简体中文版本 -->
-        <div class="lang-content" data-lang-content="zh-CN">
-            <p class="last-updated">最后更新：2025 年 1 月</p>
-            
-            <div class="highlight-box">
-                <p><strong>我们的承诺：</strong>修改到你满意为止。在大多数情况下，我们会通过修改来解决问题，而非退款。</p>
-            </div>
-            
-            <h2>1. 退款条件</h2>
-            <p>以下情况可申请退款：</p>
-            <ul>
-                <li>项目尚未开始设计工作（仅收取订金后 48 小时内）</li>
-                <li>因我方原因无法按时交付且无法协商解决</li>
-                <li>交付成品与确认的报价单内容严重不符</li>
-            </ul>
-            
-            <h2>2. 退款比例</h2>
-            <table class="refund-table">
-                <tr><th>项目阶段</th><th>可退款比例</th></tr>
-                <tr><td>支付订金后 48 小时内（未开工）</td><td>100% 订金</td></tr>
-                <tr><td>设计进行中（初稿前）</td><td>50% 订金</td></tr>
-                <tr><td>初稿已提交</td><td>不予退款</td></tr>
-                <tr><td>项目已完成交付</td><td>不予退款</td></tr>
-            </table>
-            
-            <h2>3. 不适用退款的情况</h2>
-            <ul>
-                <li>客户因自身原因中途取消项目</li>
-                <li>客户未能在约定时间内提供所需资料导致延误</li>
-                <li>设计风格偏好改变（我们会通过修改来解决）</li>
-                <li>项目已完成并交付所有文件</li>
-            </ul>
-            
-            <h2>4. 退款流程</h2>
-            <ul>
-                <li>发送邮件至 hello@spacebetweenhealing.com 申请退款</li>
-                <li>说明退款原因及相关订单资料</li>
-                <li>我们会在 5 个工作天内回复</li>
-                <li>批准后，退款会在 7-14 个工作天内处理</li>
-            </ul>
-            
-            <h2>5. 退款方式</h2>
-            <p>退款将以原支付方式退回。如使用 Wise 或其他国际支付，可能会产生手续费，该费用由客户承担。</p>
-            
-            <div class="contact-box">
-                <h3>需要帮助？</h3>
-                <p>如有任何问题或需要讨论特殊情况：<a href="mailto:hello@spacebetweenhealing.com">hello@spacebetweenhealing.com</a></p>
-            </div>
-        </div>
-        
-        <!-- English Version -->
-        <div class="lang-content" data-lang-content="en">
-            <p class="last-updated">Last Updated: January 2025</p>
-            
-            <div class="highlight-box">
-                <p><strong>Our Commitment:</strong> Revisions until you're satisfied. In most cases, we resolve issues through revisions, not refunds.</p>
-            </div>
-            
-            <h2>1. Refund Eligibility</h2>
-            <p>Refunds may be requested when:</p>
-            <ul>
-                <li>Project has not started (within 48 hours of deposit)</li>
-                <li>We cannot deliver on time due to our fault and no solution can be reached</li>
-                <li>Deliverables significantly differ from the confirmed quotation</li>
-            </ul>
-            
-            <h2>2. Refund Rates</h2>
-            <table class="refund-table">
-                <tr><th>Project Stage</th><th>Refund Rate</th></tr>
-                <tr><td>Within 48 hours of deposit (work not started)</td><td>100% of deposit</td></tr>
-                <tr><td>Design in progress (before first draft)</td><td>50% of deposit</td></tr>
-                <tr><td>First draft submitted</td><td>No refund</td></tr>
-                <tr><td>Project completed and delivered</td><td>No refund</td></tr>
-            </table>
-            
-            <h2>3. Non-Refundable Situations</h2>
-            <ul>
-                <li>Client cancels for personal reasons</li>
-                <li>Delays caused by client not providing required materials</li>
-                <li>Change in design style preference (resolved through revisions)</li>
-                <li>Project completed with all files delivered</li>
-            </ul>
-            
-            <h2>4. Refund Process</h2>
-            <ul>
-                <li>Email hello@spacebetweenhealing.com to request refund</li>
-                <li>Include reason and order details</li>
-                <li>We respond within 5 business days</li>
-                <li>If approved, refund processed within 7-14 business days</li>
-            </ul>
-            
-            <h2>5. Refund Method</h2>
-            <p>Refunds are returned via original payment method. For Wise or international payments, transaction fees may apply and are borne by the client.</p>
-            
-            <div class="contact-box">
-                <h3>Need Help?</h3>
-                <p>For questions or special circumstances: <a href="mailto:hello@spacebetweenhealing.com">hello@spacebetweenhealing.com</a></p>
+            <div class="legal-content">
+                <!-- 繁體中文 -->
+                <div class="lang-content active" data-lang-content="zh-TW">
+                    <div class="highlight-box">
+                        <p class="zh"><strong>我們的承諾：</strong>我們致力於確保你對最終成品滿意。在大多數情況下，我們會透過修改來解決問題，而非退款。</p>
+                    </div>
+                    
+                    <h2 class="zh">1. 退款條件</h2>
+                    <p class="zh">以下情況可申請退款：</p>
+                    <ul>
+                        <li class="zh">專案尚未開始設計工作（僅收取訂金後 48 小時內）</li>
+                        <li class="zh">因我方原因無法按時交付且無法協商解決</li>
+                        <li class="zh">交付成品與確認的報價單內容嚴重不符</li>
+                    </ul>
+                    
+                    <h2 class="zh">2. 退款比例</h2>
+                    <table class="refund-table">
+                        <tr><th>專案階段</th><th>可退款比例</th></tr>
+                        <tr><td>支付訂金後 48 小時內（未開工）</td><td>100% 訂金</td></tr>
+                        <tr><td>設計進行中（初稿前）</td><td>50% 訂金</td></tr>
+                        <tr><td>初稿已提交</td><td>不予退款</td></tr>
+                        <tr><td>專案已完成交付</td><td>不予退款</td></tr>
+                    </table>
+                    
+                    <h2 class="zh">3. 不適用退款的情況</h2>
+                    <ul>
+                        <li class="zh">客戶因自身原因中途取消專案</li>
+                        <li class="zh">客戶未能在約定時間內提供所需資料導致延誤</li>
+                        <li class="zh">設計風格偏好改變（我們會透過修改來解決）</li>
+                        <li class="zh">專案已完成並交付所有檔案</li>
+                    </ul>
+                    
+                    <h2 class="zh">4. 退款流程</h2>
+                    <ul>
+                        <li class="zh">發送電郵至 hello@spacebetweenhealing.com 申請退款</li>
+                        <li class="zh">說明退款原因及相關訂單資料</li>
+                        <li class="zh">我們會在 5 個工作天內回覆</li>
+                        <li class="zh">批准後，退款會在 7-14 個工作天內處理</li>
+                    </ul>
+                    
+                    <h2 class="zh">5. 退款方式</h2>
+                    <p class="zh">退款將以原支付方式退回。如使用 Wise 或其他國際支付，可能會產生手續費，該費用由客戶承擔。</p>
+                    
+                    <div class="contact-box">
+                        <h3 class="zh">需要協助？</h3>
+                        <p class="zh">如有任何問題：<a href="mailto:hello@spacebetweenhealing.com">hello@spacebetweenhealing.com</a></p>
+                    </div>
+                </div>
+
+                <!-- 简体中文 -->
+                <div class="lang-content" data-lang-content="zh-CN">
+                    <div class="highlight-box">
+                        <p class="zh"><strong>我们的承诺：</strong>我们致力于确保你对最终成品满意。在大多数情况下，我们会通过修改来解决问题，而非退款。</p>
+                    </div>
+                    
+                    <h2 class="zh">1. 退款条件</h2>
+                    <p class="zh">以下情况可申请退款：</p>
+                    <ul>
+                        <li class="zh">项目尚未开始设计工作（仅收取订金后 48 小时内）</li>
+                        <li class="zh">因我方原因无法按时交付且无法协商解决</li>
+                        <li class="zh">交付成品与确认的报价单内容严重不符</li>
+                    </ul>
+                    
+                    <h2 class="zh">2. 退款比例</h2>
+                    <table class="refund-table">
+                        <tr><th>项目阶段</th><th>可退款比例</th></tr>
+                        <tr><td>支付订金后 48 小时内（未开工）</td><td>100% 订金</td></tr>
+                        <tr><td>设计进行中（初稿前）</td><td>50% 订金</td></tr>
+                        <tr><td>初稿已提交</td><td>不予退款</td></tr>
+                        <tr><td>项目已完成交付</td><td>不予退款</td></tr>
+                    </table>
+                    
+                    <h2 class="zh">3. 不适用退款的情况</h2>
+                    <ul>
+                        <li class="zh">客户因自身原因中途取消项目</li>
+                        <li class="zh">客户未能在约定时间内提供所需资料导致延误</li>
+                        <li class="zh">设计风格偏好改变（我们会通过修改来解决）</li>
+                        <li class="zh">项目已完成并交付所有文件</li>
+                    </ul>
+                    
+                    <h2 class="zh">4. 退款流程</h2>
+                    <ul>
+                        <li class="zh">发送邮件至 hello@spacebetweenhealing.com 申请退款</li>
+                        <li class="zh">说明退款原因及相关订单资料</li>
+                        <li class="zh">我们会在 5 个工作天内回复</li>
+                        <li class="zh">批准后，退款会在 7-14 个工作天内处理</li>
+                    </ul>
+                    
+                    <h2 class="zh">5. 退款方式</h2>
+                    <p class="zh">退款将以原支付方式退回。如使用 Wise 或其他国际支付，可能会产生手续费，该费用由客户承担。</p>
+                    
+                    <div class="contact-box">
+                        <h3 class="zh">需要帮助？</h3>
+                        <p class="zh">如有任何问题：<a href="mailto:hello@spacebetweenhealing.com">hello@spacebetweenhealing.com</a></p>
+                    </div>
+                </div>
+
+                <!-- English -->
+                <div class="lang-content" data-lang-content="en">
+                    <div class="highlight-box">
+                        <p><strong>Our Commitment:</strong> We are dedicated to ensuring your satisfaction with the final deliverables. In most cases, we resolve issues through revisions, not refunds.</p>
+                    </div>
+                    
+                    <h2>1. Refund Eligibility</h2>
+                    <p>Refunds may be requested when:</p>
+                    <ul>
+                        <li>Project has not started (within 48 hours of deposit)</li>
+                        <li>We cannot deliver on time due to our fault and no solution can be reached</li>
+                        <li>Deliverables significantly differ from the confirmed quotation</li>
+                    </ul>
+                    
+                    <h2>2. Refund Rates</h2>
+                    <table class="refund-table">
+                        <tr><th>Project Stage</th><th>Refund Rate</th></tr>
+                        <tr><td>Within 48 hours of deposit (work not started)</td><td>100% of deposit</td></tr>
+                        <tr><td>Design in progress (before first draft)</td><td>50% of deposit</td></tr>
+                        <tr><td>First draft submitted</td><td>No refund</td></tr>
+                        <tr><td>Project completed and delivered</td><td>No refund</td></tr>
+                    </table>
+                    
+                    <h2>3. Non-Refundable Situations</h2>
+                    <ul>
+                        <li>Client cancels for personal reasons</li>
+                        <li>Delays caused by client not providing required materials</li>
+                        <li>Change in design style preference (resolved through revisions)</li>
+                        <li>Project completed with all files delivered</li>
+                    </ul>
+                    
+                    <h2>4. Refund Process</h2>
+                    <ul>
+                        <li>Email hello@spacebetweenhealing.com to request refund</li>
+                        <li>Include reason and order details</li>
+                        <li>We respond within 5 business days</li>
+                        <li>If approved, refund processed within 7-14 business days</li>
+                    </ul>
+                    
+                    <h2>5. Refund Method</h2>
+                    <p>Refunds are returned via original payment method. For Wise or international payments, transaction fees may apply and are borne by the client.</p>
+                    
+                    <div class="contact-box">
+                        <h3>Need Help?</h3>
+                        <p>For questions: <a href="mailto:hello@spacebetweenhealing.com">hello@spacebetweenhealing.com</a></p>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <div class="footer-bottom">
-                <p>© 2025 隙光 Space Between Studio. All rights reserved.</p>
-            </div>
+        <div class="footer-content">
+            <span class="footer-logo">Space Between Healing</span>
+            <div class="footer-links"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/refund">Refund</a></div>
+            <span class="footer-copy">© 2025 Space Between Healing</span>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
     <script>
-        const langLabels = { 'zh-TW': '繁中', 'zh-CN': '简中', 'en': 'EN' };
-        let currentLang = localStorage.getItem('sbh-lang') || 'zh-TW';
-        const langSelector = document.querySelector('.lang-selector');
-        const langBtn = document.querySelector('.lang-btn');
-        const langOptions = document.querySelectorAll('.lang-option');
-        const currentLangEl = document.querySelector('.current-lang');
-        
-        if (langBtn) langBtn.addEventListener('click', () => langSelector.classList.toggle('open'));
-        document.addEventListener('click', (e) => { if (langSelector && !langSelector.contains(e.target)) langSelector.classList.remove('open'); });
-        
-        function setLanguage(lang) {
-            currentLang = lang;
-            document.body.setAttribute('data-lang', lang);
-            if (currentLangEl) currentLangEl.textContent = langLabels[lang];
-            langOptions.forEach(opt => opt.classList.toggle('active', opt.dataset.lang === lang));
-            document.querySelectorAll('.lang-content').forEach(el => el.classList.toggle('active', el.dataset.langContent === lang));
-            localStorage.setItem('sbh-lang', lang);
-            if (langSelector) langSelector.classList.remove('open');
-        }
-        
-        langOptions.forEach(opt => opt.addEventListener('click', () => setLanguage(opt.dataset.lang)));
-        setLanguage(currentLang);
+        const langLabels={'zh-TW':'繁中','zh-CN':'简中','en':'EN'};let currentLang=localStorage.getItem('lang')||'zh-TW';const langSelector=document.querySelector('.lang-selector');const langBtn=document.querySelector('.lang-btn');const langOptions=document.querySelectorAll('.lang-option');const currentLangEl=document.querySelector('.current-lang');langBtn.addEventListener('click',()=>langSelector.classList.toggle('open'));document.addEventListener('click',e=>{if(!langSelector.contains(e.target))langSelector.classList.remove('open')});function setLanguage(lang){currentLang=lang;document.body.setAttribute('data-lang',lang);currentLangEl.textContent=langLabels[lang];langOptions.forEach(opt=>opt.classList.toggle('active',opt.dataset.lang===lang));document.querySelectorAll('.lang-content').forEach(el=>el.classList.toggle('active',el.dataset.langContent===lang));localStorage.setItem('lang',lang);langSelector.classList.remove('open')}langOptions.forEach(opt=>opt.addEventListener('click',()=>setLanguage(opt.dataset.lang)));setLanguage(currentLang);
     </script>
 </body>
 </html>
