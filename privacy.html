@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>私隱政策 | Privacy Policy | 隙光設計</title>
+    <meta name="description" content="隙光設計私隱政策 - 了解我們如何收集、使用和保護您的個人資料。">
+    <link rel="canonical" href="https://spacebetweenhealing.com/privacy.html">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        .lang-selector { position: relative; margin-left: 1rem; }
+        .lang-btn { display: flex; align-items: center; gap: 0.4rem; padding: 0.5rem 1rem; background: rgba(139, 90, 43, 0.1); border: 1px solid rgba(139, 90, 43, 0.2); border-radius: 100px; color: var(--color-accent); font-size: 0.8rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease; font-family: inherit; }
+        .lang-btn:hover { background: rgba(139, 90, 43, 0.15); border-color: var(--color-accent); }
+        .lang-btn svg { width: 12px; height: 12px; transition: transform 0.3s ease; }
+        .lang-selector.open .lang-btn svg { transform: rotate(180deg); }
+        .lang-dropdown { position: absolute; top: calc(100% + 8px); right: 0; min-width: 150px; background: white; border: 1px solid rgba(139, 90, 43, 0.15); border-radius: 12px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1); overflow: hidden; opacity: 0; visibility: hidden; transform: translateY(-10px); transition: all 0.3s ease; z-index: 1000; }
+        .lang-selector.open .lang-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+        .lang-option { display: flex; align-items: center; gap: 0.5rem; width: 100%; padding: 0.85rem 1.25rem; background: none; border: none; color: var(--color-text-light); font-size: 0.9rem; text-align: left; cursor: pointer; transition: all 0.2s ease; font-family: inherit; }
+        .lang-option:hover { background: rgba(139, 90, 43, 0.08); color: var(--color-accent); }
+        .lang-option.active { color: var(--color-accent); font-weight: 500; }
+        .lang-content { display: none; }
+        .lang-content.active { display: block; }
+        [data-lang="zh-CN"] { font-family: 'Noto Serif SC', 'Noto Sans SC', serif; }
+        
+        .legal-content { max-width: 800px; margin: 0 auto; padding: 3rem 1.5rem; }
+        .legal-content h1 { font-family: 'Noto Serif TC', serif; font-size: 2rem; color: var(--color-primary); margin-bottom: 0.5rem; }
+        .legal-content .last-updated { color: var(--color-text-muted); font-size: 0.9rem; margin-bottom: 2rem; }
+        .legal-content h2 { font-size: 1.25rem; color: var(--color-primary); margin-top: 2rem; margin-bottom: 1rem; }
+        .legal-content p, .legal-content li { color: var(--color-text-light); line-height: 1.8; margin-bottom: 1rem; }
+        .legal-content ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }
+        .legal-content li { margin-bottom: 0.5rem; }
+        .contact-box { background: var(--color-bg-alt); padding: 1.5rem; border-radius: 12px; margin-top: 2rem; }
+        .contact-box h3 { font-size: 1rem; color: var(--color-primary); margin-bottom: 0.5rem; }
+        .contact-box a { color: var(--color-accent); }
+        
+        @media (max-width: 768px) {
+            .lang-selector { margin-left: 0; margin-top: 1rem; }
+        }
+    </style>
+</head>
+<body data-lang="zh-TW">
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <div class="logo-icon-box"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/></svg></div>
+                <div class="logo-text-group"><span class="logo-text">隙光設計</span><span class="logo-subtext">Space Between Healing</span></div>
+            </a>
+            <button class="nav-toggle" aria-label="開啟選單"><span></span><span></span><span></span></button>
+            <ul class="nav-menu">
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="about.html">關於</a></li>
+                <li><a href="services.html">服務</a></li>
+                <li><a href="portfolio.html">作品</a></li>
+                <li><a href="lounge.html">療癒實驗室</a></li>
+            </ul>
+            <div class="nav-right-group" style="display:flex;align-items:center;gap:1rem;">
+                <div class="lang-selector">
+                    <button class="lang-btn"><span class="current-lang">繁中</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                    <div class="lang-dropdown">
+                        <button class="lang-option active" data-lang="zh-TW">🇭🇰 繁體中文</button>
+                        <button class="lang-option" data-lang="zh-CN">🇨🇳 简体中文</button>
+                        <button class="lang-option" data-lang="en">🌍 English</button>
+                    </div>
+                </div>
+                <a href="collaboration.html" class="nav-cta">合作邀請</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header"><div class="container">
+        <h1>
+            <span class="lang-content active" data-lang-content="zh-TW">私隱政策</span>
+            <span class="lang-content" data-lang-content="zh-CN">隐私政策</span>
+            <span class="lang-content" data-lang-content="en">Privacy Policy</span>
+        </h1>
+    </div></header>
+
+    <main class="legal-content">
+        <!-- 繁體中文版本 -->
+        <div class="lang-content active" data-lang-content="zh-TW">
+            <p class="last-updated">最後更新：2025 年 1 月</p>
+            
+            <p>隙光設計 Space Between Healing（下稱「我們」）重視您的私隱。本政策說明我們如何收集、使用和保護您的個人資料。</p>
+            
+            <h2>1. 資料收集</h2>
+            <p>我們可能收集以下類型的資料：</p>
+            <ul>
+                <li><strong>聯繫資料：</strong>姓名、電子郵件、電話號碼、WhatsApp 號碼</li>
+                <li><strong>業務資料：</strong>公司名稱、品牌資料、項目需求</li>
+                <li><strong>技術資料：</strong>IP 地址、瀏覽器類型、訪問時間</li>
+                <li><strong>對話記錄：</strong>透過 AI 品牌診斷系統的對話內容</li>
+            </ul>
+            
+            <h2>2. 資料使用</h2>
+            <p>我們使用您的資料用於：</p>
+            <ul>
+                <li>回應您的諮詢和服務請求</li>
+                <li>提供品牌設計服務</li>
+                <li>發送項目更新和相關通訊</li>
+                <li>改善我們的服務和網站體驗</li>
+                <li>處理付款和開具發票</li>
+            </ul>
+            
+            <h2>3. 資料保護</h2>
+            <p>我們採取適當的技術和組織措施保護您的資料，包括使用 SSL 加密、限制訪問權限、定期審查資料處理做法。</p>
+            
+            <h2>4. 資料分享</h2>
+            <p>我們不會出售您的個人資料。我們可能與支付處理商（Wise、Stripe、Airwallex）、雲端服務提供商、及項目所需的合作夥伴分享資料。</p>
+            
+            <h2>5. 您的權利</h2>
+            <p>您有權查閱、更正、刪除您的資料，以及反對或限制某些資料處理。</p>
+            
+            <h2>6. Cookies</h2>
+            <p>我們的網站使用 cookies 來改善瀏覽體驗。您可以透過瀏覽器設置管理 cookies。</p>
+            
+            <div class="contact-box">
+                <h3>聯繫我們</h3>
+                <p>如有任何私隱相關問題：<a href="mailto:hello@spacebetweenhealing.com">hello@spacebetweenhealing.com</a></p>
+            </div>
+        </div>
+        
+        <!-- 简体中文版本 -->
+        <div class="lang-content" data-lang-content="zh-CN">
+            <p class="last-updated">最后更新：2025 年 1 月</p>
+            
+            <p>隙光设计 Space Between Healing（下称「我们」）重视您的隐私。本政策说明我们如何收集、使用和保护您的个人数据。</p>
+            
+            <h2>1. 数据收集</h2>
+            <p>我们可能收集以下类型的数据：</p>
+            <ul>
+                <li><strong>联系数据：</strong>姓名、电子邮件、电话号码、WhatsApp 号码</li>
+                <li><strong>业务数据：</strong>公司名称、品牌资料、项目需求</li>
+                <li><strong>技术数据：</strong>IP 地址、浏览器类型、访问时间</li>
+                <li><strong>对话记录：</strong>通过 AI 品牌诊断系统的对话内容</li>
+            </ul>
+            
+            <h2>2. 数据使用</h2>
+            <p>我们使用您的数据用于：</p>
+            <ul>
+                <li>回应您的咨询和服务请求</li>
+                <li>提供品牌设计服务</li>
+                <li>发送项目更新和相关通讯</li>
+                <li>改善我们的服务和网站体验</li>
+                <li>处理付款和开具发票</li>
+            </ul>
+            
+            <h2>3. 数据保护</h2>
+            <p>我们采取适当的技术和组织措施保护您的数据，包括使用 SSL 加密、限制访问权限、定期审查数据处理做法。</p>
+            
+            <h2>4. 数据分享</h2>
+            <p>我们不会出售您的个人数据。我们可能与支付处理商（Wise、Stripe、Airwallex）、云端服务提供商、及项目所需的合作伙伴分享数据。</p>
+            
+            <h2>5. 您的权利</h2>
+            <p>您有权查阅、更正、删除您的数据，以及反对或限制某些数据处理。</p>
+            
+            <h2>6. Cookies</h2>
+            <p>我们的网站使用 cookies 来改善浏览体验。您可以通过浏览器设置管理 cookies。</p>
+            
+            <div class="contact-box">
+                <h3>联系我们</h3>
+                <p>如有任何隐私相关问题：<a href="mailto:hello@spacebetweenhealing.com">hello@spacebetweenhealing.com</a></p>
+            </div>
+        </div>
+        
+        <!-- English Version -->
+        <div class="lang-content" data-lang-content="en">
+            <p class="last-updated">Last Updated: January 2025</p>
+            
+            <p>Space Between Healing ("we") values your privacy. This policy explains how we collect, use, and protect your personal data.</p>
+            
+            <h2>1. Data Collection</h2>
+            <p>We may collect:</p>
+            <ul>
+                <li><strong>Contact Data:</strong> Name, email, phone number, WhatsApp</li>
+                <li><strong>Business Data:</strong> Company name, brand information, project requirements</li>
+                <li><strong>Technical Data:</strong> IP address, browser type, visit times</li>
+                <li><strong>Conversation Logs:</strong> AI brand diagnosis conversations</li>
+            </ul>
+            
+            <h2>2. Data Use</h2>
+            <p>We use your data to:</p>
+            <ul>
+                <li>Respond to inquiries and service requests</li>
+                <li>Provide brand design services</li>
+                <li>Send project updates</li>
+                <li>Improve our services</li>
+                <li>Process payments</li>
+            </ul>
+            
+            <h2>3. Data Protection</h2>
+            <p>We implement appropriate measures including SSL encryption, access restrictions, and regular reviews.</p>
+            
+            <h2>4. Data Sharing</h2>
+            <p>We do not sell your data. We may share with payment processors (Wise, Stripe, Airwallex), cloud providers, and project partners.</p>
+            
+            <h2>5. Your Rights</h2>
+            <p>You have the right to access, correct, delete your data, and object to certain processing.</p>
+            
+            <h2>6. Cookies</h2>
+            <p>Our website uses cookies. You can manage preferences through browser settings.</p>
+            
+            <div class="contact-box">
+                <h3>Contact Us</h3>
+                <p>For privacy questions: <a href="mailto:hello@spacebetweenhealing.com">hello@spacebetweenhealing.com</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2025 隙光 Space Between Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        const langLabels = { 'zh-TW': '繁中', 'zh-CN': '简中', 'en': 'EN' };
+        let currentLang = localStorage.getItem('sbh-lang') || 'zh-TW';
+        const langSelector = document.querySelector('.lang-selector');
+        const langBtn = document.querySelector('.lang-btn');
+        const langOptions = document.querySelectorAll('.lang-option');
+        const currentLangEl = document.querySelector('.current-lang');
+        
+        if (langBtn) langBtn.addEventListener('click', () => langSelector.classList.toggle('open'));
+        document.addEventListener('click', (e) => { if (langSelector && !langSelector.contains(e.target)) langSelector.classList.remove('open'); });
+        
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.body.setAttribute('data-lang', lang);
+            if (currentLangEl) currentLangEl.textContent = langLabels[lang];
+            langOptions.forEach(opt => opt.classList.toggle('active', opt.dataset.lang === lang));
+            document.querySelectorAll('.lang-content').forEach(el => el.classList.toggle('active', el.dataset.langContent === lang));
+            localStorage.setItem('sbh-lang', lang);
+            if (langSelector) langSelector.classList.remove('open');
+        }
+        
+        langOptions.forEach(opt => opt.addEventListener('click', () => setLanguage(opt.dataset.lang)));
+        setLanguage(currentLang);
+    </script>
+</body>
+</html>
