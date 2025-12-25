@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>你的品牌需要療癒嗎？5 個徵兆自我檢測 | Space Between Healing</title>
+    <meta name="description" content="品牌也會生病。了解 5 個徵兆，檢視你的品牌是否需要療癒。">
+    <link rel="canonical" href="https://spacebetweenhealing.com/lounge/brand-healing-signs">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Outfit:wght@300;400;500;600&family=Noto+Serif+TC:wght@300;400;500&family=Noto+Serif+SC:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #0a0a0a;
+            --bg-dark: #111;
+            --bg-card: #161616;
+            --gold: #d4a574;
+            --gold-light: #e8c9a0;
+            --sage: #a0b89c;
+            --cream: #f5efe6;
+            --glow-gold: rgba(212,165,116,0.35);
+            --glow-sage: rgba(160,184,156,0.25);
+            --text-primary: #f5efe6;
+            --text-secondary: rgba(245,239,230,0.7);
+            --text-muted: rgba(245,239,230,0.45);
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-zh: 'Noto Serif TC', serif;
+            --font-zh-sc: 'Noto Serif SC', serif;
+            --ease: cubic-bezier(0.16,1,0.3,1);
+        }
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior:smooth; }
+        body { font-family:var(--font-body); background:var(--bg-deep); color:var(--text-primary); line-height:1.7; overflow-x:hidden; }
+        [data-lang="zh-TW"] .zh { font-family:var(--font-zh); }
+        [data-lang="zh-CN"] .zh { font-family:var(--font-zh-sc); }
+        .lang-content { display:none; }
+        .lang-content.active { display:block; }
+
+        .ambient { position:fixed; inset:0; z-index:-1; pointer-events:none; }
+        .orb { position:absolute; border-radius:50%; filter:blur(100px); opacity:0.4; }
+        .orb-1 { width:500px; height:500px; background:radial-gradient(circle,var(--glow-gold) 0%,transparent 70%); top:-15%; left:-10%; animation:float 25s ease-in-out infinite; }
+        .orb-2 { width:400px; height:400px; background:radial-gradient(circle,var(--glow-sage) 0%,transparent 70%); bottom:-10%; right:-5%; animation:float 30s ease-in-out infinite reverse; }
+        @keyframes float { 0%,100%{transform:translate(0,0)} 50%{transform:translate(30px,-20px)} }
+
+        .nav { position:fixed; top:0; left:0; right:0; z-index:1000; padding:1rem 4vw; display:flex; justify-content:space-between; align-items:center; background:rgba(10,10,10,0.95); backdrop-filter:blur(20px); border-bottom:1px solid rgba(212,165,116,0.1); }
+        .nav-logo { font-family:var(--font-display); font-size:1.1rem; letter-spacing:0.2em; color:var(--gold); text-decoration:none; font-weight:500; }
+        .nav-right { display:flex; align-items:center; gap:2rem; }
+        .nav-links { display:flex; gap:0.5rem; list-style:none; }
+        .nav-links li a { display:block; font-size:0.85rem; color:var(--text-secondary); text-decoration:none; transition:all 0.3s; padding:0.6rem 1rem; border-radius:8px; }
+        .nav-links li a:hover { color:var(--gold); background:rgba(212,165,116,0.1); }
+        .nav-links li a.active { color:var(--gold); background:rgba(212,165,116,0.15); }
+        .lang-selector { position:relative; }
+        .lang-btn { display:flex; align-items:center; gap:0.4rem; padding:0.5rem 1rem; background:rgba(212,165,116,0.1); border:1px solid rgba(212,165,116,0.25); border-radius:100px; color:var(--gold); font-size:0.8rem; cursor:pointer; transition:all 0.3s; font-weight:500; }
+        .lang-btn:hover { background:rgba(212,165,116,0.2); border-color:var(--gold); }
+        .lang-btn svg { width:12px; height:12px; transition:transform 0.3s; }
+        .lang-selector.open .lang-btn svg { transform:rotate(180deg); }
+        .lang-dropdown { position:absolute; top:calc(100% + 8px); right:0; min-width:140px; background:var(--bg-card); border:1px solid rgba(212,165,116,0.2); border-radius:12px; overflow:hidden; opacity:0; visibility:hidden; transform:translateY(-10px); transition:all 0.3s var(--ease); z-index:100; box-shadow:0 10px 40px rgba(0,0,0,0.4); }
+        .lang-selector.open .lang-dropdown { opacity:1; visibility:visible; transform:translateY(0); }
+        .lang-option { display:flex; align-items:center; gap:0.5rem; width:100%; padding:0.75rem 1rem; background:none; border:none; color:var(--text-secondary); font-size:0.85rem; text-align:left; cursor:pointer; transition:all 0.2s; }
+        .lang-option:hover { background:rgba(212,165,116,0.1); color:var(--gold); }
+        .lang-option.active { color:var(--gold); }
+
+        .article-header { padding:10rem 4vw 4rem; text-align:center; position:relative; max-width:800px; margin:0 auto; }
+        .article-meta { display:flex; justify-content:center; gap:1.5rem; margin-bottom:1.5rem; flex-wrap:wrap; }
+        .article-meta span { font-size:0.85rem; color:var(--text-muted); display:flex; align-items:center; gap:0.4rem; }
+        .article-meta svg { width:14px; height:14px; }
+        .article-tag { display:inline-block; background:rgba(160,184,156,0.15); color:var(--sage); font-size:0.8rem; padding:0.4rem 1rem; border-radius:20px; margin-bottom:1.5rem; }
+        .article-title { font-family:var(--font-display); font-size:clamp(2rem,5vw,3rem); font-weight:400; line-height:1.3; margin-bottom:1rem; }
+        .article-subtitle { font-size:1.1rem; color:var(--text-secondary); max-width:600px; margin:0 auto; }
+
+        .article-content { max-width:720px; margin:0 auto; padding:0 4vw 5rem; }
+        .article-content p { color:var(--text-secondary); line-height:2; margin-bottom:1.5rem; font-size:1.05rem; }
+        .article-content h2 { font-family:var(--font-display); font-size:1.6rem; color:var(--cream); margin:3rem 0 1.5rem; position:relative; padding-left:1.5rem; }
+        .article-content h2::before { content:''; position:absolute; left:0; top:50%; transform:translateY(-50%); width:4px; height:70%; background:var(--gold); border-radius:2px; }
+        .article-content h3 { font-family:var(--font-display); font-size:1.3rem; color:var(--gold-light); margin:2rem 0 1rem; }
+        .article-content ul, .article-content ol { margin:1.5rem 0; padding-left:1.5rem; }
+        .article-content li { color:var(--text-secondary); margin-bottom:0.75rem; line-height:1.8; }
+        .article-content blockquote { background:rgba(212,165,116,0.05); border-left:3px solid var(--gold); padding:1.5rem 2rem; margin:2rem 0; border-radius:0 12px 12px 0; }
+        .article-content blockquote p { color:var(--cream); font-style:italic; margin:0; }
+
+        .sign-card { background:var(--bg-card); border:1px solid rgba(212,165,116,0.1); border-radius:16px; padding:2rem; margin:2rem 0; position:relative; }
+        .sign-card::before { content:attr(data-num); position:absolute; top:-12px; left:20px; background:var(--gold); color:var(--bg-deep); font-family:var(--font-display); font-size:1.2rem; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:500; }
+        .sign-card h4 { font-family:var(--font-display); font-size:1.2rem; color:var(--cream); margin-bottom:0.75rem; padding-left:0.5rem; }
+        .sign-card p { color:var(--text-secondary); margin:0; font-size:0.95rem; line-height:1.8; }
+
+        .highlight-box { background:rgba(160,184,156,0.08); border:1px solid rgba(160,184,156,0.2); border-radius:16px; padding:2rem; margin:2.5rem 0; text-align:center; }
+        .highlight-box h3 { font-family:var(--font-display); font-size:1.4rem; color:var(--sage); margin-bottom:1rem; }
+        .highlight-box p { color:var(--text-secondary); margin-bottom:1.5rem; }
+
+        .btn { display:inline-flex; align-items:center; gap:0.6rem; padding:1rem 2rem; font-family:var(--font-body); font-size:0.85rem; font-weight:500; text-decoration:none; border-radius:100px; cursor:pointer; transition:all 0.4s var(--ease); border:none; }
+        .btn svg { width:16px; height:16px; }
+        .btn-primary { background:linear-gradient(135deg,var(--gold) 0%,var(--gold-light) 100%); color:var(--bg-deep); }
+        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 15px 35px var(--glow-gold); }
+        .btn-outline { background:transparent; border:1px solid rgba(212,165,116,0.3); color:var(--gold); }
+        .btn-outline:hover { background:rgba(212,165,116,0.1); border-color:var(--gold); }
+
+        .article-nav { display:flex; justify-content:space-between; align-items:center; padding:2rem 0; border-top:1px solid rgba(212,165,116,0.1); margin-top:3rem; flex-wrap:wrap; gap:1rem; }
+        .back-link { display:inline-flex; align-items:center; gap:0.5rem; color:var(--text-secondary); text-decoration:none; font-size:0.9rem; transition:color 0.3s; }
+        .back-link:hover { color:var(--gold); }
+        .back-link svg { width:16px; height:16px; }
+
+        .footer { padding:3rem 4vw; background:var(--bg-dark); border-top:1px solid rgba(212,165,116,0.08); }
+        .footer-content { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem; }
+        .footer-logo { font-family:var(--font-display); font-size:0.95rem; letter-spacing:0.15em; color:var(--gold); }
+        .footer-links { display:flex; gap:1.5rem; flex-wrap:wrap; }
+        .footer-links a { font-size:0.8rem; color:var(--text-muted); text-decoration:none; transition:color 0.3s; }
+        .footer-links a:hover { color:var(--gold); }
+        .footer-copy { font-size:0.75rem; color:var(--text-muted); }
+
+        @media (max-width:768px) {
+            .nav-links { display:none; }
+            .article-header { padding:8rem 1.5rem 3rem; }
+            .article-content { padding:0 1.5rem 3rem; }
+            .sign-card { padding:1.5rem; }
+            .article-nav { flex-direction:column; text-align:center; }
+            .footer-content { flex-direction:column; text-align:center; }
+        }
+    </style>
+</head>
+<body data-lang="zh-TW">
+    <div class="ambient"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
+
+    <nav class="nav">
+        <a href="index.html" class="nav-logo">Space Between</a>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="about.html"><span class="lang-content active" data-lang-content="zh-TW">關於</span><span class="lang-content" data-lang-content="zh-CN">关于</span><span class="lang-content" data-lang-content="en">About</span></a></li>
+                <li><a href="services.html"><span class="lang-content active" data-lang-content="zh-TW">服務</span><span class="lang-content" data-lang-content="zh-CN">服务</span><span class="lang-content" data-lang-content="en">Services</span></a></li>
+                <li><a href="portfolio.html"><span class="lang-content active" data-lang-content="zh-TW">作品</span><span class="lang-content" data-lang-content="zh-CN">作品</span><span class="lang-content" data-lang-content="en">Works</span></a></li>
+                <li><a href="lounge.html" class="active"><span class="lang-content active" data-lang-content="zh-TW">療癒實驗室</span><span class="lang-content" data-lang-content="zh-CN">疗愈实验室</span><span class="lang-content" data-lang-content="en">Healing Lab</span></a></li>
+                <li><a href="ai-assistant.html"><span class="lang-content active" data-lang-content="zh-TW">AI 智能分析助理</span><span class="lang-content" data-lang-content="zh-CN">AI 智能分析助理</span><span class="lang-content" data-lang-content="en">AI Assistant</span></a></li>
+                <li><a href="contact.html"><span class="lang-content active" data-lang-content="zh-TW">聯絡</span><span class="lang-content" data-lang-content="zh-CN">联络</span><span class="lang-content" data-lang-content="en">Contact</span></a></li>
+            </ul>
+            <div class="lang-selector">
+                <button class="lang-btn"><span class="current-lang">繁中</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="lang-dropdown">
+                    <button class="lang-option active" data-lang="zh-TW">🇭🇰 繁體中文</button>
+                    <button class="lang-option" data-lang="zh-CN">🇨🇳 简体中文</button>
+                    <button class="lang-option" data-lang="en">🌍 English</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="article-header">
+        <span class="article-tag">Brand Positioning</span>
+        <div class="article-meta">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> 2025.01</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> <span class="lang-content active" data-lang-content="zh-TW">5 分鐘閱讀</span><span class="lang-content" data-lang-content="zh-CN">5 分钟阅读</span><span class="lang-content" data-lang-content="en">5 min read</span></span>
+        </div>
+        <h1 class="article-title">
+            <span class="lang-content active" data-lang-content="zh-TW" class="zh">你的品牌需要療癒嗎？<br>5 個徵兆自我檢測</span>
+            <span class="lang-content" data-lang-content="zh-CN" class="zh">你的品牌需要疗愈吗？<br>5 个征兆自我检测</span>
+            <span class="lang-content" data-lang-content="en">Does Your Brand Need Healing?<br>5 Signs to Check</span>
+        </h1>
+        <div class="lang-content active" data-lang-content="zh-TW">
+            <p class="article-subtitle zh">品牌也會「生病」——這些徵兆告訴你，是時候停下來好好檢視品牌狀態了。</p>
+        </div>
+        <div class="lang-content" data-lang-content="zh-CN">
+            <p class="article-subtitle zh">品牌也会「生病」——这些征兆告诉你，是时候停下来好好检视品牌状态了。</p>
+        </div>
+        <div class="lang-content" data-lang-content="en">
+            <p class="article-subtitle">Brands can get "sick" too — these signs tell you it's time to pause and examine your brand's state.</p>
+        </div>
+    </header>
+
+    <article class="article-content">
+        <!-- 繁體中文內容 -->
+        <div class="lang-content active" data-lang-content="zh-TW">
+            <p class="zh">我們常常說一個人需要休息、需要療癒，但你有沒有想過，你的品牌也可能正在「生病」？</p>
+            <p class="zh">品牌不只是一個 logo、一組配色，或是社群上的貼文。品牌是你與外界溝通的方式，是你價值觀的延伸，更是你事業的「能量場」。當這個能量場出現裂縫，即使你很努力，也會感覺事倍功半。</p>
+            
+            <blockquote>
+                <p class="zh">「如果品牌是一個人，它現在的狀態健康嗎？」</p>
+            </blockquote>
+            
+            <p class="zh">以下是我們在顧問過程中常見的 5 個徵兆，幫助你檢視品牌是否需要一次深度的「療癒」。</p>
+
+            <h2 class="zh">五個品牌需要療癒的徵兆</h2>
+
+            <div class="sign-card" data-num="1">
+                <h4 class="zh">你很難用一句話介紹自己在做什麼</h4>
+                <p class="zh">當別人問「你是做什麼的？」，你發現自己總是講得很長、很複雜，或是每次說法都不太一樣。這通常代表品牌核心定位還不夠清晰。一個健康的品牌，應該能在 30 秒內讓對方理解你的價值。</p>
+            </div>
+
+            <div class="sign-card" data-num="2">
+                <h4 class="zh">你對自己的視覺形象感到不滿或尷尬</h4>
+                <p class="zh">網站、名片、社群封面……每次分享都有點不好意思，覺得「不夠代表真正的我」。視覺是品牌的第一印象，當它與你的內在不一致，會讓你在推廣時缺乏信心，也會讓潛在客戶感到困惑。</p>
+            </div>
+
+            <div class="sign-card" data-num="3">
+                <h4 class="zh">你不確定誰才是你真正想服務的人</h4>
+                <p class="zh">「所有人都是我的潛在客戶」——這句話聽起來很美好，但實際上會讓你的行銷變得模糊。當你什麼都想做、誰都想服務，結果就是沒有人覺得「這就是為我設計的」。</p>
+            </div>
+
+            <div class="sign-card" data-num="4">
+                <h4 class="zh">你發的內容反應平平，互動越來越少</h4>
+                <p class="zh">明明很用心在寫文案、做圖，但就是沒什麼回響。這可能不是你不夠努力，而是品牌敘事與受眾期待之間出現了斷裂。你說的話，沒有真正「說進」他們的心裡。</p>
+            </div>
+
+            <div class="sign-card" data-num="5">
+                <h4 class="zh">你對經營品牌感到疲憊，失去熱情</h4>
+                <p class="zh">最初的熱情消退，取而代之的是「不得不做」的義務感。這往往是因為品牌已經偏離了你最初的初衷，或是你一直在模仿別人的模式，而沒有找到屬於自己的節奏。</p>
+            </div>
+
+            <h2 class="zh">如果你中了 2 個以上……</h2>
+            <p class="zh">那麼，你的品牌可能正在向你發出「需要被照顧」的訊號。</p>
+            <p class="zh">品牌療癒不是推翻重來，而是回到核心，重新整理那些混亂的部分，讓你與品牌之間的關係恢復和諧。就像身體不舒服時需要休息和調理，品牌也需要定期的「健康檢查」。</p>
+
+            <div class="highlight-box">
+                <h3 class="zh">想更深入了解你的品牌狀態？</h3>
+                <p class="zh">試試我們的免費 AI 品牌診斷工具，3 分鐘獲取專屬分析報告。</p>
+                <a href="ai-brand-analysis.html" class="btn btn-primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    開始免費診斷
+                </a>
+            </div>
+
+            <p class="zh">如果你更傾向於一對一的深度對話，也歡迎<a href="contact.html" style="color:var(--gold)">與我們聯絡</a>，讓我們陪你一起找回品牌的清晰與力量。</p>
+        </div>
+
+        <!-- 简体中文内容 -->
+        <div class="lang-content" data-lang-content="zh-CN">
+            <p class="zh">我们常常说一个人需要休息、需要疗愈，但你有没有想过，你的品牌也可能正在「生病」？</p>
+            <p class="zh">品牌不只是一个 logo、一组配色，或是社群上的贴文。品牌是你与外界沟通的方式，是你价值观的延伸，更是你事业的「能量场」。当这个能量场出现裂缝，即使你很努力，也会感觉事倍功半。</p>
+            
+            <blockquote>
+                <p class="zh">「如果品牌是一个人，它现在的状态健康吗？」</p>
+            </blockquote>
+            
+            <p class="zh">以下是我们在顾问过程中常见的 5 个征兆，帮助你检视品牌是否需要一次深度的「疗愈」。</p>
+
+            <h2 class="zh">五个品牌需要疗愈的征兆</h2>
+
+            <div class="sign-card" data-num="1">
+                <h4 class="zh">你很难用一句话介绍自己在做什么</h4>
+                <p class="zh">当别人问「你是做什么的？」，你发现自己总是讲得很长、很复杂，或是每次说法都不太一样。这通常代表品牌核心定位还不够清晰。一个健康的品牌，应该能在 30 秒内让对方理解你的价值。</p>
+            </div>
+
+            <div class="sign-card" data-num="2">
+                <h4 class="zh">你对自己的视觉形象感到不满或尴尬</h4>
+                <p class="zh">网站、名片、社群封面……每次分享都有点不好意思，觉得「不够代表真正的我」。视觉是品牌的第一印象，当它与你的内在不一致，会让你在推广时缺乏信心，也会让潜在客户感到困惑。</p>
+            </div>
+
+            <div class="sign-card" data-num="3">
+                <h4 class="zh">你不确定谁才是你真正想服务的人</h4>
+                <p class="zh">「所有人都是我的潜在客户」——这句话听起来很美好，但实际上会让你的行销变得模糊。当你什么都想做、谁都想服务，结果就是没有人觉得「这就是为我设计的」。</p>
+            </div>
+
+            <div class="sign-card" data-num="4">
+                <h4 class="zh">你发的内容反应平平，互动越来越少</h4>
+                <p class="zh">明明很用心在写文案、做图，但就是没什么回响。这可能不是你不够努力，而是品牌叙事与受众期待之间出现了断裂。你说的话，没有真正「说进」他们的心里。</p>
+            </div>
+
+            <div class="sign-card" data-num="5">
+                <h4 class="zh">你对经营品牌感到疲惫，失去热情</h4>
+                <p class="zh">最初的热情消退，取而代之的是「不得不做」的义务感。这往往是因为品牌已经偏离了你最初的初衷，或是你一直在模仿别人的模式，而没有找到属于自己的节奏。</p>
+            </div>
+
+            <h2 class="zh">如果你中了 2 个以上……</h2>
+            <p class="zh">那么，你的品牌可能正在向你发出「需要被照顾」的讯号。</p>
+            <p class="zh">品牌疗愈不是推翻重来，而是回到核心，重新整理那些混乱的部分，让你与品牌之间的关系恢复和谐。就像身体不舒服时需要休息和调理，品牌也需要定期的「健康检查」。</p>
+
+            <div class="highlight-box">
+                <h3 class="zh">想更深入了解你的品牌状态？</h3>
+                <p class="zh">试试我们的免费 AI 品牌诊断工具，3 分钟获取专属分析报告。</p>
+                <a href="ai-brand-analysis.html" class="btn btn-primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    开始免费诊断
+                </a>
+            </div>
+
+            <p class="zh">如果你更倾向于一对一的深度对话，也欢迎<a href="contact.html" style="color:var(--gold)">与我们联络</a>，让我们陪你一起找回品牌的清晰与力量。</p>
+        </div>
+
+        <!-- English content -->
+        <div class="lang-content" data-lang-content="en">
+            <p>We often talk about people needing rest and healing, but have you ever considered that your brand might be "sick" too?</p>
+            <p>A brand is more than just a logo, a color palette, or social media posts. It's how you communicate with the world, an extension of your values, and the "energy field" of your business. When cracks appear in this energy field, even your best efforts can feel ineffective.</p>
+            
+            <blockquote>
+                <p>"If your brand were a person, would it be healthy right now?"</p>
+            </blockquote>
+            
+            <p>Here are 5 common signs we encounter in our consulting work that can help you assess whether your brand needs deep "healing."</p>
+
+            <h2>Five Signs Your Brand Needs Healing</h2>
+
+            <div class="sign-card" data-num="1">
+                <h4>You struggle to explain what you do in one sentence</h4>
+                <p>When someone asks "What do you do?", you find yourself giving long, complicated answers, or saying something different each time. This usually indicates that your brand's core positioning isn't clear enough. A healthy brand should be able to communicate its value in 30 seconds.</p>
+            </div>
+
+            <div class="sign-card" data-num="2">
+                <h4>You feel dissatisfied or embarrassed by your visual identity</h4>
+                <p>Your website, business cards, social media covers... every time you share them, you feel a bit uncomfortable, thinking "this doesn't really represent the real me." Visuals are your brand's first impression, and when they don't align with your inner self, you'll lack confidence in promotion, and potential clients will feel confused.</p>
+            </div>
+
+            <div class="sign-card" data-num="3">
+                <h4>You're unsure who you really want to serve</h4>
+                <p>"Everyone is my potential client" — this sounds ideal, but it actually makes your marketing fuzzy. When you try to do everything and serve everyone, the result is that no one feels "this was designed for me."</p>
+            </div>
+
+            <div class="sign-card" data-num="4">
+                <h4>Your content gets lukewarm responses and decreasing engagement</h4>
+                <p>You put your heart into writing copy and creating graphics, but there's barely any response. This might not be because you're not working hard enough, but because there's a disconnect between your brand narrative and your audience's expectations. What you're saying isn't truly "speaking to" their hearts.</p>
+            </div>
+
+            <div class="sign-card" data-num="5">
+                <h4>You feel exhausted running your brand and have lost your passion</h4>
+                <p>The initial passion has faded, replaced by a sense of obligation. This often happens because your brand has drifted from your original purpose, or you've been imitating others' models instead of finding your own rhythm.</p>
+            </div>
+
+            <h2>If you identified with 2 or more signs...</h2>
+            <p>Then your brand might be sending you signals that it "needs care."</p>
+            <p>Brand healing isn't about starting over — it's about returning to the core, reorganizing the chaotic parts, and restoring harmony in your relationship with your brand. Just like your body needs rest and care when unwell, your brand also needs regular "health check-ups."</p>
+
+            <div class="highlight-box">
+                <h3>Want to understand your brand's state better?</h3>
+                <p>Try our free AI brand analysis tool and get your personalized report in 3 minutes.</p>
+                <a href="ai-brand-analysis.html" class="btn btn-primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    Start Free Analysis
+                </a>
+            </div>
+
+            <p>If you prefer a one-on-one deep conversation, feel free to <a href="contact.html" style="color:var(--gold)">contact us</a>, and we'll help you rediscover your brand's clarity and power.</p>
+        </div>
+
+        <nav class="article-nav">
+            <a href="lounge.html" class="back-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                <span class="lang-content active" data-lang-content="zh-TW">返回療癒實驗室</span>
+                <span class="lang-content" data-lang-content="zh-CN">返回疗愈实验室</span>
+                <span class="lang-content" data-lang-content="en">Back to Healing Lab</span>
+            </a>
+            <a href="ai-brand-analysis.html" class="btn btn-outline">
+                <span class="lang-content active" data-lang-content="zh-TW">免費品牌診斷</span>
+                <span class="lang-content" data-lang-content="zh-CN">免费品牌诊断</span>
+                <span class="lang-content" data-lang-content="en">Free Brand Analysis</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </nav>
+    </article>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <span class="footer-logo">Space Between Healing</span>
+            <div class="footer-links">
+                <a href="about.html"><span class="lang-content active" data-lang-content="zh-TW">關於</span><span class="lang-content" data-lang-content="zh-CN">关于</span><span class="lang-content" data-lang-content="en">About</span></a>
+                <a href="services.html"><span class="lang-content active" data-lang-content="zh-TW">服務</span><span class="lang-content" data-lang-content="zh-CN">服务</span><span class="lang-content" data-lang-content="en">Services</span></a>
+                <a href="lounge.html"><span class="lang-content active" data-lang-content="zh-TW">療癒實驗室</span><span class="lang-content" data-lang-content="zh-CN">疗愈实验室</span><span class="lang-content" data-lang-content="en">Healing Lab</span></a>
+                <a href="contact.html"><span class="lang-content active" data-lang-content="zh-TW">聯絡</span><span class="lang-content" data-lang-content="zh-CN">联络</span><span class="lang-content" data-lang-content="en">Contact</span></a>
+                <a href="privacy.html"><span class="lang-content active" data-lang-content="zh-TW">私隱政策</span><span class="lang-content" data-lang-content="zh-CN">隐私政策</span><span class="lang-content" data-lang-content="en">Privacy</span></a>
+                <a href="terms.html"><span class="lang-content active" data-lang-content="zh-TW">服務條款</span><span class="lang-content" data-lang-content="zh-CN">服务条款</span><span class="lang-content" data-lang-content="en">Terms</span></a>
+            </div>
+            <span class="footer-copy">© 2025 Space Between Healing</span>
+        </div>
+    </footer>
+
+    <script>
+        const langLabels = {'zh-TW':'繁中','zh-CN':'简中','en':'EN'};
+        let currentLang = localStorage.getItem('lang') || 'zh-TW';
+        const langSelector = document.querySelector('.lang-selector');
+        const langBtn = document.querySelector('.lang-btn');
+        const langOptions = document.querySelectorAll('.lang-option');
+        const currentLangEl = document.querySelector('.current-lang');
+
+        langBtn.addEventListener('click', () => langSelector.classList.toggle('open'));
+        document.addEventListener('click', e => { if (!langSelector.contains(e.target)) langSelector.classList.remove('open'); });
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.body.setAttribute('data-lang', lang);
+            currentLangEl.textContent = langLabels[lang];
+            langOptions.forEach(opt => opt.classList.toggle('active', opt.dataset.lang === lang));
+            document.querySelectorAll('.lang-content').forEach(el => el.classList.toggle('active', el.dataset.langContent === lang));
+            localStorage.setItem('lang', lang);
+            langSelector.classList.remove('open');
+        }
+        langOptions.forEach(opt => opt.addEventListener('click', () => setLanguage(opt.dataset.lang)));
+        setLanguage(currentLang);
+    </script>
+</body>
+</html>
