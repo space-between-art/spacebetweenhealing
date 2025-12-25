@@ -82,6 +82,20 @@
             .legal-page { padding:6rem 1.5rem 3rem; }
             .footer-content { flex-direction:column; text-align:center; }
         }
+    
+        /* Disclaimer */
+        .disclaimer-box { 
+            background: rgba(160,184,156,0.08); 
+            border: 1px solid rgba(160,184,156,0.2); 
+            border-radius: 12px; 
+            padding: 1.5rem 2rem; 
+            margin: 2rem 0; 
+            font-size: 0.85rem; 
+            color: var(--text-muted); 
+            line-height: 1.8;
+        }
+        .disclaimer-box strong { color: var(--sage); }
+
     </style>
 </head>
 <body data-lang="zh-TW">
@@ -166,7 +180,7 @@
                     
                     <div class="contact-box">
                         <h3 class="zh">聯繫我們</h3>
-                        <p class="zh">如有任何私隱相關問題：<a href="mailto:hello@spacebetweenhealing.com">hello@spacebetweenhealing.com</a></p>
+                        <p class="zh">如有任何私隱相關問題：<a href="/cdn-cgi/l/email-protection#a2cac7cececde2d1d2c3c1c7c0c7d6d5c7c7cccac7c3cecbccc58cc1cdcf"><span class="__cf_email__" data-cfemail="dbb3beb7b7b49ba8abbab8beb9beafacbebeb5b3bebab7b2b5bcf5b8b4b6">[email&#160;protected]</span></a></p>
                     </div>
                 </div>
 
@@ -219,7 +233,7 @@
                     
                     <div class="contact-box">
                         <h3 class="zh">联系我们</h3>
-                        <p class="zh">如有任何隐私相关问题：<a href="mailto:hello@spacebetweenhealing.com">hello@spacebetweenhealing.com</a></p>
+                        <p class="zh">如有任何隐私相关问题：<a href="/cdn-cgi/l/email-protection#a6cec3cacac9e6d5d6c7c5c3c4c3d2d1c3c3c8cec3c7cacfc8c188c5c9cb"><span class="__cf_email__" data-cfemail="e78f828b8b88a79497868482858293908282898f82868b8e8980c984888a">[email&#160;protected]</span></a></p>
                     </div>
                 </div>
 
@@ -272,12 +286,32 @@
                     
                     <div class="contact-box">
                         <h3>Contact Us</h3>
-                        <p>For privacy questions: <a href="mailto:hello@spacebetweenhealing.com">hello@spacebetweenhealing.com</a></p>
+                        <p>For privacy questions: <a href="/cdn-cgi/l/email-protection#771f121b1b18370407161412151203001212191f12161b1e19105914181a"><span class="__cf_email__" data-cfemail="acc4c9c0c0c3ecdfdccdcfc9cec9d8dbc9c9c2c4c9cdc0c5c2cb82cfc3c1">[email&#160;protected]</span></a></p>
                     </div>
                 </div>
             </div>
         </div>
     </main>
+
+    <!-- Payment Disclaimer -->
+    <section style="padding: 0 4vw 3rem;">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <div style="background: rgba(160,184,156,0.08); border: 1px solid rgba(160,184,156,0.2); border-radius: 12px; padding: 1.5rem 2rem; font-size: 0.85rem; color: rgba(245,239,230,0.45); line-height: 1.8;">
+                <div class="lang-content active" data-lang-content="zh-TW">
+                    <p class="zh"><strong style="color: #a0b89c;">付款處理說明</strong><br>
+                    本網站現階段的付款處理僅適用於顧問服務費用，不涉及 SaaS 訂閱、會員帳戶或系統平台用戶資料。</p>
+                </div>
+                <div class="lang-content" data-lang-content="zh-CN">
+                    <p class="zh"><strong style="color: #a0b89c;">付款处理说明</strong><br>
+                    本网站现阶段的付款处理仅适用于顾问服务费用，不涉及 SaaS 订阅、会员账户或系统平台用户数据。</p>
+                </div>
+                <div class="lang-content" data-lang-content="en">
+                    <p><strong style="color: #a0b89c;">Payment Processing Notice</strong><br>
+                    Payment processing on this website currently applies only to consultancy service fees and does not involve SaaS subscriptions, member accounts, or system platform user data.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer class="footer">
         <div class="footer-content">
@@ -291,7 +325,7 @@
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         const langLabels={'zh-TW':'繁中','zh-CN':'简中','en':'EN'};
         let currentLang=localStorage.getItem('lang')||'zh-TW';
         const langSelector=document.querySelector('.lang-selector');
@@ -300,9 +334,3 @@
         const currentLangEl=document.querySelector('.current-lang');
         langBtn.addEventListener('click',()=>langSelector.classList.toggle('open'));
         document.addEventListener('click',e=>{if(!langSelector.contains(e.target))langSelector.classList.remove('open')});
-        function setLanguage(lang){currentLang=lang;document.body.setAttribute('data-lang',lang);currentLangEl.textContent=langLabels[lang];langOptions.forEach(opt=>opt.classList.toggle('active',opt.dataset.lang===lang));document.querySelectorAll('.lang-content').forEach(el=>el.classList.toggle('active',el.dataset.langContent===lang));localStorage.setItem('lang',lang);langSelector.classList.remove('open')}
-        langOptions.forEach(opt=>opt.addEventListener('click',()=>setLanguage(opt.dataset.lang)));
-        setLanguage(currentLang);
-    </script>
-</body>
-</html>

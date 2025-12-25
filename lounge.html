@@ -131,6 +131,20 @@
         .article-card.coming-soon::before { display:none; }
         .coming-badge { display:inline-block; background:rgba(245,239,230,0.1); color:var(--text-muted); font-size:0.7rem; padding:0.3rem 0.7rem; border-radius:10px; margin-bottom:0.75rem; }
 
+        
+        /* Disclaimer */
+        .disclaimer-box { 
+            background: rgba(160,184,156,0.08); 
+            border: 1px solid rgba(160,184,156,0.2); 
+            border-radius: 12px; 
+            padding: 1.5rem 2rem; 
+            margin: 2rem 0; 
+            font-size: 0.85rem; 
+            color: var(--text-muted); 
+            line-height: 1.8;
+        }
+        .disclaimer-box strong { color: var(--sage); }
+
         /* Resources Section */
         .resources-section { background:var(--bg-dark); padding:5rem 4vw; margin-top:2rem; }
         .resources-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem; max-width:900px; margin:0 auto; }
@@ -344,14 +358,17 @@
                     <div class="lang-content active" data-lang-content="zh-TW">
                         <h4 class="resource-title zh">AI 智能分析助理 光光</h4>
                         <p class="resource-desc zh">24 小時隨時為你解答品牌困惑，提供初步的品牌診斷與建議。</p>
+                        <p class="resource-desc zh" style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem; opacity: 0.8;">※ 此 AI 助理為品牌思維引導工具，用於教育及對話引導，不屬於研發技術成果展示。</p>
                     </div>
                     <div class="lang-content" data-lang-content="zh-CN">
                         <h4 class="resource-title zh">AI 智能分析助理 光光</h4>
                         <p class="resource-desc zh">24 小时随时为你解答品牌困惑，提供初步的品牌诊断与建议。</p>
+                        <p class="resource-desc zh" style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem; opacity: 0.8;">※ 此 AI 助理为品牌思维引导工具，用于教育及对话引导，不属于研发技术成果展示。</p>
                     </div>
                     <div class="lang-content" data-lang-content="en">
                         <h4 class="resource-title">AI Smart Assistant 光光</h4>
                         <p class="resource-desc">Available 24/7 to answer your brand questions and provide preliminary diagnosis and suggestions.</p>
+                        <p class="resource-desc" style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem; opacity: 0.8;">※ This AI assistant is a brand thinking guidance tool for education and dialogue facilitation, not an R&D technology demonstration.</p>
                     </div>
                     <a href="ai-assistant.html" class="resource-link">
                         <span class="lang-content active" data-lang-content="zh-TW">開始對話</span>

@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>作品案例 Works | Space Between Healing</title>
-    <meta name="description" content="品牌療癒實踐案例。真實的轉化故事，展現設計如何幫助身心靈創業者找回品牌的靈魂。">
-    <link rel="canonical" href="https://spacebetweenhealing.com/portfolio">
+    <title>靈性療癒工作室 品牌案例 | Space Between Healing</title>
+    <meta name="description" content="從模糊定位到清晰願景——一位資深靈性導師的品牌療癒旅程。Space Between Healing 品牌設計案例。">
+    <link rel="canonical" href="https://spacebetweenhealing.com/case-spiritual-healing">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Outfit:wght@300;400;500;600&family=Noto+Serif+TC:wght@300;400;500&family=Noto+Serif+SC:wght@300;400;500&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Outfit:wght@300;400;500;600&family=Noto+Serif+TC:wght@300;400;500&family=Noto+Serif+SC:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-deep: #0a0a0a;
@@ -26,27 +26,25 @@
             --font-display: 'Cormorant Garamond', serif;
             --font-body: 'Outfit', sans-serif;
             --font-zh: 'Noto Serif TC', serif;
-            --font-zh-sc: 'Noto Serif SC', serif;
             --ease: cubic-bezier(0.16,1,0.3,1);
         }
         *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
         html { scroll-behavior:smooth; }
         body { font-family:var(--font-body); background:var(--bg-deep); color:var(--text-primary); line-height:1.7; overflow-x:hidden; }
-        [data-lang="zh-TW"] .zh { font-family:var(--font-zh); }
-        [data-lang="zh-CN"] .zh { font-family:var(--font-zh-sc); }
+        .zh { font-family:var(--font-zh); }
         .lang-content { display:none; }
         .lang-content.active { display:block; }
         span.lang-content { display:none; }
         span.lang-content.active { display:inline; }
 
+        /* Ambient */
         .ambient { position:fixed; inset:0; z-index:-1; pointer-events:none; }
         .orb { position:absolute; border-radius:50%; filter:blur(100px); opacity:0.4; }
         .orb-1 { width:500px; height:500px; background:radial-gradient(circle,var(--glow-gold) 0%,transparent 70%); top:-15%; left:-10%; animation:float 25s ease-in-out infinite; }
         .orb-2 { width:400px; height:400px; background:radial-gradient(circle,var(--glow-sage) 0%,transparent 70%); bottom:-10%; right:-5%; animation:float 30s ease-in-out infinite reverse; }
         @keyframes float { 0%,100%{transform:translate(0,0)} 50%{transform:translate(30px,-20px)} }
-        .breathing { position:fixed; inset:0; background:radial-gradient(ellipse at 50% 50%,rgba(212,165,116,0.02) 0%,transparent 60%); animation:breathe 8s ease-in-out infinite; pointer-events:none; z-index:-1; }
-        @keyframes breathe { 0%,100%{opacity:0.3} 50%{opacity:0.7} }
 
+        /* Nav */
         .nav { position:fixed; top:0; left:0; right:0; z-index:1000; padding:1rem 4vw; display:flex; justify-content:space-between; align-items:center; background:rgba(10,10,10,0.95); backdrop-filter:blur(20px); border-bottom:1px solid rgba(212,165,116,0.1); }
         .nav-logo { font-family:var(--font-display); font-size:1.1rem; letter-spacing:0.2em; color:var(--gold); text-decoration:none; font-weight:500; }
         .nav-right { display:flex; align-items:center; gap:2rem; }
@@ -59,130 +57,145 @@
         .lang-btn:hover { background:rgba(212,165,116,0.2); border-color:var(--gold); }
         .lang-btn svg { width:12px; height:12px; transition:transform 0.3s; }
         .lang-selector.open .lang-btn svg { transform:rotate(180deg); }
-        .lang-dropdown { position:absolute; top:calc(100% + 8px); right:0; min-width:140px; background:var(--bg-card); border:1px solid rgba(212,165,116,0.2); border-radius:12px; overflow:hidden; opacity:0; visibility:hidden; transform:translateY(-10px); transition:all 0.3s var(--ease); z-index:100; box-shadow:0 10px 40px rgba(0,0,0,0.4); }
+        .lang-dropdown { position:absolute; top:calc(100% + 8px); right:0; min-width:140px; background:var(--bg-card); border:1px solid rgba(212,165,116,0.15); border-radius:12px; overflow:hidden; opacity:0; visibility:hidden; transform:translateY(-10px); transition:all 0.3s var(--ease); z-index:100; }
         .lang-selector.open .lang-dropdown { opacity:1; visibility:visible; transform:translateY(0); }
         .lang-option { display:flex; align-items:center; gap:0.5rem; width:100%; padding:0.75rem 1rem; background:none; border:none; color:var(--text-secondary); font-size:0.85rem; text-align:left; cursor:pointer; transition:all 0.2s; }
         .lang-option:hover { background:rgba(212,165,116,0.1); color:var(--gold); }
         .lang-option.active { color:var(--gold); }
+        .mobile-toggle { display:none; }
 
-        .mobile-toggle { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:5px; }
-        .mobile-toggle span { display:block; width:22px; height:2px; background:var(--gold); transition:all 0.3s; }
-        @media (max-width:900px) {
-            .nav-links { display:none; }
-            .mobile-toggle { display:flex; }
-        }
+        /* Hero */
+        .case-hero { padding:10rem 4vw 5rem; position:relative; }
+        .case-hero-inner { max-width:1100px; margin:0 auto; }
+        .back-link { display:inline-flex; align-items:center; gap:0.5rem; color:var(--text-muted); text-decoration:none; font-size:0.85rem; margin-bottom:2rem; transition:color 0.3s; }
+        .back-link:hover { color:var(--gold); }
+        .back-link svg { width:16px; height:16px; }
+        .case-tags { display:flex; flex-wrap:wrap; gap:0.75rem; margin-bottom:1.5rem; }
+        .case-tag { padding:0.4rem 1rem; background:rgba(212,165,116,0.1); border:1px solid rgba(212,165,116,0.2); border-radius:100px; font-size:0.75rem; color:var(--gold); font-weight:500; letter-spacing:0.05em; }
+        .case-title { font-family:var(--font-display); font-size:clamp(2.5rem,6vw,4rem); font-weight:300; margin-bottom:1rem; line-height:1.2; }
+        .case-title .highlight { color:var(--gold); font-style:italic; }
+        .case-subtitle { font-size:1.2rem; color:var(--text-secondary); max-width:700px; line-height:1.8; }
 
-        .page-header { padding:10rem 4vw 5rem; text-align:center; position:relative; }
-        .page-header::after { content:''; position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:60px; height:1px; background:var(--gold); opacity:0.3; }
-        .page-tag { display:inline-flex; align-items:center; gap:0.75rem; margin-bottom:1.5rem; }
-        .page-tag-line { width:30px; height:1px; background:var(--gold); }
-        .page-tag-text { font-size:0.7rem; font-weight:600; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold); }
-        .page-title { font-family:var(--font-display); font-size:clamp(2.5rem,6vw,4rem); font-weight:300; margin-bottom:1rem; }
-        .page-title .highlight { color:var(--gold); font-style:italic; }
-        .page-subtitle { font-size:1.1rem; color:var(--text-secondary); max-width:600px; margin:0 auto; }
+        /* Case Meta */
+        .case-meta { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:2rem; padding:3rem 0; border-top:1px solid rgba(212,165,116,0.1); border-bottom:1px solid rgba(212,165,116,0.1); margin:3rem 0; }
+        .meta-item { }
+        .meta-label { font-size:0.7rem; text-transform:uppercase; letter-spacing:0.15em; color:var(--text-muted); margin-bottom:0.5rem; }
+        .meta-value { font-size:1rem; color:var(--cream); }
 
+        /* Section */
         .section { padding:5rem 4vw; position:relative; }
-        .container { max-width:1100px; margin:0 auto; }
-
-        .intro-box { background:rgba(212,165,116,0.05); border:1px solid rgba(212,165,116,0.1); border-radius:20px; padding:2.5rem; max-width:800px; margin:0 auto 4rem; text-align:center; position:relative; overflow:hidden; }
-        .intro-box::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); }
-        .intro-box p { color:var(--text-secondary); line-height:1.9; margin-bottom:1rem; }
-        .intro-box p:last-child { margin-bottom:0; }
-
-        .section-header { text-align:center; margin-bottom:3rem; }
-        .section-tag { display:inline-flex; align-items:center; gap:0.75rem; margin-bottom:1rem; }
+        .container { max-width:900px; margin:0 auto; }
+        .container-wide { max-width:1100px; margin:0 auto; }
+        .section-tag { display:inline-flex; align-items:center; gap:0.75rem; margin-bottom:1.5rem; }
         .section-tag-line { width:30px; height:1px; background:var(--gold); }
         .section-tag-text { font-size:0.65rem; font-weight:600; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold); }
-        .section-title { font-family:var(--font-display); font-size:2rem; font-weight:300; color:var(--cream); }
 
-        .portfolio-grid { display:grid; gap:2.5rem; }
-        
-        .case-featured { display:grid; grid-template-columns:1.2fr 1fr; gap:3rem; background:var(--bg-card); border:1px solid rgba(212,165,116,0.1); border-radius:24px; overflow:hidden; transition:all 0.5s var(--ease); }
-        .case-featured:hover { border-color:rgba(212,165,116,0.25); box-shadow:0 30px 80px rgba(0,0,0,0.4); transform:translateY(-5px); }
-        
-        .case-visual { position:relative; min-height:400px; background:linear-gradient(135deg, rgba(212,165,116,0.12) 0%, rgba(160,184,156,0.08) 100%); display:flex; align-items:center; justify-content:center; overflow:hidden; }
-        .case-visual::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 30% 30%, rgba(212,165,116,0.15), transparent 60%); }
-        .case-visual-icon { width:120px; height:120px; background:linear-gradient(135deg,var(--gold) 0%,var(--gold-light) 100%); border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 20px 60px rgba(212,165,116,0.3); position:relative; z-index:1; }
-        .case-visual-icon svg { width:60px; height:60px; color:var(--bg-deep); }
-        
-        .case-info { padding:3rem; display:flex; flex-direction:column; justify-content:center; }
-        .case-badge { display:inline-flex; align-items:center; gap:0.5rem; background:linear-gradient(135deg,rgba(160,184,156,0.15),rgba(160,184,156,0.05)); color:var(--sage); font-size:0.75rem; font-weight:500; padding:0.5rem 1rem; border-radius:100px; margin-bottom:1.5rem; width:fit-content; }
-        .case-badge svg { width:14px; height:14px; }
-        .case-title { font-family:var(--font-display); font-size:clamp(1.8rem,3vw,2.2rem); color:var(--cream); margin-bottom:0.75rem; line-height:1.3; }
-        .case-subtitle { font-size:1rem; color:var(--gold); margin-bottom:1.5rem; font-style:italic; }
-        .case-desc { font-size:0.95rem; color:var(--text-secondary); line-height:1.8; margin-bottom:2rem; }
-        
-        .case-tags { display:flex; flex-wrap:wrap; gap:0.6rem; margin-bottom:2rem; }
-        .case-tag { background:rgba(212,165,116,0.1); border:1px solid rgba(212,165,116,0.15); color:var(--gold-light); font-size:0.75rem; padding:0.4rem 0.9rem; border-radius:100px; transition:all 0.3s; }
-        .case-tag:hover { background:rgba(212,165,116,0.2); border-color:var(--gold); }
+        /* Content */
+        .content-block { margin-bottom:4rem; }
+        .content-block h2 { font-family:var(--font-display); font-size:1.8rem; font-weight:400; margin-bottom:1.5rem; color:var(--cream); }
+        .content-block h3 { font-family:var(--font-display); font-size:1.4rem; font-weight:400; margin:2rem 0 1rem; color:var(--cream); }
+        .content-block p { color:var(--text-secondary); line-height:2; margin-bottom:1.5rem; }
+        .content-block ul { list-style:none; margin:1.5rem 0; }
+        .content-block li { color:var(--text-secondary); line-height:2; padding-left:1.5rem; position:relative; margin-bottom:0.75rem; }
+        .content-block li::before { content:''; position:absolute; left:0; top:0.75rem; width:6px; height:6px; background:var(--gold); border-radius:50%; }
 
-        .cases-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:2rem; }
-        
-        .case-card { background:var(--bg-card); border:1px solid rgba(212,165,116,0.08); border-radius:20px; overflow:hidden; transition:all 0.4s var(--ease); position:relative; }
-        .case-card:hover { transform:translateY(-8px); border-color:rgba(212,165,116,0.2); box-shadow:0 25px 60px rgba(0,0,0,0.4); }
-        
-        .case-card-visual { position:relative; height:200px; background:linear-gradient(135deg, rgba(212,165,116,0.1) 0%, rgba(160,184,156,0.08) 100%); display:flex; align-items:center; justify-content:center; }
-        .case-card-visual::before { content:''; position:absolute; bottom:0; left:0; right:0; height:80px; background:linear-gradient(to top, var(--bg-card), transparent); }
-        .case-card-icon { width:70px; height:70px; background:linear-gradient(135deg,var(--gold) 0%,var(--gold-light) 100%); border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 15px 40px rgba(212,165,116,0.25); }
-        .case-card-icon svg { width:35px; height:35px; color:var(--bg-deep); }
-        
-        .case-card-content { padding:2rem; }
-        .case-card .case-badge { margin-bottom:1rem; }
-        .case-card .case-title { font-size:1.4rem; margin-bottom:0.5rem; }
-        .case-card .case-subtitle { font-size:0.9rem; margin-bottom:1rem; }
-        .case-card .case-desc { font-size:0.9rem; margin-bottom:1.5rem; }
+        /* Quote */
+        .quote-block { background:rgba(160,184,156,0.05); border-left:3px solid var(--sage); padding:2rem; border-radius:0 16px 16px 0; margin:3rem 0; }
+        .quote-block p { font-family:var(--font-display); font-size:1.3rem; font-style:italic; color:var(--cream); line-height:1.8; margin:0; }
+        .quote-author { margin-top:1rem; font-size:0.9rem; color:var(--text-muted); }
 
-        .case-card.coming-soon { opacity:0.7; }
-        .case-card.coming-soon:hover { transform:none; box-shadow:none; }
-        .coming-badge { position:absolute; top:1rem; right:1rem; background:rgba(0,0,0,0.8); color:var(--text-muted); font-size:0.7rem; padding:0.4rem 0.9rem; border-radius:100px; z-index:2; backdrop-filter:blur(10px); letter-spacing:0.05em; }
+        /* Challenge & Solution Grid */
+        .challenge-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:2rem; margin:3rem 0; }
+        .challenge-card { background:var(--bg-card); border:1px solid rgba(212,165,116,0.1); border-radius:20px; padding:2rem; }
+        .challenge-card.problem { border-color:rgba(200,100,100,0.2); }
+        .challenge-card.solution { border-color:rgba(160,184,156,0.2); }
+        .challenge-icon { width:50px; height:50px; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:1.5rem; }
+        .challenge-card.problem .challenge-icon { background:rgba(200,100,100,0.1); color:#c88; }
+        .challenge-card.solution .challenge-icon { background:rgba(160,184,156,0.1); color:var(--sage); }
+        .challenge-icon svg { width:24px; height:24px; }
+        .challenge-card h4 { font-family:var(--font-display); font-size:1.2rem; color:var(--cream); margin-bottom:1rem; }
+        .challenge-card ul { list-style:none; }
+        .challenge-card li { color:var(--text-secondary); font-size:0.95rem; padding:0.5rem 0; border-bottom:1px solid rgba(255,255,255,0.05); }
+        .challenge-card li:last-child { border:none; }
 
-        .process-section { background:var(--bg-dark); padding:5rem 4vw; margin-top:2rem; }
-        .process-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.5rem; max-width:1000px; margin:0 auto; }
-        .process-step { text-align:center; padding:2.5rem 1.5rem; background:rgba(212,165,116,0.03); border:1px solid rgba(212,165,116,0.08); border-radius:20px; transition:all 0.4s var(--ease); position:relative; overflow:hidden; }
-        .process-step::before { content:''; position:absolute; top:0; left:50%; transform:translateX(-50%); width:40px; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); opacity:0; transition:opacity 0.3s; }
-        .process-step:hover { border-color:rgba(212,165,116,0.2); transform:translateY(-5px); }
-        .process-step:hover::before { opacity:1; }
-        .process-num { font-family:var(--font-display); font-size:3rem; font-weight:300; color:var(--gold); margin-bottom:1rem; opacity:0.5; }
-        .process-title { font-family:var(--font-display); font-size:1.3rem; margin-bottom:0.75rem; color:var(--cream); }
-        .process-desc { font-size:0.85rem; color:var(--text-muted); line-height:1.7; }
+        /* Gallery */
+        .gallery { margin:4rem 0; }
+        .gallery-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:1.5rem; }
+        .gallery-item { background:var(--bg-card); border:1px solid rgba(212,165,116,0.1); border-radius:16px; overflow:hidden; aspect-ratio:4/3; position:relative; }
+        .gallery-item.full { grid-column:1/-1; aspect-ratio:16/7; }
+        .gallery-placeholder { width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; background:linear-gradient(135deg, rgba(212,165,116,0.05) 0%, rgba(160,184,156,0.05) 100%); }
+        .gallery-placeholder svg { width:48px; height:48px; color:var(--text-muted); opacity:0.5; margin-bottom:1rem; }
+        .gallery-placeholder span { font-size:0.85rem; color:var(--text-muted); }
+        .gallery-caption { position:absolute; bottom:0; left:0; right:0; padding:1rem 1.5rem; background:linear-gradient(transparent, rgba(0,0,0,0.8)); }
+        .gallery-caption span { font-size:0.85rem; color:var(--cream); }
 
-        .cta-section { text-align:center; padding:6rem 4vw; }
-        .cta-box { background:linear-gradient(135deg,rgba(212,165,116,0.08) 0%,rgba(160,184,156,0.05) 100%); border:1px solid rgba(212,165,116,0.15); border-radius:24px; padding:4rem 3rem; max-width:700px; margin:0 auto; position:relative; overflow:hidden; }
-        .cta-box::before { content:''; position:absolute; top:-50%; left:-50%; width:200%; height:200%; background:radial-gradient(circle at center,rgba(212,165,116,0.05),transparent 50%); animation:rotate 30s linear infinite; }
-        @keyframes rotate { to { transform:rotate(360deg); } }
-        .cta-title { font-family:var(--font-display); font-size:clamp(1.8rem,4vw,2.5rem); font-weight:300; margin-bottom:1rem; position:relative; }
-        .cta-text { color:var(--text-secondary); margin-bottom:2rem; position:relative; }
-        
-        .btn { display:inline-flex; align-items:center; gap:0.6rem; padding:1rem 2rem; font-family:var(--font-body); font-size:0.85rem; font-weight:500; text-decoration:none; border-radius:100px; cursor:pointer; transition:all 0.4s var(--ease); border:none; position:relative; }
-        .btn svg { width:16px; height:16px; transition:transform 0.3s; }
-        .btn:hover svg { transform:translateX(3px); }
+        /* Results */
+        .results-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:1.5rem; margin:3rem 0; }
+        .result-card { background:linear-gradient(135deg, rgba(212,165,116,0.08) 0%, rgba(160,184,156,0.08) 100%); border:1px solid rgba(212,165,116,0.15); border-radius:20px; padding:2rem; text-align:center; }
+        .result-number { font-family:var(--font-display); font-size:3rem; font-weight:300; color:var(--gold); line-height:1; margin-bottom:0.5rem; }
+        .result-unit { font-size:1rem; color:var(--gold); }
+        .result-label { font-size:0.9rem; color:var(--text-secondary); margin-top:0.5rem; }
+
+        /* Testimonial */
+        .testimonial { background:var(--bg-card); border:1px solid rgba(212,165,116,0.15); border-radius:24px; padding:3rem; margin:4rem 0; position:relative; }
+        .testimonial::before { content:'"'; position:absolute; top:1rem; left:2rem; font-family:var(--font-display); font-size:6rem; color:var(--gold); opacity:0.2; line-height:1; }
+        .testimonial-content { position:relative; z-index:1; }
+        .testimonial-text { font-size:1.1rem; color:var(--cream); line-height:2; margin-bottom:2rem; }
+        .testimonial-author { display:flex; align-items:center; gap:1rem; }
+        .testimonial-avatar { width:50px; height:50px; border-radius:50%; background:linear-gradient(135deg, var(--gold), var(--sage)); display:flex; align-items:center; justify-content:center; }
+        .testimonial-avatar svg { width:24px; height:24px; color:var(--bg-deep); }
+        .testimonial-info h5 { font-size:1rem; color:var(--cream); margin-bottom:0.25rem; }
+        .testimonial-info span { font-size:0.85rem; color:var(--text-muted); }
+
+        /* Process Timeline */
+        .timeline { margin:3rem 0; }
+        .timeline-item { display:grid; grid-template-columns:80px 1fr; gap:2rem; padding:2rem 0; border-bottom:1px solid rgba(212,165,116,0.08); }
+        .timeline-item:last-child { border:none; }
+        .timeline-phase { }
+        .timeline-week { font-family:var(--font-display); font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; }
+        .timeline-num { font-family:var(--font-display); font-size:2.5rem; color:var(--gold); line-height:1; }
+        .timeline-content h4 { font-family:var(--font-display); font-size:1.2rem; color:var(--cream); margin-bottom:0.75rem; }
+        .timeline-content p { color:var(--text-secondary); font-size:0.95rem; line-height:1.8; }
+
+        /* CTA */
+        .cta-section { padding:5rem 4vw; text-align:center; background:linear-gradient(180deg, transparent 0%, rgba(212,165,116,0.03) 100%); }
+        .cta-section h2 { font-family:var(--font-display); font-size:clamp(1.8rem,4vw,2.5rem); color:var(--cream); margin-bottom:1rem; }
+        .cta-section p { color:var(--text-secondary); margin-bottom:2rem; max-width:500px; margin-left:auto; margin-right:auto; }
+        .btn { display:inline-flex; align-items:center; gap:0.75rem; padding:1rem 2rem; border-radius:100px; text-decoration:none; font-weight:500; transition:all 0.3s var(--ease); }
         .btn-primary { background:linear-gradient(135deg,var(--gold) 0%,var(--gold-light) 100%); color:var(--bg-deep); }
-        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 15px 35px var(--glow-gold); }
+        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 10px 30px rgba(212,165,116,0.3); }
+        .btn svg { width:18px; height:18px; }
 
-        footer { padding:4rem 4vw 2rem; border-top:1px solid rgba(212,165,116,0.1); }
-        .footer-content { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:2rem; }
-        .footer-logo { font-family:var(--font-display); font-size:1rem; letter-spacing:0.2em; color:var(--gold); }
-        .footer-links { display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; }
-        .footer-links a { color:var(--text-muted); text-decoration:none; font-size:0.85rem; transition:color 0.3s; }
+        /* Footer */
+        .footer { padding:3rem 4vw; background:var(--bg-dark); border-top:1px solid rgba(212,165,116,0.08); }
+        .footer-content { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem; }
+        .footer-logo { font-family:var(--font-display); font-size:0.95rem; letter-spacing:0.15em; color:var(--gold); }
+        .footer-links { display:flex; gap:1.5rem; flex-wrap:wrap; }
+        .footer-links a { font-size:0.8rem; color:var(--text-muted); text-decoration:none; transition:color 0.3s; }
         .footer-links a:hover { color:var(--gold); }
-        .footer-copy { font-size:0.8rem; color:var(--text-muted); }
+        .footer-copy { font-size:0.75rem; color:var(--text-muted); }
 
+        /* Responsive */
         @media (max-width:900px) {
-            .case-featured { grid-template-columns:1fr; }
-            .case-visual { min-height:280px; }
-            .case-info { padding:2rem; }
+            .nav-links { display:none; }
+            .mobile-toggle { display:block; }
+            .challenge-grid { grid-template-columns:1fr; }
+            .results-grid { grid-template-columns:1fr; }
+            .gallery-grid { grid-template-columns:1fr; }
+            .gallery-item.full { aspect-ratio:16/9; }
         }
         @media (max-width:600px) {
-            .page-header { padding:8rem 1.5rem 3rem; }
-            .section { padding:3rem 1.5rem; }
-            .intro-box { padding:1.5rem; }
+            .case-meta { grid-template-columns:repeat(2, 1fr); }
+            .timeline-item { grid-template-columns:60px 1fr; gap:1rem; }
             .footer-content { flex-direction:column; text-align:center; }
         }
     </style>
 </head>
-<body data-lang="zh-TW">
-    <div class="ambient"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
-    <div class="breathing"></div>
+<body>
+    <div class="ambient">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+    </div>
 
     <nav class="nav">
         <a href="index.html" class="nav-logo">SPACE BETWEEN</a>
@@ -207,126 +220,101 @@
         </div>
     </nav>
 
-    <header class="page-header">
-        <div class="page-tag"><span class="page-tag-line"></span><span class="page-tag-text">Portfolio</span><span class="page-tag-line"></span></div>
-        <div class="lang-content active" data-lang-content="zh-TW">
-            <h1 class="page-title zh">作品 <span class="highlight">&</span> 案例</h1>
-            <p class="page-subtitle zh">每一個品牌背後，都有一個值得被療癒的故事。</p>
-        </div>
-        <div class="lang-content" data-lang-content="zh-CN">
-            <h1 class="page-title zh">作品 <span class="highlight">&</span> 案例</h1>
-            <p class="page-subtitle zh">每一个品牌背后，都有一个值得被疗愈的故事。</p>
-        </div>
-        <div class="lang-content" data-lang-content="en">
-            <h1 class="page-title">Works <span class="highlight">&</span> Cases</h1>
-            <p class="page-subtitle">Behind every brand, there's a story worth healing.</p>
-        </div>
-    </header>
+    <!-- Hero -->
+    <section class="case-hero">
+        <div class="case-hero-inner">
+            <a href="portfolio.html" class="back-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                <span class="lang-content active" data-lang-content="zh-TW">返回作品集</span>
+                <span class="lang-content" data-lang-content="zh-CN">返回作品集</span>
+                <span class="lang-content" data-lang-content="en">Back to Portfolio</span>
+            </a>
 
-    <section class="section">
-        <div class="container">
-            <div class="intro-box">
+            <div class="case-tags">
+                <span class="case-tag">Brand Strategy</span>
+                <span class="case-tag">Visual Identity</span>
+                <span class="case-tag">Website Design</span>
+            </div>
+
+            <h1 class="case-title">
                 <div class="lang-content active" data-lang-content="zh-TW">
-                    <p class="zh">這裡記錄的，不只是設計成果，更是品牌轉化的旅程。</p>
-                    <p class="zh">每個案例都見證著創業者如何從迷惘中找到方向，讓品牌回歸本心。</p>
+                    <span class="zh">靈性療癒工作室</span><br>
+                    <span class="highlight">Inner Light Studio</span>
                 </div>
                 <div class="lang-content" data-lang-content="zh-CN">
-                    <p class="zh">这里记录的，不只是设计成果，更是品牌转化的旅程。</p>
-                    <p class="zh">每个案例都见证着创业者如何从迷惘中找到方向，让品牌回归本心。</p>
+                    <span class="zh">灵性疗愈工作室</span><br>
+                    <span class="highlight">Inner Light Studio</span>
                 </div>
                 <div class="lang-content" data-lang-content="en">
-                    <p>What's recorded here isn't just design outcomes, but journeys of brand transformation.</p>
-                    <p>Each case witnesses how entrepreneurs found direction from confusion, letting their brands return to their essence.</p>
+                    Spiritual Healing Studio<br>
+                    <span class="highlight">Inner Light Studio</span>
                 </div>
+            </h1>
+
+            <div class="lang-content active" data-lang-content="zh-TW">
+                <p class="case-subtitle zh">從模糊定位到清晰願景——一位資深靈性導師如何找回品牌的內在光芒，建立與理想客戶的深度連結。</p>
+            </div>
+            <div class="lang-content" data-lang-content="zh-CN">
+                <p class="case-subtitle zh">从模糊定位到清晰愿景——一位资深灵性导师如何找回品牌的内在光芒，建立与理想客户的深度连结。</p>
+            </div>
+            <div class="lang-content" data-lang-content="en">
+                <p class="case-subtitle">From unclear positioning to clear vision — how a senior spiritual guide rediscovered her brand's inner light and built deep connections with ideal clients.</p>
             </div>
 
-            <div class="portfolio-grid">
-                <div class="case-featured">
-                    <div class="case-visual">
-                        <div class="case-visual-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                        </div>
+            <div class="case-meta">
+                <div class="meta-item">
+                    <div class="meta-label">
+                        <span class="lang-content active" data-lang-content="zh-TW">客戶</span>
+                        <span class="lang-content" data-lang-content="zh-CN">客户</span>
+                        <span class="lang-content" data-lang-content="en">Client</span>
                     </div>
-                    <div class="case-info">
-                        <div class="case-badge">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
-                            <span class="lang-content active" data-lang-content="zh-TW">精選案例</span>
-                            <span class="lang-content" data-lang-content="zh-CN">精选案例</span>
-                            <span class="lang-content" data-lang-content="en">Featured</span>
-                        </div>
-                        <div class="lang-content active" data-lang-content="zh-TW">
-                            <h3 class="case-title zh">靈性療癒工作室</h3>
-                            <p class="case-subtitle zh">從模糊定位到清晰願景</p>
-                            <p class="case-desc zh">一位資深靈性導師，擁有豐富經驗卻苦於品牌形象無法傳達內在深度。透過品牌療癒，我們重新定義核心價值，建立與目標受眾的深度連結，讓她的專業能量得以完整呈現。</p>
-                        </div>
-                        <div class="lang-content" data-lang-content="zh-CN">
-                            <h3 class="case-title zh">灵性疗愈工作室</h3>
-                            <p class="case-subtitle zh">从模糊定位到清晰愿景</p>
-                            <p class="case-desc zh">一位资深灵性导师，拥有丰富经验却苦于品牌形象无法传达内在深度。通过品牌疗愈，我们重新定义核心价值，建立与目标受众的深度连结，让她的专业能量得以完整呈现。</p>
-                        </div>
-                        <div class="lang-content" data-lang-content="en">
-                            <h3 class="case-title">Spiritual Healing Studio</h3>
-                            <p class="case-subtitle">From Unclear Positioning to Clear Vision</p>
-                            <p class="case-desc">A senior spiritual guide with rich experience struggled to convey inner depth through brand image. Through brand healing, we redefined core values and built deep connections with the target audience.</p>
-                        </div>
-                        <div class="case-tags">
-                            <span class="case-tag">Brand Strategy</span>
-                            <span class="case-tag">Visual Identity</span>
-                            <span class="case-tag">Website Design</span>
-                        </div>
-                    </div>
+                    <div class="meta-value">Inner Light Studio</div>
                 </div>
-
-                <div class="cases-row">
-                    <div class="case-card coming-soon">
-                        <span class="coming-badge">Coming Soon</span>
-                        <div class="case-card-visual">
-                            <div class="case-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div>
-                        </div>
-                        <div class="case-card-content">
-                            <div class="case-badge"><span class="lang-content active" data-lang-content="zh-TW">網站設計</span><span class="lang-content" data-lang-content="zh-CN">网站设计</span><span class="lang-content" data-lang-content="en">Web Design</span></div>
-                            <div class="lang-content active" data-lang-content="zh-TW">
-                                <h3 class="case-title zh">身心諮詢師品牌</h3>
-                                <p class="case-subtitle zh">專業與溫度的平衡</p>
-                                <p class="case-desc zh">如何在保持專業形象的同時，讓網站散發溫暖的療癒氛圍？</p>
-                            </div>
-                            <div class="lang-content" data-lang-content="zh-CN">
-                                <h3 class="case-title zh">身心咨询师品牌</h3>
-                                <p class="case-subtitle zh">专业与温度的平衡</p>
-                                <p class="case-desc zh">如何在保持专业形象的同时，让网站散发温暖的疗愈氛围？</p>
-                            </div>
-                            <div class="lang-content" data-lang-content="en">
-                                <h3 class="case-title">Wellness Consultant Brand</h3>
-                                <p class="case-subtitle">Balancing Professionalism and Warmth</p>
-                                <p class="case-desc">How to maintain a professional image while radiating a warm, healing atmosphere?</p>
-                            </div>
-                            <div class="case-tags"><span class="case-tag">Web Design</span><span class="case-tag">UX</span></div>
-                        </div>
+                <div class="meta-item">
+                    <div class="meta-label">
+                        <span class="lang-content active" data-lang-content="zh-TW">領域</span>
+                        <span class="lang-content" data-lang-content="zh-CN">领域</span>
+                        <span class="lang-content" data-lang-content="en">Industry</span>
                     </div>
+                    <div class="lang-content active" data-lang-content="zh-TW"><div class="meta-value zh">靈性療癒 / 身心教練</div></div>
+                    <div class="lang-content" data-lang-content="zh-CN"><div class="meta-value zh">灵性疗愈 / 身心教练</div></div>
+                    <div class="lang-content" data-lang-content="en"><div class="meta-value">Spiritual Healing / Coaching</div></div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">
+                        <span class="lang-content active" data-lang-content="zh-TW">時間</span>
+                        <span class="lang-content" data-lang-content="zh-CN">时间</span>
+                        <span class="lang-content" data-lang-content="en">Duration</span>
+                    </div>
+                    <div class="lang-content active" data-lang-content="zh-TW"><div class="meta-value">8 週</div></div>
+                    <div class="lang-content" data-lang-content="zh-CN"><div class="meta-value">8 周</div></div>
+                    <div class="lang-content" data-lang-content="en"><div class="meta-value">8 Weeks</div></div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">
+                        <span class="lang-content active" data-lang-content="zh-TW">服務內容</span>
+                        <span class="lang-content" data-lang-content="zh-CN">服务内容</span>
+                        <span class="lang-content" data-lang-content="en">Services</span>
+                    </div>
+                    <div class="lang-content active" data-lang-content="zh-TW"><div class="meta-value zh">完整品牌療癒</div></div>
+                    <div class="lang-content" data-lang-content="zh-CN"><div class="meta-value zh">完整品牌疗愈</div></div>
+                    <div class="lang-content" data-lang-content="en"><div class="meta-value">Full Brand Healing</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                    <div class="case-card coming-soon">
-                        <span class="coming-badge">Coming Soon</span>
-                        <div class="case-card-visual">
-                            <div class="case-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg></div>
-                        </div>
-                        <div class="case-card-content">
-                            <div class="case-badge"><span class="lang-content active" data-lang-content="zh-TW">完整重建</span><span class="lang-content" data-lang-content="zh-CN">完整重建</span><span class="lang-content" data-lang-content="en">Full Rebuild</span></div>
-                            <div class="lang-content active" data-lang-content="zh-TW">
-                                <h3 class="case-title zh">芳療品牌轉型</h3>
-                                <p class="case-subtitle zh">從代購到自有品牌</p>
-                                <p class="case-desc zh">一個芳療愛好者如何從代購轉型，建立屬於自己的品牌故事。</p>
-                            </div>
-                            <div class="lang-content" data-lang-content="zh-CN">
-                                <h3 class="case-title zh">芳疗品牌转型</h3>
-                                <p class="case-subtitle zh">从代购到自有品牌</p>
-                                <p class="case-desc zh">一个芳疗爱好者如何从代购转型，建立属于自己的品牌故事。</p>
-                            </div>
-                            <div class="lang-content" data-lang-content="en">
-                                <h3 class="case-title">Aromatherapy Brand Transformation</h3>
-                                <p class="case-subtitle">From Reseller to Own Brand</p>
-                                <p class="case-desc">How an aromatherapy enthusiast transformed from reselling to building their own brand story.</p>
-                            </div>
-                            <div class="case-tags"><span class="case-tag">Brand Strategy</span><span class="case-tag">Visual Identity</span></div>
+    <!-- Gallery Preview -->
+    <section class="section" style="padding-top:0;">
+        <div class="container-wide">
+            <div class="gallery">
+                <div class="gallery-grid">
+                    <div class="gallery-item full">
+                        <div class="gallery-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                            <span class="lang-content active" data-lang-content="zh-TW" class="zh">網站首頁設計</span>
+                            <span class="lang-content" data-lang-content="zh-CN" class="zh">网站首页设计</span>
+                            <span class="lang-content" data-lang-content="en">Website Homepage Design</span>
                         </div>
                     </div>
                 </div>
@@ -334,83 +322,396 @@
         </div>
     </section>
 
-    <section class="process-section">
-        <div class="section-header">
-            <div class="section-tag" style="justify-content:center;display:flex;"><span class="section-tag-line"></span><span class="section-tag-text">Our Process</span><span class="section-tag-line"></span></div>
-            <h2 class="section-title"><span class="lang-content active" data-lang-content="zh-TW">療癒流程</span><span class="lang-content" data-lang-content="zh-CN">疗愈流程</span><span class="lang-content" data-lang-content="en">Healing Process</span></h2>
-        </div>
-        <div class="process-grid">
-            <div class="process-step">
-                <div class="process-num">01</div>
-                <div class="lang-content active" data-lang-content="zh-TW"><h4 class="process-title zh">聆聽與理解</h4><p class="process-desc zh">深度訪談，了解你的故事、願景與困惑</p></div>
-                <div class="lang-content" data-lang-content="zh-CN"><h4 class="process-title zh">聆听与理解</h4><p class="process-desc zh">深度访谈，了解你的故事、愿景与困惑</p></div>
-                <div class="lang-content" data-lang-content="en"><h4 class="process-title">Listen & Understand</h4><p class="process-desc">Deep interviews to understand your story, vision and challenges</p></div>
-            </div>
-            <div class="process-step">
-                <div class="process-num">02</div>
-                <div class="lang-content active" data-lang-content="zh-TW"><h4 class="process-title zh">診斷與定位</h4><p class="process-desc zh">找出品牌「症狀」，釐清核心問題</p></div>
-                <div class="lang-content" data-lang-content="zh-CN"><h4 class="process-title zh">诊断与定位</h4><p class="process-desc zh">找出品牌「症状」，厘清核心问题</p></div>
-                <div class="lang-content" data-lang-content="en"><h4 class="process-title">Diagnose & Position</h4><p class="process-desc">Identify brand "symptoms" and clarify core issues</p></div>
-            </div>
-            <div class="process-step">
-                <div class="process-num">03</div>
-                <div class="lang-content active" data-lang-content="zh-TW"><h4 class="process-title zh">創作與療癒</h4><p class="process-desc zh">設計視覺、文案與系統，注入療癒能量</p></div>
-                <div class="lang-content" data-lang-content="zh-CN"><h4 class="process-title zh">创作与疗愈</h4><p class="process-desc zh">设计视觉、文案与系统，注入疗愈能量</p></div>
-                <div class="lang-content" data-lang-content="en"><h4 class="process-title">Create & Heal</h4><p class="process-desc">Design visuals, copy and systems with healing energy</p></div>
-            </div>
-            <div class="process-step">
-                <div class="process-num">04</div>
-                <div class="lang-content active" data-lang-content="zh-TW"><h4 class="process-title zh">陪伴與成長</h4><p class="process-desc zh">持續支援，確保品牌健康成長</p></div>
-                <div class="lang-content" data-lang-content="zh-CN"><h4 class="process-title zh">陪伴与成长</h4><p class="process-desc zh">持续支援，确保品牌健康成长</p></div>
-                <div class="lang-content" data-lang-content="en"><h4 class="process-title">Support & Grow</h4><p class="process-desc">Continuous support ensuring healthy brand growth</p></div>
+    <!-- Background -->
+    <section class="section">
+        <div class="container">
+            <div class="content-block">
+                <div class="section-tag"><span class="section-tag-line"></span><span class="section-tag-text">Background</span></div>
+                <div class="lang-content active" data-lang-content="zh-TW">
+                    <h2 class="zh">關於客戶</h2>
+                    <p class="zh">Michelle 是一位擁有 15 年經驗的靈性療癒師與身心教練。她精通多種療癒模式，包括頌缽療癒、能量調頻、冥想引導等，在業界累積了深厚的口碑。</p>
+                    <p class="zh">然而，當她決定將事業從兼職轉為全職時，卻發現自己的品牌形象與真實的專業深度之間存在巨大落差。她的網站看起來「什麼都做」，卻沒有清晰地傳達她最核心的價值——幫助高壓職場人士找回內在平靜。</p>
+                </div>
+                <div class="lang-content" data-lang-content="zh-CN">
+                    <h2 class="zh">关于客户</h2>
+                    <p class="zh">Michelle 是一位拥有 15 年经验的灵性疗愈师与身心教练。她精通多种疗愈模式，包括颂钵疗愈、能量调频、冥想引导等，在业界累积了深厚的口碑。</p>
+                    <p class="zh">然而，当她决定将事业从兼职转为全职时，却发现自己的品牌形象与真实的专业深度之间存在巨大落差。她的网站看起来「什么都做」，却没有清晰地传达她最核心的价值——帮助高压职场人士找回内在平静。</p>
+                </div>
+                <div class="lang-content" data-lang-content="en">
+                    <h2>About the Client</h2>
+                    <p>Michelle is a spiritual healer and wellness coach with 15 years of experience. She is proficient in various healing modalities including singing bowl therapy, energy tuning, and meditation guidance, having built a solid reputation in the industry.</p>
+                    <p>However, when she decided to transition from part-time to full-time, she discovered a significant gap between her brand image and her true professional depth. Her website appeared to "do everything" without clearly communicating her core value — helping high-pressure professionals find inner peace.</p>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Challenge & Solution -->
+    <section class="section" style="background:rgba(212,165,116,0.02);">
+        <div class="container">
+            <div class="section-tag" style="justify-content:center;display:flex;margin-bottom:2rem;">
+                <span class="section-tag-line"></span>
+                <span class="section-tag-text">Challenge & Solution</span>
+                <span class="section-tag-line"></span>
+            </div>
+
+            <div class="challenge-grid">
+                <div class="challenge-card problem">
+                    <div class="challenge-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+                    </div>
+                    <div class="lang-content active" data-lang-content="zh-TW">
+                        <h4 class="zh">品牌「症狀」</h4>
+                        <ul>
+                            <li class="zh">服務項目過多，訪客不知從何選起</li>
+                            <li class="zh">視覺風格混亂，缺乏專業感</li>
+                            <li class="zh">無法清楚說明「為什麼選我」</li>
+                            <li class="zh">網站轉換率極低，詢問者寥寥</li>
+                            <li class="zh">定價困難，常被砍價</li>
+                        </ul>
+                    </div>
+                    <div class="lang-content" data-lang-content="zh-CN">
+                        <h4 class="zh">品牌「症状」</h4>
+                        <ul>
+                            <li class="zh">服务项目过多，访客不知从何选起</li>
+                            <li class="zh">视觉风格混乱，缺乏专业感</li>
+                            <li class="zh">无法清楚说明「为什么选我」</li>
+                            <li class="zh">网站转换率极低，询问者寥寥</li>
+                            <li class="zh">定价困难，常被砍价</li>
+                        </ul>
+                    </div>
+                    <div class="lang-content" data-lang-content="en">
+                        <h4>Brand "Symptoms"</h4>
+                        <ul>
+                            <li>Too many service offerings, visitors overwhelmed</li>
+                            <li>Inconsistent visual style, lacking professionalism</li>
+                            <li>Unable to articulate "why choose me"</li>
+                            <li>Extremely low website conversion rate</li>
+                            <li>Pricing difficulties, frequent negotiations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="challenge-card solution">
+                    <div class="challenge-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+                    </div>
+                    <div class="lang-content active" data-lang-content="zh-TW">
+                        <h4 class="zh">療癒方案</h4>
+                        <ul>
+                            <li class="zh">聚焦核心服務，建立旗艦療程</li>
+                            <li class="zh">設計療癒系視覺識別系統</li>
+                            <li class="zh">撰寫品牌故事與價值主張</li>
+                            <li class="zh">重建網站資訊架構與用戶旅程</li>
+                            <li class="zh">建立價值定價策略</li>
+                        </ul>
+                    </div>
+                    <div class="lang-content" data-lang-content="zh-CN">
+                        <h4 class="zh">疗愈方案</h4>
+                        <ul>
+                            <li class="zh">聚焦核心服务，建立旗舰疗程</li>
+                            <li class="zh">设计疗愈系视觉识别系统</li>
+                            <li class="zh">撰写品牌故事与价值主张</li>
+                            <li class="zh">重建网站信息架构与用户旅程</li>
+                            <li class="zh">建立价值定价策略</li>
+                        </ul>
+                    </div>
+                    <div class="lang-content" data-lang-content="en">
+                        <h4>Healing Solution</h4>
+                        <ul>
+                            <li>Focus on core services, establish flagship program</li>
+                            <li>Design healing-focused visual identity system</li>
+                            <li>Craft brand story and value proposition</li>
+                            <li>Rebuild website architecture and user journey</li>
+                            <li>Establish value-based pricing strategy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section">
+        <div class="container">
+            <div class="content-block">
+                <div class="section-tag"><span class="section-tag-line"></span><span class="section-tag-text">Process</span></div>
+                <div class="lang-content active" data-lang-content="zh-TW"><h2 class="zh">療癒過程</h2></div>
+                <div class="lang-content" data-lang-content="zh-CN"><h2 class="zh">疗愈过程</h2></div>
+                <div class="lang-content" data-lang-content="en"><h2>The Healing Process</h2></div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-phase">
+                            <div class="timeline-week">Week</div>
+                            <div class="timeline-num">1-2</div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="lang-content active" data-lang-content="zh-TW">
+                                <h4 class="zh">深度聆聽與診斷</h4>
+                                <p class="zh">透過 3 次深度訪談，了解 Michelle 的療癒旅程、專業背景與願景。同時進行競品分析與目標客群研究，找出品牌的核心定位機會。</p>
+                            </div>
+                            <div class="lang-content" data-lang-content="zh-CN">
+                                <h4 class="zh">深度聆听与诊断</h4>
+                                <p class="zh">透过 3 次深度访谈，了解 Michelle 的疗愈旅程、专业背景与愿景。同时进行竞品分析与目标客群研究，找出品牌的核心定位机会。</p>
+                            </div>
+                            <div class="lang-content" data-lang-content="en">
+                                <h4>Deep Listening & Diagnosis</h4>
+                                <p>Through 3 in-depth interviews, we understood Michelle's healing journey, professional background, and vision. We also conducted competitor analysis and target audience research to identify core positioning opportunities.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-phase">
+                            <div class="timeline-week">Week</div>
+                            <div class="timeline-num">3-4</div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="lang-content active" data-lang-content="zh-TW">
+                                <h4 class="zh">品牌策略與定位</h4>
+                                <p class="zh">確立「職場療癒」作為核心定位，將服務整合為三大療程系列。撰寫品牌故事、價值主張與核心訊息框架。</p>
+                            </div>
+                            <div class="lang-content" data-lang-content="zh-CN">
+                                <h4 class="zh">品牌策略与定位</h4>
+                                <p class="zh">确立「职场疗愈」作为核心定位，将服务整合为三大疗程系列。撰写品牌故事、价值主张与核心信息框架。</p>
+                            </div>
+                            <div class="lang-content" data-lang-content="en">
+                                <h4>Brand Strategy & Positioning</h4>
+                                <p>Established "workplace healing" as the core positioning, integrating services into three program series. Crafted brand story, value proposition, and core messaging framework.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-phase">
+                            <div class="timeline-week">Week</div>
+                            <div class="timeline-num">5-6</div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="lang-content active" data-lang-content="zh-TW">
+                                <h4 class="zh">視覺識別設計</h4>
+                                <p class="zh">以「內在之光」為概念，設計溫暖而專業的視覺系統。包含標誌設計、色彩系統、字體搭配與視覺元素庫。</p>
+                            </div>
+                            <div class="lang-content" data-lang-content="zh-CN">
+                                <h4 class="zh">视觉识别设计</h4>
+                                <p class="zh">以「内在之光」为概念，设计温暖而专业的视觉系统。包含标志设计、色彩系统、字体搭配与视觉元素库。</p>
+                            </div>
+                            <div class="lang-content" data-lang-content="en">
+                                <h4>Visual Identity Design</h4>
+                                <p>Based on the "inner light" concept, we designed a warm yet professional visual system including logo design, color system, typography, and visual element library.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-phase">
+                            <div class="timeline-week">Week</div>
+                            <div class="timeline-num">7-8</div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="lang-content active" data-lang-content="zh-TW">
+                                <h4 class="zh">網站設計與上線</h4>
+                                <p class="zh">設計並開發全新品牌網站，優化用戶旅程與轉換路徑。包含服務頁面、關於頁面、預約系統整合與 SEO 基礎設定。</p>
+                            </div>
+                            <div class="lang-content" data-lang-content="zh-CN">
+                                <h4 class="zh">网站设计与上线</h4>
+                                <p class="zh">设计并开发全新品牌网站，优化用户旅程与转换路径。包含服务页面、关于页面、预约系统整合与 SEO 基础设定。</p>
+                            </div>
+                            <div class="lang-content" data-lang-content="en">
+                                <h4>Website Design & Launch</h4>
+                                <p>Designed and developed a new brand website, optimizing user journey and conversion paths. Included service pages, about page, booking system integration, and SEO fundamentals.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section" style="background:rgba(160,184,156,0.02);">
+        <div class="container-wide">
+            <div class="section-tag" style="justify-content:center;display:flex;margin-bottom:2rem;">
+                <span class="section-tag-line"></span>
+                <span class="section-tag-text">Deliverables</span>
+                <span class="section-tag-line"></span>
+            </div>
+
+            <div class="gallery">
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            <span class="lang-content active" data-lang-content="zh-TW" class="zh">標誌設計</span>
+                            <span class="lang-content" data-lang-content="zh-CN" class="zh">标志设计</span>
+                            <span class="lang-content" data-lang-content="en">Logo Design</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                            <span class="lang-content active" data-lang-content="zh-TW" class="zh">色彩系統</span>
+                            <span class="lang-content" data-lang-content="zh-CN" class="zh">色彩系统</span>
+                            <span class="lang-content" data-lang-content="en">Color System</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>
+                            <span class="lang-content active" data-lang-content="zh-TW" class="zh">字體搭配</span>
+                            <span class="lang-content" data-lang-content="zh-CN" class="zh">字体搭配</span>
+                            <span class="lang-content" data-lang-content="en">Typography</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                            <span class="lang-content active" data-lang-content="zh-TW" class="zh">網站設計</span>
+                            <span class="lang-content" data-lang-content="zh-CN" class="zh">网站设计</span>
+                            <span class="lang-content" data-lang-content="en">Website Design</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item full">
+                        <div class="gallery-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+                            <span class="lang-content active" data-lang-content="zh-TW" class="zh">品牌手冊</span>
+                            <span class="lang-content" data-lang-content="zh-CN" class="zh">品牌手册</span>
+                            <span class="lang-content" data-lang-content="en">Brand Guidelines</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results -->
+    <section class="section">
+        <div class="container">
+            <div class="content-block">
+                <div class="section-tag"><span class="section-tag-line"></span><span class="section-tag-text">Results</span></div>
+                <div class="lang-content active" data-lang-content="zh-TW"><h2 class="zh">療癒成果</h2></div>
+                <div class="lang-content" data-lang-content="zh-CN"><h2 class="zh">疗愈成果</h2></div>
+                <div class="lang-content" data-lang-content="en"><h2>Healing Results</h2></div>
+
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-number">3<span class="result-unit">x</span></div>
+                        <div class="lang-content active" data-lang-content="zh-TW"><div class="result-label zh">網站詢問量提升</div></div>
+                        <div class="lang-content" data-lang-content="zh-CN"><div class="result-label zh">网站询问量提升</div></div>
+                        <div class="lang-content" data-lang-content="en"><div class="result-label">Increase in Inquiries</div></div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">40<span class="result-unit">%</span></div>
+                        <div class="lang-content active" data-lang-content="zh-TW"><div class="result-label zh">客單價提升</div></div>
+                        <div class="lang-content" data-lang-content="zh-CN"><div class="result-label zh">客单价提升</div></div>
+                        <div class="lang-content" data-lang-content="en"><div class="result-label">Higher Average Order Value</div></div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">90<span class="result-unit">%</span></div>
+                        <div class="lang-content active" data-lang-content="zh-TW"><div class="result-label zh">客戶來自理想族群</div></div>
+                        <div class="lang-content" data-lang-content="zh-CN"><div class="result-label zh">客户来自理想族群</div></div>
+                        <div class="lang-content" data-lang-content="en"><div class="result-label">Clients from Target Audience</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="section" style="background:rgba(212,165,116,0.02);">
+        <div class="container">
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <div class="lang-content active" data-lang-content="zh-TW">
+                        <p class="testimonial-text zh">「這次的品牌療癒，讓我終於能夠清楚地告訴別人我在做什麼。以前每次介紹自己都很心虛，現在我可以自信地說出品牌故事，而且吸引到的都是真正需要我的人。最神奇的是，我不再害怕報價了。」</p>
+                    </div>
+                    <div class="lang-content" data-lang-content="zh-CN">
+                        <p class="testimonial-text zh">「这次的品牌疗愈，让我终于能够清楚地告诉别人我在做什么。以前每次介绍自己都很心虚，现在我可以自信地说出品牌故事，而且吸引到的都是真正需要我的人。最神奇的是，我不再害怕报价了。」</p>
+                    </div>
+                    <div class="lang-content" data-lang-content="en">
+                        <p class="testimonial-text">"This brand healing finally allowed me to clearly tell others what I do. Before, I always felt uncertain when introducing myself. Now I can confidently share my brand story, and I attract people who truly need me. The most magical thing is that I'm no longer afraid to quote my prices."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        </div>
+                        <div class="testimonial-info">
+                            <h5>Michelle</h5>
+                            <span>Inner Light Studio</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
     <section class="cta-section">
-        <div class="cta-box">
-            <div class="lang-content active" data-lang-content="zh-TW"><h2 class="cta-title zh">準備好開始你的品牌療癒之旅了嗎？</h2><p class="cta-text zh">讓我們一起，找回品牌最真實的樣子。</p></div>
-            <div class="lang-content" data-lang-content="zh-CN"><h2 class="cta-title zh">准备好开始你的品牌疗愈之旅了吗？</h2><p class="cta-text zh">让我们一起，找回品牌最真实的样子。</p></div>
-            <div class="lang-content" data-lang-content="en"><h2 class="cta-title">Ready to start your brand healing journey?</h2><p class="cta-text">Let's work together to rediscover your brand's authentic self.</p></div>
-            <a href="contact.html" class="btn btn-primary">
-                <span class="lang-content active" data-lang-content="zh-TW">預約諮詢</span><span class="lang-content" data-lang-content="zh-CN">预约咨询</span><span class="lang-content" data-lang-content="en">Book Consultation</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
+        <div class="lang-content active" data-lang-content="zh-TW">
+            <h2 class="zh">你的品牌也需要療癒嗎？</h2>
+            <p class="zh">讓我們一起，找回品牌最真實的樣子。</p>
         </div>
+        <div class="lang-content" data-lang-content="zh-CN">
+            <h2 class="zh">你的品牌也需要疗愈吗？</h2>
+            <p class="zh">让我们一起，找回品牌最真实的样子。</p>
+        </div>
+        <div class="lang-content" data-lang-content="en">
+            <h2>Does Your Brand Need Healing Too?</h2>
+            <p>Let's work together to rediscover your brand's authentic self.</p>
+        </div>
+        <a href="contact.html" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+            <span class="lang-content active" data-lang-content="zh-TW">預約免費諮詢</span>
+            <span class="lang-content" data-lang-content="zh-CN">预约免费咨询</span>
+            <span class="lang-content" data-lang-content="en">Book Free Consultation</span>
+        </a>
     </section>
 
-    <footer>
+    <!-- Footer -->
+    <footer class="footer">
         <div class="footer-content">
-            <div class="footer-logo">SPACE BETWEEN HEALING</div>
-            <div class="footer-links"><a href="about.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
-            <p class="footer-copy">© 2024 Space Between Healing. All rights reserved.</p>
+            <span class="footer-logo">SPACE BETWEEN HEALING</span>
+            <div class="footer-links">
+                <a href="about.html"><span class="lang-content active" data-lang-content="zh-TW">關於</span><span class="lang-content" data-lang-content="zh-CN">关于</span><span class="lang-content" data-lang-content="en">About</span></a>
+                <a href="services.html"><span class="lang-content active" data-lang-content="zh-TW">服務</span><span class="lang-content" data-lang-content="zh-CN">服务</span><span class="lang-content" data-lang-content="en">Services</span></a>
+                <a href="portfolio.html"><span class="lang-content active" data-lang-content="zh-TW">作品</span><span class="lang-content" data-lang-content="zh-CN">作品</span><span class="lang-content" data-lang-content="en">Works</span></a>
+                <a href="contact.html"><span class="lang-content active" data-lang-content="zh-TW">聯絡</span><span class="lang-content" data-lang-content="zh-CN">联络</span><span class="lang-content" data-lang-content="en">Contact</span></a>
+                <a href="privacy.html"><span class="lang-content active" data-lang-content="zh-TW">私隱政策</span><span class="lang-content" data-lang-content="zh-CN">隐私政策</span><span class="lang-content" data-lang-content="en">Privacy</span></a>
+                <a href="terms.html"><span class="lang-content active" data-lang-content="zh-TW">服務條款</span><span class="lang-content" data-lang-content="zh-CN">服务条款</span><span class="lang-content" data-lang-content="en">Terms</span></a>
+            </div>
+            <span class="footer-copy">© 2025 Space Between Healing</span>
         </div>
     </footer>
 
     <script>
+        const langLabels = {'zh-TW':'繁中','zh-CN':'简中','en':'EN'};
+        let currentLang = localStorage.getItem('lang') || 'zh-TW';
         const langSelector = document.querySelector('.lang-selector');
         const langBtn = document.querySelector('.lang-btn');
         const langOptions = document.querySelectorAll('.lang-option');
-        const currentLangSpan = document.querySelector('.current-lang');
+        const currentLangEl = document.querySelector('.current-lang');
 
-        langBtn?.addEventListener('click', () => langSelector.classList.toggle('open'));
-        document.addEventListener('click', (e) => { if (!langSelector?.contains(e.target)) langSelector?.classList.remove('open'); });
+        langBtn.addEventListener('click', () => langSelector.classList.toggle('open'));
+        document.addEventListener('click', e => { if (!langSelector.contains(e.target)) langSelector.classList.remove('open'); });
 
-        langOptions.forEach(option => {
-            option.addEventListener('click', () => {
-                const lang = option.dataset.lang;
-                document.body.dataset.lang = lang;
-                langOptions.forEach(o => o.classList.remove('active'));
-                option.classList.add('active');
-                currentLangSpan.textContent = lang === 'zh-TW' ? '繁中' : lang === 'zh-CN' ? '简中' : 'EN';
-                document.querySelectorAll('.lang-content').forEach(el => { el.classList.toggle('active', el.dataset.langContent === lang); });
-                langSelector.classList.remove('open');
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.body.setAttribute('data-lang', lang);
+            currentLangEl.textContent = langLabels[lang];
+            langOptions.forEach(opt => opt.classList.toggle('active', opt.dataset.lang === lang));
+            document.querySelectorAll('.lang-content').forEach(el => {
+                if (el.tagName === 'SPAN') {
+                    el.classList.toggle('active', el.dataset.langContent === lang);
+                } else {
+                    el.classList.toggle('active', el.dataset.langContent === lang);
+                }
             });
-        });
-
-        const mobileToggle = document.querySelector('.mobile-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        mobileToggle?.addEventListener('click', () => { navLinks?.classList.toggle('show'); });
+            localStorage.setItem('lang', lang);
+            langSelector.classList.remove('open');
+        }
+        langOptions.forEach(opt => opt.addEventListener('click', () => setLanguage(opt.dataset.lang)));
+        setLanguage(currentLang);
     </script>
 </body>
 </html>
