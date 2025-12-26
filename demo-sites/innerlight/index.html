@@ -1,1 +1,967 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inner Light Studio | 內在之光療癒工作室</title>
+    <meta name="description" content="專為高壓職場人士設計的靈性療癒服務。找回內在平靜，重建身心平衡。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-cream: #faf8f5;
+            --bg-warm: #f5f0e8;
+            --bg-sage-light: #e8efe6;
+            --gold: #c4a77d;
+            --gold-dark: #a08660;
+            --sage: #7d9a73;
+            --sage-dark: #5c7a54;
+            --plum: #8b7082;
+            --text-dark: #2d2a26;
+            --text-body: #4a4540;
+            --text-muted: #7a756d;
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'Outfit', sans-serif;
+            --font-zh: 'Noto Serif TC', serif;
+            --ease: cubic-bezier(0.16,1,0.3,1);
+        }
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior:smooth; }
+        body { font-family:var(--font-body); background:var(--bg-cream); color:var(--text-body); line-height:1.7; overflow-x:hidden; }
+        .zh { font-family:var(--font-zh); }
+        img { max-width:100%; height:auto; display:block; }
 
+        /* Demo Badge */
+        .demo-badge {
+            position:fixed;
+            top:1rem;
+            right:1rem;
+            z-index:9999;
+            background:linear-gradient(135deg, var(--sage) 0%, var(--sage-dark) 100%);
+            color:white;
+            padding:0.6rem 1.2rem;
+            border-radius:100px;
+            font-size:0.75rem;
+            font-weight:600;
+            letter-spacing:0.1em;
+            box-shadow:0 4px 20px rgba(125,154,115,0.4);
+            display:flex;
+            align-items:center;
+            gap:0.5rem;
+        }
+        .demo-badge::before {
+            content:'';
+            width:8px;
+            height:8px;
+            background:white;
+            border-radius:50%;
+            animation:pulse 2s infinite;
+        }
+        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.5} }
+
+        /* Nav */
+        .nav {
+            position:fixed;
+            top:0;
+            left:0;
+            right:0;
+            z-index:1000;
+            padding:1rem 5vw;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            background:rgba(250,248,245,0.95);
+            backdrop-filter:blur(20px);
+            border-bottom:1px solid rgba(196,167,125,0.1);
+        }
+        .nav-logo {
+            display:flex;
+            align-items:center;
+            gap:0.75rem;
+            text-decoration:none;
+        }
+        .nav-logo-icon {
+            width:42px;
+            height:42px;
+            border-radius:50%;
+            overflow:hidden;
+            box-shadow:0 2px 10px rgba(125,154,115,0.2);
+        }
+        .nav-logo-icon img {
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
+        .nav-logo-text {
+            font-family:var(--font-display);
+            font-size:1.3rem;
+            font-weight:500;
+            color:var(--text-dark);
+            letter-spacing:0.05em;
+        }
+        .nav-links {
+            display:flex;
+            gap:2.5rem;
+            list-style:none;
+        }
+        .nav-links a {
+            font-size:0.9rem;
+            color:var(--text-muted);
+            text-decoration:none;
+            transition:color 0.3s;
+            position:relative;
+        }
+        .nav-links a:hover { color:var(--sage-dark); }
+        .nav-links a::after {
+            content:'';
+            position:absolute;
+            bottom:-4px;
+            left:0;
+            width:0;
+            height:2px;
+            background:var(--sage);
+            transition:width 0.3s var(--ease);
+        }
+        .nav-links a:hover::after { width:100%; }
+        .nav-cta {
+            padding:0.7rem 1.5rem;
+            background:var(--sage);
+            color:white;
+            text-decoration:none;
+            border-radius:100px;
+            font-size:0.85rem;
+            font-weight:500;
+            transition:all 0.3s;
+        }
+        .nav-cta:hover {
+            background:var(--sage-dark);
+            transform:translateY(-2px);
+            box-shadow:0 4px 15px rgba(125,154,115,0.3);
+        }
+
+        /* Hero */
+        .hero {
+            min-height:100vh;
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            align-items:center;
+            padding:8rem 5vw 5rem;
+            gap:4rem;
+            position:relative;
+            overflow:hidden;
+        }
+        .hero::before {
+            content:'';
+            position:absolute;
+            top:-20%;
+            right:-10%;
+            width:60%;
+            height:80%;
+            background:radial-gradient(ellipse, rgba(125,154,115,0.08) 0%, transparent 70%);
+            pointer-events:none;
+        }
+        .hero-content { position:relative; z-index:1; }
+        .hero-tag {
+            display:inline-flex;
+            align-items:center;
+            gap:0.5rem;
+            padding:0.5rem 1rem;
+            background:var(--bg-sage-light);
+            border-radius:100px;
+            font-size:0.75rem;
+            color:var(--sage-dark);
+            font-weight:500;
+            letter-spacing:0.1em;
+            margin-bottom:1.5rem;
+        }
+        .hero-tag svg { width:14px; height:14px; }
+        .hero-title {
+            font-family:var(--font-display);
+            font-size:clamp(2.5rem,5vw,4rem);
+            font-weight:400;
+            color:var(--text-dark);
+            line-height:1.2;
+            margin-bottom:1.5rem;
+        }
+        .hero-title .highlight {
+            color:var(--sage);
+            font-style:italic;
+        }
+        .hero-desc {
+            font-size:1.1rem;
+            color:var(--text-muted);
+            line-height:1.9;
+            margin-bottom:2rem;
+            max-width:480px;
+        }
+        .hero-ctas {
+            display:flex;
+            gap:1rem;
+            flex-wrap:wrap;
+        }
+        .btn {
+            display:inline-flex;
+            align-items:center;
+            gap:0.6rem;
+            padding:1rem 2rem;
+            border-radius:100px;
+            text-decoration:none;
+            font-weight:500;
+            transition:all 0.3s var(--ease);
+            font-size:0.95rem;
+        }
+        .btn svg { width:18px; height:18px; }
+        .btn-primary {
+            background:linear-gradient(135deg, var(--sage) 0%, var(--sage-dark) 100%);
+            color:white;
+        }
+        .btn-primary:hover {
+            transform:translateY(-3px);
+            box-shadow:0 10px 30px rgba(125,154,115,0.35);
+        }
+        .btn-secondary {
+            background:transparent;
+            color:var(--text-dark);
+            border:1.5px solid var(--gold);
+        }
+        .btn-secondary:hover {
+            background:var(--gold);
+            color:white;
+        }
+        .hero-visual {
+            position:relative;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+        .hero-image-main {
+            width:100%;
+            max-width:420px;
+            border-radius:200px 200px 24px 24px;
+            overflow:hidden;
+            box-shadow:0 30px 60px rgba(0,0,0,0.12);
+            position:relative;
+        }
+        .hero-image-main img {
+            width:100%;
+            height:auto;
+            object-fit:cover;
+        }
+        .hero-float-card {
+            position:absolute;
+            background:white;
+            border-radius:16px;
+            padding:1.25rem;
+            box-shadow:0 10px 40px rgba(0,0,0,0.1);
+        }
+        .hero-float-card.card-1 {
+            bottom:15%;
+            left:-15%;
+            display:flex;
+            align-items:center;
+            gap:1rem;
+        }
+        .float-icon {
+            width:50px;
+            height:50px;
+            background:linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            border-radius:12px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        .float-icon svg { width:24px; height:24px; color:white; }
+        .float-text h4 { font-size:0.9rem; color:var(--text-dark); margin-bottom:0.2rem; }
+        .float-text span { font-size:0.75rem; color:var(--text-muted); }
+        .hero-float-card.card-2 {
+            top:15%;
+            right:-5%;
+        }
+        .card-2-inner {
+            display:flex;
+            align-items:center;
+            gap:0.75rem;
+        }
+        .stars { display:flex; gap:0.2rem; color:var(--gold); }
+        .stars svg { width:14px; height:14px; fill:var(--gold); }
+
+        /* Services */
+        .services {
+            padding:6rem 5vw;
+            background:white;
+        }
+        .section-header {
+            text-align:center;
+            max-width:600px;
+            margin:0 auto 4rem;
+        }
+        .section-tag {
+            display:inline-flex;
+            align-items:center;
+            gap:0.75rem;
+            margin-bottom:1rem;
+        }
+        .section-tag-line { width:30px; height:1px; background:var(--gold); }
+        .section-tag-text {
+            font-size:0.7rem;
+            font-weight:600;
+            letter-spacing:0.2em;
+            text-transform:uppercase;
+            color:var(--gold-dark);
+        }
+        .section-title {
+            font-family:var(--font-display);
+            font-size:clamp(2rem,4vw,2.8rem);
+            font-weight:400;
+            color:var(--text-dark);
+            margin-bottom:1rem;
+        }
+        .section-desc {
+            color:var(--text-muted);
+            line-height:1.8;
+        }
+        .services-grid {
+            display:grid;
+            grid-template-columns:repeat(3, 1fr);
+            gap:2rem;
+            max-width:1200px;
+            margin:0 auto;
+        }
+        .service-card {
+            background:var(--bg-cream);
+            border-radius:24px;
+            overflow:hidden;
+            transition:all 0.4s var(--ease);
+            position:relative;
+        }
+        .service-card::before {
+            content:'';
+            position:absolute;
+            top:0;
+            left:0;
+            right:0;
+            height:4px;
+            background:linear-gradient(90deg, var(--sage) 0%, var(--gold) 100%);
+            opacity:0;
+            transition:opacity 0.3s;
+        }
+        .service-card:hover {
+            transform:translateY(-8px);
+            box-shadow:0 20px 50px rgba(0,0,0,0.1);
+        }
+        .service-card:hover::before { opacity:1; }
+        .service-image {
+            width:100%;
+            height:200px;
+            overflow:hidden;
+        }
+        .service-image img {
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            transition:transform 0.5s var(--ease);
+        }
+        .service-card:hover .service-image img {
+            transform:scale(1.05);
+        }
+        .service-content {
+            padding:2rem;
+        }
+        .service-card h3 {
+            font-family:var(--font-display);
+            font-size:1.4rem;
+            color:var(--text-dark);
+            margin-bottom:0.75rem;
+        }
+        .service-card p {
+            font-size:0.95rem;
+            color:var(--text-muted);
+            line-height:1.8;
+            margin-bottom:1.5rem;
+        }
+        .service-link {
+            display:inline-flex;
+            align-items:center;
+            gap:0.5rem;
+            color:var(--sage-dark);
+            text-decoration:none;
+            font-size:0.9rem;
+            font-weight:500;
+            transition:gap 0.3s;
+        }
+        .service-link:hover { gap:0.75rem; }
+        .service-link svg { width:16px; height:16px; }
+
+        /* About */
+        .about {
+            padding:6rem 5vw;
+            background:var(--bg-warm);
+        }
+        .about-grid {
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:5rem;
+            max-width:1100px;
+            margin:0 auto;
+            align-items:center;
+        }
+        .about-image {
+            border-radius:24px;
+            overflow:hidden;
+            box-shadow:0 20px 50px rgba(0,0,0,0.1);
+        }
+        .about-image img {
+            width:100%;
+            height:auto;
+        }
+        .about-content h2 {
+            font-family:var(--font-display);
+            font-size:clamp(1.8rem,3.5vw,2.5rem);
+            color:var(--text-dark);
+            margin-bottom:1.5rem;
+            line-height:1.3;
+        }
+        .about-content h2 .highlight { color:var(--sage); font-style:italic; }
+        .about-content p {
+            color:var(--text-muted);
+            line-height:2;
+            margin-bottom:1.5rem;
+        }
+        .about-stats {
+            display:grid;
+            grid-template-columns:repeat(3, 1fr);
+            gap:1.5rem;
+            margin-top:2rem;
+            padding-top:2rem;
+            border-top:1px solid rgba(196,167,125,0.2);
+        }
+        .stat-item { text-align:center; }
+        .stat-num {
+            font-family:var(--font-display);
+            font-size:2.5rem;
+            color:var(--sage);
+            line-height:1;
+        }
+        .stat-label {
+            font-size:0.85rem;
+            color:var(--text-muted);
+            margin-top:0.5rem;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding:6rem 5vw;
+            background:white;
+        }
+        .gallery-grid {
+            display:grid;
+            grid-template-columns:repeat(3, 1fr);
+            gap:1.5rem;
+            max-width:1200px;
+            margin:0 auto;
+        }
+        .gallery-item {
+            border-radius:16px;
+            overflow:hidden;
+            aspect-ratio:1;
+            position:relative;
+        }
+        .gallery-item img {
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            transition:transform 0.5s var(--ease);
+        }
+        .gallery-item:hover img {
+            transform:scale(1.05);
+        }
+        .gallery-item.wide {
+            grid-column:span 2;
+            aspect-ratio:2/1;
+        }
+
+        /* Testimonial */
+        .testimonial {
+            padding:6rem 5vw;
+            background:linear-gradient(135deg, var(--sage) 0%, var(--sage-dark) 100%);
+            color:white;
+            text-align:center;
+            position:relative;
+            overflow:hidden;
+        }
+        .testimonial::before {
+            content:'';
+            position:absolute;
+            inset:0;
+            background:url('images/pattern.png') center/cover;
+            opacity:0.05;
+        }
+        .testimonial-inner {
+            max-width:800px;
+            margin:0 auto;
+            position:relative;
+            z-index:1;
+        }
+        .testimonial-quote {
+            font-family:var(--font-display);
+            font-size:clamp(1.3rem,3vw,1.8rem);
+            font-style:italic;
+            line-height:1.8;
+            margin-bottom:2rem;
+            position:relative;
+        }
+        .testimonial-quote::before {
+            content:'"';
+            font-size:6rem;
+            position:absolute;
+            top:-2rem;
+            left:50%;
+            transform:translateX(-50%);
+            opacity:0.2;
+            font-family:var(--font-display);
+            line-height:1;
+        }
+        .testimonial-author {
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:1rem;
+        }
+        .testimonial-avatar {
+            width:60px;
+            height:60px;
+            border-radius:50%;
+            overflow:hidden;
+            border:3px solid rgba(255,255,255,0.3);
+        }
+        .testimonial-avatar img {
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
+        .testimonial-info { text-align:left; }
+        .testimonial-info h4 { font-size:1rem; margin-bottom:0.2rem; }
+        .testimonial-info span { font-size:0.85rem; opacity:0.8; }
+
+        /* CTA */
+        .cta {
+            padding:6rem 5vw;
+            text-align:center;
+            position:relative;
+            overflow:hidden;
+        }
+        .cta-bg {
+            position:absolute;
+            inset:0;
+            z-index:0;
+        }
+        .cta-bg img {
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            opacity:0.15;
+        }
+        .cta-inner {
+            max-width:700px;
+            margin:0 auto;
+            position:relative;
+            z-index:1;
+        }
+        .cta h2 {
+            font-family:var(--font-display);
+            font-size:clamp(2rem,4vw,3rem);
+            color:var(--text-dark);
+            margin-bottom:1rem;
+        }
+        .cta p {
+            color:var(--text-muted);
+            font-size:1.1rem;
+            margin-bottom:2rem;
+        }
+        .cta-form {
+            display:flex;
+            gap:1rem;
+            justify-content:center;
+            flex-wrap:wrap;
+        }
+        .cta-input {
+            padding:1rem 1.5rem;
+            border:1.5px solid rgba(196,167,125,0.3);
+            border-radius:100px;
+            font-size:1rem;
+            width:300px;
+            background:white;
+            transition:border-color 0.3s;
+        }
+        .cta-input:focus {
+            outline:none;
+            border-color:var(--sage);
+        }
+
+        /* Footer */
+        .footer {
+            padding:4rem 5vw 2rem;
+            background:var(--text-dark);
+            color:rgba(255,255,255,0.7);
+        }
+        .footer-grid {
+            display:grid;
+            grid-template-columns:2fr 1fr 1fr 1fr;
+            gap:3rem;
+            max-width:1200px;
+            margin:0 auto 3rem;
+        }
+        .footer-brand h3 {
+            font-family:var(--font-display);
+            font-size:1.5rem;
+            color:white;
+            margin-bottom:1rem;
+            display:flex;
+            align-items:center;
+            gap:0.75rem;
+        }
+        .footer-logo-small {
+            width:36px;
+            height:36px;
+            border-radius:50%;
+            overflow:hidden;
+        }
+        .footer-logo-small img {
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
+        .footer-brand p {
+            font-size:0.9rem;
+            line-height:1.8;
+            margin-bottom:1.5rem;
+        }
+        .footer-social {
+            display:flex;
+            gap:0.75rem;
+        }
+        .footer-social a {
+            width:40px;
+            height:40px;
+            background:rgba(255,255,255,0.1);
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            color:white;
+            transition:background 0.3s;
+        }
+        .footer-social a:hover { background:var(--sage); }
+        .footer-social svg { width:18px; height:18px; }
+        .footer-col h4 {
+            color:white;
+            font-size:0.9rem;
+            margin-bottom:1.5rem;
+            letter-spacing:0.1em;
+        }
+        .footer-col ul { list-style:none; }
+        .footer-col li { margin-bottom:0.75rem; }
+        .footer-col a {
+            color:rgba(255,255,255,0.6);
+            text-decoration:none;
+            font-size:0.9rem;
+            transition:color 0.3s;
+        }
+        .footer-col a:hover { color:var(--gold); }
+        .footer-bottom {
+            text-align:center;
+            padding-top:2rem;
+            border-top:1px solid rgba(255,255,255,0.1);
+            font-size:0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width:1024px) {
+            .hero { grid-template-columns:1fr; text-align:center; }
+            .hero-content { order:2; }
+            .hero-visual { order:1; }
+            .hero-desc { margin:0 auto 2rem; }
+            .hero-ctas { justify-content:center; }
+            .hero-float-card { display:none; }
+            .services-grid { grid-template-columns:1fr; max-width:500px; }
+            .about-grid { grid-template-columns:1fr; }
+            .gallery-grid { grid-template-columns:repeat(2, 1fr); }
+            .gallery-item.wide { grid-column:span 1; aspect-ratio:1; }
+            .footer-grid { grid-template-columns:1fr 1fr; }
+        }
+        @media (max-width:600px) {
+            .nav-links { display:none; }
+            .hero-image-main { max-width:300px; }
+            .about-stats { grid-template-columns:1fr; }
+            .gallery-grid { grid-template-columns:1fr; }
+            .footer-grid { grid-template-columns:1fr; }
+            .cta-form { flex-direction:column; align-items:center; }
+            .cta-input { width:100%; max-width:300px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-badge">DEMO · 案例示範</div>
+
+    <!-- Nav -->
+    <nav class="nav">
+        <a href="#" class="nav-logo">
+            <div class="nav-logo-icon">
+                <img src="images/logo.png" alt="Inner Light Logo">
+            </div>
+            <span class="nav-logo-text">Inner Light</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#about">關於</a></li>
+            <li><a href="#services">服務</a></li>
+            <li><a href="#testimonial">見證</a></li>
+            <li><a href="#">文章</a></li>
+        </ul>
+        <a href="#cta" class="nav-cta">預約諮詢</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-tag">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+                <span>專為高壓職場人士設計</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="zh">在忙碌中</span><br>
+                <span class="zh">找回你的</span><span class="highlight">內在之光</span>
+            </h1>
+            <p class="hero-desc zh">
+                工作壓力讓你身心俱疲？透過頌缽療癒、能量調頻與冥想引導，幫助你釋放壓力、重建平衡，找回那個平靜而有力量的自己。
+            </p>
+            <div class="hero-ctas">
+                <a href="#cta" class="btn btn-primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                    <span class="zh">預約免費諮詢</span>
+                </a>
+                <a href="#about" class="btn btn-secondary">
+                    <span class="zh">了解更多</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-image-main">
+                <img src="images/hero-portrait.png" alt="Michelle - Inner Light Studio 療癒師">
+            </div>
+            <div class="hero-float-card card-1">
+                <div class="float-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2z"/><path d="M12 6v6l4 2"/></svg>
+                </div>
+                <div class="float-text">
+                    <h4 class="zh">15 年療癒經驗</h4>
+                    <span class="zh">資深認證療癒師</span>
+                </div>
+            </div>
+            <div class="hero-float-card card-2">
+                <div class="card-2-inner">
+                    <div class="stars">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
+                    </div>
+                    <span style="font-size:0.85rem;color:var(--text-muted);">200+ 好評</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="section-header">
+            <div class="section-tag">
+                <span class="section-tag-line"></span>
+                <span class="section-tag-text">Services</span>
+                <span class="section-tag-line"></span>
+            </div>
+            <h2 class="section-title zh">療癒服務</h2>
+            <p class="section-desc zh">每一個療程都是為你量身設計的療癒旅程，幫助你找回內在的平靜與力量。</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="images/service-singing-bowl.png" alt="頌缽療癒">
+                </div>
+                <div class="service-content">
+                    <h3 class="zh">頌缽療癒</h3>
+                    <p class="zh">透過頌缽的聲音頻率，深層放鬆身心，釋放累積的壓力與情緒。適合工作壓力大、睡眠品質不佳的你。</p>
+                    <a href="#" class="service-link">
+                        <span class="zh">了解更多</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="images/service-energy.png" alt="能量調頻">
+                </div>
+                <div class="service-content">
+                    <h3 class="zh">能量調頻</h3>
+                    <p class="zh">運用能量療癒技術，調整你的能量場，清理阻塞，讓生命能量重新流動。適合感覺卡住、缺乏動力的你。</p>
+                    <a href="#" class="service-link">
+                        <span class="zh">了解更多</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="images/service-meditation.png" alt="冥想引導">
+                </div>
+                <div class="service-content">
+                    <h3 class="zh">冥想引導</h3>
+                    <p class="zh">客製化的冥想練習，幫助你建立每日的靜心習慣，培養內在的覺察力與平靜。適合想建立自我療癒能力的你。</p>
+                    <a href="#" class="service-link">
+                        <span class="zh">了解更多</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="about-grid">
+            <div class="about-image">
+                <img src="images/healing-room.png" alt="Inner Light Studio 療癒空間">
+            </div>
+            <div class="about-content">
+                <div class="section-tag">
+                    <span class="section-tag-line"></span>
+                    <span class="section-tag-text">About</span>
+                </div>
+                <h2 class="zh">我相信，每個人內心都有一道<span class="highlight">光</span></h2>
+                <p class="zh">你好，我是 Michelle。15 年前，我也曾是一個被工作壓力壓得喘不過氣的上班族。直到我遇見了療癒，才發現原來我們每個人內心都有自我療癒的力量。</p>
+                <p class="zh">現在，我希望陪伴你一起找回那道內在之光。不是告訴你該怎麼做，而是引導你去發現——你早已擁有的力量。</p>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-num">15+</div>
+                        <div class="stat-label zh">年療癒經驗</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-num">500+</div>
+                        <div class="stat-label zh">服務個案</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-num">98%</div>
+                        <div class="stat-label zh">好評推薦</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery-section">
+        <div class="section-header">
+            <div class="section-tag">
+                <span class="section-tag-line"></span>
+                <span class="section-tag-text">Gallery</span>
+                <span class="section-tag-line"></span>
+            </div>
+            <h2 class="section-title zh">療癒空間</h2>
+            <p class="section-desc zh">一個安靜、溫暖的空間，等待你的到來。</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item wide">
+                <img src="images/banner.png" alt="療癒藝術">
+            </div>
+            <div class="gallery-item">
+                <img src="images/singing-bowls-still.png" alt="頌缽">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="testimonial" id="testimonial">
+        <div class="testimonial-inner">
+            <p class="testimonial-quote zh">
+                「原本只是抱著試試看的心情，沒想到一次療程就讓我感受到前所未有的放鬆。現在我每個月都會來報到，這已經成為我照顧自己的重要儀式。」
+            </p>
+            <div class="testimonial-author">
+                <div class="testimonial-avatar">
+                    <img src="images/testimonial-avatar.png" alt="Sarah Chen">
+                </div>
+                <div class="testimonial-info">
+                    <h4>Sarah Chen</h4>
+                    <span class="zh">科技業產品經理</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="cta">
+        <div class="cta-bg">
+            <img src="images/cta-bg.png" alt="">
+        </div>
+        <div class="cta-inner">
+            <h2 class="zh">準備好開始你的療癒之旅了嗎？</h2>
+            <p class="zh">預約 30 分鐘免費諮詢，讓我們一起找到最適合你的療癒方式。</p>
+            <div class="cta-form">
+                <input type="email" class="cta-input" placeholder="輸入你的 Email">
+                <a href="#" class="btn btn-primary zh">預約諮詢</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>
+                    <div class="footer-logo-small">
+                        <img src="images/logo.png" alt="Logo">
+                    </div>
+                    Inner Light Studio
+                </h3>
+                <p class="zh">專為高壓職場人士設計的靈性療癒服務。在這裡，你可以放下一切，找回內在的平靜與力量。</p>
+                <div class="footer-social">
+                    <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><path d="M17.5 6.5h.01"/></svg></a>
+                    <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+                    <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 class="zh">服務</h4>
+                <ul>
+                    <li><a href="#" class="zh">頌缽療癒</a></li>
+                    <li><a href="#" class="zh">能量調頻</a></li>
+                    <li><a href="#" class="zh">冥想引導</a></li>
+                    <li><a href="#" class="zh">企業療癒</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="zh">關於</h4>
+                <ul>
+                    <li><a href="#" class="zh">我的故事</a></li>
+                    <li><a href="#" class="zh">療癒理念</a></li>
+                    <li><a href="#" class="zh">認證資歷</a></li>
+                    <li><a href="#" class="zh">常見問題</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 class="zh">聯絡</h4>
+                <ul>
+                    <li><a href="#">hello@innerlight.studio</a></li>
+                    <li><a href="#" class="zh">台北市大安區</a></li>
+                    <li><a href="#" class="zh">預約諮詢</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Inner Light Studio. All rights reserved.</p>
+            <p style="margin-top:0.5rem;font-size:0.75rem;opacity:0.6;">Demo website designed by Space Between Healing</p>
+        </div>
+    </footer>
+</body>
+</html>
