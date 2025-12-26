@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>心渡 身心諮詢師品牌案例 | Space Between Healing</title>
-    <meta name="description" content="專業與溫度的平衡——一位資深身心諮詢師如何透過品牌療癒，找到與個案深度連結的方式。">
+    <meta name="description" content="專業與溫度的平衡——一位身心諮詢師如何透過品牌療癒，從冰冷的證書牆蛻變為溫暖的對話邀請。">
     <link rel="canonical" href="https://spacebetweenhealing.com/case-wellness-consultant">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,13 +14,13 @@
             --bg-deep: #0a0a0a;
             --bg-dark: #111;
             --bg-card: #161616;
-            --gold: #c9846a;
-            --gold-light: #e0a88a;
-            --sage: #b5917a;
-            --terracotta: #c9846a;
+            --gold: #c4a484;
+            --gold-light: #d4b896;
+            --sage: #a0b89c;
             --cream: #f5efe6;
-            --glow-gold: rgba(201,132,106,0.35);
-            --glow-sage: rgba(181,145,122,0.25);
+            --terracotta: #c4a484;
+            --glow-gold: rgba(196,164,132,0.35);
+            --glow-sage: rgba(160,184,156,0.25);
             --text-primary: #f5efe6;
             --text-secondary: rgba(245,239,230,0.7);
             --text-muted: rgba(245,239,230,0.45);
@@ -44,22 +44,22 @@
         .orb-2 { width:400px; height:400px; background:radial-gradient(circle,var(--glow-sage) 0%,transparent 70%); bottom:-10%; right:-5%; animation:float 30s ease-in-out infinite reverse; }
         @keyframes float { 0%,100%{transform:translate(0,0)} 50%{transform:translate(30px,-20px)} }
 
-        .nav { position:fixed; top:0; left:0; right:0; z-index:1000; padding:1rem 4vw; display:flex; justify-content:space-between; align-items:center; background:rgba(10,10,10,0.95); backdrop-filter:blur(20px); border-bottom:1px solid rgba(201,132,106,0.1); }
+        .nav { position:fixed; top:0; left:0; right:0; z-index:1000; padding:1rem 4vw; display:flex; justify-content:space-between; align-items:center; background:rgba(10,10,10,0.95); backdrop-filter:blur(20px); border-bottom:1px solid rgba(196,164,132,0.1); }
         .nav-logo { font-family:var(--font-display); font-size:1.1rem; letter-spacing:0.2em; color:var(--gold); text-decoration:none; font-weight:500; }
         .nav-right { display:flex; align-items:center; gap:2rem; }
         .nav-links { display:flex; gap:0.5rem; list-style:none; }
         .nav-links li a { display:block; font-size:0.85rem; color:var(--text-secondary); text-decoration:none; transition:all 0.3s; padding:0.6rem 1rem; border-radius:8px; }
-        .nav-links li a:hover { color:var(--gold); background:rgba(201,132,106,0.1); }
-        .nav-links li a.active { color:var(--gold); background:rgba(201,132,106,0.15); }
+        .nav-links li a:hover { color:var(--gold); background:rgba(196,164,132,0.1); }
+        .nav-links li a.active { color:var(--gold); background:rgba(196,164,132,0.15); }
         .lang-selector { position:relative; }
-        .lang-btn { display:flex; align-items:center; gap:0.4rem; padding:0.5rem 1rem; background:rgba(201,132,106,0.1); border:1px solid rgba(201,132,106,0.25); border-radius:100px; color:var(--gold); font-size:0.8rem; cursor:pointer; transition:all 0.3s; font-weight:500; }
-        .lang-btn:hover { background:rgba(201,132,106,0.2); border-color:var(--gold); }
+        .lang-btn { display:flex; align-items:center; gap:0.4rem; padding:0.5rem 1rem; background:rgba(196,164,132,0.1); border:1px solid rgba(196,164,132,0.25); border-radius:100px; color:var(--gold); font-size:0.8rem; cursor:pointer; transition:all 0.3s; font-weight:500; }
+        .lang-btn:hover { background:rgba(196,164,132,0.2); border-color:var(--gold); }
         .lang-btn svg { width:12px; height:12px; transition:transform 0.3s; }
         .lang-selector.open .lang-btn svg { transform:rotate(180deg); }
-        .lang-dropdown { position:absolute; top:calc(100% + 8px); right:0; min-width:140px; background:var(--bg-card); border:1px solid rgba(201,132,106,0.15); border-radius:12px; overflow:hidden; opacity:0; visibility:hidden; transform:translateY(-10px); transition:all 0.3s var(--ease); z-index:100; }
+        .lang-dropdown { position:absolute; top:calc(100% + 8px); right:0; min-width:140px; background:var(--bg-card); border:1px solid rgba(196,164,132,0.15); border-radius:12px; overflow:hidden; opacity:0; visibility:hidden; transform:translateY(-10px); transition:all 0.3s var(--ease); z-index:100; }
         .lang-selector.open .lang-dropdown { opacity:1; visibility:visible; transform:translateY(0); }
         .lang-option { display:flex; align-items:center; gap:0.5rem; width:100%; padding:0.75rem 1rem; background:none; border:none; color:var(--text-secondary); font-size:0.85rem; text-align:left; cursor:pointer; transition:all 0.2s; }
-        .lang-option:hover { background:rgba(201,132,106,0.1); color:var(--gold); }
+        .lang-option:hover { background:rgba(196,164,132,0.1); color:var(--gold); }
         .lang-option.active { color:var(--gold); }
         .mobile-toggle { display:none; }
 
@@ -69,12 +69,12 @@
         .back-link:hover { color:var(--gold); }
         .back-link svg { width:16px; height:16px; }
         .case-tags { display:flex; flex-wrap:wrap; gap:0.75rem; margin-bottom:1.5rem; }
-        .case-tag { padding:0.4rem 1rem; background:rgba(201,132,106,0.1); border:1px solid rgba(201,132,106,0.2); border-radius:100px; font-size:0.75rem; color:var(--gold); font-weight:500; letter-spacing:0.05em; }
+        .case-tag { padding:0.4rem 1rem; background:rgba(196,164,132,0.1); border:1px solid rgba(196,164,132,0.2); border-radius:100px; font-size:0.75rem; color:var(--gold); font-weight:500; letter-spacing:0.05em; }
         .case-title { font-family:var(--font-display); font-size:clamp(2.5rem,6vw,4rem); font-weight:300; margin-bottom:1rem; line-height:1.2; }
         .case-title .highlight { color:var(--gold); font-style:italic; }
         .case-subtitle { font-size:1.2rem; color:var(--text-secondary); max-width:700px; line-height:1.8; }
 
-        .case-meta { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:2rem; padding:3rem 0; border-top:1px solid rgba(201,132,106,0.1); border-bottom:1px solid rgba(201,132,106,0.1); margin:3rem 0; }
+        .case-meta { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:2rem; padding:3rem 0; border-top:1px solid rgba(196,164,132,0.1); border-bottom:1px solid rgba(196,164,132,0.1); margin:3rem 0; }
         .meta-item { }
         .meta-label { font-size:0.7rem; text-transform:uppercase; letter-spacing:0.15em; color:var(--text-muted); margin-bottom:0.5rem; }
         .meta-value { font-size:1rem; color:var(--cream); }
@@ -94,17 +94,17 @@
         .content-block li { color:var(--text-secondary); line-height:2; padding-left:1.5rem; position:relative; margin-bottom:0.75rem; }
         .content-block li::before { content:''; position:absolute; left:0; top:0.75rem; width:6px; height:6px; background:var(--gold); border-radius:50%; }
 
-        .quote-block { background:rgba(201,132,106,0.05); border-left:3px solid var(--terracotta); padding:2rem; border-radius:0 16px 16px 0; margin:3rem 0; }
+        .quote-block { background:rgba(160,184,156,0.08); border-left:3px solid var(--sage); padding:2rem; border-radius:0 16px 16px 0; margin:3rem 0; }
         .quote-block p { font-family:var(--font-display); font-size:1.3rem; font-style:italic; color:var(--cream); line-height:1.8; margin:0; }
         .quote-author { margin-top:1rem; font-size:0.9rem; color:var(--text-muted); }
 
         .challenge-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:2rem; margin:3rem 0; }
-        .challenge-card { background:var(--bg-card); border:1px solid rgba(201,132,106,0.1); border-radius:20px; padding:2rem; }
+        .challenge-card { background:var(--bg-card); border:1px solid rgba(196,164,132,0.1); border-radius:20px; padding:2rem; }
         .challenge-card.problem { border-color:rgba(200,100,100,0.2); }
-        .challenge-card.solution { border-color:rgba(201,132,106,0.3); }
+        .challenge-card.solution { border-color:rgba(160,184,156,0.3); }
         .challenge-icon { width:50px; height:50px; border-radius:12px; display:flex; align-items:center; justify-content:center; margin-bottom:1.5rem; }
         .challenge-card.problem .challenge-icon { background:rgba(200,100,100,0.1); color:#c88; }
-        .challenge-card.solution .challenge-icon { background:rgba(201,132,106,0.15); color:var(--terracotta); }
+        .challenge-card.solution .challenge-icon { background:rgba(160,184,156,0.15); color:var(--sage); }
         .challenge-icon svg { width:24px; height:24px; }
         .challenge-card h4 { font-family:var(--font-display); font-size:1.2rem; color:var(--cream); margin-bottom:1rem; }
         .challenge-card ul { list-style:none; }
@@ -113,31 +113,31 @@
 
         .gallery { margin:4rem 0; }
         .gallery-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:1.5rem; }
-        .gallery-item { background:var(--bg-card); border:1px solid rgba(201,132,106,0.1); border-radius:16px; overflow:hidden; aspect-ratio:4/3; position:relative; }
+        .gallery-item { background:var(--bg-card); border:1px solid rgba(196,164,132,0.1); border-radius:16px; overflow:hidden; aspect-ratio:4/3; position:relative; }
         .gallery-item.full { grid-column:1/-1; aspect-ratio:16/7; }
+        .gallery-item.tall { aspect-ratio:3/4; }
         .gallery-item img { width:100%; height:100%; object-fit:cover; }
         .gallery-caption { position:absolute; bottom:0; left:0; right:0; padding:1rem 1.5rem; background:linear-gradient(transparent, rgba(0,0,0,0.8)); }
         .gallery-caption span { font-size:0.85rem; color:var(--cream); }
 
         .results-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:1.5rem; margin:3rem 0; }
-        .result-card { background:linear-gradient(135deg, rgba(201,132,106,0.08) 0%, rgba(181,145,122,0.08) 100%); border:1px solid rgba(201,132,106,0.15); border-radius:20px; padding:2rem; text-align:center; }
+        .result-card { background:linear-gradient(135deg, rgba(196,164,132,0.08) 0%, rgba(160,184,156,0.08) 100%); border:1px solid rgba(196,164,132,0.15); border-radius:20px; padding:2rem; text-align:center; }
         .result-number { font-family:var(--font-display); font-size:3rem; font-weight:300; color:var(--gold); line-height:1; margin-bottom:0.5rem; }
         .result-unit { font-size:1rem; color:var(--gold); }
         .result-label { font-size:0.9rem; color:var(--text-secondary); margin-top:0.5rem; }
 
-        .testimonial { background:var(--bg-card); border:1px solid rgba(201,132,106,0.15); border-radius:24px; padding:3rem; margin:4rem 0; position:relative; }
+        .testimonial { background:var(--bg-card); border:1px solid rgba(196,164,132,0.15); border-radius:24px; padding:3rem; margin:4rem 0; position:relative; }
         .testimonial::before { content:'"'; position:absolute; top:1rem; left:2rem; font-family:var(--font-display); font-size:6rem; color:var(--gold); opacity:0.2; line-height:1; }
         .testimonial-content { position:relative; z-index:1; }
         .testimonial-text { font-size:1.1rem; color:var(--cream); line-height:2; margin-bottom:2rem; }
         .testimonial-author { display:flex; align-items:center; gap:1rem; }
         .testimonial-avatar { width:50px; height:50px; border-radius:50%; background:linear-gradient(135deg, var(--gold), var(--sage)); display:flex; align-items:center; justify-content:center; overflow:hidden; }
-        .testimonial-avatar img { width:100%; height:100%; object-fit:cover; }
         .testimonial-avatar svg { width:24px; height:24px; color:var(--bg-deep); }
         .testimonial-info h5 { font-size:1rem; color:var(--cream); margin-bottom:0.25rem; }
         .testimonial-info span { font-size:0.85rem; color:var(--text-muted); }
 
         .timeline { margin:3rem 0; }
-        .timeline-item { display:grid; grid-template-columns:80px 1fr; gap:2rem; padding:2rem 0; border-bottom:1px solid rgba(201,132,106,0.08); }
+        .timeline-item { display:grid; grid-template-columns:80px 1fr; gap:2rem; padding:2rem 0; border-bottom:1px solid rgba(196,164,132,0.08); }
         .timeline-item:last-child { border:none; }
         .timeline-phase { }
         .timeline-week { font-family:var(--font-display); font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; }
@@ -145,28 +145,21 @@
         .timeline-content h4 { font-family:var(--font-display); font-size:1.2rem; color:var(--cream); margin-bottom:0.75rem; }
         .timeline-content p { color:var(--text-secondary); font-size:0.95rem; line-height:1.8; }
 
-        .cta-section { padding:5rem 4vw; text-align:center; background:linear-gradient(180deg, transparent 0%, rgba(201,132,106,0.03) 100%); }
+        .cta-section { padding:5rem 4vw; text-align:center; background:linear-gradient(180deg, transparent 0%, rgba(196,164,132,0.03) 100%); }
         .cta-section h2 { font-family:var(--font-display); font-size:clamp(1.8rem,4vw,2.5rem); color:var(--cream); margin-bottom:1rem; }
         .cta-section p { color:var(--text-secondary); margin-bottom:2rem; max-width:500px; margin-left:auto; margin-right:auto; }
         .btn { display:inline-flex; align-items:center; gap:0.75rem; padding:1rem 2rem; border-radius:100px; text-decoration:none; font-weight:500; transition:all 0.3s var(--ease); }
         .btn-primary { background:linear-gradient(135deg,var(--gold) 0%,var(--gold-light) 100%); color:var(--bg-deep); }
-        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 10px 30px rgba(201,132,106,0.3); }
+        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 10px 30px rgba(196,164,132,0.3); }
         .btn svg { width:18px; height:18px; }
 
-        .footer { padding:3rem 4vw; background:var(--bg-dark); border-top:1px solid rgba(201,132,106,0.08); }
+        .footer { padding:3rem 4vw; background:var(--bg-dark); border-top:1px solid rgba(196,164,132,0.08); }
         .footer-content { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem; }
         .footer-logo { font-family:var(--font-display); font-size:0.95rem; letter-spacing:0.15em; color:var(--gold); }
         .footer-links { display:flex; gap:1.5rem; flex-wrap:wrap; }
         .footer-links a { font-size:0.8rem; color:var(--text-muted); text-decoration:none; transition:color 0.3s; }
         .footer-links a:hover { color:var(--gold); }
         .footer-copy { font-size:0.75rem; color:var(--text-muted); }
-
-        .brand-visual { position:relative; margin:4rem 0; }
-        .brand-visual-bg { position:absolute; inset:0; z-index:0; opacity:0.15; }
-        .brand-visual-bg img { width:100%; height:100%; object-fit:cover; border-radius:24px; }
-        .brand-visual-content { position:relative; z-index:1; padding:4rem; text-align:center; }
-        .brand-name-display { font-family:var(--font-display); font-size:clamp(3rem,8vw,5rem); color:var(--cream); margin-bottom:1rem; letter-spacing:0.1em; }
-        .brand-tagline { font-size:1.2rem; color:var(--text-secondary); font-style:italic; }
 
         @media (max-width:900px) {
             .nav-links { display:none; }
@@ -196,7 +189,7 @@
                 <li><a href="about.html"><span class="lang-content active" data-lang-content="zh-TW">關於</span><span class="lang-content" data-lang-content="zh-CN">关于</span><span class="lang-content" data-lang-content="en">About</span></a></li>
                 <li><a href="services.html"><span class="lang-content active" data-lang-content="zh-TW">服務</span><span class="lang-content" data-lang-content="zh-CN">服务</span><span class="lang-content" data-lang-content="en">Services</span></a></li>
                 <li><a href="portfolio.html" class="active"><span class="lang-content active" data-lang-content="zh-TW">作品</span><span class="lang-content" data-lang-content="zh-CN">作品</span><span class="lang-content" data-lang-content="en">Works</span></a></li>
-                <li><a href="lounge.html"><span class="lang-content active" data-lang-content="zh-TW">療癒實驗室</span><span class="lang-content" data-lang-content="zh-CN">疗愈实验室</span><span class="lang-content" data-lang-content="en">Healing Lab</span></a></li>
+                <li><a href="lounge.html"><span class="lang-content active" data-lang-content="zh-TW">會客室</span><span class="lang-content" data-lang-content="zh-CN">会客室</span><span class="lang-content" data-lang-content="en">Lounge</span></a></li>
                 <li><a href="contact.html"><span class="lang-content active" data-lang-content="zh-TW">聯絡</span><span class="lang-content" data-lang-content="zh-CN">联络</span><span class="lang-content" data-lang-content="en">Contact</span></a></li>
             </ul>
             <div class="lang-selector">
@@ -243,13 +236,13 @@
             </h1>
 
             <div class="lang-content active" data-lang-content="zh-TW">
-                <p class="case-subtitle zh">專業與溫度的平衡——一位資深身心諮詢師如何在保持專業形象的同時，讓品牌散發溫暖的療癒氛圍。</p>
+                <p class="case-subtitle zh">專業與溫度的平衡——如何在保持專業形象的同時，讓網站散發溫暖的療癒氛圍？從「冰冷的證書牆」蛻變為「溫暖的對話邀請」。</p>
             </div>
             <div class="lang-content" data-lang-content="zh-CN">
-                <p class="case-subtitle zh">专业与温度的平衡——一位资深身心咨询师如何在保持专业形象的同时，让品牌散发温暖的疗愈氛围。</p>
+                <p class="case-subtitle zh">专业与温度的平衡——如何在保持专业形象的同时，让网站散发温暖的疗愈氛围？从「冰冷的证书墙」蜕变为「温暖的对话邀请」。</p>
             </div>
             <div class="lang-content" data-lang-content="en">
-                <p class="case-subtitle">Balancing professionalism and warmth — how a senior wellness consultant maintained professional credibility while radiating a healing atmosphere.</p>
+                <p class="case-subtitle">Balancing professionalism and warmth — how to maintain a professional image while radiating a warm, healing atmosphere? From "cold certificate wall" to "warm conversation invitation".</p>
             </div>
 
             <div class="case-meta">
@@ -269,7 +262,7 @@
                     </div>
                     <div class="lang-content active" data-lang-content="zh-TW"><div class="meta-value zh">身心諮詢 / 心理輔導</div></div>
                     <div class="lang-content" data-lang-content="zh-CN"><div class="meta-value zh">身心咨询 / 心理辅导</div></div>
-                    <div class="lang-content" data-lang-content="en"><div class="meta-value">Wellness Consulting / Counseling</div></div>
+                    <div class="lang-content" data-lang-content="en"><div class="meta-value">Wellness / Counseling</div></div>
                 </div>
                 <div class="meta-item">
                     <div class="meta-label">
@@ -301,11 +294,11 @@
             <div class="gallery">
                 <div class="gallery-grid">
                     <div class="gallery-item full" style="aspect-ratio:16/9;">
-                        <img src="xindu-images/hero-space.png" alt="心渡諮詢空間設計">
+                        <img src="demo-sites/xindu-demo/images/hero-space.png" alt="心渡諮詢空間設計">
                         <div class="gallery-caption">
                             <span class="lang-content active" data-lang-content="zh-TW" class="zh">諮詢空間 — 溫暖而專業的對話場域</span>
                             <span class="lang-content" data-lang-content="zh-CN" class="zh">咨询空间 — 温暖而专业的对话场域</span>
-                            <span class="lang-content" data-lang-content="en">Consultation Space — Warm and Professional</span>
+                            <span class="lang-content" data-lang-content="en">Consultation Space — Warm and Professional Dialogue</span>
                         </div>
                     </div>
                 </div>
@@ -320,40 +313,40 @@
                 <div class="section-tag"><span class="section-tag-line"></span><span class="section-tag-text">Background</span></div>
                 <div class="lang-content active" data-lang-content="zh-TW">
                     <h2 class="zh">關於客戶</h2>
-                    <p class="zh">Michelle 是一位擁有十年經驗的身心諮詢師，持有國際認證的心理諮詢資格。她的個案轉介率高達 70%，在業界累積了深厚的口碑。</p>
-                    <p class="zh">然而，她的舊網站卻無法反映她的專業深度。冰冷的證書羅列和制式化的服務介紹，讓潛在個案望而卻步。「每次有人問我做什麼，我都不知道怎麼說才不會讓人覺得我在推銷。」Michelle 在第一次諮詢時這樣說。</p>
+                    <p class="zh">阿慧是一位擁有心理學碩士學位的身心諮詢師，專注於職場壓力調適與情緒管理。她擁有完整的專業背景，包括多項國際認證，卻發現自己的網站給人的第一印象是「冰冷而有距離感」。</p>
+                    <p class="zh">「來找我的人都是帶著脆弱來的，但我的網站卻像在說：看看我有多專業。」阿慧坦言，她的舊網站堆滿了證書和學歷，卻沒有讓人感受到被理解、被接納的溫暖。</p>
                 </div>
                 <div class="lang-content" data-lang-content="zh-CN">
                     <h2 class="zh">关于客户</h2>
-                    <p class="zh">Michelle 是一位拥有十年经验的身心咨询师，持有国际认证的心理咨询资格。她的个案转介率高达 70%，在业界累积了深厚的口碑。</p>
-                    <p class="zh">然而，她的旧网站却无法反映她的专业深度。冰冷的证书罗列和制式化的服务介绍，让潜在个案望而却步。「每次有人问我做什么，我都不知道怎么说才不会让人觉得我在推销。」Michelle 在第一次咨询时这样说。</p>
+                    <p class="zh">阿慧是一位拥有心理学硕士学位的身心咨询师，专注于职场压力调适与情绪管理。她拥有完整的专业背景，包括多项国际认证，却发现自己的网站给人的第一印象是「冰冷而有距离感」。</p>
+                    <p class="zh">「来找我的人都是带着脆弱来的，但我的网站却像在说：看看我有多专业。」阿慧坦言，她的旧网站堆满了证书和学历，却没有让人感受到被理解、被接纳的温暖。</p>
                 </div>
                 <div class="lang-content" data-lang-content="en">
                     <h2>About the Client</h2>
-                    <p>Michelle is a wellness consultant with 10 years of experience, holding internationally certified counseling credentials. Her client referral rate reaches 70%, building a solid reputation in the industry.</p>
-                    <p>However, her old website couldn't reflect her professional depth. Cold certificate listings and formulaic service descriptions made potential clients hesitant. "Every time someone asks what I do, I don't know how to explain without sounding like I'm selling," Michelle said during our first consultation.</p>
+                    <p>Hui is a wellness consultant with a Master's degree in Psychology, specializing in workplace stress management and emotional regulation. Despite her comprehensive professional background and international certifications, she found her website gave off an "cold and distant" first impression.</p>
+                    <p>"People who come to me are vulnerable, but my website seemed to say: look how professional I am." Hui admitted her old website was filled with certificates and credentials but lacked the warmth of being understood and accepted.</p>
                 </div>
             </div>
 
             <div class="quote-block">
                 <div class="lang-content active" data-lang-content="zh-TW">
-                    <p class="zh">「跟妳說話很安心。」</p>
-                    <div class="quote-author zh">— Michelle 最常收到的客戶回饋</div>
+                    <p class="zh">「我想讓每個點進來的人，都感覺像走進一個可以安心呼吸的空間。」</p>
+                    <div class="quote-author zh">— 阿慧的願景</div>
                 </div>
                 <div class="lang-content" data-lang-content="zh-CN">
-                    <p class="zh">「跟妳说话很安心。」</p>
-                    <div class="quote-author zh">— Michelle 最常收到的客户回馈</div>
+                    <p class="zh">「我想让每个点进来的人，都感觉像走进一个可以安心呼吸的空间。」</p>
+                    <div class="quote-author zh">— 阿慧的愿景</div>
                 </div>
                 <div class="lang-content" data-lang-content="en">
-                    <p>"Talking to you feels so reassuring."</p>
-                    <div class="quote-author">— Michelle's most common client feedback</div>
+                    <p>"I want everyone who visits to feel like they've entered a space where they can breathe easy."</p>
+                    <div class="quote-author">— Hui's vision</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Challenge & Solution -->
-    <section class="section" style="background:rgba(201,132,106,0.02);">
+    <section class="section" style="background:rgba(160,184,156,0.03);">
         <div class="container">
             <div class="section-tag" style="justify-content:center;display:flex;margin-bottom:2rem;">
                 <span class="section-tag-line"></span>
@@ -369,31 +362,31 @@
                     <div class="lang-content active" data-lang-content="zh-TW">
                         <h4 class="zh">品牌「症狀」</h4>
                         <ul>
-                            <li class="zh">專業形象過於嚴肅，讓人望而卻步</li>
-                            <li class="zh">無法在網站傳達面對面諮詢的溫暖</li>
-                            <li class="zh">服務價值難以量化，定價缺乏信心</li>
-                            <li class="zh">網站轉換率極低，線上詢問寥寥</li>
-                            <li class="zh">不知如何介紹自己而不顯得推銷</li>
+                            <li class="zh">網站過度強調專業證照，缺乏人情味</li>
+                            <li class="zh">視覺風格冰冷，不像療癒空間</li>
+                            <li class="zh">文案生硬，像學術報告</li>
+                            <li class="zh">用戶不知道第一步該做什麼</li>
+                            <li class="zh">轉換率低，多數人看了就離開</li>
                         </ul>
                     </div>
                     <div class="lang-content" data-lang-content="zh-CN">
                         <h4 class="zh">品牌「症状」</h4>
                         <ul>
-                            <li class="zh">专业形象过于严肃，让人望而却步</li>
-                            <li class="zh">无法在网站传达面对面咨询的温暖</li>
-                            <li class="zh">服务价值难以量化，定价缺乏信心</li>
-                            <li class="zh">网站转换率极低，线上询问寥寥</li>
-                            <li class="zh">不知如何介绍自己而不显得推销</li>
+                            <li class="zh">网站过度强调专业证照，缺乏人情味</li>
+                            <li class="zh">视觉风格冰冷，不像疗愈空间</li>
+                            <li class="zh">文案生硬，像学术报告</li>
+                            <li class="zh">用户不知道第一步该做什么</li>
+                            <li class="zh">转换率低，多数人看了就离开</li>
                         </ul>
                     </div>
                     <div class="lang-content" data-lang-content="en">
                         <h4>Brand "Symptoms"</h4>
                         <ul>
-                            <li>Professional image too serious, off-putting</li>
-                            <li>Website couldn't convey in-person warmth</li>
-                            <li>Service value hard to quantify, pricing uncertainty</li>
-                            <li>Extremely low website conversion</li>
-                            <li>Struggled to introduce herself without seeming salesy</li>
+                            <li>Website over-emphasized credentials, lacked warmth</li>
+                            <li>Cold visual style, unlike a healing space</li>
+                            <li>Stiff copy, like academic reports</li>
+                            <li>Users didn't know what to do first</li>
+                            <li>Low conversion rate, most visitors left quickly</li>
                         </ul>
                     </div>
                 </div>
@@ -405,155 +398,32 @@
                     <div class="lang-content active" data-lang-content="zh-TW">
                         <h4 class="zh">療癒方案</h4>
                         <ul>
-                            <li class="zh">以「安心」為核心，重塑品牌語調</li>
-                            <li class="zh">設計對話式網站開場，模擬諮詢氛圍</li>
-                            <li class="zh">將資歷後移，先讓訪客感受被理解</li>
-                            <li class="zh">建立「心渡」品牌識別與故事</li>
-                            <li class="zh">設計降低諮詢門檻的預約流程</li>
+                            <li class="zh">重新設計視覺系統，採用溫暖色調</li>
+                            <li class="zh">以「空間」概念重塑網站體驗</li>
+                            <li class="zh">改寫文案，用對話式語氣</li>
+                            <li class="zh">設計清晰的用戶旅程與 CTA</li>
+                            <li class="zh">專業證照移至次要位置</li>
                         </ul>
                     </div>
                     <div class="lang-content" data-lang-content="zh-CN">
                         <h4 class="zh">疗愈方案</h4>
                         <ul>
-                            <li class="zh">以「安心」为核心，重塑品牌语调</li>
-                            <li class="zh">设计对话式网站开场，模拟咨询氛围</li>
-                            <li class="zh">将资历后移，先让访客感受被理解</li>
-                            <li class="zh">建立「心渡」品牌识别与故事</li>
-                            <li class="zh">设计降低咨询门槛的预约流程</li>
+                            <li class="zh">重新设计视觉系统，采用温暖色调</li>
+                            <li class="zh">以「空间」概念重塑网站体验</li>
+                            <li class="zh">改写文案，用对话式语气</li>
+                            <li class="zh">设计清晰的用户旅程与 CTA</li>
+                            <li class="zh">专业证照移至次要位置</li>
                         </ul>
                     </div>
                     <div class="lang-content" data-lang-content="en">
                         <h4>Healing Solution</h4>
                         <ul>
-                            <li>Reshape brand voice around "reassurance"</li>
-                            <li>Design conversational website opening</li>
-                            <li>Move credentials down, lead with understanding</li>
-                            <li>Create "Xin Du" brand identity and story</li>
-                            <li>Design low-barrier booking process</li>
+                            <li>Redesign visual system with warm tones</li>
+                            <li>Reshape website as a "space" concept</li>
+                            <li>Rewrite copy with conversational tone</li>
+                            <li>Design clear user journey and CTAs</li>
+                            <li>Move credentials to secondary position</li>
                         </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Brand Concept -->
-    <section class="section">
-        <div class="container">
-            <div class="brand-visual">
-                <div class="brand-visual-bg">
-                    <img src="xindu-images/brand-concept.png" alt="Brand Concept">
-                </div>
-                <div class="brand-visual-content">
-                    <div class="lang-content active" data-lang-content="zh-TW">
-                        <div class="brand-name-display zh">心渡</div>
-                        <p class="brand-tagline zh">用心陪伴你渡過</p>
-                    </div>
-                    <div class="lang-content" data-lang-content="zh-CN">
-                        <div class="brand-name-display zh">心渡</div>
-                        <p class="brand-tagline zh">用心陪伴你渡过</p>
-                    </div>
-                    <div class="lang-content" data-lang-content="en">
-                        <div class="brand-name-display">Xin Du</div>
-                        <p class="brand-tagline">Accompanying you with heart</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process -->
-    <section class="section" style="background:rgba(201,132,106,0.02);">
-        <div class="container">
-            <div class="content-block">
-                <div class="section-tag"><span class="section-tag-line"></span><span class="section-tag-text">Process</span></div>
-                <div class="lang-content active" data-lang-content="zh-TW"><h2 class="zh">療癒過程</h2></div>
-                <div class="lang-content" data-lang-content="zh-CN"><h2 class="zh">疗愈过程</h2></div>
-                <div class="lang-content" data-lang-content="en"><h2>The Healing Process</h2></div>
-
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-phase">
-                            <div class="timeline-week">Week</div>
-                            <div class="timeline-num">1</div>
-                        </div>
-                        <div class="timeline-content">
-                            <div class="lang-content active" data-lang-content="zh-TW">
-                                <h4 class="zh">聆聽：找到核心</h4>
-                                <p class="zh">在深度訪談中，我們發現 Michelle 最常收到的回饋是「跟妳說話很安心」。這句話成為了品牌核心——她的價值不在於多少張證書，而在於讓人感到被理解、被接住的能力。</p>
-                            </div>
-                            <div class="lang-content" data-lang-content="zh-CN">
-                                <h4 class="zh">聆听：找到核心</h4>
-                                <p class="zh">在深度访谈中，我们发现 Michelle 最常收到的回馈是「跟妳说话很安心」。这句话成为了品牌核心——她的价值不在于多少张证书，而在于让人感到被理解、被接住的能力。</p>
-                            </div>
-                            <div class="lang-content" data-lang-content="en">
-                                <h4>Listen: Finding the Core</h4>
-                                <p>During deep interviews, we discovered Michelle's most common feedback was "talking to you feels so reassuring." This became the brand core — her value isn't in certificates, but in making people feel understood and supported.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-phase">
-                            <div class="timeline-week">Week</div>
-                            <div class="timeline-num">2-3</div>
-                        </div>
-                        <div class="timeline-content">
-                            <div class="lang-content active" data-lang-content="zh-TW">
-                                <h4 class="zh">診斷：問題不在專業</h4>
-                                <p class="zh">問題不在於不夠專業，而在於專業的呈現方式阻隔了人與人之間的連結。網站需要的不是更多資歷，而是一個溫暖的邀請。</p>
-                            </div>
-                            <div class="lang-content" data-lang-content="zh-CN">
-                                <h4 class="zh">诊断：问题不在专业</h4>
-                                <p class="zh">问题不在于不够专业，而在于专业的呈现方式阻隔了人与人之间的连结。网站需要的不是更多资历，而是一个温暖的邀请。</p>
-                            </div>
-                            <div class="lang-content" data-lang-content="en">
-                                <h4>Diagnose: Not About Credentials</h4>
-                                <p>The problem wasn't lacking professionalism, but how professionalism was presented created distance. The website needed a warm invitation, not more credentials.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-phase">
-                            <div class="timeline-week">Week</div>
-                            <div class="timeline-num">4-5</div>
-                        </div>
-                        <div class="timeline-content">
-                            <div class="lang-content active" data-lang-content="zh-TW">
-                                <h4 class="zh">處方：心渡誕生</h4>
-                                <p class="zh">我們創造了「心渡」這個品牌名稱——意指「用心陪伴你渡過」。視覺上採用溫暖的大地色系，網站首頁不再是資歷介紹，而是一句：「你今天，還好嗎？」</p>
-                            </div>
-                            <div class="lang-content" data-lang-content="zh-CN">
-                                <h4 class="zh">处方：心渡诞生</h4>
-                                <p class="zh">我们创造了「心渡」这个品牌名称——意指「用心陪伴你渡过」。视觉上采用温暖的大地色系，网站首页不再是资历介绍，而是一句：「你今天，还好吗？」</p>
-                            </div>
-                            <div class="lang-content" data-lang-content="en">
-                                <h4>Prescription: Xin Du is Born</h4>
-                                <p>We created "Xin Du" — meaning "accompanying you with heart." Warm earth tones replaced clinical colors. The homepage now opens with: "How are you doing today?"</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-phase">
-                            <div class="timeline-week">Week</div>
-                            <div class="timeline-num">6</div>
-                        </div>
-                        <div class="timeline-content">
-                            <div class="lang-content active" data-lang-content="zh-TW">
-                                <h4 class="zh">上線與陪伴</h4>
-                                <p class="zh">網站上線後持續優化，包含預約系統加入「今天想聊什麼」的開放式問題，降低諮詢門檻，讓第一步變得更容易。</p>
-                            </div>
-                            <div class="lang-content" data-lang-content="zh-CN">
-                                <h4 class="zh">上线与陪伴</h4>
-                                <p class="zh">网站上线后持续优化，包含预约系统加入「今天想聊什么」的开放式问题，降低咨询门槛，让第一步变得更容易。</p>
-                            </div>
-                            <div class="lang-content" data-lang-content="en">
-                                <h4>Launch & Support</h4>
-                                <p>Post-launch optimization included adding "What's on your mind today?" to the booking system, lowering barriers and making the first step easier.</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -572,43 +442,35 @@
             <div class="gallery">
                 <div class="gallery-grid">
                     <div class="gallery-item">
-                        <img src="xindu-images/portrait.png" alt="品牌形象照">
+                        <img src="demo-sites/xindu-demo/images/room-detail.png" alt="空間細節">
                         <div class="gallery-caption">
-                            <span class="lang-content active" data-lang-content="zh-TW" class="zh">品牌形象</span>
-                            <span class="lang-content" data-lang-content="zh-CN" class="zh">品牌形象</span>
-                            <span class="lang-content" data-lang-content="en">Brand Portrait</span>
+                            <span class="lang-content active" data-lang-content="zh-TW" class="zh">空間細節 — 營造安心氛圍</span>
+                            <span class="lang-content" data-lang-content="zh-CN" class="zh">空间细节 — 营造安心氛围</span>
+                            <span class="lang-content" data-lang-content="en">Space Details — Creating Comfort</span>
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="xindu-images/tea-moment.png" alt="服務情境">
+                        <img src="demo-sites/xindu-demo/images/tea-moment.png" alt="茶敘時刻">
                         <div class="gallery-caption">
-                            <span class="lang-content active" data-lang-content="zh-TW" class="zh">服務情境 — 陪伴時刻</span>
-                            <span class="lang-content" data-lang-content="zh-CN" class="zh">服务情境 — 陪伴时刻</span>
-                            <span class="lang-content" data-lang-content="en">Service Context — Companionship</span>
+                            <span class="lang-content active" data-lang-content="zh-TW" class="zh">茶敘時刻 — 對話的開始</span>
+                            <span class="lang-content" data-lang-content="zh-CN" class="zh">茶叙时刻 — 对话的开始</span>
+                            <span class="lang-content" data-lang-content="en">Tea Moment — Beginning of Dialogue</span>
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="xindu-images/room-detail.png" alt="空間細節">
+                        <img src="demo-sites/xindu-demo/images/portrait.png" alt="諮詢師形象">
                         <div class="gallery-caption">
-                            <span class="lang-content active" data-lang-content="zh-TW" class="zh">空間細節 — 安心角落</span>
-                            <span class="lang-content" data-lang-content="zh-CN" class="zh">空间细节 — 安心角落</span>
-                            <span class="lang-content" data-lang-content="en">Space Detail — Safe Corner</span>
+                            <span class="lang-content active" data-lang-content="zh-TW" class="zh">專業形象 — 溫暖而可靠</span>
+                            <span class="lang-content" data-lang-content="zh-CN" class="zh">专业形象 — 温暖而可靠</span>
+                            <span class="lang-content" data-lang-content="en">Professional Image — Warm & Reliable</span>
                         </div>
                     </div>
                     <div class="gallery-item">
-                        <img src="xindu-images/brand-concept.png" alt="品牌概念">
+                        <img src="demo-sites/xindu-demo/images/brand-concept.png" alt="品牌概念">
                         <div class="gallery-caption">
-                            <span class="lang-content active" data-lang-content="zh-TW" class="zh">品牌概念 — 連結意象</span>
-                            <span class="lang-content" data-lang-content="zh-CN" class="zh">品牌概念 — 连结意象</span>
-                            <span class="lang-content" data-lang-content="en">Brand Concept — Connection</span>
-                        </div>
-                    </div>
-                    <div class="gallery-item full">
-                        <img src="xindu-images/watercolor-bg.png" alt="視覺系統">
-                        <div class="gallery-caption">
-                            <span class="lang-content active" data-lang-content="zh-TW" class="zh">視覺系統 — 溫暖大地色調</span>
-                            <span class="lang-content" data-lang-content="zh-CN" class="zh">视觉系统 — 温暖大地色调</span>
-                            <span class="lang-content" data-lang-content="en">Visual System — Warm Earth Tones</span>
+                            <span class="lang-content active" data-lang-content="zh-TW" class="zh">品牌概念 — 心的擺渡</span>
+                            <span class="lang-content" data-lang-content="zh-CN" class="zh">品牌概念 — 心的摆渡</span>
+                            <span class="lang-content" data-lang-content="en">Brand Concept — Ferry of the Heart</span>
                         </div>
                     </div>
                 </div>
@@ -617,7 +479,7 @@
     </section>
 
     <!-- Results -->
-    <section class="section" style="background:rgba(201,132,106,0.02);">
+    <section class="section" style="background:rgba(196,164,132,0.03);">
         <div class="container">
             <div class="content-block">
                 <div class="section-tag"><span class="section-tag-line"></span><span class="section-tag-text">Results</span></div>
@@ -627,22 +489,22 @@
 
                 <div class="results-grid">
                     <div class="result-card">
-                        <div class="result-number">40<span class="result-unit">%</span></div>
-                        <div class="lang-content active" data-lang-content="zh-TW"><div class="result-label zh">線上預約諮詢增加</div></div>
-                        <div class="lang-content" data-lang-content="zh-CN"><div class="result-label zh">线上预约咨询增加</div></div>
-                        <div class="lang-content" data-lang-content="en"><div class="result-label">Increase in Online Bookings</div></div>
+                        <div class="result-number">2.5<span class="result-unit">x</span></div>
+                        <div class="lang-content active" data-lang-content="zh-TW"><div class="result-label zh">網站停留時間提升</div></div>
+                        <div class="lang-content" data-lang-content="zh-CN"><div class="result-label zh">网站停留时间提升</div></div>
+                        <div class="lang-content" data-lang-content="en"><div class="result-label">Increase in Time on Site</div></div>
                     </div>
                     <div class="result-card">
-                        <div class="result-number">3<span class="result-unit">個月</span></div>
-                        <div class="lang-content active" data-lang-content="zh-TW"><div class="result-label zh">即見顯著成效</div></div>
-                        <div class="lang-content" data-lang-content="zh-CN"><div class="result-label zh">即见显著成效</div></div>
-                        <div class="lang-content" data-lang-content="en"><div class="result-label">To See Significant Results</div></div>
+                        <div class="result-number">65<span class="result-unit">%</span></div>
+                        <div class="lang-content active" data-lang-content="zh-TW"><div class="result-label zh">預約轉換率提升</div></div>
+                        <div class="lang-content" data-lang-content="zh-CN"><div class="result-label zh">预约转换率提升</div></div>
+                        <div class="lang-content" data-lang-content="en"><div class="result-label">Booking Conversion Increase</div></div>
                     </div>
                     <div class="result-card">
                         <div class="result-number">100<span class="result-unit">%</span></div>
-                        <div class="lang-content active" data-lang-content="zh-TW"><div class="result-label zh">定價信心提升</div></div>
-                        <div class="lang-content" data-lang-content="zh-CN"><div class="result-label zh">定价信心提升</div></div>
-                        <div class="lang-content" data-lang-content="en"><div class="result-label">Pricing Confidence Boost</div></div>
+                        <div class="lang-content active" data-lang-content="zh-TW"><div class="result-label zh">客戶滿意度</div></div>
+                        <div class="lang-content" data-lang-content="zh-CN"><div class="result-label zh">客户满意度</div></div>
+                        <div class="lang-content" data-lang-content="en"><div class="result-label">Client Satisfaction</div></div>
                     </div>
                 </div>
             </div>
@@ -655,20 +517,22 @@
             <div class="testimonial">
                 <div class="testimonial-content">
                     <div class="lang-content active" data-lang-content="zh-TW">
-                        <p class="testimonial-text zh">「以前每次介紹自己都很心虛，現在我可以自信地說：『我是心渡的 Michelle，陪伴人們渡過生命轉折的諮詢師。』最神奇的是，我不再害怕報價了——因為我終於知道自己的價值在哪裡。」</p>
+                        <p class="testimonial-text zh">「新網站上線後，有好幾個個案告訴我：『一進到你的網站，就覺得這裡是我能說話的地方。』這正是我一直想傳達的感覺。專業很重要，但讓人感到被接納，才是療癒的開始。」</p>
                     </div>
                     <div class="lang-content" data-lang-content="zh-CN">
-                        <p class="testimonial-text zh">「以前每次介绍自己都很心虚，现在我可以自信地说：『我是心渡的 Michelle，陪伴人们渡过生命转折的咨询师。』最神奇的是，我不再害怕报价了——因为我终于知道自己的价值在哪里。」</p>
+                        <p class="testimonial-text zh">「新网站上线后，有好几个个案告诉我：『一进到你的网站，就觉得这里是我能说话的地方。』这正是我一直想传达的感觉。专业很重要，但让人感到被接纳，才是疗愈的开始。」</p>
                     </div>
                     <div class="lang-content" data-lang-content="en">
-                        <p class="testimonial-text">"I used to feel uncertain introducing myself. Now I confidently say: 'I'm Michelle from Xin Du, a consultant who accompanies people through life transitions.' The most magical thing is I'm no longer afraid to quote prices — because I finally know where my value lies."</p>
+                        <p class="testimonial-text">"After the new website launched, several clients told me: 'The moment I entered your website, I felt this was a place where I could speak.' That's exactly what I wanted to convey. Professionalism matters, but making people feel accepted is where healing begins."</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="testimonial-avatar">
-                            <img src="xindu-images/portrait.png" alt="Michelle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
                         </div>
                         <div class="testimonial-info">
-                            <h5>Michelle</h5>
+                            <h5 class="lang-content active" data-lang-content="zh-TW">阿慧</h5>
+                            <h5 class="lang-content" data-lang-content="zh-CN">阿慧</h5>
+                            <h5 class="lang-content" data-lang-content="en">Hui</h5>
                             <span class="lang-content active" data-lang-content="zh-TW" class="zh">心渡創辦人</span>
                             <span class="lang-content" data-lang-content="zh-CN" class="zh">心渡创办人</span>
                             <span class="lang-content" data-lang-content="en">Founder, Xin Du</span>
