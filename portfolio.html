@@ -95,56 +95,35 @@
         .section-tag-text { font-size:0.65rem; font-weight:600; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold); }
         .section-title { font-family:var(--font-display); font-size:2rem; font-weight:300; color:var(--cream); }
 
-        .portfolio-grid { display:grid; gap:2.5rem; }
+        /* All cases in card grid */
+        .cases-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:2rem; }
         
-        .case-featured { display:grid; grid-template-columns:1.2fr 1fr; gap:3rem; background:var(--bg-card); border:1px solid rgba(212,165,116,0.1); border-radius:24px; overflow:hidden; transition:all 0.5s var(--ease); }
-        .case-featured:hover { border-color:rgba(212,165,116,0.25); box-shadow:0 30px 80px rgba(0,0,0,0.4); transform:translateY(-5px); }
-        
-        .case-featured-link { text-decoration:none; color:inherit; display:block; }
-        .case-visual { position:relative; min-height:400px; background:linear-gradient(135deg, rgba(212,165,116,0.12) 0%, rgba(160,184,156,0.08) 100%); display:flex; align-items:center; justify-content:center; overflow:hidden; }
-        .case-visual::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 30% 30%, rgba(212,165,116,0.15), transparent 60%); }
-        .case-visual-icon { width:120px; height:120px; background:linear-gradient(135deg,var(--gold) 0%,var(--gold-light) 100%); border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 20px 60px rgba(212,165,116,0.3); position:relative; z-index:1; }
-        .case-visual-preview { position:absolute; inset:0; z-index:2; }
-        .case-visual-preview img { width:100%; height:100%; object-fit:cover; transition:transform 0.6s var(--ease); }
-        .case-featured:hover .case-visual-preview img { transform:scale(1.05); }
-        .case-visual-overlay { position:absolute; inset:0; background:linear-gradient(135deg, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.6) 100%); z-index:3; display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity 0.4s; }
-        .case-featured:hover .case-visual-overlay { opacity:1; }
-        .case-visual-overlay-btn { background:rgba(212,165,116,0.9); color:var(--bg-deep); padding:0.8rem 1.5rem; border-radius:100px; font-size:0.85rem; font-weight:500; display:flex; align-items:center; gap:0.5rem; transform:translateY(10px); transition:all 0.4s var(--ease); }
-        .case-featured:hover .case-visual-overlay-btn { transform:translateY(0); }
-        .case-visual-overlay-btn svg { width:16px; height:16px; }
-        .btn-view-case { margin-top:0.5rem; }
-        .case-visual-icon svg { width:60px; height:60px; color:var(--bg-deep); }
-        
-        .case-info { padding:3rem; display:flex; flex-direction:column; justify-content:center; }
-        .case-badge { display:inline-flex; align-items:center; gap:0.5rem; background:linear-gradient(135deg,rgba(160,184,156,0.15),rgba(160,184,156,0.05)); color:var(--sage); font-size:0.75rem; font-weight:500; padding:0.5rem 1rem; border-radius:100px; margin-bottom:1.5rem; width:fit-content; }
-        .case-badge svg { width:14px; height:14px; }
-        .case-title { font-family:var(--font-display); font-size:clamp(1.8rem,3vw,2.2rem); color:var(--cream); margin-bottom:0.75rem; line-height:1.3; }
-        .case-subtitle { font-size:1rem; color:var(--gold); margin-bottom:1.5rem; font-style:italic; }
-        .case-desc { font-size:0.95rem; color:var(--text-secondary); line-height:1.8; margin-bottom:2rem; }
-        
-        .case-tags { display:flex; flex-wrap:wrap; gap:0.6rem; margin-bottom:2rem; }
-        .case-tag { background:rgba(212,165,116,0.1); border:1px solid rgba(212,165,116,0.15); color:var(--gold-light); font-size:0.75rem; padding:0.4rem 0.9rem; border-radius:100px; transition:all 0.3s; }
-        .case-tag:hover { background:rgba(212,165,116,0.2); border-color:var(--gold); }
-
-        .cases-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:2rem; }
-        
-        .case-card { background:var(--bg-card); border:1px solid rgba(212,165,116,0.08); border-radius:20px; overflow:hidden; transition:all 0.4s var(--ease); position:relative; }
+        .case-card { background:var(--bg-card); border:1px solid rgba(212,165,116,0.08); border-radius:20px; overflow:hidden; transition:all 0.4s var(--ease); position:relative; text-decoration:none; color:inherit; display:block; }
         .case-card:hover { transform:translateY(-8px); border-color:rgba(212,165,116,0.2); box-shadow:0 25px 60px rgba(0,0,0,0.4); }
         
-        .case-card-visual { position:relative; height:200px; background:linear-gradient(135deg, rgba(212,165,116,0.1) 0%, rgba(160,184,156,0.08) 100%); display:flex; align-items:center; justify-content:center; }
-        .case-card-visual::before { content:''; position:absolute; bottom:0; left:0; right:0; height:80px; background:linear-gradient(to top, var(--bg-card), transparent); }
+        .case-card-visual { position:relative; height:220px; background:linear-gradient(135deg, rgba(212,165,116,0.1) 0%, rgba(160,184,156,0.08) 100%); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+        .case-card-visual::before { content:''; position:absolute; bottom:0; left:0; right:0; height:80px; background:linear-gradient(to top, var(--bg-card), transparent); z-index:2; }
+        .case-card-visual img { width:100%; height:100%; object-fit:cover; transition:transform 0.5s var(--ease); }
+        .case-card:hover .case-card-visual img { transform:scale(1.08); }
         .case-card-icon { width:70px; height:70px; background:linear-gradient(135deg,var(--gold) 0%,var(--gold-light) 100%); border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 15px 40px rgba(212,165,116,0.25); }
         .case-card-icon svg { width:35px; height:35px; color:var(--bg-deep); }
         
-        .case-card-content { padding:2rem; }
-        .case-card .case-badge { margin-bottom:1rem; }
-        .case-card .case-title { font-size:1.4rem; margin-bottom:0.5rem; }
-        .case-card .case-subtitle { font-size:0.9rem; margin-bottom:1rem; }
-        .case-card .case-desc { font-size:0.9rem; margin-bottom:1.5rem; }
+        .case-card-overlay { position:absolute; inset:0; background:linear-gradient(135deg, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.5) 100%); z-index:3; display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity 0.4s; }
+        .case-card:hover .case-card-overlay { opacity:1; }
+        .case-card-overlay-btn { background:rgba(212,165,116,0.9); color:var(--bg-deep); padding:0.7rem 1.3rem; border-radius:100px; font-size:0.8rem; font-weight:500; display:flex; align-items:center; gap:0.4rem; }
+        .case-card-overlay-btn svg { width:14px; height:14px; }
 
-        .case-card.coming-soon { opacity:0.7; }
-        .case-card.coming-soon:hover { transform:none; box-shadow:none; }
-        .coming-badge { position:absolute; top:1rem; right:1rem; background:rgba(0,0,0,0.8); color:var(--text-muted); font-size:0.7rem; padding:0.4rem 0.9rem; border-radius:100px; z-index:2; backdrop-filter:blur(10px); letter-spacing:0.05em; }
+        .case-card-content { padding:2rem; }
+        .case-badge { display:inline-flex; align-items:center; gap:0.5rem; background:linear-gradient(135deg,rgba(160,184,156,0.15),rgba(160,184,156,0.05)); color:var(--sage); font-size:0.75rem; font-weight:500; padding:0.5rem 1rem; border-radius:100px; margin-bottom:1rem; width:fit-content; }
+        .case-badge svg { width:14px; height:14px; }
+        .case-badge.featured { background:linear-gradient(135deg,rgba(212,165,116,0.2),rgba(212,165,116,0.08)); color:var(--gold); }
+        .case-title { font-family:var(--font-display); font-size:1.4rem; color:var(--cream); margin-bottom:0.5rem; line-height:1.3; }
+        .case-subtitle { font-size:0.9rem; color:var(--gold); margin-bottom:1rem; font-style:italic; }
+        .case-desc { font-size:0.9rem; color:var(--text-secondary); line-height:1.8; margin-bottom:1.5rem; }
+        
+        .case-tags { display:flex; flex-wrap:wrap; gap:0.5rem; }
+        .case-tag { background:rgba(212,165,116,0.1); border:1px solid rgba(212,165,116,0.15); color:var(--gold-light); font-size:0.7rem; padding:0.35rem 0.75rem; border-radius:100px; transition:all 0.3s; }
+        .case-tag:hover { background:rgba(212,165,116,0.2); border-color:var(--gold); }
 
         .process-section { background:var(--bg-dark); padding:5rem 4vw; margin-top:2rem; }
         .process-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.5rem; max-width:1000px; margin:0 auto; }
@@ -177,16 +156,12 @@
         .footer-links a:hover { color:var(--gold); }
         .footer-copy { font-size:0.8rem; color:var(--text-muted); }
 
-        @media (max-width:900px) {
-            .case-featured { grid-template-columns:1fr; }
-            .case-visual { min-height:280px; }
-            .case-info { padding:2rem; }
-        }
         @media (max-width:600px) {
             .page-header { padding:8rem 1.5rem 3rem; }
             .section { padding:3rem 1.5rem; }
             .intro-box { padding:1.5rem; }
             .footer-content { flex-direction:column; text-align:center; }
+            .cases-grid { grid-template-columns:1fr; }
         }
     </style>
 </head>
@@ -201,8 +176,8 @@
                 <li><a href="about.html"><span class="lang-content active" data-lang-content="zh-TW">關於</span><span class="lang-content" data-lang-content="zh-CN">关于</span><span class="lang-content" data-lang-content="en">About</span></a></li>
                 <li><a href="services.html"><span class="lang-content active" data-lang-content="zh-TW">服務</span><span class="lang-content" data-lang-content="zh-CN">服务</span><span class="lang-content" data-lang-content="en">Services</span></a></li>
                 <li><a href="portfolio.html" class="active"><span class="lang-content active" data-lang-content="zh-TW">作品</span><span class="lang-content" data-lang-content="zh-CN">作品</span><span class="lang-content" data-lang-content="en">Works</span></a></li>
-                <li><a href="lounge.html"><span class="lang-content active" data-lang-content="zh-TW">療癒實驗室</span><span class="lang-content" data-lang-content="zh-CN">疗愈实验室</span><span class="lang-content" data-lang-content="en">Healing Lab</span></a></li>
-                <li><a href="ai-assistant.html"><span class="lang-content active" data-lang-content="zh-TW">AI 智能分析助理</span><span class="lang-content" data-lang-content="zh-CN">AI 智能分析助理</span><span class="lang-content" data-lang-content="en">AI Assistant</span></a></li>
+                <li><a href="case-studies.html"><span class="lang-content active" data-lang-content="zh-TW">示範案例</span><span class="lang-content" data-lang-content="zh-CN">示范案例</span><span class="lang-content" data-lang-content="en">Case Studies</span></a></li>
+                <li><a href="lounge.html"><span class="lang-content active" data-lang-content="zh-TW">會客室</span><span class="lang-content" data-lang-content="zh-CN">会客室</span><span class="lang-content" data-lang-content="en">Lounge</span></a></li>
                 <li><a href="contact.html"><span class="lang-content active" data-lang-content="zh-TW">聯絡</span><span class="lang-content" data-lang-content="zh-CN">联络</span><span class="lang-content" data-lang-content="en">Contact</span></a></li>
             </ul>
             <div class="lang-selector">
@@ -250,15 +225,14 @@
                 </div>
             </div>
 
-            <div class="portfolio-grid">
-                <a href="case-spiritual-healing.html" class="case-featured-link">
-                <div class="case-featured">
-                    <div class="case-visual">
-                        <div class="case-visual-preview">
-                            <img src="innerlight-demo/images/hero-portrait.png" alt="Inner Light Studio 案例預覽">
-                        </div>
-                        <div class="case-visual-overlay">
-                            <span class="case-visual-overlay-btn">
+            <!-- All Three Cases in Card Grid -->
+            <div class="cases-grid">
+                <!-- Case 1: 靈性療癒工作室 -->
+                <a href="case-spiritual-healing.html" class="case-card">
+                    <div class="case-card-visual">
+                        <img src="innerlight-demo/images/hero-portrait.png" alt="Inner Light Studio">
+                        <div class="case-card-overlay">
+                            <span class="case-card-overlay-btn">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                                 <span class="lang-content active" data-lang-content="zh-TW">查看案例</span>
                                 <span class="lang-content" data-lang-content="zh-CN">查看案例</span>
@@ -266,8 +240,8 @@
                             </span>
                         </div>
                     </div>
-                    <div class="case-info">
-                        <div class="case-badge">
+                    <div class="case-card-content">
+                        <div class="case-badge featured">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
                             <span class="lang-content active" data-lang-content="zh-TW">精選案例</span>
                             <span class="lang-content" data-lang-content="zh-CN">精选案例</span>
@@ -276,86 +250,100 @@
                         <div class="lang-content active" data-lang-content="zh-TW">
                             <h3 class="case-title zh">靈性療癒工作室</h3>
                             <p class="case-subtitle zh">從模糊定位到清晰願景</p>
-                            <p class="case-desc zh">一位資深靈性導師，擁有豐富經驗卻苦於品牌形象無法傳達內在深度。透過品牌療癒，我們重新定義核心價值，建立與目標受眾的深度連結，讓她的專業能量得以完整呈現。</p>
+                            <p class="case-desc zh">一位資深靈性導師，擁有豐富經驗卻苦於品牌形象無法傳達內在深度。透過品牌療癒，重新定義核心價值。</p>
                         </div>
                         <div class="lang-content" data-lang-content="zh-CN">
                             <h3 class="case-title zh">灵性疗愈工作室</h3>
                             <p class="case-subtitle zh">从模糊定位到清晰愿景</p>
-                            <p class="case-desc zh">一位资深灵性导师，拥有丰富经验却苦于品牌形象无法传达内在深度。通过品牌疗愈，我们重新定义核心价值，建立与目标受众的深度连结，让她的专业能量得以完整呈现。</p>
+                            <p class="case-desc zh">一位资深灵性导师，拥有丰富经验却苦于品牌形象无法传达内在深度。通过品牌疗愈，重新定义核心价值。</p>
                         </div>
                         <div class="lang-content" data-lang-content="en">
                             <h3 class="case-title">Spiritual Healing Studio</h3>
                             <p class="case-subtitle">From Unclear Positioning to Clear Vision</p>
-                            <p class="case-desc">A senior spiritual guide with rich experience struggled to convey inner depth through brand image. Through brand healing, we redefined core values and built deep connections with the target audience.</p>
+                            <p class="case-desc">A senior spiritual guide with rich experience struggled to convey inner depth through brand image. Through brand healing, redefined core values.</p>
                         </div>
                         <div class="case-tags">
                             <span class="case-tag">Brand Strategy</span>
                             <span class="case-tag">Visual Identity</span>
-                            <span class="case-tag">Website Design</span>
+                            <span class="case-tag">Website</span>
                         </div>
-                        <span class="btn btn-primary btn-view-case">
-                            <span class="lang-content active" data-lang-content="zh-TW">查看完整案例</span>
-                            <span class="lang-content" data-lang-content="zh-CN">查看完整案例</span>
-                            <span class="lang-content" data-lang-content="en">View Full Case</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                        </span>
                     </div>
-                </div>
                 </a>
 
-                <div class="cases-row">
-                    <div class="case-card coming-soon">
-                        <span class="coming-badge">Coming Soon</span>
-                        <div class="case-card-visual">
-                            <div class="case-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 12.75l6 6 9-13.5"/></svg></div>
-                        </div>
-                        <div class="case-card-content">
-                            <div class="case-badge"><span class="lang-content active" data-lang-content="zh-TW">網站設計</span><span class="lang-content" data-lang-content="zh-CN">网站设计</span><span class="lang-content" data-lang-content="en">Web Design</span></div>
-                            <div class="lang-content active" data-lang-content="zh-TW">
-                                <h3 class="case-title zh">身心諮詢師品牌</h3>
-                                <p class="case-subtitle zh">專業與溫度的平衡</p>
-                                <p class="case-desc zh">如何在保持專業形象的同時，讓網站散發溫暖的療癒氛圍？</p>
-                            </div>
-                            <div class="lang-content" data-lang-content="zh-CN">
-                                <h3 class="case-title zh">身心咨询师品牌</h3>
-                                <p class="case-subtitle zh">专业与温度的平衡</p>
-                                <p class="case-desc zh">如何在保持专业形象的同时，让网站散发温暖的疗愈氛围？</p>
-                            </div>
-                            <div class="lang-content" data-lang-content="en">
-                                <h3 class="case-title">Wellness Consultant Brand</h3>
-                                <p class="case-subtitle">Balancing Professionalism and Warmth</p>
-                                <p class="case-desc">How to maintain a professional image while radiating a warm, healing atmosphere?</p>
-                            </div>
-                            <div class="case-tags"><span class="case-tag">Web Design</span><span class="case-tag">UX</span></div>
+                <!-- Case 2: 心渡 Wellness Consultant -->
+                <a href="case-wellness-consultant.html" class="case-card">
+                    <div class="case-card-visual">
+                        <img src="xindu-images/hero-space.png" alt="心渡諮詢空間">
+                        <div class="case-card-overlay">
+                            <span class="case-card-overlay-btn">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                <span class="lang-content active" data-lang-content="zh-TW">查看案例</span>
+                                <span class="lang-content" data-lang-content="zh-CN">查看案例</span>
+                                <span class="lang-content" data-lang-content="en">View Case</span>
+                            </span>
                         </div>
                     </div>
+                    <div class="case-card-content">
+                        <div class="case-badge"><span class="lang-content active" data-lang-content="zh-TW">網站設計</span><span class="lang-content" data-lang-content="zh-CN">网站设计</span><span class="lang-content" data-lang-content="en">Web Design</span></div>
+                        <div class="lang-content active" data-lang-content="zh-TW">
+                            <h3 class="case-title zh">心渡 身心諮詢師品牌</h3>
+                            <p class="case-subtitle zh">專業與溫度的平衡</p>
+                            <p class="case-desc zh">如何在保持專業形象的同時，讓網站散發溫暖的療癒氛圍？從「冰冷的證書牆」蛻變為「溫暖的對話邀請」。</p>
+                        </div>
+                        <div class="lang-content" data-lang-content="zh-CN">
+                            <h3 class="case-title zh">心渡 身心咨询师品牌</h3>
+                            <p class="case-subtitle zh">专业与温度的平衡</p>
+                            <p class="case-desc zh">如何在保持专业形象的同时，让网站散发温暖的疗愈氛围？从「冰冷的证书墙」蜕变为「温暖的对话邀请」。</p>
+                        </div>
+                        <div class="lang-content" data-lang-content="en">
+                            <h3 class="case-title">Xin Du Wellness Consultant</h3>
+                            <p class="case-subtitle">Balancing Professionalism and Warmth</p>
+                            <p class="case-desc">How to maintain a professional image while radiating a warm, healing atmosphere? From "cold certificate wall" to "warm conversation invitation".</p>
+                        </div>
+                        <div class="case-tags">
+                            <span class="case-tag">Web Design</span>
+                            <span class="case-tag">UX Strategy</span>
+                            <span class="case-tag">Brand Voice</span>
+                        </div>
+                    </div>
+                </a>
 
-                    <div class="case-card coming-soon">
-                        <span class="coming-badge">Coming Soon</span>
-                        <div class="case-card-visual">
-                            <div class="case-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg></div>
-                        </div>
-                        <div class="case-card-content">
-                            <div class="case-badge"><span class="lang-content active" data-lang-content="zh-TW">完整重建</span><span class="lang-content" data-lang-content="zh-CN">完整重建</span><span class="lang-content" data-lang-content="en">Full Rebuild</span></div>
-                            <div class="lang-content active" data-lang-content="zh-TW">
-                                <h3 class="case-title zh">芳療品牌轉型</h3>
-                                <p class="case-subtitle zh">從代購到自有品牌</p>
-                                <p class="case-desc zh">一個芳療愛好者如何從代購轉型，建立屬於自己的品牌故事。</p>
-                            </div>
-                            <div class="lang-content" data-lang-content="zh-CN">
-                                <h3 class="case-title zh">芳疗品牌转型</h3>
-                                <p class="case-subtitle zh">从代购到自有品牌</p>
-                                <p class="case-desc zh">一个芳疗爱好者如何从代购转型，建立属于自己的品牌故事。</p>
-                            </div>
-                            <div class="lang-content" data-lang-content="en">
-                                <h3 class="case-title">Aromatherapy Brand Transformation</h3>
-                                <p class="case-subtitle">From Reseller to Own Brand</p>
-                                <p class="case-desc">How an aromatherapy enthusiast transformed from reselling to building their own brand story.</p>
-                            </div>
-                            <div class="case-tags"><span class="case-tag">Brand Strategy</span><span class="case-tag">Visual Identity</span></div>
+                <!-- Case 3: 植覺 Aromatherapy Brand -->
+                <a href="case-aromatherapy-brand.html" class="case-card">
+                    <div class="case-card-visual">
+                        <img src="zhijue-images/hero-workshop.png" alt="植覺調香工作室">
+                        <div class="case-card-overlay">
+                            <span class="case-card-overlay-btn">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                <span class="lang-content active" data-lang-content="zh-TW">查看案例</span>
+                                <span class="lang-content" data-lang-content="zh-CN">查看案例</span>
+                                <span class="lang-content" data-lang-content="en">View Case</span>
+                            </span>
                         </div>
                     </div>
-                </div>
+                    <div class="case-card-content">
+                        <div class="case-badge"><span class="lang-content active" data-lang-content="zh-TW">完整重建</span><span class="lang-content" data-lang-content="zh-CN">完整重建</span><span class="lang-content" data-lang-content="en">Full Rebuild</span></div>
+                        <div class="lang-content active" data-lang-content="zh-TW">
+                            <h3 class="case-title zh">植覺 芳療品牌轉型</h3>
+                            <p class="case-subtitle zh">從代購到自有品牌</p>
+                            <p class="case-desc zh">一個芳療愛好者如何從代購轉型，建立屬於自己的品牌故事。從「中間人」蛻變為「品牌主理人」。</p>
+                        </div>
+                        <div class="lang-content" data-lang-content="zh-CN">
+                            <h3 class="case-title zh">植觉 芳疗品牌转型</h3>
+                            <p class="case-subtitle zh">从代购到自有品牌</p>
+                            <p class="case-desc zh">一个芳疗爱好者如何从代购转型，建立属于自己的品牌故事。从「中间人」蜕变为「品牌主理人」。</p>
+                        </div>
+                        <div class="lang-content" data-lang-content="en">
+                            <h3 class="case-title">Scent & Soul Brand Transformation</h3>
+                            <p class="case-subtitle">From Reseller to Own Brand</p>
+                            <p class="case-desc">How an aromatherapy enthusiast transformed from reselling to building their own brand story. From "middleman" to "brand founder".</p>
+                        </div>
+                        <div class="case-tags">
+                            <span class="case-tag">Brand Strategy</span>
+                            <span class="case-tag">Visual Identity</span>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -409,7 +397,7 @@
         <div class="footer-content">
             <div class="footer-logo">SPACE BETWEEN HEALING</div>
             <div class="footer-links"><a href="about.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
-            <p class="footer-copy">© 2024 Space Between Healing. All rights reserved.</p>
+            <p class="footer-copy">© 2025 Space Between Healing. All rights reserved.</p>
         </div>
     </footer>
 
