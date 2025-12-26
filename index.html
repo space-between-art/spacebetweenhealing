@@ -94,6 +94,19 @@
         .lang-option:hover { background:rgba(212,165,116,0.1); color:var(--gold); }
         .lang-option.active { color:var(--gold); }
 
+        /* Mobile Menu Toggle */
+        .menu-toggle { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; z-index:1001; }
+        .menu-toggle span { display:block; width:24px; height:2px; background:var(--gold); transition:all 0.3s var(--ease); }
+        .menu-toggle.active span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
+        .menu-toggle.active span:nth-child(2) { opacity:0; }
+        .menu-toggle.active span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu { position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(10,10,10,0.98); backdrop-filter:blur(20px); z-index:999; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem; opacity:0; visibility:hidden; transition:all 0.4s var(--ease); }
+        .mobile-menu.open { opacity:1; visibility:visible; }
+        .mobile-menu a { font-family:var(--font-display); font-size:1.5rem; color:var(--text-secondary); text-decoration:none; padding:0.75rem 2rem; transition:all 0.3s; }
+        .mobile-menu a:hover { color:var(--gold); }
+
         /* Hero */
         .hero { min-height:100vh; display:flex; align-items:center; justify-content:center; position:relative; padding:8rem 4vw 4rem; }
         .hero-content { text-align:center; max-width:900px; }
@@ -143,45 +156,6 @@
         .service-title-zh { font-size:0.9rem; color:var(--text-secondary); margin-bottom:0.75rem; }
         .service-desc { font-size:0.9rem; color:var(--text-muted); line-height:1.7; }
 
-        /* Pricing */
-        .pricing-section { background:var(--bg-dark); }
-        .pricing-intro { text-align:center; max-width:600px; margin:0 auto 3rem; }
-        .pricing-intro p { color:var(--text-secondary); }
-        .pricing-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; }
-        .pricing-card { background:var(--bg-card); border:1px solid rgba(212,165,116,0.1); border-radius:20px; padding:2rem; position:relative; transition:all 0.4s var(--ease); }
-        .pricing-card:hover { transform:translateY(-5px); border-color:rgba(212,165,116,0.25); }
-        .pricing-card.featured { border-color:var(--gold); }
-        .pricing-card.featured::before { content:'Most Popular'; position:absolute; top:-12px; left:50%; transform:translateX(-50%); padding:0.4rem 1rem; background:var(--gold); color:var(--bg-deep); font-size:0.7rem; font-weight:600; letter-spacing:0.1em; border-radius:100px; }
-        .pricing-name { font-family:var(--font-display); font-size:1.4rem; margin-bottom:0.25rem; }
-        .pricing-name-zh { font-size:0.85rem; color:var(--text-secondary); margin-bottom:1rem; }
-        .pricing-price { font-family:var(--font-display); font-size:2.5rem; font-weight:300; color:var(--gold); margin-bottom:0.25rem; }
-        .pricing-price span { font-size:1rem; color:var(--text-muted); }
-        .pricing-timeline { font-size:0.8rem; color:var(--text-muted); margin-bottom:1.25rem; padding-bottom:1.25rem; border-bottom:1px solid rgba(212,165,116,0.1); }
-        .pricing-for { font-size:0.85rem; color:var(--sage); margin-bottom:1rem; }
-        .pricing-features { list-style:none; margin-bottom:1.5rem; }
-        .pricing-features li { font-size:0.85rem; color:var(--text-secondary); padding:0.4rem 0; padding-left:1.25rem; position:relative; }
-        .pricing-features li::before { content:'✓'; position:absolute; left:0; color:var(--gold); }
-        .pricing-btn { width:100%; justify-content:center; }
-
-        /* International */
-        .international-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
-        .international-text h2 { font-family:var(--font-display); font-size:clamp(1.8rem,3.5vw,2.5rem); font-weight:300; margin-bottom:1.25rem; line-height:1.3; }
-        .international-text p { color:var(--text-secondary); margin-bottom:1rem; line-height:1.8; }
-        .payment-badges { display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1.5rem; }
-        .payment-badge { padding:0.6rem 1.1rem; background:rgba(160,184,156,0.1); border:1px solid rgba(160,184,156,0.2); border-radius:100px; font-size:0.8rem; font-weight:500; color:var(--sage); transition:all 0.3s; }
-        .payment-badge:hover { background:rgba(160,184,156,0.15); transform:translateY(-2px); }
-        .globe-container { position:relative; height:350px; display:flex; align-items:center; justify-content:center; }
-        .globe { width:280px; height:280px; border-radius:50%; background:radial-gradient(circle at 30% 30%,rgba(212,165,116,0.12) 0%,transparent 50%),linear-gradient(135deg,var(--bg-card) 0%,var(--bg-dark) 100%); border:1px solid rgba(212,165,116,0.15); animation:globeFloat 6s ease-in-out infinite; box-shadow:inset 0 0 60px rgba(0,0,0,0.4),0 0 30px rgba(212,165,116,0.08); }
-        @keyframes globeFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
-        .globe-ring { position:absolute; border:1px dashed rgba(212,165,116,0.12); border-radius:50%; }
-        .globe-ring-1 { inset:-25px; animation:ringRotate 25s linear infinite; }
-        .globe-ring-2 { inset:-50px; animation:ringRotate 35s linear infinite reverse; }
-        @keyframes ringRotate { to{transform:rotate(360deg)} }
-        .region-marker { position:absolute; display:flex; flex-direction:column; align-items:center; gap:0.3rem; }
-        .marker-dot { width:8px; height:8px; background:var(--gold); border-radius:50%; box-shadow:0 0 12px var(--glow-gold); animation:pulse 2s ease-in-out infinite; }
-        @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.3)} }
-        .marker-label { padding:0.25rem 0.5rem; background:var(--bg-card); border:1px solid rgba(212,165,116,0.15); border-radius:4px; font-size:0.65rem; white-space:nowrap; }
-
         /* CTA */
         .cta-section { text-align:center; background:linear-gradient(180deg,var(--bg-deep) 0%,var(--bg-dark) 100%); }
         .cta-buttons { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-top:2rem; }
@@ -207,6 +181,7 @@
         }
         @media (max-width:768px) {
             .nav-links { display:none; }
+            .menu-toggle { display:flex; }
             .hero { padding:7rem 1.5rem 3rem; }
             .section { padding:4rem 1.5rem; }
             .hero-cta, .cta-buttons { flex-direction:column; align-items:center; }
@@ -224,6 +199,16 @@
     <div class="loader">
         <p class="loader-logo">SPACE BETWEEN</p>
         <div class="loader-bar"><div class="loader-progress"></div></div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="about.html"><span class="lang-content active" data-lang-content="zh-TW">關於</span><span class="lang-content" data-lang-content="zh-CN">关于</span><span class="lang-content" data-lang-content="en">About</span></a>
+        <a href="services.html"><span class="lang-content active" data-lang-content="zh-TW">服務</span><span class="lang-content" data-lang-content="zh-CN">服务</span><span class="lang-content" data-lang-content="en">Services</span></a>
+        <a href="portfolio.html"><span class="lang-content active" data-lang-content="zh-TW">作品</span><span class="lang-content" data-lang-content="zh-CN">作品</span><span class="lang-content" data-lang-content="en">Works</span></a>
+        <a href="lounge.html"><span class="lang-content active" data-lang-content="zh-TW">療癒實驗室</span><span class="lang-content" data-lang-content="zh-CN">疗愈实验室</span><span class="lang-content" data-lang-content="en">Healing Lab</span></a>
+        <a href="ai-assistant.html"><span class="lang-content active" data-lang-content="zh-TW">AI 助理</span><span class="lang-content" data-lang-content="zh-CN">AI 助理</span><span class="lang-content" data-lang-content="en">AI Assistant</span></a>
+        <a href="contact.html"><span class="lang-content active" data-lang-content="zh-TW">聯絡</span><span class="lang-content" data-lang-content="zh-CN">联络</span><span class="lang-content" data-lang-content="en">Contact</span></a>
     </div>
 
     <!-- Nav -->
@@ -246,6 +231,11 @@
                     <button class="lang-option" data-lang="en">🌍 English</button>
                 </div>
             </div>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
@@ -444,7 +434,6 @@
     <section class="section" style="background:var(--bg-deep);overflow:hidden;">
         <div class="container">
             <div class="reveal" style="background:linear-gradient(135deg,rgba(212,165,116,0.08) 0%,rgba(160,184,156,0.05) 100%);border:1px solid rgba(212,165,116,0.15);border-radius:24px;padding:3rem;position:relative;overflow:hidden;">
-                <!-- Decorative elements -->
                 <div style="position:absolute;top:-50px;right:-50px;width:200px;height:200px;background:radial-gradient(circle,rgba(212,165,116,0.15) 0%,transparent 70%);border-radius:50%;pointer-events:none;"></div>
                 <div style="position:absolute;bottom:-30px;left:-30px;width:150px;height:150px;background:radial-gradient(circle,rgba(160,184,156,0.1) 0%,transparent 70%);border-radius:50%;pointer-events:none;"></div>
                 
@@ -516,7 +505,7 @@
                 <div class="lang-content" data-lang-content="zh-CN"><p class="section-subtitle zh" style="margin-bottom:2rem;">如果你正在寻找一个能理解你理念、协助你整理方向的顾问伙伴，<br>欢迎与我们联络，开启一段温和而清晰的成长旅程。</p></div>
                 <div class="lang-content" data-lang-content="en"><p class="section-subtitle" style="margin-bottom:2rem;">If you're looking for a consulting partner who understands your vision and helps you find direction,<br>we invite you to connect with us and begin a gentle, clear journey of growth.</p></div>
                 <div class="cta-buttons">
-                    <a href="/cdn-cgi/l/email-protection#1179747d7d7e5162617072747374656674747f7974707d787f763f727e7c" class="btn btn-primary">
+                    <a href="mailto:hello@spacebetweenhealing.com" class="btn btn-primary">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
                         <span>Email Us</span>
                     </a>
@@ -536,6 +525,7 @@
             <div class="footer-links">
                 <a href="about.html"><span class="lang-content active" data-lang-content="zh-TW">關於</span><span class="lang-content" data-lang-content="zh-CN">关于</span><span class="lang-content" data-lang-content="en">About</span></a>
                 <a href="services.html"><span class="lang-content active" data-lang-content="zh-TW">服務</span><span class="lang-content" data-lang-content="zh-CN">服务</span><span class="lang-content" data-lang-content="en">Services</span></a>
+                <a href="portfolio.html"><span class="lang-content active" data-lang-content="zh-TW">作品</span><span class="lang-content" data-lang-content="zh-CN">作品</span><span class="lang-content" data-lang-content="en">Works</span></a>
                 <a href="lounge.html"><span class="lang-content active" data-lang-content="zh-TW">療癒實驗室</span><span class="lang-content" data-lang-content="zh-CN">疗愈实验室</span><span class="lang-content" data-lang-content="en">Healing Lab</span></a>
                 <a href="contact.html"><span class="lang-content active" data-lang-content="zh-TW">聯絡</span><span class="lang-content" data-lang-content="zh-CN">联络</span><span class="lang-content" data-lang-content="en">Contact</span></a>
                 <a href="privacy.html"><span class="lang-content active" data-lang-content="zh-TW">私隱政策</span><span class="lang-content" data-lang-content="zh-CN">隐私政策</span><span class="lang-content" data-lang-content="en">Privacy</span></a>
@@ -546,21 +536,38 @@
     </footer>
 
     <script>
-        // Loader - with fallback timeout
+        // Loader
         function hideLoader() {
             const loader = document.querySelector('.loader');
             if (loader && !loader.classList.contains('hidden')) {
                 loader.classList.add('hidden');
             }
         }
-        // Normal load
         window.addEventListener('load', () => setTimeout(hideLoader, 800));
-        // Fallback - always hide after 3 seconds
         setTimeout(hideLoader, 3000);
 
         // Nav scroll
         const nav = document.querySelector('.nav');
         window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50));
+
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
+            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+        });
+        
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
 
         // Language
         const langLabels = {'zh-TW':'繁中','zh-CN':'简中','en':'EN'};
