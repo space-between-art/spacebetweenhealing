@@ -1,1 +1,1017 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心渡 Xin Du | 身心諮詢</title>
+    <meta name="description" content="在喧囂中，為心找一處安靜的渡口。專業身心諮詢，陪你走過生命的每一個轉折。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+TC:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #FAF7F2;
+            --cream-dark: #F5EFE6;
+            --terracotta: #C4A484;
+            --terracotta-dark: #A68B6A;
+            --terracotta-light: #D4BFA6;
+            --earth: #8B7355;
+            --charcoal: #3D3D3D;
+            --text: #4A4A4A;
+            --text-light: #7A7A7A;
+            --white: #FFFFFF;
+            --font-display: 'Cormorant Garamond', serif;
+            --font-zh: 'Noto Serif TC', serif;
+            --font-body: 'Noto Sans TC', sans-serif;
+            --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { 
+            scroll-behavior: smooth;
+            scroll-snap-type: y proximity;
+        }
+        
+        body { 
+            font-family: var(--font-body); 
+            background: var(--cream); 
+            color: var(--text); 
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* Minimal Side Navigation */
+        .side-nav {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .side-nav a {
+            width: 12px;
+            height: 12px;
+            border: 1.5px solid var(--terracotta);
+            border-radius: 50%;
+            transition: all 0.4s var(--ease);
+            position: relative;
+        }
+
+        .side-nav a::after {
+            content: attr(data-label);
+            position: absolute;
+            right: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.75rem;
+            color: var(--terracotta);
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-family: var(--font-zh);
+        }
+
+        .side-nav a:hover::after { opacity: 1; }
+        .side-nav a:hover, .side-nav a.active { background: var(--terracotta); }
+
+        /* Top Bar */
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem 4vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 999;
+            background: linear-gradient(to bottom, var(--cream) 0%, transparent 100%);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            border: 1.5px solid var(--terracotta);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-zh);
+            font-size: 0.9rem;
+            color: var(--terracotta);
+            font-weight: 500;
+        }
+
+        .logo-text {
+            font-family: var(--font-zh);
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            letter-spacing: 0.1em;
+            font-weight: 400;
+        }
+
+        .top-contact {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            letter-spacing: 0.05em;
+        }
+
+        .top-contact a {
+            color: var(--terracotta);
+            text-decoration: none;
+            margin-left: 0.5rem;
+        }
+
+        /* Section Base */
+        section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            scroll-snap-align: start;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--cream);
+            padding: 0 8vw;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8vw;
+            align-items: center;
+            max-width: 1400px;
+            width: 100%;
+        }
+
+        .hero-text {
+            padding-right: 2rem;
+        }
+
+        .hero-vertical {
+            writing-mode: vertical-rl;
+            font-family: var(--font-zh);
+            font-size: 0.75rem;
+            color: var(--terracotta);
+            letter-spacing: 0.3em;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .hero-title {
+            font-family: var(--font-zh);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 300;
+            line-height: 1.5;
+            color: var(--charcoal);
+            margin-bottom: 2rem;
+        }
+
+        .hero-title em {
+            font-style: normal;
+            color: var(--terracotta);
+            position: relative;
+        }
+
+        .hero-title em::after {
+            content: '';
+            position: absolute;
+            bottom: 0.2em;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--terracotta);
+            opacity: 0.4;
+        }
+
+        .hero-desc {
+            font-size: 1rem;
+            color: var(--text-light);
+            line-height: 2;
+            margin-bottom: 3rem;
+            max-width: 400px;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 2rem;
+            background: transparent;
+            border: 1px solid var(--terracotta);
+            color: var(--terracotta);
+            font-family: var(--font-zh);
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.4s var(--ease);
+            letter-spacing: 0.1em;
+        }
+
+        .hero-cta:hover {
+            background: var(--terracotta);
+            color: var(--white);
+        }
+
+        .hero-cta svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s;
+        }
+
+        .hero-cta:hover svg {
+            transform: translateX(4px);
+        }
+
+        .hero-image {
+            position: relative;
+            height: 70vh;
+            max-height: 600px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0 0 0 60px;
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100%;
+            height: 100%;
+            border: 1px solid var(--terracotta-light);
+            border-radius: 0 0 0 60px;
+            z-index: -1;
+        }
+
+        .hero-badge {
+            position: absolute;
+            bottom: 2rem;
+            left: -3rem;
+            background: var(--white);
+            padding: 1.5rem 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            border-radius: 4px;
+        }
+
+        .hero-badge-num {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--terracotta);
+            line-height: 1;
+        }
+
+        .hero-badge-text {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+
+        /* Philosophy Section */
+        .philosophy {
+            background: var(--white);
+            padding: 8rem 8vw;
+        }
+
+        .philosophy-content {
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-tag-line {
+            width: 40px;
+            height: 1px;
+            background: var(--terracotta);
+        }
+
+        .section-tag-text {
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            color: var(--terracotta);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .philosophy-quote {
+            font-family: var(--font-zh);
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-weight: 300;
+            line-height: 2;
+            color: var(--charcoal);
+            margin-bottom: 2rem;
+        }
+
+        .philosophy-quote em {
+            font-style: normal;
+            color: var(--terracotta);
+        }
+
+        .philosophy-desc {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 2.2;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--cream);
+            padding: 0 8vw;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 6vw;
+            align-items: center;
+            max-width: 1200px;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: -15px;
+            width: 60%;
+            height: 60%;
+            background: var(--terracotta-light);
+            opacity: 0.2;
+            z-index: -1;
+            border-radius: 4px;
+        }
+
+        .about-text h2 {
+            font-family: var(--font-zh);
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            font-weight: 400;
+            color: var(--charcoal);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .about-text h2 span {
+            color: var(--terracotta);
+        }
+
+        .about-text p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 2.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-signature {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--terracotta-light);
+        }
+
+        .about-signature-name {
+            font-family: var(--font-zh);
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            margin-bottom: 0.25rem;
+        }
+
+        .about-signature-title {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--cream-dark);
+            padding: 8rem 8vw;
+            min-height: auto;
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .services-title {
+            font-family: var(--font-zh);
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            font-weight: 300;
+            color: var(--charcoal);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 4px;
+            transition: all 0.4s var(--ease);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--terracotta);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s var(--ease);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+        }
+
+        .service-num {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--terracotta-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-name {
+            font-family: var(--font-zh);
+            font-size: 1.2rem;
+            color: var(--charcoal);
+            margin-bottom: 1rem;
+        }
+
+        .service-desc {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-duration {
+            font-size: 0.75rem;
+            color: var(--terracotta);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .service-duration svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* Space Section */
+        .space {
+            background: var(--white);
+            padding: 6rem 8vw;
+            min-height: auto;
+        }
+
+        .space-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .space-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .space-image img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .space-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2rem 0;
+        }
+
+        .space-text h2 {
+            font-family: var(--font-zh);
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: var(--charcoal);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .space-text p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 2;
+            margin-bottom: 1rem;
+        }
+
+        .space-features {
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .space-feature {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: var(--text);
+        }
+
+        .space-feature-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--terracotta-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .space-feature-icon svg {
+            width: 16px;
+            height: 16px;
+            color: var(--white);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--charcoal);
+            padding: 6rem 8vw;
+            min-height: auto;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .contact-text h2 {
+            font-family: var(--font-zh);
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            font-weight: 300;
+            color: var(--cream);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-text p {
+            font-size: 0.95rem;
+            color: rgba(250,247,242,0.7);
+            line-height: 2;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem 0;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(250,247,242,0.3);
+            color: var(--cream);
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(250,247,242,0.5);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--terracotta);
+        }
+
+        .form-group textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        .form-submit {
+            align-self: flex-start;
+            padding: 1rem 2.5rem;
+            background: var(--terracotta);
+            border: none;
+            color: var(--white);
+            font-family: var(--font-zh);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s var(--ease);
+            letter-spacing: 0.1em;
+        }
+
+        .form-submit:hover {
+            background: var(--terracotta-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            padding: 3rem 8vw;
+            border-top: 1px solid rgba(250,247,242,0.1);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-family: var(--font-zh);
+            font-size: 1rem;
+            color: var(--cream);
+            letter-spacing: 0.1em;
+        }
+
+        .footer-info {
+            display: flex;
+            gap: 3rem;
+            font-size: 0.8rem;
+            color: rgba(250,247,242,0.6);
+        }
+
+        .footer-info a {
+            color: rgba(250,247,242,0.6);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-info a:hover {
+            color: var(--terracotta);
+        }
+
+        .footer-copy {
+            font-size: 0.75rem;
+            color: rgba(250,247,242,0.4);
+        }
+
+        /* Demo Badge */
+        .demo-badge {
+            position: fixed;
+            top: 1.5rem;
+            right: 8vw;
+            background: var(--terracotta);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 1001;
+            box-shadow: 0 4px 15px rgba(196,164,132,0.4);
+        }
+
+        .demo-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: var(--white);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content { grid-template-columns: 1fr; gap: 3rem; }
+            .hero-image { height: 50vh; order: -1; }
+            .hero-badge { left: 1rem; bottom: 1rem; }
+            .about-content { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr; }
+            .space-content { grid-template-columns: 1fr; }
+            .contact-content { grid-template-columns: 1fr; gap: 3rem; }
+            .side-nav { display: none; }
+        }
+
+        @media (max-width: 600px) {
+            .hero { padding: 6rem 1.5rem 3rem; }
+            .philosophy, .services { padding: 4rem 1.5rem; }
+            .space-text { padding: 2rem 1.5rem; }
+            .contact { padding: 4rem 1.5rem; }
+            footer { padding: 2rem 1.5rem; }
+            .footer-content { flex-direction: column; gap: 1.5rem; text-align: center; }
+            .footer-info { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Demo Badge -->
+    <div class="demo-badge">DEMO・示範網站</div>
+
+    <!-- Top Bar -->
+    <header class="top-bar">
+        <a href="#" class="logo">
+            <span class="logo-icon">渡</span>
+            <span class="logo-text">心渡</span>
+        </a>
+        <div class="top-contact">
+            預約諮詢 <a href="/cdn-cgi/l/email-protection#8ae2efe6e6e5caf2e3e4eeffa4e9e5e7"><span class="__cf_email__" data-cfemail="731b161f1f1c330b1a1d17065d101c1e">[email&#160;protected]</span></a>
+        </div>
+    </header>
+
+    <!-- Side Navigation -->
+    <nav class="side-nav">
+        <a href="#hero" data-label="首頁" class="active"></a>
+        <a href="#philosophy" data-label="理念"></a>
+        <a href="#about" data-label="關於"></a>
+        <a href="#services" data-label="服務"></a>
+        <a href="#space" data-label="空間"></a>
+        <a href="#contact" data-label="聯絡"></a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-vertical">身心諮詢 · 內在探索</div>
+                <h1 class="hero-title">
+                    在喧囂中<br>
+                    為心找一處<br>
+                    <em>安靜的渡口</em>
+                </h1>
+                <p class="hero-desc">
+                    生命的河流有時湍急，有時平靜。無論你正經歷什麼，這裡都有一個位置，等待陪你一起，找到內心的錨點。
+                </p>
+                <a href="#contact" class="hero-cta">
+                    預約初次諮詢
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="hero-image">
+                <img src="images/portrait.png" alt="心渡諮詢師">
+                <div class="hero-badge">
+                    <div class="hero-badge-num">12+</div>
+                    <div class="hero-badge-text">年專業經驗</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section class="philosophy" id="philosophy">
+        <div class="philosophy-content">
+            <div class="section-tag">
+                <span class="section-tag-line"></span>
+                <span class="section-tag-text">Philosophy</span>
+                <span class="section-tag-line"></span>
+            </div>
+            <p class="philosophy-quote">
+                「療癒不是要<em>修復</em>你，<br>
+                而是陪你看見，<br>
+                你本來就是<em>完整</em>的。」
+            </p>
+            <p class="philosophy-desc">
+                每個人內心都有自我療癒的能力。我的工作不是給你答案，而是創造一個安全的空間，讓你能夠停下來，聽見自己內在的聲音，找回與自己的連結。
+            </p>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="about-content">
+            <div class="about-image">
+                <img src="images/tea-moment.png" alt="諮詢空間一角">
+            </div>
+            <div class="about-text">
+                <div class="section-tag">
+                    <span class="section-tag-line"></span>
+                    <span class="section-tag-text">About</span>
+                </div>
+                <h2>我是林心渡<br><span>你的身心旅途陪伴者</span></h2>
+                <p>曾經，我也是在職場高速運轉中迷失自己的人。直到生命給了我一次停下來的機會，我才發現——原來照顧內心，是如此重要又被忽略的事。</p>
+                <p>這十多年來，我陪伴了許多和當年的我一樣的人。在這個空間裡，沒有評判，只有理解；沒有催促，只有陪伴。</p>
+                <div class="about-signature">
+                    <div class="about-signature-name">林心渡 Michelle Lin</div>
+                    <div class="about-signature-title">諮商心理師・正念引導師・藝術治療師</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="services-header">
+            <div class="section-tag">
+                <span class="section-tag-line"></span>
+                <span class="section-tag-text">Services</span>
+                <span class="section-tag-line"></span>
+            </div>
+            <h2 class="services-title">療癒服務</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-num">01</div>
+                <h3 class="service-name">個別諮商</h3>
+                <p class="service-desc">一對一深度對話，探索困擾的根源，找回內在平衡。適合正在經歷人生轉折、情緒困擾或自我探索的你。</p>
+                <div class="service-duration">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+                    </svg>
+                    50 分鐘 / 次
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-num">02</div>
+                <h3 class="service-name">正念工作坊</h3>
+                <p class="service-desc">小班制正念練習，學習與當下同在的能力。透過呼吸、靜坐與覺察練習，培養日常的平靜力量。</p>
+                <div class="service-duration">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+                    </svg>
+                    2 小時 / 堂
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-num">03</div>
+                <h3 class="service-name">藝術療癒</h3>
+                <p class="service-desc">不需要藝術技巧，透過創作過程，讓潛意識的情緒自然流動。繪畫、拼貼、書寫，找到言語之外的表達。</p>
+                <div class="service-duration">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+                    </svg>
+                    90 分鐘 / 次
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Space -->
+    <section class="space" id="space">
+        <div class="space-content">
+            <div class="space-image">
+                <img src="images/hero-space.png" alt="心渡諮詢空間">
+            </div>
+            <div class="space-text">
+                <div class="section-tag">
+                    <span class="section-tag-line"></span>
+                    <span class="section-tag-text">Space</span>
+                </div>
+                <h2>一個讓心<br>可以呼吸的地方</h2>
+                <p>位於城市靜巷中的獨立空間，自然光線、木質溫度、淡雅茶香。從踏入的那一刻起，就能感受到不同。</p>
+                <p>這裡沒有冰冷的診療椅，只有舒適的沙發、溫暖的茶，以及一個願意傾聽的人。</p>
+                <div class="space-features">
+                    <div class="space-feature">
+                        <span class="space-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+                            </svg>
+                        </span>
+                        獨立入口，完全隱私
+                    </div>
+                    <div class="space-feature">
+                        <span class="space-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                            </svg>
+                        </span>
+                        自然採光，植物環繞
+                    </div>
+                    <div class="space-feature">
+                        <span class="space-feature-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                            </svg>
+                        </span>
+                        寧靜氛圍，遠離喧囂
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <div class="contact-text">
+                <div class="section-tag">
+                    <span class="section-tag-line" style="background:var(--terracotta-light)"></span>
+                    <span class="section-tag-text" style="color:var(--terracotta-light)">Contact</span>
+                </div>
+                <h2>準備好<br>開始這段旅程了嗎？</h2>
+                <p>第一步往往是最難的，但你已經在這裡了。<br>留下訊息，讓我們約個時間聊聊。</p>
+            </div>
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" placeholder="你的名字">
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="電話（選填）">
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="想說的話..."></textarea>
+                </div>
+                <button type="submit" class="form-submit">送出訊息</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">心渡 Xin Du</div>
+            <div class="footer-info">
+                <a href="/cdn-cgi/l/email-protection#ddb5b8b1b1b29da5b4b3b9a8f3beb2b0"><span class="__cf_email__" data-cfemail="741c1118181b340c1d1a10015a171b19">[email&#160;protected]</span></a>
+                <span>台北市大安區</span>
+                <a href="#">Instagram</a>
+            </div>
+            <div class="footer-copy">© 2025 Xin Du. 示範網站 by Space Between Healing</div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.side-nav a');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 300) {
+                    curr
