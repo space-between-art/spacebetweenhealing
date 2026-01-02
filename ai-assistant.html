@@ -164,6 +164,10 @@
         .success-state h4 { font-size:1.1rem; margin-bottom:0.5rem; color:var(--gold); }
         .success-state p { font-size:0.9rem; color:rgba(255,255,255,0.8); line-height:1.6; }
 
+        /* Error State */
+        .error-state { text-align:center; padding:1rem; background:rgba(239,68,68,0.1); border:1px solid rgba(239,68,68,0.3); border-radius:8px; margin-top:0.75rem; }
+        .error-state p { font-size:0.85rem; color:#fca5a5; }
+
         /* Disclaimer */
         .disclaimer { text-align:center; padding:1.5rem 4vw; margin-top:auto; }
         .disclaimer p { font-size:0.8rem; color:var(--text-muted); max-width:600px; margin:0 auto; }
@@ -316,13 +320,14 @@
 
     <script>
         // ========== CONFIG ==========
-        // 改用 n8n webhook URL
         const API_ENDPOINT = 'https://spacebetween.app.n8n.cloud/webhook/healing-chat';
+        const HUBSPOT_ENDPOINT = 'https://spacebetween.app.n8n.cloud/webhook/hubspot-lead';
 
         // ========== STATE ==========
         let history = [];
         let hasSummary = false;
         let currentChatLang = 'zh-TW';
+        let lastSummaryData = null; // Store summary for HubSpot
 
         // ========== DOM ==========
         const chatMessages = document.getElementById('chatMessages');
@@ -344,19 +349,34 @@
                 welcome: '你好！我是助光光 ✨\n\n歡迎來到品牌療癒實驗室。我是 AI 驅動的品牌情緒診斷系統，會透過對話幫你釐清品牌狀態。\n\n準備好開始診斷了嗎？',
                 placeholder: '說說你的品牌困擾...',
                 suggestions: ['我的品牌好像有點問題...', '想了解診斷流程', '不確定自己需要什麼'],
-                error: '抱歉，診斷系統暫時無法回應 😔\n請稍後再試，或直接聯繫：hello@spacebetweenhealing.com'
+                error: '抱歉，診斷系統暫時無法回應 😔\n請稍後再試，或直接聯繫：hello@spacebetweenhealing.com',
+                formSuccess: '診斷報告已送出！',
+                formSuccessDesc: '設計師會在 1-2 個工作天內回覆你 ✨',
+                formError: '送出失敗，請稍後再試或直接聯繫 hello@spacebetweenhealing.com',
+                formSubmitting: '處理中...',
+                formSubmit: '送出診斷報告給設計師'
             },
             'zh-CN': {
                 welcome: '你好！我是助光光 ✨\n\n欢迎来到品牌疗愈实验室。我是 AI 驱动的品牌情绪诊断系统，会通过对话帮你厘清品牌状态。\n\n准备好开始诊断了吗？',
                 placeholder: '说说你的品牌困扰...',
                 suggestions: ['我的品牌好像有点问题...', '想了解诊断流程', '不确定自己需要什么'],
-                error: '抱歉，诊断系统暂时无法回应 😔\n请稍后再试，或直接联系：hello@spacebetweenhealing.com'
+                error: '抱歉，诊断系统暂时无法回应 😔\n请稍后再试，或直接联系：hello@spacebetweenhealing.com',
+                formSuccess: '诊断报告已送出！',
+                formSuccessDesc: '设计师会在 1-2 个工作天内回复你 ✨',
+                formError: '送出失败，请稍后再试或直接联系 hello@spacebetweenhealing.com',
+                formSubmitting: '处理中...',
+                formSubmit: '送出诊断报告给设计师'
             },
             'en': {
                 welcome: 'Hello! I\'m Light Guide ✨\n\nWelcome to the Brand Healing Lab. I\'m an AI-powered brand emotion diagnostic system that helps you understand your brand\'s state through conversation.\n\nReady to start the diagnosis?',
                 placeholder: 'Tell me about your brand concerns...',
                 suggestions: ['My brand seems to have some issues...', 'Want to know the process', 'Not sure what I need'],
-                error: 'Sorry, the system is temporarily unavailable 😔\nPlease try again later or contact: hello@spacebetweenhealing.com'
+                error: 'Sorry, the system is temporarily unavailable 😔\nPlease try again later or contact: hello@spacebetweenhealing.com',
+                formSuccess: 'Report submitted!',
+                formSuccessDesc: 'Our designer will respond within 1-2 business days ✨',
+                formError: 'Submission failed. Please try again or contact hello@spacebetweenhealing.com',
+                formSubmitting: 'Submitting...',
+                formSubmit: 'Submit report to designer'
             }
         };
 
@@ -429,6 +449,7 @@
             // Summary card
             if (summary && !hasSummary) {
                 hasSummary = true;
+                lastSummaryData = summary; // Store for HubSpot
                 extra += renderSummaryCard(summary);
             }
 
@@ -465,13 +486,14 @@
                     ${summary['療癒方向'] ? `<div class="summary-row"><span class="label">療癒方向</span><span class="value">${summary['療癒方向']}</span></div>` : ''}
                     ${summary['優先處理'] || summary['期望目標'] ? `<div class="summary-row"><span class="label">優先處理</span><span class="value">${summary['優先處理'] || summary['期望目標']}</span></div>` : ''}
                 </div>` : ''}
-                <div class="contact-form">
+                <div class="contact-form" id="contactForm">
                     <p class="form-label">留下聯繫方式，設計師會根據診斷結果跟進：</p>
                     <input type="text" class="form-input" id="userName" placeholder="你的名字">
                     <input type="email" class="form-input" id="userEmail" placeholder="Email">
                     <input type="tel" class="form-input" id="userPhone" placeholder="WhatsApp（選填）">
-                    <button class="submit-btn" onclick="submitForm()">送出診斷報告給設計師</button>
+                    <button class="submit-btn" id="submitBtn" onclick="submitForm()">${chatContent[currentChatLang].formSubmit}</button>
                     <p class="privacy-hint">🔒 資料僅用於設計師聯繫</p>
+                    <div id="formMessage"></div>
                 </div>
             </div>`;
         }
@@ -505,7 +527,6 @@
             console.log('Calling API:', API_ENDPOINT);
             
             try {
-                // 改用 n8n 期望嘅格式
                 const res = await fetch(API_ENDPOINT, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -524,7 +545,6 @@
                 const data = await res.json();
                 console.log('API Response data:', data);
                 
-                // n8n 返回格式是 { reply: '...' }
                 const reply = data.reply || data.content?.[0]?.text || chatContent[currentChatLang].error;
                 history.push({ role: 'assistant', content: reply });
                 return reply;
@@ -557,60 +577,96 @@
             sendMessage(text);
         }
 
+        // ========== SUBMIT TO HUBSPOT VIA N8N ==========
         async function submitForm() {
             const name = document.getElementById('userName').value.trim();
             const email = document.getElementById('userEmail').value.trim();
             const phone = document.getElementById('userPhone').value.trim();
+            const btn = document.getElementById('submitBtn');
+            const formMessage = document.getElementById('formMessage');
             
+            // Validation
             if (!name || !email) {
-                alert('請填寫名字和 Email');
+                formMessage.innerHTML = '<div class="error-state"><p>請填寫名字和 Email</p></div>';
                 return;
             }
             if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                alert('請輸入有效的 Email');
+                formMessage.innerHTML = '<div class="error-state"><p>請輸入有效的 Email</p></div>';
                 return;
             }
             
-            const btn = document.querySelector('.submit-btn');
+            // Disable button
             btn.disabled = true;
-            btn.textContent = '處理中...';
+            btn.textContent = chatContent[currentChatLang].formSubmitting;
+            formMessage.innerHTML = '';
             
-            // Build summary
-            const card = document.getElementById('summaryCard');
-            let summary = '【品牌初步診斷報告】\n\n';
-            card.querySelectorAll('.summary-section').forEach(section => {
-                const title = section.querySelector('.summary-title')?.textContent || '';
-                if (title) summary += `━━ ${title} ━━\n`;
-                section.querySelectorAll('.summary-row').forEach(row => {
-                    const label = row.querySelector('.label')?.textContent || '';
-                    const value = row.querySelector('.value')?.textContent || '';
-                    if (label && value) summary += `${label}：${value}\n`;
+            // Build conversation log
+            const conversationLog = history.map(m => 
+                `[${m.role === 'user' ? '訪客' : '光光'}] ${m.content}`
+            ).join('\n\n');
+            
+            // Prepare data for n8n/HubSpot
+            const payload = {
+                // Contact info
+                name: name,
+                email: email,
+                phone: phone || '',
+                
+                // Summary data
+                summary: lastSummaryData || {},
+                
+                // Additional context
+                industry: lastSummaryData?.['產業/服務'] || '',
+                targetAudience: lastSummaryData?.['目標客群'] || '',
+                mainIssue: lastSummaryData?.['主要問題維度'] || lastSummaryData?.['目前困擾'] || '',
+                healingDirection: lastSummaryData?.['療癒方向'] || '',
+                priority: lastSummaryData?.['優先處理'] || lastSummaryData?.['期望目標'] || '',
+                emotionKeywords: lastSummaryData?.['情緒關鍵詞'] || '',
+                
+                // Conversation
+                conversationLog: conversationLog,
+                
+                // Meta
+                language: currentChatLang,
+                source: 'ai-assistant',
+                timestamp: new Date().toISOString()
+            };
+            
+            console.log('Submitting to HubSpot via n8n:', payload);
+            
+            try {
+                const res = await fetch(HUBSPOT_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
                 });
-                summary += '\n';
-            });
-            
-            const log = history.map(m => `[${m.role === 'user' ? '訪客' : '光光'}]\n${m.content}`).join('\n\n---\n\n');
-            
-            const subject = encodeURIComponent(`[光光診斷] 品牌健康診斷報告：${name}`);
-            const body = encodeURIComponent(
-                `━━━ 訪客資料 ━━━\n姓名：${name}\nEmail：${email}\n電話：${phone || '未提供'}\n\n` +
-                `━━━ 診斷報告 ━━━\n${summary}` +
-                `━━━ 對話紀錄 ━━━\n${log}\n\n` +
-                `──────────\n由光光 AI 智能品牌情緒診斷系統生成`
-            );
-            
-            window.location.href = `mailto:hello@spacebetweenhealing.com?subject=${subject}&body=${body}`;
-            
-            setTimeout(() => {
-                card.innerHTML = `
-                    <div class="success-state">
-                        <div class="success-icon">✓</div>
-                        <h4>診斷報告準備完成！</h4>
-                        <p>請在 Email 應用程式中點擊送出。<br>設計師會在 1-2 個工作天內回覆 ✨</p>
-                    </div>
-                `;
-                scrollDown();
-            }, 300);
+                
+                console.log('HubSpot webhook response:', res.status);
+                
+                if (res.ok) {
+                    // Success - show success state
+                    const card = document.getElementById('summaryCard');
+                    const contactForm = document.getElementById('contactForm');
+                    
+                    if (contactForm) {
+                        contactForm.innerHTML = `
+                            <div class="success-state">
+                                <div class="success-icon">✓</div>
+                                <h4>${chatContent[currentChatLang].formSuccess}</h4>
+                                <p>${chatContent[currentChatLang].formSuccessDesc}</p>
+                            </div>
+                        `;
+                    }
+                    scrollDown();
+                } else {
+                    throw new Error('HubSpot API error: ' + res.status);
+                }
+            } catch (e) {
+                console.error('HubSpot submit error:', e);
+                btn.disabled = false;
+                btn.textContent = chatContent[currentChatLang].formSubmit;
+                formMessage.innerHTML = `<div class="error-state"><p>${chatContent[currentChatLang].formError}</p></div>`;
+            }
         }
 
         // ========== LANGUAGE SWITCHING ==========
@@ -635,6 +691,7 @@
             if (chatMessages) chatMessages.innerHTML = '';
             history = [];
             hasSummary = false;
+            lastSummaryData = null;
             
             // Show welcome
             console.log('Showing welcome message');
