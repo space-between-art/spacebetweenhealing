@@ -316,7 +316,8 @@
 
     <script>
         // ========== CONFIG ==========
-        const API_ENDPOINT = 'https://guangguang-ai.winsusa2611.workers.dev';
+        // 改用 n8n webhook URL
+        const API_ENDPOINT = 'https://spacebetween.app.n8n.cloud/webhook/healing-chat';
 
         // ========== STATE ==========
         let history = [];
@@ -502,13 +503,15 @@
             history.push({ role: 'user', content: msgToSend });
             
             console.log('Calling API:', API_ENDPOINT);
-            console.log('Messages:', history);
             
             try {
+                // 改用 n8n 期望嘅格式
                 const res = await fetch(API_ENDPOINT, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ messages: history })
+                    body: JSON.stringify({ 
+                        body: { message: msgToSend }
+                    })
                 });
                 
                 console.log('API Response status:', res.status);
@@ -521,7 +524,8 @@
                 const data = await res.json();
                 console.log('API Response data:', data);
                 
-                const reply = data.content?.[0]?.text || data.reply || chatContent[currentChatLang].error;
+                // n8n 返回格式是 { reply: '...' }
+                const reply = data.reply || data.content?.[0]?.text || chatContent[currentChatLang].error;
                 history.push({ role: 'assistant', content: reply });
                 return reply;
             } catch (e) {
