@@ -522,16 +522,22 @@
                 msgToSend = `[請用簡體中文回覆] ${userMsg}`;
             }
             
+            // Add user message to history
             history.push({ role: 'user', content: msgToSend });
             
             console.log('Calling API:', API_ENDPOINT);
+            console.log('Sending history:', history);
             
             try {
+                // Send complete conversation history
                 const res = await fetch(API_ENDPOINT, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ 
-                        body: { message: msgToSend }
+                        body: { 
+                            message: msgToSend,
+                            messages: history  // Complete conversation history
+                        }
                     })
                 });
                 
