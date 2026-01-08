@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>你的品牌需要療癒嗎？5 個徵兆自我檢測 | 隙光設計</title>
-    <meta name="description" content="品牌也會生病——這 5 個常見徵兆反映的是品牌定位、品牌聲音、視覺識別的缺失。從療癒角度認識問題，以專業設計觀點找出解方。">
+    <title>敘事的力量：如何讓品牌故事打動人心 | 隙光設計</title>
+    <meta name="description" content="好的品牌故事不是自說自話，而是與受眾產生共鳴的橋樑。學習三層敘事架構，讓你的品牌故事真正打動人心。">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="你的品牌需要療癒嗎？5 個徵兆自我檢測">
-    <meta property="og:description" content="品牌也會生病——這 5 個常見徵兆，反映的是品牌核心三要素的缺失。">
+    <meta property="og:title" content="敘事的力量：如何讓品牌故事打動人心">
+    <meta property="og:description" content="好的品牌故事不是自說自話，而是與受眾產生共鳴的橋樑。學習三層敘事架構，讓你的品牌故事真正打動人心。">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://spacebetweenhealing.com/lounge/article-brand-healing-signs.html">
+    <meta property="og:url" content="https://spacebetweenhealing.com/lounge/article-narrative-power.html">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
@@ -139,20 +139,20 @@
             margin-bottom: 2.5rem;
         }
         
-        /* Symptom Cards */
-        .symptom-list {
+        /* Framework Cards */
+        .framework-list {
             margin: 2.5rem 0;
         }
         
-        .symptom-item {
+        .framework-item {
             background: #faf9f7;
             border-radius: 12px;
             padding: 1.5rem 2rem;
             margin-bottom: 1.5rem;
-            border-left: 4px solid #8b7355;
+            border-left: 4px solid #d4a574;
         }
         
-        .symptom-item h3 {
+        .framework-item h3 {
             font-size: 1.1rem;
             color: #2d2926;
             margin-top: 0;
@@ -162,35 +162,30 @@
             gap: 0.75rem;
         }
         
-        .symptom-item h3 .num {
-            background: #2d2926;
+        .framework-item h3 .layer {
+            background: #d4a574;
             color: white;
-            width: 26px;
-            height: 26px;
-            min-width: 26px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
+            padding: 0.2rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
         }
         
-        .symptom-item .feeling {
+        .framework-item .description {
             color: #5a5550;
             font-size: 1rem;
             margin-bottom: 1rem;
-            padding-left: 2.5rem;
+            padding-left: 0;
         }
         
-        .symptom-item .analysis {
+        .framework-item .example-box {
             background: white;
             border-radius: 8px;
             padding: 1rem 1.25rem;
-            margin-left: 2.5rem;
             border: 1px solid #e8e4df;
         }
         
-        .symptom-item .analysis-label {
+        .framework-item .example-label {
             font-size: 0.75rem;
             color: #8b7355;
             text-transform: uppercase;
@@ -201,19 +196,111 @@
             gap: 0.4rem;
         }
         
-        .symptom-item .analysis-label svg {
+        .framework-item .example-label svg {
             width: 14px;
             height: 14px;
         }
         
-        .symptom-item .analysis p {
+        .framework-item .example-box p {
             margin: 0;
             font-size: 0.95rem;
             color: #4a4543;
             line-height: 1.7;
+            font-style: italic;
         }
         
-        .symptom-item .analysis strong {
+        /* Story Comparison */
+        .story-comparison {
+            margin: 2.5rem 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        .story-box {
+            background: #faf9f7;
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+        
+        .story-box.bad {
+            border: 2px solid #e8c9a0;
+        }
+        
+        .story-box.good {
+            border: 2px solid #a0b89c;
+        }
+        
+        .story-box-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .story-box.bad .story-box-label {
+            color: #c9a574;
+        }
+        
+        .story-box.good .story-box-label {
+            color: #7a9976;
+        }
+        
+        .story-box-label svg {
+            width: 16px;
+            height: 16px;
+        }
+        
+        .story-box p {
+            font-size: 0.95rem;
+            color: #4a4543;
+            line-height: 1.7;
+            margin: 0;
+        }
+        
+        /* Practice Box */
+        .practice-box {
+            background: linear-gradient(135deg, #f8f6f3 0%, #f0ebe4 100%);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+        }
+        
+        .practice-box h3 {
+            font-family: 'Noto Serif TC', serif;
+            font-size: 1.2rem;
+            color: #2d2926;
+            margin: 0 0 1.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .practice-box h3 svg {
+            width: 20px;
+            height: 20px;
+            color: #8b7355;
+        }
+        
+        .practice-box ol {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+        
+        .practice-box li {
+            margin-bottom: 1rem;
+            color: #4a4543;
+            line-height: 1.8;
+        }
+        
+        .practice-box li:last-child {
+            margin-bottom: 0;
+        }
+        
+        .practice-box li strong {
             color: #2d2926;
         }
         
@@ -352,11 +439,11 @@
         }
         
         .article-cta .btn svg {
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
         }
         
-        /* Navigation */
+        /* Article Navigation */
         .article-nav {
             display: flex;
             justify-content: space-between;
@@ -368,35 +455,43 @@
         .article-nav a {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            color: #8b7355;
+            gap: 0.75rem;
             text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
+            color: #4a4543;
+            padding: 1rem 1.5rem;
+            background: #faf9f7;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            max-width: 45%;
         }
         
         .article-nav a:hover {
-            color: #6b5a45;
+            background: #f5f3f0;
+            color: #2d2926;
         }
         
-        .article-nav svg {
-            width: 18px;
-            height: 18px;
+        .article-nav a svg {
+            width: 20px;
+            height: 20px;
+            flex-shrink: 0;
         }
         
         .article-nav .nav-text {
             display: flex;
             flex-direction: column;
-            gap: 0.2rem;
+            gap: 0.25rem;
         }
         
         .article-nav .nav-label {
             font-size: 0.75rem;
             color: #9a938b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
         .article-nav .nav-title {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            font-weight: 500;
         }
         
         /* Responsive */
@@ -417,15 +512,12 @@
                 font-size: 1rem;
             }
             
-            .symptom-item {
+            .framework-item {
                 padding: 1.25rem 1.5rem;
             }
             
-            .symptom-item .feeling,
-            .symptom-item .analysis {
-                padding-left: 0;
-                margin-left: 0;
-                margin-top: 1rem;
+            .story-comparison {
+                grid-template-columns: 1fr;
             }
             
             .article-meta {
@@ -441,6 +533,10 @@
             .article-nav {
                 flex-direction: column;
                 gap: 1rem;
+            }
+            
+            .article-nav a {
+                max-width: 100%;
             }
         }
     </style>
@@ -480,11 +576,11 @@
             <nav class="breadcrumb">
                 <a href="lounge.html">會客室</a>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                <span>品牌自我檢測</span>
+                <span>敘事策略</span>
             </nav>
             
-            <span class="series-tag">品牌療癒系列 · 第 1 篇</span>
-            <h1>你的品牌需要療癒嗎？<br>5 個徵兆自我檢測</h1>
+            <span class="series-tag">品牌療癒系列 · 第 3 篇</span>
+            <h1>敘事的力量：<br>如何讓品牌故事打動人心</h1>
             
             <div class="article-meta">
                 <span>
@@ -493,7 +589,7 @@
                 </span>
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    閱讀時間 6 分鐘
+                    閱讀時間 8 分鐘
                 </span>
             </div>
         </div>
@@ -503,116 +599,137 @@
     <article class="article-content">
         <div class="container">
             <div class="article-body">
-                <p class="lead-text">品牌也會「生病」——當你對自己的品牌感到疲憊或疏離時，這些徵兆正在告訴你：是時候停下來，好好檢視品牌的狀態了。</p>
+                <p class="lead-text">人們不會記住你的服務有多專業，但他們會記住你讓他們感受到什麼。這就是故事的力量——它不是說服，而是連結。</p>
                 
-                <p>作為獨立創業者，你可能已經忙於產品開發、客戶服務、財務管理……品牌經營常常被擠到優先序的最後。</p>
+                <p>作為獨立創業者，你可能已經聽過無數次「你需要一個品牌故事」。但當你坐下來要寫的時候，卻發現自己不知從何下筆。</p>
                 
-                <p>直到有一天，你發現自己對著品牌的 Logo 發呆，心裡浮現一個聲音：「這真的是我嗎？」</p>
+                <p>是從自己的背景開始寫嗎？還是從專業資歷開始？要不要提到那些影響你的人生轉折？</p>
                 
-                <p>這種感覺很正常。品牌不是一次設計好就能永遠不變的——它會隨著你的成長而需要調整，也會因為長期被忽略而出現「症狀」。</p>
+                <p>這些困惑很正常。因為「品牌故事」這個詞本身就容易讓人誤解——它不是一篇自傳，也不是一份簡歷。</p>
                 
-                <p>以下是 5 個常見的徵兆。如果你發現自己符合其中幾項，別擔心——這不是你的問題，而是品牌在向你發出訊號，提醒你它需要被照顧。</p>
+                <p>品牌故事的本質，是一座<strong>連結你與受眾的橋樑</strong>。它要回答的不是「你是誰」，而是「你能為他們帶來什麼」。</p>
 
-                <div class="symptom-list">
-                    <div class="symptom-item">
-                        <h3><span class="num">1</span>每次介紹自己的事業，都說不清楚、說得心虛</h3>
-                        <p class="feeling">當別人問「你是做什麼的？」，你發現自己每次的答案都不一樣，或者說完後自己都覺得不太對。</p>
-                        <div class="analysis">
-                            <div class="analysis-label">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg>
-                                設計師分析
+                <h2>好的品牌故事 vs 無效的品牌故事</h2>
+                
+                <p>讓我們先看看兩種故事的差異：</p>
+                
+                <div class="story-comparison">
+                    <div class="story-box bad">
+                        <div class="story-box-label">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>
+                            自說自話的故事
+                        </div>
+                        <p>「我從小就對設計充滿熱情。大學畢業後進入廣告公司，累積了 8 年經驗。2020 年我決定創業，成立了自己的設計工作室。我擅長品牌識別設計、網頁設計⋯⋯」</p>
+                    </div>
+                    <div class="story-box good">
+                        <div class="story-box-label">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                            與受眾共鳴的故事
+                        </div>
+                        <p>「你有沒有過這種感覺：明明做著自己熱愛的事，卻總是說不清楚自己在做什麼？我曾經也是。直到我發現，問題不在於『怎麼說』，而在於我還沒真正認識自己的品牌⋯⋯」</p>
+                    </div>
+                </div>
+                
+                <p>看出差異了嗎？</p>
+                
+                <p>第一個故事是「我、我、我」——講的是自己的經歷、自己的技能，但受眾讀完後不會有任何情感連結。</p>
+                
+                <p>第二個故事是「你、我們」——它從受眾的痛點開始，讓人立刻產生「對，我就是這樣！」的共鳴，然後才帶出自己的經歷作為解方的來源。</p>
+
+                <h2>三層敘事架構：讓故事產生共鳴</h2>
+                
+                <p>一個有效的品牌故事，通常包含三個層次。你可以把它想像成一座橋：</p>
+
+                <div class="framework-list">
+                    <div class="framework-item">
+                        <h3><span class="layer">第一層</span>共同的痛點</h3>
+                        <p class="description">從受眾的問題開始，讓他們感到「被看見」。這個痛點最好是你自己也經歷過的——這樣你的理解才會真實。</p>
+                        <div class="example-box">
+                            <div class="example-label">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                                例子
                             </div>
-                            <p>這是<strong>品牌定位（Brand Positioning）</strong>不清晰的徵兆。品牌定位回答的是：你是誰、服務誰、解決什麼問題、為什麼選你。當這些問題沒有明確答案，你自然說不清楚。</p>
+                            <p>「你是不是也覺得，每次介紹自己的事業時，話說出口就覺得不太對？」</p>
                         </div>
                     </div>
                     
-                    <div class="symptom-item">
-                        <h3><span class="num">2</span>不斷想換 Logo、換顏色，卻永遠不滿意</h3>
-                        <p class="feeling">你可能已經換過好幾個 Logo，或者一直想換但又不知道該換成什麼。每次看到都覺得「不太對」。</p>
-                        <div class="analysis">
-                            <div class="analysis-label">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg>
-                                設計師分析
+                    <div class="framework-item">
+                        <h3><span class="layer">第二層</span>發現與轉變</h3>
+                        <p class="description">分享你是如何發現解決方法的——可能是一個頓悟、一次學習、一段經歷。這是故事的「轉折點」，也是你獨特性的來源。</p>
+                        <div class="example-box">
+                            <div class="example-label">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                                例子
                             </div>
-                            <p>這種「視覺焦慮」通常不是設計本身的問題，而是<strong>品牌策略（Brand Strategy）</strong>還沒釐清。視覺是品牌的外衣，當內在不清晰時，怎麼換衣服都不會滿意。先定義品牌性格，再談視覺。</p>
+                            <p>「後來我發現，問題不是『怎麼說』，而是我從來沒有好好定義『我是誰』。當我花時間釐清品牌的核心價值後，一切都變得清晰了。」</p>
                         </div>
                     </div>
                     
-                    <div class="symptom-item">
-                        <h3><span class="num">3</span>看到同行的品牌會焦慮，覺得自己「不夠專業」</h3>
-                        <p class="feeling">滑到競爭對手的 Instagram，心裡就開始比較——他們的設計好像比較有質感、風格比較統一、追蹤者比較多……</p>
-                        <div class="analysis">
-                            <div class="analysis-label">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg>
-                                設計師分析
+                    <div class="framework-item">
+                        <h3><span class="layer">第三層</span>提供的價值</h3>
+                        <p class="description">回到受眾身上——你現在能為他們提供什麼？你的服務如何幫助他們經歷類似的轉變？這裡要避免硬銷，而是用「邀請」的語氣。</p>
+                        <div class="example-box">
+                            <div class="example-label">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                                例子
                             </div>
-                            <p>焦慮來自於缺乏<strong>品牌差異化（Brand Differentiation）</strong>的自信。當你不確定自己的獨特價值，就會不斷用別人的標準衡量自己。專業感不是模仿來的，而是從清晰的定位中長出來的。</p>
-                        </div>
-                    </div>
-                    
-                    <div class="symptom-item">
-                        <h3><span class="num">4</span>客人常誤解你的服務，吸引到的不是理想客群</h3>
-                        <p class="feeling">你明明提供的是高品質的服務，來詢問的卻都是比價的客人；你想吸引有品味的客群，來的卻是要求多多的麻煩客。</p>
-                        <div class="analysis">
-                            <div class="analysis-label">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg>
-                                設計師分析
-                            </div>
-                            <p>這是<strong>品牌訊息（Brand Messaging）</strong>與<strong>視覺識別（Visual Identity）</strong>不一致的結果。你的內在價值和外在呈現有落差——可能是定價、文案、視覺風格傳遞了錯誤的訊號，吸引了錯誤的受眾。</p>
-                        </div>
-                    </div>
-                    
-                    <div class="symptom-item">
-                        <h3><span class="num">5</span>對經營社交媒體感到極度抗拒或倦怠</h3>
-                        <p class="feeling">每次要發文都是一種折磨——不知道要發什麼、不確定該用什麼語氣、發完了又覺得不像自己。</p>
-                        <div class="analysis">
-                            <div class="analysis-label">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg>
-                                設計師分析
-                            </div>
-                            <p>這種倦怠來自於<strong>品牌聲音（Brand Voice）</strong>還沒建立。品牌聲音是你與受眾溝通的一致語氣和風格——當它不存在時，每次發文都像在重新發明輪子，當然會感到疲憊。</p>
+                            <p>「現在，我幫助和我一樣的獨立創業者，找到屬於他們的品牌聲音。因為我相信，每個人都值得擁有一個真正代表自己的品牌。」</p>
                         </div>
                     </div>
                 </div>
 
-                <h2>這些徵兆在告訴你什麼？</h2>
+                <h2>寫品牌故事的三個原則</h2>
                 
-                <p>如果你符合以上 1-2 項，你的品牌可能只是需要一些微調和梳理。</p>
+                <p>有了架構之後，還有三個原則能讓你的故事更有力量：</p>
                 
-                <p>如果你符合 3 項以上，你的品牌可能正在經歷一個轉型期——它需要被重新認識、重新定義。</p>
+                <h3>1. 具體比抽象有力</h3>
+                <p>「我幫助創業者建立品牌」太抽象。「我幫助療癒工作者找到屬於自己的品牌聲音」就具體多了。具體的描述會讓受眾更容易想像自己是否適合。</p>
                 
-                <p>無論是哪一種情況，請記住：<strong>這不是你的失敗，而是成長的訊號。</strong></p>
+                <h3>2. 脆弱比完美動人</h3>
+                <p>不要害怕分享你曾經的迷惘或失敗。這些「不完美」恰恰是讓人產生連結的地方。當你說「我也曾經⋯⋯」時，受眾會感到被理解。</p>
                 
-                <p>品牌和人一樣，會隨著時間改變。當你的事業進入新階段、當你對市場有了新的理解、當你自己的價值觀有了轉變——品牌也需要跟著調整，才能繼續真實地代表你。</p>
+                <h3>3. 情感比資訊重要</h3>
+                <p>人們可能不記得你說了什麼，但會記得你讓他們感受到什麼。所以與其列出一堆服務項目，不如讓他們感受到「這個人理解我」。</p>
+
+                <div class="practice-box">
+                    <h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+                        現在就試試看
+                    </h3>
+                    <ol>
+                        <li><strong>回想你的客戶最常遇到的問題是什麼？</strong>這就是「共同痛點」的素材。</li>
+                        <li><strong>你是怎麼發現解決這個問題的方法的？</strong>可能是一本書、一次對話、一段經歷。這就是你的「轉變故事」。</li>
+                        <li><strong>如果只能用一句話說明你能帶給客戶什麼，你會怎麼說？</strong>這就是你的「價值主張」。</li>
+                    </ol>
+                </div>
 
                 <!-- Designer Summary -->
                 <div class="designer-summary">
                     <h3>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
-                        設計師總結
+                        設計師觀點
                     </h3>
-                    <p>這 5 個徵兆，在品牌設計的專業術語中，反映的是<strong>品牌核心三要素</strong>的缺失或不一致：</p>
+                    <p>在品牌策略的領域中，我們稱這種敘事方式為<strong>品牌敘事架構（Brand Narrative Framework）</strong>。它不只是「關於我們」頁面的文案，而是貫穿所有品牌溝通的核心邏輯。</p>
                     <ul>
-                        <li><strong>品牌定位（Brand Positioning）</strong>：你是誰、服務誰、提供什麼價值</li>
-                        <li><strong>品牌聲音（Brand Voice）</strong>：你如何說話、用什麼語氣溝通</li>
-                        <li><strong>視覺識別（Visual Identity）</strong>：Logo、色彩、字體的系統化應用</li>
+                        <li><strong>情感連結（Emotional Connection）</strong>：好的敘事讓受眾產生情感認同</li>
+                        <li><strong>差異化定位（Differentiation）</strong>：你的轉變故事就是你獨特的賣點</li>
+                        <li><strong>行動召喚（Call to Action）</strong>：從情感連結自然過渡到邀請合作</li>
                     </ul>
-                    <p>當這三者清晰且一致，上述的「症狀」自然會消失。品牌療癒的本質，就是重新建立這三者的連貫性。</p>
-                    <p>在接下來的文章中，我們會逐一探討這些主題，幫助你從根本解決品牌的問題。</p>
+                    <p>當你的品牌故事能清楚回答「為什麼是你」這個問題時，行銷就不再是推銷——而是吸引。</p>
                 </div>
 
                 <div class="highlight-box">
-                    <p><strong>療癒的起點，是承認需要被照顧。</strong><br>允許自己停下來，好好看看你的品牌。</p>
+                    <p><strong>品牌故事不是要說服別人你很厲害，而是讓對的人感到被理解。</strong><br>當他們說「你好像在說我」時，連結就建立了。</p>
                 </div>
                 
-                <p>如果這篇文章讓你有些共鳴，歡迎在 Instagram 私訊我，告訴我你的品牌正在經歷什麼。我很想聽聽你的故事。</p>
+                <p>如果你也想找到屬於自己的品牌故事，歡迎與我聊聊。有時候，局外人的視角能幫你看見自己習以為常卻獨特珍貴的東西。</p>
             </div>
 
             <!-- Article Footer -->
             <footer class="article-footer">
                 <div class="article-cta">
-                    <h3>想為品牌做一次健康檢查？</h3>
-                    <p>預約免費諮詢，讓我們一起診斷品牌的狀況，找出改善的方向。</p>
+                    <h3>想找到屬於你的品牌故事？</h3>
+                    <p>預約免費諮詢，讓我們一起發掘你的品牌核心，打造能打動人心的品牌敘事。</p>
                     <div class="cta-buttons">
                         <a href="contact.html" class="btn btn-primary">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
@@ -626,17 +743,17 @@
                 </div>
                 
                 <nav class="article-nav">
-                    <a href="lounge.html">
+                    <a href="article-brand-identity.html">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                        <span class="nav-text">
+                            <span class="nav-label">上一篇</span>
+                            <span class="nav-title">品牌為何不像自己？</span>
+                        </span>
+                    </a>
+                    <a href="lounge.html" style="text-align: right;">
                         <span class="nav-text">
                             <span class="nav-label">回到</span>
                             <span class="nav-title">療癒實驗室</span>
-                        </span>
-                    </a>
-                    <a href="article-brand-identity.html" style="text-align: right;">
-                        <span class="nav-text">
-                            <span class="nav-label">下一篇</span>
-                            <span class="nav-title">品牌為何不像自己？</span>
                         </span>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
                     </a>
@@ -698,5 +815,16 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Mobile navigation toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        navToggle?.addEventListener('click', () => {
+            navMenu?.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

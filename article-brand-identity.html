@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>你的品牌需要療癒嗎？5 個徵兆自我檢測 | 隙光設計</title>
-    <meta name="description" content="品牌也會生病——這 5 個常見徵兆反映的是品牌定位、品牌聲音、視覺識別的缺失。從療癒角度認識問題，以專業設計觀點找出解方。">
+    <title>為什麼你的品牌總是「不像自己」？| 隙光設計</title>
+    <meta name="description" content="品牌與創辦人之間的斷裂感，往往源於定位的模糊。當內在的聲音與外在的呈現不一致，品牌就會顯得疏離。探索四種常見的品牌斷裂模式，找回真實的品牌聲音。">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="你的品牌需要療癒嗎？5 個徵兆自我檢測">
-    <meta property="og:description" content="品牌也會生病——這 5 個常見徵兆，反映的是品牌核心三要素的缺失。">
+    <meta property="og:title" content="為什麼你的品牌總是「不像自己」？">
+    <meta property="og:description" content="品牌與創辦人之間的斷裂感，往往源於定位的模糊。探索四種常見的品牌斷裂模式。">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://spacebetweenhealing.com/lounge/article-brand-healing-signs.html">
+    <meta property="og:url" content="https://spacebetweenhealing.com/lounge/article-brand-identity.html">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
@@ -139,20 +139,20 @@
             margin-bottom: 2.5rem;
         }
         
-        /* Symptom Cards */
-        .symptom-list {
+        /* Disconnect Cards */
+        .disconnect-list {
             margin: 2.5rem 0;
         }
         
-        .symptom-item {
+        .disconnect-item {
             background: #faf9f7;
             border-radius: 12px;
             padding: 1.5rem 2rem;
             margin-bottom: 1.5rem;
-            border-left: 4px solid #8b7355;
+            border-left: 4px solid #a0b89c;
         }
         
-        .symptom-item h3 {
+        .disconnect-item h3 {
             font-size: 1.1rem;
             color: #2d2926;
             margin-top: 0;
@@ -162,8 +162,8 @@
             gap: 0.75rem;
         }
         
-        .symptom-item h3 .num {
-            background: #2d2926;
+        .disconnect-item h3 .num {
+            background: #a0b89c;
             color: white;
             width: 26px;
             height: 26px;
@@ -175,24 +175,33 @@
             font-size: 0.8rem;
         }
         
-        .symptom-item .feeling {
+        .disconnect-item .scenario {
             color: #5a5550;
             font-size: 1rem;
             margin-bottom: 1rem;
             padding-left: 2.5rem;
+            font-style: italic;
         }
         
-        .symptom-item .analysis {
+        .disconnect-item .explanation {
+            color: #4a4543;
+            font-size: 0.95rem;
+            padding-left: 2.5rem;
+            line-height: 1.8;
+        }
+        
+        .disconnect-item .healing-note {
             background: white;
             border-radius: 8px;
             padding: 1rem 1.25rem;
             margin-left: 2.5rem;
+            margin-top: 1rem;
             border: 1px solid #e8e4df;
         }
         
-        .symptom-item .analysis-label {
+        .disconnect-item .healing-label {
             font-size: 0.75rem;
-            color: #8b7355;
+            color: #a0b89c;
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 0.5rem;
@@ -201,20 +210,16 @@
             gap: 0.4rem;
         }
         
-        .symptom-item .analysis-label svg {
+        .disconnect-item .healing-label svg {
             width: 14px;
             height: 14px;
         }
         
-        .symptom-item .analysis p {
+        .disconnect-item .healing-note p {
             margin: 0;
             font-size: 0.95rem;
             color: #4a4543;
             line-height: 1.7;
-        }
-        
-        .symptom-item .analysis strong {
-            color: #2d2926;
         }
         
         /* Highlight Box */
@@ -234,6 +239,49 @@
         
         .highlight-box strong {
             color: #2d2926;
+        }
+        
+        /* Question Box */
+        .question-box {
+            background: #faf9f7;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+        }
+        
+        .question-box h3 {
+            font-size: 1.1rem;
+            color: #2d2926;
+            margin-top: 0;
+            margin-bottom: 1.25rem;
+        }
+        
+        .question-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .question-box li {
+            padding: 0.75rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #4a4543;
+            font-size: 1rem;
+            line-height: 1.6;
+            border-bottom: 1px solid #e8e4df;
+        }
+        
+        .question-box li:last-child {
+            border-bottom: none;
+        }
+        
+        .question-box li::before {
+            content: '?';
+            position: absolute;
+            left: 0;
+            color: #8b7355;
+            font-weight: 600;
         }
         
         /* Designer Summary */
@@ -372,7 +420,6 @@
             color: #8b7355;
             text-decoration: none;
             font-size: 0.95rem;
-            transition: color 0.3s ease;
         }
         
         .article-nav a:hover {
@@ -382,21 +429,6 @@
         .article-nav svg {
             width: 18px;
             height: 18px;
-        }
-        
-        .article-nav .nav-text {
-            display: flex;
-            flex-direction: column;
-            gap: 0.2rem;
-        }
-        
-        .article-nav .nav-label {
-            font-size: 0.75rem;
-            color: #9a938b;
-        }
-        
-        .article-nav .nav-title {
-            font-size: 0.9rem;
         }
         
         /* Responsive */
@@ -417,12 +449,13 @@
                 font-size: 1rem;
             }
             
-            .symptom-item {
+            .disconnect-item {
                 padding: 1.25rem 1.5rem;
             }
             
-            .symptom-item .feeling,
-            .symptom-item .analysis {
+            .disconnect-item .scenario,
+            .disconnect-item .explanation,
+            .disconnect-item .healing-note {
                 padding-left: 0;
                 margin-left: 0;
                 margin-top: 1rem;
@@ -436,11 +469,6 @@
             
             .designer-summary {
                 padding: 1.5rem;
-            }
-            
-            .article-nav {
-                flex-direction: column;
-                gap: 1rem;
             }
         }
     </style>
@@ -480,11 +508,11 @@
             <nav class="breadcrumb">
                 <a href="lounge.html">會客室</a>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                <span>品牌自我檢測</span>
+                <span>品牌身份認同</span>
             </nav>
             
-            <span class="series-tag">品牌療癒系列 · 第 1 篇</span>
-            <h1>你的品牌需要療癒嗎？<br>5 個徵兆自我檢測</h1>
+            <span class="series-tag">品牌療癒系列 · 第 2 篇</span>
+            <h1>為什麼你的品牌<br>總是「不像自己」？</h1>
             
             <div class="article-meta">
                 <span>
@@ -493,7 +521,7 @@
                 </span>
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    閱讀時間 6 分鐘
+                    閱讀時間 7 分鐘
                 </span>
             </div>
         </div>
@@ -503,116 +531,117 @@
     <article class="article-content">
         <div class="container">
             <div class="article-body">
-                <p class="lead-text">品牌也會「生病」——當你對自己的品牌感到疲憊或疏離時，這些徵兆正在告訴你：是時候停下來，好好檢視品牌的狀態了。</p>
+                <p class="lead-text">你有沒有過這種感覺：明明品牌是自己一手創建的，卻怎麼看都覺得「這不太像我」？每次發文、每次與客戶互動，都帶著一種隱隱的違和感。</p>
                 
-                <p>作為獨立創業者，你可能已經忙於產品開發、客戶服務、財務管理……品牌經營常常被擠到優先序的最後。</p>
+                <p>這種感受比你想像的普遍得多。許多獨立創業者都曾經歷過——他們對自己的專業充滿熱情，卻無法在品牌中看到自己的影子。</p>
                 
-                <p>直到有一天，你發現自己對著品牌的 Logo 發呆，心裡浮現一個聲音：「這真的是我嗎？」</p>
+                <p>品牌與創辦人之間的「斷裂感」，不是因為你不夠努力，而是因為在某個環節，品牌的發展偏離了你真實的聲音。</p>
                 
-                <p>這種感覺很正常。品牌不是一次設計好就能永遠不變的——它會隨著你的成長而需要調整，也會因為長期被忽略而出現「症狀」。</p>
+                <h2>四種常見的品牌斷裂模式</h2>
                 
-                <p>以下是 5 個常見的徵兆。如果你發現自己符合其中幾項，別擔心——這不是你的問題，而是品牌在向你發出訊號，提醒你它需要被照顧。</p>
+                <p>在過去的諮詢經驗中，我發現品牌與創辦人之間的斷裂，通常源自四種模式。看看你是否能在其中找到自己的影子：</p>
 
-                <div class="symptom-list">
-                    <div class="symptom-item">
-                        <h3><span class="num">1</span>每次介紹自己的事業，都說不清楚、說得心虛</h3>
-                        <p class="feeling">當別人問「你是做什麼的？」，你發現自己每次的答案都不一樣，或者說完後自己都覺得不太對。</p>
-                        <div class="analysis">
-                            <div class="analysis-label">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg>
-                                設計師分析
+                <div class="disconnect-list">
+                    <div class="disconnect-item">
+                        <h3><span class="num">1</span>模仿成功者的陷阱</h3>
+                        <p class="scenario">「她的品牌做得那麼成功，我照著她的風格做應該也會有效。」</p>
+                        <p class="explanation">當我們還不確定自己是誰時，最直覺的做法就是模仿看起來成功的人。但成功的品牌之所以成功，正是因為它們真實地表達了創辦人的獨特性。當你模仿別人時，你正在用別人的聲音說話——而受眾是感受得到的。</p>
+                        <div class="healing-note">
+                            <div class="healing-label">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                                療癒提示
                             </div>
-                            <p>這是<strong>品牌定位（Brand Positioning）</strong>不清晰的徵兆。品牌定位回答的是：你是誰、服務誰、解決什麼問題、為什麼選你。當這些問題沒有明確答案，你自然說不清楚。</p>
+                            <p>與其問「成功的品牌長什麼樣」，不如問「什麼樣的表達方式讓我感到自在」。找回你自己的節奏。</p>
                         </div>
                     </div>
                     
-                    <div class="symptom-item">
-                        <h3><span class="num">2</span>不斷想換 Logo、換顏色，卻永遠不滿意</h3>
-                        <p class="feeling">你可能已經換過好幾個 Logo，或者一直想換但又不知道該換成什麼。每次看到都覺得「不太對」。</p>
-                        <div class="analysis">
-                            <div class="analysis-label">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg>
-                                設計師分析
+                    <div class="disconnect-item">
+                        <h3><span class="num">2</span>討好市場的焦慮</h3>
+                        <p class="scenario">「我必須看起來更專業、更主流，才能吸引到客戶。」</p>
+                        <p class="explanation">為了「市場接受度」而收起自己的稜角，是很多創業者會做的妥協。但諷刺的是，當你試圖討好所有人時，你反而變得面目模糊。真正會被你吸引的客戶，恰恰是那些能在你的品牌中看到真實性的人。</p>
+                        <div class="healing-note">
+                            <div class="healing-label">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                                療癒提示
                             </div>
-                            <p>這種「視覺焦慮」通常不是設計本身的問題，而是<strong>品牌策略（Brand Strategy）</strong>還沒釐清。視覺是品牌的外衣，當內在不清晰時，怎麼換衣服都不會滿意。先定義品牌性格，再談視覺。</p>
+                            <p>你的「特別」不是缺點，而是篩選機制。它會幫你吸引對的人，過濾不適合的人。</p>
                         </div>
                     </div>
                     
-                    <div class="symptom-item">
-                        <h3><span class="num">3</span>看到同行的品牌會焦慮，覺得自己「不夠專業」</h3>
-                        <p class="feeling">滑到競爭對手的 Instagram，心裡就開始比較——他們的設計好像比較有質感、風格比較統一、追蹤者比較多……</p>
-                        <div class="analysis">
-                            <div class="analysis-label">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg>
-                                設計師分析
+                    <div class="disconnect-item">
+                        <h3><span class="num">3</span>視覺先行的錯位</h3>
+                        <p class="scenario">「先把 Logo 和網站做好，品牌定位之後再說。」</p>
+                        <p class="explanation">這是最常見的順序顛倒。視覺識別應該是品牌策略的「外衣」，而不是起點。當你還不清楚自己的品牌核心價值、目標受眾、品牌性格時，任何視覺設計都只是猜測——而且很可能猜錯。</p>
+                        <div class="healing-note">
+                            <div class="healing-label">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                                療癒提示
                             </div>
-                            <p>焦慮來自於缺乏<strong>品牌差異化（Brand Differentiation）</strong>的自信。當你不確定自己的獨特價值，就會不斷用別人的標準衡量自己。專業感不是模仿來的，而是從清晰的定位中長出來的。</p>
+                            <p>好的設計流程是：先定義內在（定位、價值、性格），再設計外在（視覺、語言、體驗）。</p>
                         </div>
                     </div>
                     
-                    <div class="symptom-item">
-                        <h3><span class="num">4</span>客人常誤解你的服務，吸引到的不是理想客群</h3>
-                        <p class="feeling">你明明提供的是高品質的服務，來詢問的卻都是比價的客人；你想吸引有品味的客群，來的卻是要求多多的麻煩客。</p>
-                        <div class="analysis">
-                            <div class="analysis-label">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg>
-                                設計師分析
+                    <div class="disconnect-item">
+                        <h3><span class="num">4</span>過去與現在的落差</h3>
+                        <p class="scenario">「這是我三年前做的品牌，現在的我已經不一樣了。」</p>
+                        <p class="explanation">你在成長，但品牌還停留在過去。這種落差會隨著時間越來越明顯。品牌不是一次性的工程，它需要隨著你的發展而演進。當你感覺品牌「不再代表我」時，這是一個重新校準的訊號，而不是失敗的證明。</p>
+                        <div class="healing-note">
+                            <div class="healing-label">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                                療癒提示
                             </div>
-                            <p>這是<strong>品牌訊息（Brand Messaging）</strong>與<strong>視覺識別（Visual Identity）</strong>不一致的結果。你的內在價值和外在呈現有落差——可能是定價、文案、視覺風格傳遞了錯誤的訊號，吸引了錯誤的受眾。</p>
-                        </div>
-                    </div>
-                    
-                    <div class="symptom-item">
-                        <h3><span class="num">5</span>對經營社交媒體感到極度抗拒或倦怠</h3>
-                        <p class="feeling">每次要發文都是一種折磨——不知道要發什麼、不確定該用什麼語氣、發完了又覺得不像自己。</p>
-                        <div class="analysis">
-                            <div class="analysis-label">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/></svg>
-                                設計師分析
-                            </div>
-                            <p>這種倦怠來自於<strong>品牌聲音（Brand Voice）</strong>還沒建立。品牌聲音是你與受眾溝通的一致語氣和風格——當它不存在時，每次發文都像在重新發明輪子，當然會感到疲憊。</p>
+                            <p>品牌更新不是否定過去，而是誠實地反映現在的你。給自己許可，讓品牌跟上你的腳步。</p>
                         </div>
                     </div>
                 </div>
 
-                <h2>這些徵兆在告訴你什麼？</h2>
+                <h2>找回品牌的真實聲音</h2>
                 
-                <p>如果你符合以上 1-2 項，你的品牌可能只是需要一些微調和梳理。</p>
+                <p>如果你在上面的模式中看到了自己，這是好事——意識到問題是改變的第一步。</p>
                 
-                <p>如果你符合 3 項以上，你的品牌可能正在經歷一個轉型期——它需要被重新認識、重新定義。</p>
+                <p>找回品牌真實聲音的過程，本質上是一個「向內探索」的過程。它不是關於學習更多市場技巧，而是關於更誠實地面對幾個核心問題：</p>
                 
-                <p>無論是哪一種情況，請記住：<strong>這不是你的失敗，而是成長的訊號。</strong></p>
+                <div class="question-box">
+                    <h3>你可以問自己這些問題：</h3>
+                    <ul>
+                        <li>當我不考慮市場、不考慮競爭對手時，我最想透過這份事業傳達什麼？</li>
+                        <li>在我的專業領域中，有什麼是我特別在意、別人可能不那麼在意的？</li>
+                        <li>我希望客戶在與我合作後，帶走什麼樣的感受？</li>
+                        <li>如果我的品牌是一個人，它會怎麼說話、怎麼穿著、怎麼對待別人？</li>
+                        <li>三年後，我希望這個品牌變成什麼樣子？</li>
+                    </ul>
+                </div>
                 
-                <p>品牌和人一樣，會隨著時間改變。當你的事業進入新階段、當你對市場有了新的理解、當你自己的價值觀有了轉變——品牌也需要跟著調整，才能繼續真實地代表你。</p>
+                <p>這些問題沒有標準答案，但花時間認真思考它們，會幫助你找到品牌的「真北」——那個無論外在環境如何變化，都能作為指引的核心方向。</p>
 
                 <!-- Designer Summary -->
                 <div class="designer-summary">
                     <h3>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
-                        設計師總結
+                        設計師觀點
                     </h3>
-                    <p>這 5 個徵兆，在品牌設計的專業術語中，反映的是<strong>品牌核心三要素</strong>的缺失或不一致：</p>
+                    <p>在品牌設計的專業術語中，我們稱這個過程為<strong>品牌身份建構（Brand Identity Development）</strong>。它不只是視覺層面的設計，而是從根本上定義：</p>
                     <ul>
-                        <li><strong>品牌定位（Brand Positioning）</strong>：你是誰、服務誰、提供什麼價值</li>
-                        <li><strong>品牌聲音（Brand Voice）</strong>：你如何說話、用什麼語氣溝通</li>
-                        <li><strong>視覺識別（Visual Identity）</strong>：Logo、色彩、字體的系統化應用</li>
+                        <li><strong>品牌本質（Brand Essence）</strong>：你的品牌存在的核心意義</li>
+                        <li><strong>品牌性格（Brand Personality）</strong>：品牌的人格特質與表達方式</li>
+                        <li><strong>品牌承諾（Brand Promise）</strong>：你對客戶的核心承諾</li>
+                        <li><strong>品牌差異化（Brand Differentiation）</strong>：你與競爭者的本質區別</li>
                     </ul>
-                    <p>當這三者清晰且一致，上述的「症狀」自然會消失。品牌療癒的本質，就是重新建立這三者的連貫性。</p>
-                    <p>在接下來的文章中，我們會逐一探討這些主題，幫助你從根本解決品牌的問題。</p>
+                    <p>當這些元素清晰且一致時，品牌自然會「像你」——因為它本來就是從你的核心長出來的。</p>
                 </div>
 
                 <div class="highlight-box">
-                    <p><strong>療癒的起點，是承認需要被照顧。</strong><br>允許自己停下來，好好看看你的品牌。</p>
+                    <p><strong>品牌不是你「創造」出來的，而是你「發現」的。</strong><br>它一直在那裡，只是需要被看見、被表達。</p>
                 </div>
                 
-                <p>如果這篇文章讓你有些共鳴，歡迎在 Instagram 私訊我，告訴我你的品牌正在經歷什麼。我很想聽聽你的故事。</p>
+                <p>在下一篇文章中，我們會探討如何用「敘事」的力量，把你的品牌故事說得打動人心。因為找到真實的聲音只是第一步，學會如何表達它，才能真正與受眾產生連結。</p>
             </div>
 
             <!-- Article Footer -->
             <footer class="article-footer">
                 <div class="article-cta">
-                    <h3>想為品牌做一次健康檢查？</h3>
-                    <p>預約免費諮詢，讓我們一起診斷品牌的狀況，找出改善的方向。</p>
+                    <h3>想找回品牌的真實聲音？</h3>
+                    <p>預約免費諮詢，讓我們一起探索你的品牌本質，重建內外一致的品牌身份。</p>
                     <div class="cta-buttons">
                         <a href="contact.html" class="btn btn-primary">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
@@ -626,18 +655,12 @@
                 </div>
                 
                 <nav class="article-nav">
-                    <a href="lounge.html">
+                    <a href="article-brand-healing-signs.html">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-                        <span class="nav-text">
-                            <span class="nav-label">回到</span>
-                            <span class="nav-title">療癒實驗室</span>
-                        </span>
+                        上一篇：5 個徵兆自我檢測
                     </a>
-                    <a href="article-brand-identity.html" style="text-align: right;">
-                        <span class="nav-text">
-                            <span class="nav-label">下一篇</span>
-                            <span class="nav-title">品牌為何不像自己？</span>
-                        </span>
+                    <a href="article-narrative-power.html">
+                        下一篇：敘事的力量
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
                     </a>
                 </nav>
@@ -694,9 +717,20 @@
             </div>
             <div class="footer-bottom">
                 <p>© 2025 隙光 Space Between Studio. All rights reserved.</p>
-                <p>隙光設計 Space Between Healing 為隙光 Space Between Studio 旗下品牌。</p>
+                <p>隙光設計 Space Between Healing 為隙光 Space Between Studio 旗下品牌</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Mobile navigation toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        navToggle?.addEventListener('click', () => {
+            navMenu?.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

@@ -92,7 +92,7 @@
         .intro-box p { color:var(--text-secondary); line-height:1.9; margin-bottom:1rem; }
         .intro-box p:last-child { margin-bottom:0; }
 
-        /* Article Cards - New Design */
+        /* Article Cards */
         .articles-grid { display:grid; gap:2rem; }
         
         /* Featured Article */
@@ -124,26 +124,6 @@
         .article-card .article-tag { margin-bottom:1rem; }
         .article-card .article-title { font-size:1.3rem; margin-bottom:0.75rem; }
         .article-card .article-excerpt { font-size:0.9rem; margin-bottom:1.5rem; }
-        
-        /* Coming Soon State */
-        .article-card.coming-soon { opacity:0.6; }
-        .article-card.coming-soon:hover { transform:none; box-shadow:none; }
-        .article-card.coming-soon::before { display:none; }
-        .coming-badge { display:inline-block; background:rgba(245,239,230,0.1); color:var(--text-muted); font-size:0.7rem; padding:0.3rem 0.7rem; border-radius:10px; margin-bottom:0.75rem; }
-
-        
-        /* Disclaimer */
-        .disclaimer-box { 
-            background: rgba(160,184,156,0.08); 
-            border: 1px solid rgba(160,184,156,0.2); 
-            border-radius: 12px; 
-            padding: 1.5rem 2rem; 
-            margin: 2rem 0; 
-            font-size: 0.85rem; 
-            color: var(--text-muted); 
-            line-height: 1.8;
-        }
-        .disclaimer-box strong { color: var(--sage); }
 
         /* Resources Section */
         .resources-section { background:var(--bg-dark); padding:5rem 4vw; margin-top:2rem; }
@@ -290,9 +270,8 @@
 
                 <!-- Regular Articles -->
                 <div class="articles-row">
-                    <div class="article-card coming-soon">
+                    <a href="article-brand-identity.html" class="article-card">
                         <span class="article-num">02</span>
-                        <span class="coming-badge">Coming Soon</span>
                         <div class="article-tag"><span>Brand Identity</span></div>
                         <div class="lang-content active" data-lang-content="zh-TW">
                             <h3 class="article-title zh">為什麼你的品牌總是「不像自己」？</h3>
@@ -306,11 +285,16 @@
                             <h3 class="article-title">Why Your Brand Never Feels Like "You"</h3>
                             <p class="article-excerpt">The disconnect between brand and founder often stems from unclear positioning. When inner voice and outer presentation don't align, brands feel distant.</p>
                         </div>
-                    </div>
+                        <span class="read-more">
+                            <span class="lang-content active" data-lang-content="zh-TW">閱讀文章</span>
+                            <span class="lang-content" data-lang-content="zh-CN">阅读文章</span>
+                            <span class="lang-content" data-lang-content="en">Read Article</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </span>
+                    </a>
 
-                    <div class="article-card coming-soon">
+                    <a href="article-narrative-power.html" class="article-card">
                         <span class="article-num">03</span>
-                        <span class="coming-badge">Coming Soon</span>
                         <div class="article-tag"><span>Narrative Strategy</span></div>
                         <div class="lang-content active" data-lang-content="zh-TW">
                             <h3 class="article-title zh">敘事的力量：如何讓品牌故事打動人心</h3>
@@ -324,7 +308,13 @@
                             <h3 class="article-title">The Power of Narrative: Making Brand Stories Resonate</h3>
                             <p class="article-excerpt">Good brand stories aren't monologues — they're bridges that create resonance with your audience. Learn to connect hearts through story.</p>
                         </div>
-                    </div>
+                        <span class="read-more">
+                            <span class="lang-content active" data-lang-content="zh-TW">閱讀文章</span>
+                            <span class="lang-content" data-lang-content="zh-CN">阅读文章</span>
+                            <span class="lang-content" data-lang-content="en">Read Article</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </span>
+                    </a>
                 </div>
             </div>
 
@@ -437,7 +427,7 @@
                 <a href="privacy.html">Privacy</a>
                 <a href="terms.html">Terms</a>
             </div>
-            <p class="footer-copy">© 2024 Space Between Healing. All rights reserved.</p>
+            <p class="footer-copy">© 2025 Space Between Healing. All rights reserved.</p>
         </div>
     </footer>
 
