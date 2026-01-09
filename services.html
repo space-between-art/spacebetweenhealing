@@ -100,6 +100,11 @@
         .note-box p { color:var(--text-secondary); font-size:0.95rem; margin:0; }
         .note-box strong { color:var(--sage); }
 
+        /* Disclaimer Box */
+        .disclaimer-box { background:rgba(160,184,156,0.05); border:1px solid rgba(160,184,156,0.15); border-left:3px solid var(--sage); border-radius:0 16px 16px 0; padding:1.5rem 2rem; }
+        .disclaimer-box p { color:var(--text-secondary); font-size:0.95rem; margin:0; }
+        .disclaimer-box strong { color:var(--sage); }
+
         /* Buttons */
         .btn { display:inline-flex; align-items:center; gap:0.6rem; padding:1rem 2rem; font-family:var(--font-body); font-size:0.85rem; font-weight:500; text-decoration:none; border-radius:100px; cursor:pointer; transition:all 0.4s var(--ease); border:none; }
         .btn svg { width:16px; height:16px; }
@@ -420,6 +425,63 @@
             <span class="lang-content" data-lang-content="zh-CN">联络我们</span>
             <span class="lang-content" data-lang-content="en">Contact Us</span>
         </a>
+    </section>
+
+    <!-- Payment Information -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div style="background:var(--bg-card); border:1px solid rgba(212,165,116,0.15); border-radius:20px; padding:2.5rem; max-width:600px; margin:0 auto; text-align:center;">
+                <div style="display:inline-flex; align-items:center; gap:0.5rem; margin-bottom:1.5rem;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+                    <span style="font-size:0.75rem; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold);">Payment Information</span>
+                </div>
+                <div class="lang-content active" data-lang-content="zh-TW">
+                    <h3 class="zh" style="font-family:var(--font-display); font-size:1.4rem; color:var(--cream); margin-bottom:1.25rem;">銀行轉帳資料</h3>
+                </div>
+                <div class="lang-content" data-lang-content="zh-CN">
+                    <h3 class="zh" style="font-family:var(--font-display); font-size:1.4rem; color:var(--cream); margin-bottom:1.25rem;">银行转账资料</h3>
+                </div>
+                <div class="lang-content" data-lang-content="en">
+                    <h3 style="font-family:var(--font-display); font-size:1.4rem; color:var(--cream); margin-bottom:1.25rem;">Bank Transfer Details</h3>
+                </div>
+                <div style="background:rgba(212,165,116,0.05); border-radius:12px; padding:1.5rem; text-align:left;">
+                    <div style="margin-bottom:1rem;">
+                        <p style="font-size:0.75rem; color:var(--text-muted); margin-bottom:0.25rem;">
+                            <span class="lang-content active" data-lang-content="zh-TW">帳戶名稱</span>
+                            <span class="lang-content" data-lang-content="zh-CN">账户名称</span>
+                            <span class="lang-content" data-lang-content="en">Account Name</span>
+                        </p>
+                        <p style="color:var(--cream); font-weight:500;">Space Between Studio</p>
+                    </div>
+                    <div style="margin-bottom:1rem;">
+                        <p style="font-size:0.75rem; color:var(--text-muted); margin-bottom:0.25rem;">
+                            <span class="lang-content active" data-lang-content="zh-TW">銀行名稱</span>
+                            <span class="lang-content" data-lang-content="zh-CN">银行名称</span>
+                            <span class="lang-content" data-lang-content="en">Bank</span>
+                        </p>
+                        <p style="color:var(--cream); font-weight:500;">Standard Chartered Bank (Hong Kong) Ltd</p>
+                        <p style="font-size:0.85rem; color:var(--text-muted);">
+                            <span class="lang-content active" data-lang-content="zh-TW">銀行編號：003</span>
+                            <span class="lang-content" data-lang-content="zh-CN">银行编号：003</span>
+                            <span class="lang-content" data-lang-content="en">Bank Code: 003</span>
+                        </p>
+                    </div>
+                    <div>
+                        <p style="font-size:0.75rem; color:var(--text-muted); margin-bottom:0.25rem;">
+                            <span class="lang-content active" data-lang-content="zh-TW">帳戶號碼</span>
+                            <span class="lang-content" data-lang-content="zh-CN">账户号码</span>
+                            <span class="lang-content" data-lang-content="en">Account Number</span>
+                        </p>
+                        <p style="color:var(--gold); font-size:1.1rem; font-weight:600; letter-spacing:0.05em;">474-1-244886-3</p>
+                    </div>
+                </div>
+                <p style="font-size:0.8rem; color:var(--text-muted); margin-top:1rem;">
+                    <span class="lang-content active" data-lang-content="zh-TW">轉帳後請將收據發送至 hello@spacebetweenhealing.com</span>
+                    <span class="lang-content" data-lang-content="zh-CN">转账后请将收据发送至 hello@spacebetweenhealing.com</span>
+                    <span class="lang-content" data-lang-content="en">Please send your receipt to hello@spacebetweenhealing.com after transfer</span>
+                </p>
+            </div>
+        </div>
     </section>
 
     <!-- Service Disclaimer -->
