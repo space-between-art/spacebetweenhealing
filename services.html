@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>服務項目 | Space Between Healing</title>
-    <meta name="description" content="Space Between Healing 提供一對一顧問式服務：身心靈療癒引導、品牌定位顧問、服務產品化建議、網站內容諮詢。">
-    <link rel="canonical" href="https://spacebetweenhealing.com/services">
+    <title>點樣幫到你 | Space Between Healing</title>
+    
+    <!-- SEO Meta -->
+    <meta name="description" content="品牌定位、服務包裝、網站設計 — 一對一陪你理清方向 | Space Between Healing">
+    <link rel="canonical" href="https://spacebetweenhealing.com/services.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="點樣幫到你 | Space Between Healing">
+    <meta property="og:description" content="品牌定位、服務包裝、網站設計 — 一對一陪你理清方向">
+    <meta property="og:type" content="website">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Outfit:wght@300;400;500;600&family=Noto+Serif+TC:wght@300;400;500&family=Noto+Serif+SC:wght@300;400;500&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --bg-deep: #0a0a0a;
@@ -26,14 +35,21 @@
             --font-display: 'Cormorant Garamond', serif;
             --font-body: 'Outfit', sans-serif;
             --font-zh: 'Noto Serif TC', serif;
+            --font-zh-sc: 'Noto Serif SC', serif;
             --ease: cubic-bezier(0.16,1,0.3,1);
         }
         *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration:0.01ms!important; transition-duration:0.01ms!important; }
+        }
         html { scroll-behavior:smooth; }
         body { font-family:var(--font-body); background:var(--bg-deep); color:var(--text-primary); line-height:1.7; overflow-x:hidden; }
-        .zh { font-family:var(--font-zh); }
+        [data-lang="zh-TW"] .zh { font-family:var(--font-zh); }
+        [data-lang="zh-CN"] .zh { font-family:var(--font-zh-sc); }
         .lang-content { display:none; }
         .lang-content.active { display:block; }
+        span.lang-content { display:none; }
+        span.lang-content.active { display:inline; }
 
         /* Ambient */
         .ambient { position:fixed; inset:0; z-index:-1; pointer-events:none; }
@@ -48,91 +64,112 @@
         .nav-right { display:flex; align-items:center; gap:2rem; }
         .nav-links { display:flex; gap:0.5rem; list-style:none; }
         .nav-links li a { display:block; font-size:0.85rem; color:var(--text-secondary); text-decoration:none; transition:all 0.3s; padding:0.6rem 1rem; border-radius:8px; }
-        .nav-links li a:hover { color:var(--gold); background:rgba(212,165,116,0.1); }
-        .nav-links li a.active { color:var(--gold); background:rgba(212,165,116,0.15); }
+        .nav-links li a:hover, .nav-links li a.active { color:var(--gold); background:rgba(212,165,116,0.1); }
         .lang-selector { position:relative; }
         .lang-btn { display:flex; align-items:center; gap:0.4rem; padding:0.5rem 1rem; background:rgba(212,165,116,0.1); border:1px solid rgba(212,165,116,0.25); border-radius:100px; color:var(--gold); font-size:0.8rem; cursor:pointer; transition:all 0.3s; font-weight:500; }
         .lang-btn:hover { background:rgba(212,165,116,0.2); border-color:var(--gold); }
         .lang-btn svg { width:12px; height:12px; transition:transform 0.3s; }
         .lang-selector.open .lang-btn svg { transform:rotate(180deg); }
-        .lang-dropdown { position:absolute; top:calc(100% + 8px); right:0; min-width:140px; background:var(--bg-card); border:1px solid rgba(212,165,116,0.2); border-radius:12px; overflow:hidden; opacity:0; visibility:hidden; transform:translateY(-10px); transition:all 0.3s var(--ease); z-index:100; box-shadow:0 10px 40px rgba(0,0,0,0.4); }
+        .lang-dropdown { position:absolute; top:calc(100% + 8px); right:0; min-width:140px; background:var(--bg-card); border:1px solid rgba(212,165,116,0.2); border-radius:12px; overflow:hidden; opacity:0; visibility:hidden; transform:translateY(-10px); transition:all 0.3s var(--ease); z-index:100; }
         .lang-selector.open .lang-dropdown { opacity:1; visibility:visible; transform:translateY(0); }
         .lang-option { display:flex; align-items:center; gap:0.5rem; width:100%; padding:0.75rem 1rem; background:none; border:none; color:var(--text-secondary); font-size:0.85rem; text-align:left; cursor:pointer; transition:all 0.2s; }
         .lang-option:hover { background:rgba(212,165,116,0.1); color:var(--gold); }
         .lang-option.active { color:var(--gold); }
 
-        /* Page Header */
-        .page-header { padding:10rem 4vw 5rem; text-align:center; position:relative; }
-        .page-header::after { content:''; position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:60px; height:1px; background:var(--gold); opacity:0.3; }
-        .page-title { font-family:var(--font-display); font-size:clamp(2.5rem,6vw,4rem); font-weight:300; margin-bottom:1rem; }
-        .page-title .highlight { color:var(--gold); font-style:italic; }
-        .page-subtitle { font-size:1.1rem; color:var(--text-secondary); max-width:600px; margin:0 auto; }
+        /* Mobile */
+        .menu-toggle { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; }
+        .menu-toggle span { display:block; width:24px; height:2px; background:var(--gold); transition:all 0.3s; }
+        .mobile-menu { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(10,10,10,0.98); z-index:999; padding:6rem 2rem 2rem; opacity:0; visibility:hidden; transition:all 0.3s; }
+        .mobile-menu.open { opacity:1; visibility:visible; }
+        .mobile-menu a { display:block; font-size:1.25rem; color:var(--text-primary); text-decoration:none; padding:1rem 0; border-bottom:1px solid rgba(212,165,116,0.1); }
+        @media (max-width:768px) {
+            .nav-links, .lang-selector { display:none; }
+            .menu-toggle { display:flex; }
+            .mobile-menu { display:block; }
+        }
+
+        /* Container */
+        .container { max-width:1200px; margin:0 auto; padding:0 2rem; }
+
+        /* Hero */
+        .page-hero { padding:10rem 0 5rem; text-align:center; position:relative; }
+        .page-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 100%, rgba(212,165,116,0.08) 0%, transparent 60%); pointer-events:none; }
+        .page-tag { display:inline-flex; align-items:center; gap:0.75rem; margin-bottom:1.5rem; }
+        .page-tag-line { width:30px; height:1px; background:linear-gradient(90deg, transparent, var(--gold)); }
+        .page-tag-text { font-size:0.75rem; letter-spacing:0.25em; color:var(--gold); text-transform:uppercase; }
+        .page-title { font-family:var(--font-display); font-size:clamp(2.5rem, 6vw, 4rem); color:var(--cream); margin-bottom:1rem; line-height:1.2; }
+        .page-subtitle { font-size:1.1rem; color:var(--text-secondary); max-width:600px; margin:0 auto; line-height:1.8; }
 
         /* Section */
-        .section { padding:5rem 4vw; position:relative; }
-        .container { max-width:1000px; margin:0 auto; }
-        .section-tag { display:inline-flex; align-items:center; gap:0.75rem; margin-bottom:1rem; }
-        .section-tag-line { width:30px; height:1px; background:var(--gold); }
-        .section-tag-text { font-size:0.65rem; font-weight:600; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold); }
+        .section { padding:5rem 0; }
+        .section-header { margin-bottom:3rem; }
+        .section-header.center { text-align:center; }
+        .section-tag { display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem; }
+        .section-tag-line { width:30px; height:1px; background:linear-gradient(90deg, transparent, var(--gold)); }
+        .section-tag-text { font-size:0.7rem; letter-spacing:0.2em; color:var(--gold); text-transform:uppercase; }
+        .section-title { font-family:var(--font-display); font-size:clamp(1.75rem, 4vw, 2.5rem); color:var(--cream); line-height:1.3; }
+        .section-subtitle { font-size:1rem; color:var(--text-secondary); margin-top:0.75rem; }
 
-        /* Intro */
-        .intro-text { text-align:center; max-width:700px; margin:0 auto 4rem; }
-        .intro-text p { color:var(--text-secondary); font-size:1.1rem; line-height:1.9; }
+        /* Service Detail Cards */
+        .service-detail { margin-bottom:4rem; padding:3rem; background:var(--bg-card); border:1px solid rgba(212,165,116,0.1); border-radius:24px; position:relative; overflow:hidden; }
+        .service-detail::before { content:''; position:absolute; top:0; left:0; width:4px; height:100%; background:linear-gradient(180deg, var(--gold), var(--sage)); }
+        .service-detail-header { display:flex; align-items:flex-start; gap:1.5rem; margin-bottom:2rem; }
+        .service-num { font-family:var(--font-display); font-size:3rem; color:var(--gold); opacity:0.3; line-height:1; }
+        .service-detail-title { font-family:var(--font-display); font-size:1.75rem; color:var(--cream); margin-bottom:0.5rem; }
+        .service-detail-tagline { color:var(--sage); font-size:0.95rem; font-style:italic; }
+        .service-detail-content { display:grid; grid-template-columns:1fr 1fr; gap:3rem; }
+        @media (max-width:768px) { .service-detail-content { grid-template-columns:1fr; } }
+        .service-what h4, .service-who h4 { font-size:0.85rem; letter-spacing:0.1em; color:var(--gold); margin-bottom:1rem; text-transform:uppercase; }
+        .service-what p, .service-who p { color:var(--text-secondary); line-height:1.8; margin-bottom:1rem; }
+        .service-what ul, .service-who ul { list-style:none; }
+        .service-what li, .service-who li { position:relative; padding-left:1.5rem; margin-bottom:0.75rem; color:var(--text-secondary); }
+        .service-what li::before, .service-who li::before { content:''; position:absolute; left:0; top:0.6rem; width:6px; height:6px; border-radius:50%; background:var(--sage); }
 
-        /* Service Cards */
-        .service-detail { margin-bottom:4rem; }
-        .service-detail-card { background:var(--bg-card); border:1px solid rgba(212,165,116,0.1); border-radius:24px; padding:3rem; position:relative; overflow:hidden; transition:all 0.4s var(--ease); }
-        .service-detail-card:hover { border-color:rgba(212,165,116,0.25); transform:translateY(-5px); }
-        .service-detail-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--gold),var(--sage)); }
-        .service-num { font-family:var(--font-display); font-size:5rem; font-weight:300; color:rgba(212,165,116,0.08); position:absolute; top:1rem; right:2rem; line-height:1; }
-        .service-icon { width:60px; height:60px; background:rgba(212,165,116,0.1); border-radius:16px; display:flex; align-items:center; justify-content:center; margin-bottom:1.5rem; color:var(--gold); }
-        .service-icon svg { width:30px; height:30px; }
-        .service-detail h2 { font-family:var(--font-display); font-size:1.8rem; font-weight:400; margin-bottom:0.5rem; color:var(--cream); }
-        .service-detail h3 { font-size:1rem; color:var(--text-muted); margin-bottom:1.5rem; }
-        .service-detail p { color:var(--text-secondary); line-height:1.9; margin-bottom:1rem; }
-        .service-features { margin-top:1.5rem; padding-top:1.5rem; border-top:1px solid rgba(212,165,116,0.1); }
-        .feature-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; list-style:none; }
-        .feature-list li { display:flex; align-items:flex-start; gap:0.75rem; font-size:0.9rem; color:var(--text-secondary); }
-        .feature-list li::before { content:'✓'; color:var(--sage); font-weight:600; margin-top:0.1rem; }
+        /* Pricing Philosophy */
+        .pricing-box { background:linear-gradient(135deg, rgba(212,165,116,0.08), rgba(160,184,156,0.05)); border:1px solid rgba(212,165,116,0.15); border-radius:20px; padding:2.5rem; text-align:center; margin-top:3rem; }
+        .pricing-box h3 { font-family:var(--font-display); font-size:1.5rem; color:var(--cream); margin-bottom:1rem; }
+        .pricing-box p { color:var(--text-secondary); line-height:1.8; max-width:600px; margin:0 auto 1.5rem; }
+        .pricing-note { font-size:0.85rem; color:var(--text-muted); font-style:italic; }
 
-        /* Note Box */
-        .note-box { background:rgba(160,184,156,0.05); border:1px solid rgba(160,184,156,0.15); border-left:3px solid var(--sage); border-radius:0 16px 16px 0; padding:1.5rem 2rem; margin:3rem 0; }
-        .note-box p { color:var(--text-secondary); font-size:0.95rem; margin:0; }
-        .note-box strong { color:var(--sage); }
-
-        /* Disclaimer Box */
-        .disclaimer-box { background:rgba(160,184,156,0.05); border:1px solid rgba(160,184,156,0.15); border-left:3px solid var(--sage); border-radius:0 16px 16px 0; padding:1.5rem 2rem; }
-        .disclaimer-box p { color:var(--text-secondary); font-size:0.95rem; margin:0; }
-        .disclaimer-box strong { color:var(--sage); }
-
-        /* Buttons */
-        .btn { display:inline-flex; align-items:center; gap:0.6rem; padding:1rem 2rem; font-family:var(--font-body); font-size:0.85rem; font-weight:500; text-decoration:none; border-radius:100px; cursor:pointer; transition:all 0.4s var(--ease); border:none; }
-        .btn svg { width:16px; height:16px; }
-        .btn-primary { background:linear-gradient(135deg,var(--gold) 0%,var(--gold-light) 100%); color:var(--bg-deep); }
-        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 15px 35px var(--glow-gold); }
+        /* Process */
+        .process-grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:1.5rem; margin-top:2rem; }
+        @media (max-width:900px) { .process-grid { grid-template-columns:repeat(2, 1fr); } }
+        @media (max-width:500px) { .process-grid { grid-template-columns:1fr; } }
+        .process-step { text-align:center; padding:2rem 1.5rem; background:var(--bg-card); border:1px solid rgba(212,165,116,0.08); border-radius:16px; position:relative; }
+        .process-step::after { content:'→'; position:absolute; right:-1rem; top:50%; transform:translateY(-50%); color:var(--gold); font-size:1.25rem; opacity:0.4; }
+        .process-step:last-child::after { display:none; }
+        @media (max-width:900px) { .process-step::after { display:none; } }
+        .process-num { font-family:var(--font-display); font-size:2rem; color:var(--gold); opacity:0.5; margin-bottom:0.5rem; }
+        .process-title { font-size:1rem; color:var(--cream); margin-bottom:0.5rem; }
+        .process-desc { font-size:0.85rem; color:var(--text-muted); }
 
         /* CTA */
-        .cta-section { text-align:center; background:var(--bg-dark); padding:5rem 4vw; }
-        .cta-section h2 { font-family:var(--font-display); font-size:2rem; margin-bottom:1rem; }
-        .cta-section p { color:var(--text-secondary); max-width:500px; margin:0 auto 2rem; }
+        .cta-section { background:linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-dark) 100%); }
+        .cta-box { background:linear-gradient(135deg, rgba(212,165,116,0.1), rgba(160,184,156,0.05)); border:1px solid rgba(212,165,116,0.2); border-radius:24px; padding:3rem; text-align:center; }
+        .cta-box h2 { font-family:var(--font-display); font-size:2rem; color:var(--cream); margin-bottom:1rem; }
+        .cta-box p { color:var(--text-secondary); max-width:500px; margin:0 auto 2rem; }
+        .btn { display:inline-flex; align-items:center; gap:0.5rem; padding:0.9rem 1.8rem; border-radius:100px; font-size:0.9rem; font-weight:500; text-decoration:none; transition:all 0.3s var(--ease); cursor:pointer; border:none; }
+        .btn svg { width:18px; height:18px; }
+        .btn-primary { background:linear-gradient(135deg, var(--gold), var(--gold-light)); color:var(--bg-deep); }
+        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 10px 30px rgba(212,165,116,0.3); }
+        .btn-secondary { background:transparent; border:1px solid rgba(212,165,116,0.4); color:var(--gold); }
+        .btn-secondary:hover { background:rgba(212,165,116,0.1); border-color:var(--gold); }
+        .btn-whatsapp { background:#25D366; color:#fff; }
+        .btn-whatsapp:hover { background:#20bd5a; transform:translateY(-2px); }
+        .cta-buttons { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
 
         /* Footer */
-        .footer { padding:3rem 4vw; background:var(--bg-dark); border-top:1px solid rgba(212,165,116,0.08); }
-        .footer-content { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem; }
-        .footer-logo { font-family:var(--font-display); font-size:0.95rem; letter-spacing:0.15em; color:var(--gold); }
-        .footer-links { display:flex; gap:1.5rem; flex-wrap:wrap; }
-        .footer-links a { font-size:0.8rem; color:var(--text-muted); text-decoration:none; transition:color 0.3s; }
+        .footer { background:var(--bg-dark); border-top:1px solid rgba(212,165,116,0.1); padding:3rem 2rem; }
+        .footer-content { max-width:1200px; margin:0 auto; display:flex; flex-direction:column; align-items:center; gap:1.5rem; text-align:center; }
+        .footer-logo { font-family:var(--font-display); font-size:1rem; letter-spacing:0.15em; color:var(--gold); }
+        .footer-links { display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem; }
+        .footer-links a { font-size:0.85rem; color:var(--text-secondary); text-decoration:none; transition:color 0.3s; }
         .footer-links a:hover { color:var(--gold); }
         .footer-copy { font-size:0.75rem; color:var(--text-muted); }
 
-        @media (max-width:768px) {
-            .nav-links { display:none; }
-            .page-header { padding:8rem 1.5rem 3rem; }
-            .section { padding:3rem 1.5rem; }
-            .service-detail-card { padding:2rem 1.5rem; }
-            .service-num { font-size:3rem; }
-            .footer-content { flex-direction:column; text-align:center; }
-        }
+        /* Reveal Animation */
+        .reveal { opacity:0; transform:translateY(30px); transition:all 0.8s var(--ease); }
+        .reveal.visible { opacity:1; transform:translateY(0); }
     </style>
 </head>
 <body data-lang="zh-TW">
@@ -140,365 +177,505 @@
 
     <!-- Nav -->
     <nav class="nav">
-        <a href="index.html" class="nav-logo">Space Between</a>
+        <a href="index.html" class="nav-logo">SPACE BETWEEN</a>
         <div class="nav-right">
             <ul class="nav-links">
+                <li><a href="index.html"><span class="lang-content active" data-lang-content="zh-TW">首頁</span><span class="lang-content" data-lang-content="zh-CN">首页</span><span class="lang-content" data-lang-content="en">Home</span></a></li>
                 <li><a href="about.html"><span class="lang-content active" data-lang-content="zh-TW">關於</span><span class="lang-content" data-lang-content="zh-CN">关于</span><span class="lang-content" data-lang-content="en">About</span></a></li>
                 <li><a href="services.html" class="active"><span class="lang-content active" data-lang-content="zh-TW">服務</span><span class="lang-content" data-lang-content="zh-CN">服务</span><span class="lang-content" data-lang-content="en">Services</span></a></li>
-                <li><a href="portfolio.html"><span class="lang-content active" data-lang-content="zh-TW">作品</span><span class="lang-content" data-lang-content="zh-CN">作品</span><span class="lang-content" data-lang-content="en">Works</span></a></li>
-                <li><a href="lounge.html"><span class="lang-content active" data-lang-content="zh-TW">療癒實驗室</span><span class="lang-content" data-lang-content="zh-CN">疗愈实验室</span><span class="lang-content" data-lang-content="en">Healing Lab</span></a></li>
-                <li><a href="ai-assistant.html"><span class="lang-content active" data-lang-content="zh-TW">AI 智能分析助理</span><span class="lang-content" data-lang-content="zh-CN">AI 智能分析助理</span><span class="lang-content" data-lang-content="en">AI Assistant</span></a></li>
+                <li><a href="lounge.html"><span class="lang-content active" data-lang-content="zh-TW">免費資源</span><span class="lang-content" data-lang-content="zh-CN">免费资源</span><span class="lang-content" data-lang-content="en">Resources</span></a></li>
                 <li><a href="contact.html"><span class="lang-content active" data-lang-content="zh-TW">聯絡</span><span class="lang-content" data-lang-content="zh-CN">联络</span><span class="lang-content" data-lang-content="en">Contact</span></a></li>
             </ul>
             <div class="lang-selector">
                 <button class="lang-btn"><span class="current-lang">繁中</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
                 <div class="lang-dropdown">
-                    <button class="lang-option active" data-lang="zh-TW">🇭🇰 繁體中文</button>
-                    <button class="lang-option" data-lang="zh-CN">🇨🇳 简体中文</button>
-                    <button class="lang-option" data-lang="en">🌍 English</button>
+                    <button class="lang-option active" data-lang="zh-TW">繁體中文</button>
+                    <button class="lang-option" data-lang="zh-CN">简体中文</button>
+                    <button class="lang-option" data-lang="en">English</button>
                 </div>
             </div>
         </div>
+        <button class="menu-toggle"><span></span><span></span><span></span></button>
     </nav>
 
-    <!-- Page Header -->
-    <header class="page-header">
-        <h1 class="page-title">Our <span class="highlight">Services</span></h1>
-        <div class="lang-content active" data-lang-content="zh-TW">
-            <p class="page-subtitle zh">一對一顧問式服務，為你的成長提供溫和而有系統的支援</p>
-        </div>
-        <div class="lang-content" data-lang-content="zh-CN">
-            <p class="page-subtitle zh">一对一顾问式服务，为你的成长提供温和而有系统的支援</p>
-        </div>
-        <div class="lang-content" data-lang-content="en">
-            <p class="page-subtitle">One-on-one consulting services for gentle, systematic growth support</p>
-        </div>
-    </header>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="index.html">首頁</a>
+        <a href="about.html">關於</a>
+        <a href="services.html">服務</a>
+        <a href="lounge.html">免費資源</a>
+        <a href="contact.html">聯絡</a>
+    </div>
 
-    <!-- Services -->
+    <!-- Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-tag"><span class="page-tag-line"></span><span class="page-tag-text">Our Services</span><span class="page-tag-line"></span></div>
+            <h1 class="page-title">
+                <span class="lang-content active" data-lang-content="zh-TW">我哋點樣幫你</span>
+                <span class="lang-content" data-lang-content="zh-CN">我们怎么帮你</span>
+                <span class="lang-content" data-lang-content="en">How We Help You</span>
+            </h1>
+            <p class="page-subtitle">
+                <span class="lang-content active" data-lang-content="zh-TW" class="zh">每個人嘅情況都唔同，所以我哋唔會俾你一個「標準套餐」。<br>我哋會先傾下，了解你嘅需要，再一齊搵最適合你嘅方案。</span>
+                <span class="lang-content" data-lang-content="zh-CN" class="zh">每个人的情况都不同，所以我们不会给你一个「标准套餐」。<br>我们会先聊聊，了解你的需要，再一起找最适合你的方案。</span>
+                <span class="lang-content" data-lang-content="en">Everyone's situation is different, so we don't offer a "standard package".<br>We'll chat first, understand your needs, then find the best approach together.</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Service 1: Brand Clarity -->
     <section class="section">
         <div class="container">
-            <div class="intro-text">
-                <div class="lang-content active" data-lang-content="zh-TW">
-                    <p class="zh">我們提供的所有服務均以「一對一顧問方式」進行，確保每位客戶都能獲得專注而個人化的支援。</p>
-                </div>
-                <div class="lang-content" data-lang-content="zh-CN">
-                    <p class="zh">我们提供的所有服务均以「一对一顾问方式」进行，确保每位客户都能获得专注而个人化的支援。</p>
-                </div>
-                <div class="lang-content" data-lang-content="en">
-                    <p>All our services are conducted one-on-one, ensuring each client receives focused and personalized support.</p>
-                </div>
-            </div>
-
-            <!-- Service 1 -->
-            <div class="service-detail">
-                <div class="service-detail-card">
+            <div class="service-detail reveal">
+                <div class="service-detail-header">
                     <span class="service-num">01</span>
-                    <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/><path d="M12 6v6l4 2"/></svg></div>
-                    <div class="lang-content active" data-lang-content="zh-TW">
-                        <h2 class="zh">身心靈療癒與內在整理引導</h2>
-                        <h3 class="zh">Holistic Healing & Inner Organization</h3>
-                        <p class="zh">透過敘事式引導，協助你整理內在思緒，找回清晰與平靜。這不是心理治療，而是一種溫和的陪伴與整理過程。</p>
-                        <p class="zh">適合正在經歷轉變期、感到迷惘或需要釐清方向的人。</p>
-                        <div class="service-features">
-                            <ul class="feature-list">
-                                <li>一對一敘事引導對話</li>
-                                <li>內在思緒梳理與記錄</li>
-                                <li>目標與方向釐清</li>
-                                <li>持續的陪伴與支援</li>
+                    <div>
+                        <h2 class="service-detail-title">
+                            <span class="lang-content active" data-lang-content="zh-TW">幫你理清思緒</span>
+                            <span class="lang-content" data-lang-content="zh-CN">帮你理清思绪</span>
+                            <span class="lang-content" data-lang-content="en">Clear Your Mind</span>
+                        </h2>
+                        <p class="service-detail-tagline">
+                            <span class="lang-content active" data-lang-content="zh-TW">「諗法太多，唔知從何入手」→ 我哋陪你慢慢傾</span>
+                            <span class="lang-content" data-lang-content="zh-CN">「想法太多，不知从何下手」→ 我们陪你慢慢聊</span>
+                            <span class="lang-content" data-lang-content="en">"Too many ideas, don't know where to start" → We'll sort through it together</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="service-detail-content">
+                    <div class="service-what">
+                        <h4>
+                            <span class="lang-content active" data-lang-content="zh-TW">我哋會做咩</span>
+                            <span class="lang-content" data-lang-content="zh-CN">我们会做什么</span>
+                            <span class="lang-content" data-lang-content="en">What We Do</span>
+                        </h4>
+                        <div class="lang-content active" data-lang-content="zh-TW">
+                            <p class="zh">透過一對一嘅傾談，我哋會幫你：</p>
+                            <ul>
+                                <li class="zh">將腦入面嘅諗法攞晒出嚟</li>
+                                <li class="zh">分清楚邊啲係「想做」、邊啲係「應該做」</li>
+                                <li class="zh">搵到最核心嘅方向</li>
+                                <li class="zh">排好優先次序，唔使乜都做</li>
+                            </ul>
+                        </div>
+                        <div class="lang-content" data-lang-content="zh-CN">
+                            <p class="zh">通过一对一的对话，我们会帮你：</p>
+                            <ul>
+                                <li class="zh">把脑子里的想法全部拿出来</li>
+                                <li class="zh">分清楚哪些是「想做」、哪些是「应该做」</li>
+                                <li class="zh">找到最核心的方向</li>
+                                <li class="zh">排好优先顺序，不用什么都做</li>
+                            </ul>
+                        </div>
+                        <div class="lang-content" data-lang-content="en">
+                            <p>Through one-on-one conversations, we'll help you:</p>
+                            <ul>
+                                <li>Get all your ideas out of your head</li>
+                                <li>Separate "want to do" from "should do"</li>
+                                <li>Find your core direction</li>
+                                <li>Prioritize so you don't have to do everything</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="lang-content" data-lang-content="zh-CN">
-                        <h2 class="zh">身心灵疗愈与内在整理引导</h2>
-                        <h3 class="zh">Holistic Healing & Inner Organization</h3>
-                        <p class="zh">通过叙事式引导，协助你整理内在思绪，找回清晰与平静。这不是心理治疗，而是一种温和的陪伴与整理过程。</p>
-                        <p class="zh">适合正在经历转变期、感到迷惘或需要厘清方向的人。</p>
-                        <div class="service-features">
-                            <ul class="feature-list">
-                                <li>一对一叙事引导对话</li>
-                                <li>内在思绪梳理与记录</li>
-                                <li>目标与方向厘清</li>
-                                <li>持续的陪伴与支援</li>
+                    <div class="service-who">
+                        <h4>
+                            <span class="lang-content active" data-lang-content="zh-TW">適合你如果⋯</span>
+                            <span class="lang-content" data-lang-content="zh-CN">适合你如果⋯</span>
+                            <span class="lang-content" data-lang-content="en">Right for You If...</span>
+                        </h4>
+                        <div class="lang-content active" data-lang-content="zh-TW">
+                            <ul>
+                                <li class="zh">你有好多想做嘅嘢，但唔知從邊樣開始</li>
+                                <li class="zh">你成日覺得好亂，做乜都冇晒動力</li>
+                                <li class="zh">你想有人同你傾下，幫你睇清楚成個局面</li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="lang-content" data-lang-content="en">
-                        <h2>Holistic Healing & Inner Organization</h2>
-                        <h3>身心靈療癒與內在整理引導</h3>
-                        <p>Through narrative guidance, we help you organize your inner thoughts and find clarity and peace. This is not psychotherapy, but a gentle process of companionship and organization.</p>
-                        <p>Ideal for those going through transitions, feeling lost, or needing to clarify direction.</p>
-                        <div class="service-features">
-                            <ul class="feature-list">
-                                <li>One-on-one narrative guidance</li>
-                                <li>Inner thought organization & documentation</li>
-                                <li>Goal & direction clarification</li>
-                                <li>Ongoing support & companionship</li>
+                        <div class="lang-content" data-lang-content="zh-CN">
+                            <ul>
+                                <li class="zh">你有很多想做的事，但不知从哪样开始</li>
+                                <li class="zh">你总觉得很乱，做什么都没动力</li>
+                                <li class="zh">你想有人和你聊聊，帮你看清整个局面</li>
+                            </ul>
+                        </div>
+                        <div class="lang-content" data-lang-content="en">
+                            <ul>
+                                <li>You have many things you want to do but don't know where to start</li>
+                                <li>You often feel scattered and unmotivated</li>
+                                <li>You want someone to talk to who can help you see the big picture</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Service 2 -->
-            <div class="service-detail">
-                <div class="service-detail-card">
+            <!-- Service 2: Brand Positioning -->
+            <div class="service-detail reveal">
+                <div class="service-detail-header">
                     <span class="service-num">02</span>
-                    <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
-                    <div class="lang-content active" data-lang-content="zh-TW">
-                        <h2 class="zh">品牌定位與敘事策略顧問</h2>
-                        <h3 class="zh">Brand Positioning & Narrative Strategy</h3>
-                        <p class="zh">協助你釐清品牌核心價值，建立一致且有溫度的敘事。當你清楚知道自己是誰、為誰服務，客戶自然會找到你。</p>
-                        <p class="zh">適合正在建立或重塑品牌的療癒工作者、教練導師及服務型創業者。</p>
-                        <div class="service-features">
-                            <ul class="feature-list">
-                                <li>品牌核心價值挖掘</li>
-                                <li>目標受眾定義</li>
-                                <li>品牌敘事框架建立</li>
-                                <li>一致性溝通策略</li>
+                    <div>
+                        <h2 class="service-detail-title">
+                            <span class="lang-content active" data-lang-content="zh-TW">搵到你嘅定位</span>
+                            <span class="lang-content" data-lang-content="zh-CN">找到你的定位</span>
+                            <span class="lang-content" data-lang-content="en">Find Your Position</span>
+                        </h2>
+                        <p class="service-detail-tagline">
+                            <span class="lang-content active" data-lang-content="zh-TW">「我做嘅嘢好難解釋」→ 我哋幫你搵到啱嘅講法</span>
+                            <span class="lang-content" data-lang-content="zh-CN">「我做的事很难解释」→ 我们帮你找到对的说法</span>
+                            <span class="lang-content" data-lang-content="en">"What I do is hard to explain" → We'll find the right words</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="service-detail-content">
+                    <div class="service-what">
+                        <h4>
+                            <span class="lang-content active" data-lang-content="zh-TW">我哋會做咩</span>
+                            <span class="lang-content" data-lang-content="zh-CN">我们会做什么</span>
+                            <span class="lang-content" data-lang-content="en">What We Do</span>
+                        </h4>
+                        <div class="lang-content active" data-lang-content="zh-TW">
+                            <p class="zh">品牌定位唔係寫幾句口號咁簡單。我哋會同你一齊搵：</p>
+                            <ul>
+                                <li class="zh">你係邊個？你嘅獨特之處係咩？</li>
+                                <li class="zh">你最想幫嘅人係邊啲？</li>
+                                <li class="zh">點解佢哋要揀你，而唔係其他人？</li>
+                                <li class="zh">你可以用咩一句話介紹自己？</li>
+                            </ul>
+                        </div>
+                        <div class="lang-content" data-lang-content="zh-CN">
+                            <p class="zh">品牌定位不是写几句口号那么简单。我们会和你一起找：</p>
+                            <ul>
+                                <li class="zh">你是谁？你的独特之处是什么？</li>
+                                <li class="zh">你最想帮的人是哪些？</li>
+                                <li class="zh">为什么他们要选你，而不是其他人？</li>
+                                <li class="zh">你可以用什么一句话介绍自己？</li>
+                            </ul>
+                        </div>
+                        <div class="lang-content" data-lang-content="en">
+                            <p>Brand positioning isn't just writing a few slogans. We'll help you find:</p>
+                            <ul>
+                                <li>Who you are and what makes you unique</li>
+                                <li>Who you most want to help</li>
+                                <li>Why they should choose you over others</li>
+                                <li>How to introduce yourself in one sentence</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="lang-content" data-lang-content="zh-CN">
-                        <h2 class="zh">品牌定位与叙事策略顾问</h2>
-                        <h3 class="zh">Brand Positioning & Narrative Strategy</h3>
-                        <p class="zh">协助你厘清品牌核心价值，建立一致且有温度的叙事。当你清楚知道自己是谁、为谁服务，客户自然会找到你。</p>
-                        <p class="zh">适合正在建立或重塑品牌的疗愈工作者、教练导师及服务型创业者。</p>
-                        <div class="service-features">
-                            <ul class="feature-list">
-                                <li>品牌核心价值挖掘</li>
-                                <li>目标受众定义</li>
-                                <li>品牌叙事框架建立</li>
-                                <li>一致性沟通策略</li>
+                    <div class="service-who">
+                        <h4>
+                            <span class="lang-content active" data-lang-content="zh-TW">適合你如果⋯</span>
+                            <span class="lang-content" data-lang-content="zh-CN">适合你如果⋯</span>
+                            <span class="lang-content" data-lang-content="en">Right for You If...</span>
+                        </h4>
+                        <div class="lang-content active" data-lang-content="zh-TW">
+                            <ul>
+                                <li class="zh">人哋問你做咩，你成日唔知點答</li>
+                                <li class="zh">你覺得自己嘅服務好獨特，但講唔清楚</li>
+                                <li class="zh">你想吸引「啱嘅客」，唔再嚟啲「唔啱」嘅</li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="lang-content" data-lang-content="en">
-                        <h2>Brand Positioning & Narrative Strategy</h2>
-                        <h3>品牌定位與敘事策略顧問</h3>
-                        <p>We help clarify your brand's core values and build consistent, warm narratives. When you clearly know who you are and who you serve, clients naturally find you.</p>
-                        <p>Ideal for healers, coaches, mentors, and service-based entrepreneurs building or reshaping their brand.</p>
-                        <div class="service-features">
-                            <ul class="feature-list">
-                                <li>Brand core value discovery</li>
-                                <li>Target audience definition</li>
-                                <li>Brand narrative framework</li>
-                                <li>Consistent communication strategy</li>
+                        <div class="lang-content" data-lang-content="zh-CN">
+                            <ul>
+                                <li class="zh">别人问你做什么，你总不知道怎么回答</li>
+                                <li class="zh">你觉得自己的服务很独特，但说不清楚</li>
+                                <li class="zh">你想吸引「对的客户」，不再来那些「不对」的</li>
+                            </ul>
+                        </div>
+                        <div class="lang-content" data-lang-content="en">
+                            <ul>
+                                <li>When people ask what you do, you never know how to answer</li>
+                                <li>You feel your service is unique but can't articulate it</li>
+                                <li>You want to attract the "right" clients, not the "wrong" ones</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Service 3 -->
-            <div class="service-detail">
-                <div class="service-detail-card">
+            <!-- Service 3: Service Packaging -->
+            <div class="service-detail reveal">
+                <div class="service-detail-header">
                     <span class="service-num">03</span>
-                    <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
-                    <div class="lang-content active" data-lang-content="zh-TW">
-                        <h2 class="zh">服務內容整理與產品化建議</h2>
-                        <h3 class="zh">Service Packaging & Productization</h3>
-                        <p class="zh">將你的專業轉化為清晰的服務方案，讓客戶更容易理解與選擇。從服務架構到定價策略，協助你建立可持續的商業模式。</p>
-                        <p class="zh">適合有專業能力但不知道如何包裝成服務的創業者。</p>
-                        <div class="service-features">
-                            <ul class="feature-list">
-                                <li>服務內容梳理與分類</li>
-                                <li>服務方案設計</li>
-                                <li>定價策略建議</li>
-                                <li>銷售流程優化</li>
+                    <div>
+                        <h2 class="service-detail-title">
+                            <span class="lang-content active" data-lang-content="zh-TW">包裝你嘅服務</span>
+                            <span class="lang-content" data-lang-content="zh-CN">包装你的服务</span>
+                            <span class="lang-content" data-lang-content="en">Package Your Service</span>
+                        </h2>
+                        <p class="service-detail-tagline">
+                            <span class="lang-content active" data-lang-content="zh-TW">「唔知應該收幾錢」→ 我哋幫你設計服務結構</span>
+                            <span class="lang-content" data-lang-content="zh-CN">「不知道该收多少钱」→ 我们帮你设计服务结构</span>
+                            <span class="lang-content" data-lang-content="en">"Don't know how to price" → We'll design your service structure</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="service-detail-content">
+                    <div class="service-what">
+                        <h4>
+                            <span class="lang-content active" data-lang-content="zh-TW">我哋會做咩</span>
+                            <span class="lang-content" data-lang-content="zh-CN">我们会做什么</span>
+                            <span class="lang-content" data-lang-content="en">What We Do</span>
+                        </h4>
+                        <div class="lang-content active" data-lang-content="zh-TW">
+                            <p class="zh">將你嘅專業變成人哋聽得明、想要買嘅服務：</p>
+                            <ul>
+                                <li class="zh">整理你嘅服務流程，講清楚客人會得到咩</li>
+                                <li class="zh">設計唔同價位嘅選擇（入門 → 進階）</li>
+                                <li class="zh">幫你訂一個你同客人都舒服嘅價錢</li>
+                                <li class="zh">寫好服務介紹，放上網就用得</li>
+                            </ul>
+                        </div>
+                        <div class="lang-content" data-lang-content="zh-CN">
+                            <p class="zh">把你的专业变成别人听得懂、想要买的服务：</p>
+                            <ul>
+                                <li class="zh">整理你的服务流程，说清楚客人会得到什么</li>
+                                <li class="zh">设计不同价位的选择（入门 → 进阶）</li>
+                                <li class="zh">帮你定一个你和客人都舒服的价格</li>
+                                <li class="zh">写好服务介绍，放上网就能用</li>
+                            </ul>
+                        </div>
+                        <div class="lang-content" data-lang-content="en">
+                            <p>Turn your expertise into services people understand and want to buy:</p>
+                            <ul>
+                                <li>Organize your service process and clarify what clients get</li>
+                                <li>Design different pricing tiers (entry → advanced)</li>
+                                <li>Help you set a price that works for you and your clients</li>
+                                <li>Write service descriptions ready to publish</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="lang-content" data-lang-content="zh-CN">
-                        <h2 class="zh">服务内容整理与产品化建议</h2>
-                        <h3 class="zh">Service Packaging & Productization</h3>
-                        <p class="zh">将你的专业转化为清晰的服务方案，让客户更容易理解与选择。从服务架构到定价策略，协助你建立可持续的商业模式。</p>
-                        <p class="zh">适合有专业能力但不知道如何包装成服务的创业者。</p>
-                        <div class="service-features">
-                            <ul class="feature-list">
-                                <li>服务内容梳理与分类</li>
-                                <li>服务方案设计</li>
-                                <li>定价策略建议</li>
-                                <li>销售流程优化</li>
+                    <div class="service-who">
+                        <h4>
+                            <span class="lang-content active" data-lang-content="zh-TW">適合你如果⋯</span>
+                            <span class="lang-content" data-lang-content="zh-CN">适合你如果⋯</span>
+                            <span class="lang-content" data-lang-content="en">Right for You If...</span>
+                        </h4>
+                        <div class="lang-content active" data-lang-content="zh-TW">
+                            <ul>
+                                <li class="zh">你嘅服務冇固定價錢，每次都要逐個傾</li>
+                                <li class="zh">你成日覺得收咗錢但做好多嘢</li>
+                                <li class="zh">你想有幾個「套餐」，俾客人自己揀</li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="lang-content" data-lang-content="en">
-                        <h2>Service Packaging & Productization</h2>
-                        <h3>服務內容整理與產品化建議</h3>
-                        <p>Transform your expertise into clear service offerings that clients can easily understand and choose. From service structure to pricing strategy, we help build sustainable business models.</p>
-                        <p>Ideal for entrepreneurs with professional skills but unsure how to package them as services.</p>
-                        <div class="service-features">
-                            <ul class="feature-list">
-                                <li>Service content organization</li>
-                                <li>Service package design</li>
-                                <li>Pricing strategy advice</li>
-                                <li>Sales process optimization</li>
+                        <div class="lang-content" data-lang-content="zh-CN">
+                            <ul>
+                                <li class="zh">你的服务没有固定价格，每次都要单独谈</li>
+                                <li class="zh">你总觉得收了钱但做很多事</li>
+                                <li class="zh">你想有几个「套餐」，让客人自己选</li>
+                            </ul>
+                        </div>
+                        <div class="lang-content" data-lang-content="en">
+                            <ul>
+                                <li>Your services have no fixed price, negotiated each time</li>
+                                <li>You often feel you do too much for what you charge</li>
+                                <li>You want a few "packages" for clients to choose from</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Service 4 -->
-            <div class="service-detail">
-                <div class="service-detail-card">
+            <!-- Service 4: Website Design -->
+            <div class="service-detail reveal">
+                <div class="service-detail-header">
                     <span class="service-num">04</span>
-                    <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg></div>
-                    <div class="lang-content active" data-lang-content="zh-TW">
-                        <h2 class="zh">網站及內容方向諮詢</h2>
-                        <h3 class="zh">Website & Content Direction</h3>
-                        <p class="zh">提供網站架構與內容策略建議，讓你的線上呈現更具吸引力。不只是美觀，更要能有效傳達你的價值並轉化訪客。</p>
-                        <p class="zh">適合需要建立或優化線上形象的服務型品牌。</p>
-                        <div class="service-features">
-                            <ul class="feature-list">
-                                <li>網站架構規劃建議</li>
-                                <li>內容策略方向</li>
-                                <li>用戶體驗優化建議</li>
-                                <li>轉化路徑設計</li>
+                    <div>
+                        <h2 class="service-detail-title">
+                            <span class="lang-content active" data-lang-content="zh-TW">設計你嘅網站</span>
+                            <span class="lang-content" data-lang-content="zh-CN">设计你的网站</span>
+                            <span class="lang-content" data-lang-content="en">Design Your Website</span>
+                        </h2>
+                        <p class="service-detail-tagline">
+                            <span class="lang-content active" data-lang-content="zh-TW">「客人總係搵唔到我」→ 俾你一個 24 小時營業嘅門面</span>
+                            <span class="lang-content" data-lang-content="zh-CN">「客户总是找不到我」→ 给你一个 24 小时营业的门面</span>
+                            <span class="lang-content" data-lang-content="en">"Clients can't find me" → A 24/7 storefront for you</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="service-detail-content">
+                    <div class="service-what">
+                        <h4>
+                            <span class="lang-content active" data-lang-content="zh-TW">我哋會做咩</span>
+                            <span class="lang-content" data-lang-content="zh-CN">我们会做什么</span>
+                            <span class="lang-content" data-lang-content="en">What We Do</span>
+                        </h4>
+                        <div class="lang-content active" data-lang-content="zh-TW">
+                            <p class="zh">唔只係「靚」，而係真正幫你做生意嘅網站：</p>
+                            <ul>
+                                <li class="zh">用你嘅品牌定位設計網站結構</li>
+                                <li class="zh">寫好晒文案（唔使你自己諗）</li>
+                                <li class="zh">整合預約 / 付款 / 聯絡功能</li>
+                                <li class="zh">教你點樣自己更新內容</li>
+                            </ul>
+                        </div>
+                        <div class="lang-content" data-lang-content="zh-CN">
+                            <p class="zh">不只是「好看」，而是真正帮你做生意的网站：</p>
+                            <ul>
+                                <li class="zh">用你的品牌定位设计网站结构</li>
+                                <li class="zh">写好所有文案（不用你自己想）</li>
+                                <li class="zh">整合预约 / 付款 / 联系功能</li>
+                                <li class="zh">教你怎么自己更新内容</li>
+                            </ul>
+                        </div>
+                        <div class="lang-content" data-lang-content="en">
+                            <p>Not just "pretty", but a website that actually helps your business:</p>
+                            <ul>
+                                <li>Design site structure based on your brand positioning</li>
+                                <li>Write all the copy (you don't have to)</li>
+                                <li>Integrate booking / payment / contact features</li>
+                                <li>Teach you how to update content yourself</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="lang-content" data-lang-content="zh-CN">
-                        <h2 class="zh">网站及内容方向咨询</h2>
-                        <h3 class="zh">Website & Content Direction</h3>
-                        <p class="zh">提供网站架构与内容策略建议，让你的线上呈现更具吸引力。不只是美观，更要能有效传达你的价值并转化访客。</p>
-                        <p class="zh">适合需要建立或优化线上形象的服务型品牌。</p>
-                        <div class="service-features">
-                            <ul class="feature-list">
-                                <li>网站架构规划建议</li>
-                                <li>内容策略方向</li>
-                                <li>用户体验优化建议</li>
-                                <li>转化路径设计</li>
+                    <div class="service-who">
+                        <h4>
+                            <span class="lang-content active" data-lang-content="zh-TW">適合你如果⋯</span>
+                            <span class="lang-content" data-lang-content="zh-CN">适合你如果⋯</span>
+                            <span class="lang-content" data-lang-content="en">Right for You If...</span>
+                        </h4>
+                        <div class="lang-content active" data-lang-content="zh-TW">
+                            <ul>
+                                <li class="zh">你得 IG / Facebook，但想有個正式嘅「門面」</li>
+                                <li class="zh">你已經有網站，但覺得唔夠「你」</li>
+                                <li class="zh">你想俾客人自己預約，唔使你成日覆訊息</li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="lang-content" data-lang-content="en">
-                        <h2>Website & Content Direction</h2>
-                        <h3>網站及內容方向諮詢</h3>
-                        <p>Providing website structure and content strategy advice for a more compelling online presence. Not just aesthetics, but effective communication and visitor conversion.</p>
-                        <p>Ideal for service-based brands needing to establish or optimize their online presence.</p>
-                        <div class="service-features">
-                            <ul class="feature-list">
-                                <li>Website structure planning</li>
-                                <li>Content strategy direction</li>
-                                <li>User experience optimization</li>
-                                <li>Conversion path design</li>
+                        <div class="lang-content" data-lang-content="zh-CN">
+                            <ul>
+                                <li class="zh">你只有 IG / Facebook，但想有个正式的「门面」</li>
+                                <li class="zh">你已经有网站，但觉得不够「你」</li>
+                                <li class="zh">你想让客人自己预约，不用你一直回消息</li>
+                            </ul>
+                        </div>
+                        <div class="lang-content" data-lang-content="en">
+                            <ul>
+                                <li>You only have IG / Facebook but want a proper "storefront"</li>
+                                <li>You have a website but it doesn't feel like "you"</li>
+                                <li>You want clients to book themselves without constant messaging</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Note -->
-            <div class="note-box">
+    <!-- Process -->
+    <section class="section" style="background:var(--bg-dark)">
+        <div class="container">
+            <div class="section-header center reveal">
+                <div class="section-tag" style="justify-content:center"><span class="section-tag-line"></span><span class="section-tag-text">How It Works</span><span class="section-tag-line"></span></div>
+                <h2 class="section-title">
+                    <span class="lang-content active" data-lang-content="zh-TW">合作流程</span>
+                    <span class="lang-content" data-lang-content="zh-CN">合作流程</span>
+                    <span class="lang-content" data-lang-content="en">How We Work Together</span>
+                </h2>
+            </div>
+            <div class="process-grid">
+                <div class="process-step reveal">
+                    <div class="process-num">01</div>
+                    <h3 class="process-title">
+                        <span class="lang-content active" data-lang-content="zh-TW">傾下偈</span>
+                        <span class="lang-content" data-lang-content="zh-CN">聊一聊</span>
+                        <span class="lang-content" data-lang-content="en">Chat</span>
+                    </h3>
+                    <p class="process-desc">
+                        <span class="lang-content active" data-lang-content="zh-TW">免費 30 分鐘，<br>了解你嘅需要</span>
+                        <span class="lang-content" data-lang-content="zh-CN">免费 30 分钟，<br>了解你的需要</span>
+                        <span class="lang-content" data-lang-content="en">Free 30 min,<br>understand your needs</span>
+                    </p>
+                </div>
+                <div class="process-step reveal">
+                    <div class="process-num">02</div>
+                    <h3 class="process-title">
+                        <span class="lang-content active" data-lang-content="zh-TW">制定方案</span>
+                        <span class="lang-content" data-lang-content="zh-CN">制定方案</span>
+                        <span class="lang-content" data-lang-content="en">Plan</span>
+                    </h3>
+                    <p class="process-desc">
+                        <span class="lang-content active" data-lang-content="zh-TW">根據你嘅情況，<br>設計最啱你嘅方案</span>
+                        <span class="lang-content" data-lang-content="zh-CN">根据你的情况，<br>设计最适合你的方案</span>
+                        <span class="lang-content" data-lang-content="en">Based on your situation,<br>design the best approach</span>
+                    </p>
+                </div>
+                <div class="process-step reveal">
+                    <div class="process-num">03</div>
+                    <h3 class="process-title">
+                        <span class="lang-content active" data-lang-content="zh-TW">一齊做</span>
+                        <span class="lang-content" data-lang-content="zh-CN">一起做</span>
+                        <span class="lang-content" data-lang-content="en">Execute</span>
+                    </h3>
+                    <p class="process-desc">
+                        <span class="lang-content active" data-lang-content="zh-TW">定期傾談 + 交付成品，<br>唔係你一個人做</span>
+                        <span class="lang-content" data-lang-content="zh-CN">定期对话 + 交付成品，<br>不是你一个人做</span>
+                        <span class="lang-content" data-lang-content="en">Regular check-ins + deliverables,<br>you're not alone</span>
+                    </p>
+                </div>
+                <div class="process-step reveal">
+                    <div class="process-num">04</div>
+                    <h3 class="process-title">
+                        <span class="lang-content active" data-lang-content="zh-TW">跟進支援</span>
+                        <span class="lang-content" data-lang-content="zh-CN">跟进支援</span>
+                        <span class="lang-content" data-lang-content="en">Support</span>
+                    </h3>
+                    <p class="process-desc">
+                        <span class="lang-content active" data-lang-content="zh-TW">交付後仲有跟進，<br>確保你識用</span>
+                        <span class="lang-content" data-lang-content="zh-CN">交付后还有跟进，<br>确保你会用</span>
+                        <span class="lang-content" data-lang-content="en">Post-delivery support,<br>make sure you can use it</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Philosophy -->
+    <section class="section">
+        <div class="container">
+            <div class="pricing-box reveal">
+                <h3>
+                    <span class="lang-content active" data-lang-content="zh-TW">關於收費</span>
+                    <span class="lang-content" data-lang-content="zh-CN">关于收费</span>
+                    <span class="lang-content" data-lang-content="en">About Pricing</span>
+                </h3>
                 <div class="lang-content active" data-lang-content="zh-TW">
-                    <p class="zh"><strong>※ 現階段以顧問式服務為主</strong><br>我們正逐步建立一套可被複製的療癒服務數碼應用模式，未來將配合研發項目推出更具系統化的支援平台。</p>
+                    <p class="zh">我哋唔會喺網站列出「固定價錢」，因為每個人嘅需要都唔同。<br>傾完之後，我哋會根據你嘅情況俾你一個清晰嘅報價。<br>冇隱藏收費，唔啱嘅話你隨時可以唔做。</p>
+                    <p class="pricing-note zh">一般嚟講，品牌定位 + 網站設計嘅完整方案由 HKD 8,000 起。</p>
                 </div>
                 <div class="lang-content" data-lang-content="zh-CN">
-                    <p class="zh"><strong>※ 现阶段以顾问式服务为主</strong><br>我们正逐步建立一套可被复制的疗愈服务数码应用模式，未来将配合研发项目推出更具系统化的支援平台。</p>
+                    <p class="zh">我们不会在网站列出「固定价格」，因为每个人的需要都不同。<br>聊完之后，我们会根据你的情况给你一个清晰的报价。<br>没有隐藏收费，不合适的话你随时可以不做。</p>
+                    <p class="pricing-note zh">一般来说，品牌定位 + 网站设计的完整方案由 HKD 8,000 起。</p>
                 </div>
                 <div class="lang-content" data-lang-content="en">
-                    <p><strong>※ Currently focused on consulting services</strong><br>We are gradually building a replicable digital application model for healing services, with plans to launch more systematic support platforms alongside future R&D projects.</p>
+                    <p>We don't list "fixed prices" on our website because everyone's needs are different.<br>After our chat, we'll give you a clear quote based on your situation.<br>No hidden fees, and you can always say no if it's not right for you.</p>
+                    <p class="pricing-note">Generally, a complete brand positioning + website design package starts from HKD 8,000.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA -->
-    <section class="cta-section">
-        <div class="lang-content active" data-lang-content="zh-TW">
-            <h2 class="zh">想了解更多？</h2>
-            <p class="zh">歡迎與我們聯絡，討論最適合你的顧問方案。</p>
-        </div>
-        <div class="lang-content" data-lang-content="zh-CN">
-            <h2 class="zh">想了解更多？</h2>
-            <p class="zh">欢迎与我们联络，讨论最适合你的顾问方案。</p>
-        </div>
-        <div class="lang-content" data-lang-content="en">
-            <h2>Want to Learn More?</h2>
-            <p>Connect with us to discuss the consulting plan that fits you best.</p>
-        </div>
-        <a href="contact.html" class="btn btn-primary">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
-            <span class="lang-content active" data-lang-content="zh-TW">聯絡我們</span>
-            <span class="lang-content" data-lang-content="zh-CN">联络我们</span>
-            <span class="lang-content" data-lang-content="en">Contact Us</span>
-        </a>
-    </section>
-
-    <!-- Payment Information -->
-    <section class="section" style="padding-top: 0;">
+    <section class="section cta-section">
         <div class="container">
-            <div style="background:var(--bg-card); border:1px solid rgba(212,165,116,0.15); border-radius:20px; padding:2.5rem; max-width:600px; margin:0 auto; text-align:center;">
-                <div style="display:inline-flex; align-items:center; gap:0.5rem; margin-bottom:1.5rem;">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
-                    <span style="font-size:0.75rem; font-weight:600; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold);">Payment Information</span>
-                </div>
-                <div class="lang-content active" data-lang-content="zh-TW">
-                    <h3 class="zh" style="font-family:var(--font-display); font-size:1.4rem; color:var(--cream); margin-bottom:1.25rem;">銀行轉帳資料</h3>
-                </div>
-                <div class="lang-content" data-lang-content="zh-CN">
-                    <h3 class="zh" style="font-family:var(--font-display); font-size:1.4rem; color:var(--cream); margin-bottom:1.25rem;">银行转账资料</h3>
-                </div>
-                <div class="lang-content" data-lang-content="en">
-                    <h3 style="font-family:var(--font-display); font-size:1.4rem; color:var(--cream); margin-bottom:1.25rem;">Bank Transfer Details</h3>
-                </div>
-                <div style="background:rgba(212,165,116,0.05); border-radius:12px; padding:1.5rem; text-align:left;">
-                    <div style="margin-bottom:1rem;">
-                        <p style="font-size:0.75rem; color:var(--text-muted); margin-bottom:0.25rem;">
-                            <span class="lang-content active" data-lang-content="zh-TW">帳戶名稱</span>
-                            <span class="lang-content" data-lang-content="zh-CN">账户名称</span>
-                            <span class="lang-content" data-lang-content="en">Account Name</span>
-                        </p>
-                        <p style="color:var(--cream); font-weight:500;">Space Between Studio</p>
-                    </div>
-                    <div style="margin-bottom:1rem;">
-                        <p style="font-size:0.75rem; color:var(--text-muted); margin-bottom:0.25rem;">
-                            <span class="lang-content active" data-lang-content="zh-TW">銀行名稱</span>
-                            <span class="lang-content" data-lang-content="zh-CN">银行名称</span>
-                            <span class="lang-content" data-lang-content="en">Bank</span>
-                        </p>
-                        <p style="color:var(--cream); font-weight:500;">Standard Chartered Bank (Hong Kong) Ltd</p>
-                        <p style="font-size:0.85rem; color:var(--text-muted);">
-                            <span class="lang-content active" data-lang-content="zh-TW">銀行編號：003</span>
-                            <span class="lang-content" data-lang-content="zh-CN">银行编号：003</span>
-                            <span class="lang-content" data-lang-content="en">Bank Code: 003</span>
-                        </p>
-                    </div>
-                    <div>
-                        <p style="font-size:0.75rem; color:var(--text-muted); margin-bottom:0.25rem;">
-                            <span class="lang-content active" data-lang-content="zh-TW">帳戶號碼</span>
-                            <span class="lang-content" data-lang-content="zh-CN">账户号码</span>
-                            <span class="lang-content" data-lang-content="en">Account Number</span>
-                        </p>
-                        <p style="color:var(--gold); font-size:1.1rem; font-weight:600; letter-spacing:0.05em;">474-1-244886-3</p>
-                    </div>
-                </div>
-                <p style="font-size:0.8rem; color:var(--text-muted); margin-top:1rem;">
-                    <span class="lang-content active" data-lang-content="zh-TW">轉帳後請將收據發送至 hello@spacebetweenhealing.com</span>
-                    <span class="lang-content" data-lang-content="zh-CN">转账后请将收据发送至 hello@spacebetweenhealing.com</span>
-                    <span class="lang-content" data-lang-content="en">Please send your receipt to hello@spacebetweenhealing.com after transfer</span>
+            <div class="cta-box reveal">
+                <h2>
+                    <span class="lang-content active" data-lang-content="zh-TW">唔肯定要唔要？先傾下</span>
+                    <span class="lang-content" data-lang-content="zh-CN">不确定要不要？先聊聊</span>
+                    <span class="lang-content" data-lang-content="en">Not Sure Yet? Let's Chat First</span>
+                </h2>
+                <p>
+                    <span class="lang-content active" data-lang-content="zh-TW" class="zh">免費 30 分鐘傾談，冇壓力，冇推銷。<br>就係傾下，睇下有咩可以幫到你。</span>
+                    <span class="lang-content" data-lang-content="zh-CN" class="zh">免费 30 分钟对话，没压力，没推销。<br>就是聊聊，看看有什么可以帮到你。</span>
+                    <span class="lang-content" data-lang-content="en">Free 30-minute chat, no pressure, no sales pitch.<br>Just a conversation to see how we might help.</span>
                 </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Service Disclaimer -->
-    <section class="section" style="padding-top: 0;">
-        <div class="container">
-            <div class="disclaimer-box">
-                <div class="lang-content active" data-lang-content="zh-TW">
-                    <p class="zh"><strong>※ 服務說明</strong><br>
-                    本頁為顧問式服務介紹。目前 Space Between Healing 以一對一專業支援為主，未涉及 SaaS 平台或訂閱制系統。未來若根據研發成果導入技術應用，將另行公告。</p>
-                </div>
-                <div class="lang-content" data-lang-content="zh-CN">
-                    <p class="zh"><strong>※ 服务说明</strong><br>
-                    本页为顾问式服务介绍。目前 Space Between Healing 以一对一专业支援为主，未涉及 SaaS 平台或订阅制系统。未来若根据研发成果导入技术应用，将另行公告。</p>
-                </div>
-                <div class="lang-content" data-lang-content="en">
-                    <p><strong>※ Service Notice</strong><br>
-                    This page describes consultancy-based services. Space Between Healing currently focuses on one-on-one professional support and does not involve SaaS platforms or subscription-based systems. Any future technology applications based on R&D outcomes will be announced separately.</p>
+                <div class="cta-buttons">
+                    <a href="mailto:hello@spacebetweenhealing.com" class="btn btn-primary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+                        <span>Email</span>
+                    </a>
+                    <a href="https://wa.me/85294568231" target="_blank" class="btn btn-whatsapp">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        <span>WhatsApp</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -509,18 +686,34 @@
         <div class="footer-content">
             <span class="footer-logo">Space Between Healing</span>
             <div class="footer-links">
-                <a href="about.html"><span class="lang-content active" data-lang-content="zh-TW">關於</span><span class="lang-content" data-lang-content="zh-CN">关于</span><span class="lang-content" data-lang-content="en">About</span></a>
-                <a href="services.html"><span class="lang-content active" data-lang-content="zh-TW">服務</span><span class="lang-content" data-lang-content="zh-CN">服务</span><span class="lang-content" data-lang-content="en">Services</span></a>
-                <a href="lounge.html"><span class="lang-content active" data-lang-content="zh-TW">療癒實驗室</span><span class="lang-content" data-lang-content="zh-CN">疗愈实验室</span><span class="lang-content" data-lang-content="en">Healing Lab</span></a>
-                <a href="contact.html"><span class="lang-content active" data-lang-content="zh-TW">聯絡</span><span class="lang-content" data-lang-content="zh-CN">联络</span><span class="lang-content" data-lang-content="en">Contact</span></a>
+                <a href="about.html"><span class="lang-content active" data-lang-content="zh-TW">關於我哋</span><span class="lang-content" data-lang-content="zh-CN">关于我们</span><span class="lang-content" data-lang-content="en">About</span></a>
+                <a href="services.html"><span class="lang-content active" data-lang-content="zh-TW">點樣幫到你</span><span class="lang-content" data-lang-content="zh-CN">服务内容</span><span class="lang-content" data-lang-content="en">Services</span></a>
+                <a href="lounge.html"><span class="lang-content active" data-lang-content="zh-TW">免費資源</span><span class="lang-content" data-lang-content="zh-CN">免费资源</span><span class="lang-content" data-lang-content="en">Free Resources</span></a>
+                <a href="contact.html"><span class="lang-content active" data-lang-content="zh-TW">傾下偈</span><span class="lang-content" data-lang-content="zh-CN">联系我们</span><span class="lang-content" data-lang-content="en">Contact</span></a>
                 <a href="privacy.html"><span class="lang-content active" data-lang-content="zh-TW">私隱政策</span><span class="lang-content" data-lang-content="zh-CN">隐私政策</span><span class="lang-content" data-lang-content="en">Privacy</span></a>
-                <a href="terms.html"><span class="lang-content active" data-lang-content="zh-TW">服務條款</span><span class="lang-content" data-lang-content="zh-CN">服务条款</span><span class="lang-content" data-lang-content="en">Terms</span></a>
             </div>
             <span class="footer-copy">© 2025 Space Between Healing</span>
         </div>
     </footer>
 
     <script>
+        // Mobile Menu
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
+            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Language
         const langLabels = {'zh-TW':'繁中','zh-CN':'简中','en':'EN'};
         let currentLang = localStorage.getItem('lang') || 'zh-TW';
         const langSelector = document.querySelector('.lang-selector');
@@ -542,6 +735,11 @@
         }
         langOptions.forEach(opt => opt.addEventListener('click', () => setLanguage(opt.dataset.lang)));
         setLanguage(currentLang);
+
+        // Reveal
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), {threshold:0.1});
+        reveals.forEach(el => observer.observe(el));
     </script>
 </body>
 </html>

@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>聯絡我們 | Space Between Healing</title>
-    <meta name="description" content="與 Space Between Healing 聯繫，開始你的品牌療癒之旅。">
-    <link rel="canonical" href="https://spacebetweenhealing.com/contact">
+    <title>傾下偈 | Space Between Healing</title>
+    
+    <!-- SEO Meta -->
+    <meta name="description" content="想傾下品牌？WhatsApp 或 Email 都得 | Space Between Healing">
+    <link rel="canonical" href="https://spacebetweenhealing.com/contact.html">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Outfit:wght@300;400;500;600&family=Noto+Serif+TC:wght@300;400;500&family=Noto+Serif+SC:wght@300;400;500&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --bg-deep: #0a0a0a;
@@ -26,249 +30,294 @@
             --font-display: 'Cormorant Garamond', serif;
             --font-body: 'Outfit', sans-serif;
             --font-zh: 'Noto Serif TC', serif;
+            --font-zh-sc: 'Noto Serif SC', serif;
             --ease: cubic-bezier(0.16,1,0.3,1);
         }
         *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration:0.01ms!important; transition-duration:0.01ms!important; }
+        }
         html { scroll-behavior:smooth; }
         body { font-family:var(--font-body); background:var(--bg-deep); color:var(--text-primary); line-height:1.7; overflow-x:hidden; min-height:100vh; display:flex; flex-direction:column; }
-        .zh { font-family:var(--font-zh); }
+        [data-lang="zh-TW"] .zh { font-family:var(--font-zh); }
+        [data-lang="zh-CN"] .zh { font-family:var(--font-zh-sc); }
         .lang-content { display:none; }
         .lang-content.active { display:block; }
+        span.lang-content { display:none; }
+        span.lang-content.active { display:inline; }
 
+        /* Ambient */
         .ambient { position:fixed; inset:0; z-index:-1; pointer-events:none; }
         .orb { position:absolute; border-radius:50%; filter:blur(100px); opacity:0.4; }
         .orb-1 { width:500px; height:500px; background:radial-gradient(circle,var(--glow-gold) 0%,transparent 70%); top:-15%; left:-10%; animation:float 25s ease-in-out infinite; }
         .orb-2 { width:400px; height:400px; background:radial-gradient(circle,var(--glow-sage) 0%,transparent 70%); bottom:-10%; right:-5%; animation:float 30s ease-in-out infinite reverse; }
         @keyframes float { 0%,100%{transform:translate(0,0)} 50%{transform:translate(30px,-20px)} }
 
+        /* Nav */
         .nav { position:fixed; top:0; left:0; right:0; z-index:1000; padding:1rem 4vw; display:flex; justify-content:space-between; align-items:center; background:rgba(10,10,10,0.95); backdrop-filter:blur(20px); border-bottom:1px solid rgba(212,165,116,0.1); }
         .nav-logo { font-family:var(--font-display); font-size:1.1rem; letter-spacing:0.2em; color:var(--gold); text-decoration:none; font-weight:500; }
         .nav-right { display:flex; align-items:center; gap:2rem; }
         .nav-links { display:flex; gap:0.5rem; list-style:none; }
         .nav-links li a { display:block; font-size:0.85rem; color:var(--text-secondary); text-decoration:none; transition:all 0.3s; padding:0.6rem 1rem; border-radius:8px; }
-        .nav-links li a:hover { color:var(--gold); background:rgba(212,165,116,0.1); }
-        .nav-links li a.active { color:var(--gold); background:rgba(212,165,116,0.15); }
+        .nav-links li a:hover, .nav-links li a.active { color:var(--gold); background:rgba(212,165,116,0.1); }
         .lang-selector { position:relative; }
         .lang-btn { display:flex; align-items:center; gap:0.4rem; padding:0.5rem 1rem; background:rgba(212,165,116,0.1); border:1px solid rgba(212,165,116,0.25); border-radius:100px; color:var(--gold); font-size:0.8rem; cursor:pointer; transition:all 0.3s; font-weight:500; }
         .lang-btn:hover { background:rgba(212,165,116,0.2); border-color:var(--gold); }
         .lang-btn svg { width:12px; height:12px; transition:transform 0.3s; }
         .lang-selector.open .lang-btn svg { transform:rotate(180deg); }
-        .lang-dropdown { position:absolute; top:calc(100% + 8px); right:0; min-width:140px; background:var(--bg-card); border:1px solid rgba(212,165,116,0.2); border-radius:12px; overflow:hidden; opacity:0; visibility:hidden; transform:translateY(-10px); transition:all 0.3s var(--ease); z-index:100; box-shadow:0 10px 40px rgba(0,0,0,0.4); }
+        .lang-dropdown { position:absolute; top:calc(100% + 8px); right:0; min-width:140px; background:var(--bg-card); border:1px solid rgba(212,165,116,0.2); border-radius:12px; overflow:hidden; opacity:0; visibility:hidden; transform:translateY(-10px); transition:all 0.3s var(--ease); z-index:100; }
         .lang-selector.open .lang-dropdown { opacity:1; visibility:visible; transform:translateY(0); }
         .lang-option { display:flex; align-items:center; gap:0.5rem; width:100%; padding:0.75rem 1rem; background:none; border:none; color:var(--text-secondary); font-size:0.85rem; text-align:left; cursor:pointer; transition:all 0.2s; }
         .lang-option:hover { background:rgba(212,165,116,0.1); color:var(--gold); }
         .lang-option.active { color:var(--gold); }
 
-        .page-header { padding:10rem 4vw 4rem; text-align:center; position:relative; }
-        .page-header::after { content:''; position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:60px; height:1px; background:var(--gold); opacity:0.3; }
-        .page-title { font-family:var(--font-display); font-size:clamp(2.5rem,6vw,4rem); font-weight:300; margin-bottom:1rem; }
-        .page-title .highlight { color:var(--gold); font-style:italic; }
-        .page-subtitle { font-size:1.1rem; color:var(--text-secondary); max-width:600px; margin:0 auto; }
+        /* Mobile */
+        .menu-toggle { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; }
+        .menu-toggle span { display:block; width:24px; height:2px; background:var(--gold); transition:all 0.3s; }
+        .mobile-menu { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(10,10,10,0.98); z-index:999; padding:6rem 2rem 2rem; opacity:0; visibility:hidden; transition:all 0.3s; }
+        .mobile-menu.open { opacity:1; visibility:visible; }
+        .mobile-menu a { display:block; font-size:1.25rem; color:var(--text-primary); text-decoration:none; padding:1rem 0; border-bottom:1px solid rgba(212,165,116,0.1); }
+        @media (max-width:768px) {
+            .nav-links, .lang-selector { display:none; }
+            .menu-toggle { display:flex; }
+            .mobile-menu { display:block; }
+        }
 
-        .section { padding:4rem 4vw; flex:1; }
-        .container { max-width:900px; margin:0 auto; }
+        /* Container */
+        .container { max-width:900px; margin:0 auto; padding:0 2rem; }
 
-        .contact-intro { text-align:center; max-width:650px; margin:0 auto 4rem; }
-        .contact-intro p { color:var(--text-secondary); line-height:1.9; margin-bottom:1rem; }
+        /* Main Content */
+        main { flex:1; display:flex; align-items:center; padding:8rem 0 4rem; }
 
-        .contact-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem; margin-bottom:3rem; }
-        .contact-card { background:var(--bg-card); border:1px solid rgba(212,165,116,0.08); border-radius:20px; padding:2.5rem; text-align:center; transition:all 0.4s var(--ease); text-decoration:none; display:block; }
-        .contact-card:hover { transform:translateY(-5px); border-color:rgba(212,165,116,0.25); box-shadow:0 20px 50px rgba(0,0,0,0.3); }
-        .contact-icon { width:60px; height:60px; margin:0 auto 1.5rem; display:flex; align-items:center; justify-content:center; background:rgba(212,165,116,0.1); border-radius:50%; }
+        /* Contact Hero */
+        .contact-content { width:100%; }
+        .contact-header { text-align:center; margin-bottom:4rem; }
+        .page-tag { display:inline-flex; align-items:center; gap:0.75rem; margin-bottom:1.5rem; }
+        .page-tag-line { width:30px; height:1px; background:linear-gradient(90deg, transparent, var(--gold)); }
+        .page-tag-text { font-size:0.75rem; letter-spacing:0.25em; color:var(--gold); text-transform:uppercase; }
+        .page-title { font-family:var(--font-display); font-size:clamp(2.5rem, 6vw, 4rem); color:var(--cream); margin-bottom:1rem; line-height:1.2; }
+        .page-subtitle { font-size:1.1rem; color:var(--text-secondary); max-width:500px; margin:0 auto; line-height:1.8; }
+
+        /* Contact Cards */
+        .contact-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:1.5rem; margin-bottom:3rem; }
+        @media (max-width:600px) { .contact-grid { grid-template-columns:1fr; } }
+        .contact-card { background:var(--bg-card); border:1px solid rgba(212,165,116,0.1); border-radius:20px; padding:2rem; text-align:center; transition:all 0.3s var(--ease); }
+        .contact-card:hover { border-color:rgba(212,165,116,0.3); transform:translateY(-4px); }
+        .contact-icon { width:60px; height:60px; margin:0 auto 1.25rem; background:linear-gradient(135deg, rgba(212,165,116,0.15), rgba(160,184,156,0.1)); border-radius:50%; display:flex; align-items:center; justify-content:center; }
         .contact-icon svg { width:28px; height:28px; color:var(--gold); }
-        .contact-card h3 { font-family:var(--font-display); font-size:1.4rem; color:var(--cream); margin-bottom:0.5rem; }
-        .contact-card p { color:var(--text-muted); font-size:0.9rem; margin-bottom:1.25rem; }
-        .contact-link { color:var(--gold); font-size:0.95rem; display:inline-flex; align-items:center; gap:0.5rem; }
-        .contact-link svg { width:16px; height:16px; transition:transform 0.3s; }
-        .contact-card:hover .contact-link svg { transform:translateX(5px); }
+        .contact-card h3 { font-family:var(--font-display); font-size:1.25rem; color:var(--cream); margin-bottom:0.5rem; }
+        .contact-card p { color:var(--text-secondary); font-size:0.9rem; margin-bottom:1.25rem; line-height:1.6; }
+        .contact-link { display:inline-flex; align-items:center; gap:0.5rem; padding:0.75rem 1.5rem; border-radius:100px; font-size:0.9rem; font-weight:500; text-decoration:none; transition:all 0.3s var(--ease); }
+        .contact-link.email { background:linear-gradient(135deg, var(--gold), var(--gold-light)); color:var(--bg-deep); }
+        .contact-link.email:hover { transform:translateY(-2px); box-shadow:0 8px 25px rgba(212,165,116,0.3); }
+        .contact-link.whatsapp { background:#25D366; color:#fff; }
+        .contact-link.whatsapp:hover { background:#20bd5a; transform:translateY(-2px); }
 
-        .response-note { background:rgba(160,184,156,0.05); border:1px solid rgba(160,184,156,0.15); border-radius:16px; padding:2rem; max-width:600px; margin:0 auto; text-align:center; }
-        .response-note h4 { font-family:var(--font-display); font-size:1.1rem; color:var(--sage); margin-bottom:0.75rem; }
-        .response-note p { color:var(--text-muted); font-size:0.9rem; line-height:1.8; margin:0; }
+        /* Note */
+        .contact-note { background:linear-gradient(135deg, rgba(160,184,156,0.08), rgba(212,165,116,0.05)); border:1px solid rgba(160,184,156,0.15); border-radius:16px; padding:2rem; text-align:center; }
+        .contact-note h4 { font-family:var(--font-display); font-size:1.1rem; color:var(--sage); margin-bottom:0.75rem; }
+        .contact-note p { color:var(--text-secondary); font-size:0.9rem; line-height:1.8; }
 
-        .divider { width:60px; height:1px; background:rgba(212,165,116,0.2); margin:3rem auto; }
+        /* AI Promo Banner */
+        .ai-banner { margin-top:3rem; background:linear-gradient(135deg, rgba(212,165,116,0.1), rgba(160,184,156,0.05)); border:1px solid rgba(212,165,116,0.15); border-radius:20px; padding:2rem; display:flex; align-items:center; gap:1.5rem; }
+        @media (max-width:600px) { .ai-banner { flex-direction:column; text-align:center; } }
+        .ai-banner-icon { width:70px; height:70px; background:linear-gradient(135deg, var(--gold), var(--sage)); border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+        .ai-banner-icon svg { width:36px; height:36px; color:var(--bg-deep); }
+        .ai-banner-content h4 { font-family:var(--font-display); font-size:1.25rem; color:var(--cream); margin-bottom:0.5rem; }
+        .ai-banner-content p { color:var(--text-secondary); font-size:0.9rem; margin-bottom:1rem; }
+        .ai-banner-link { display:inline-flex; align-items:center; gap:0.4rem; color:var(--gold); font-size:0.9rem; text-decoration:none; font-weight:500; }
+        .ai-banner-link:hover { text-decoration:underline; }
+        .ai-banner-link svg { width:16px; height:16px; }
 
-        .hours-section { text-align:center; margin-top:1rem; }
-        .hours-title { font-family:var(--font-display); font-size:1.3rem; color:var(--cream); margin-bottom:1rem; }
-        .hours-info { color:var(--text-secondary); font-size:0.95rem; }
-        .hours-info span { display:block; margin-bottom:0.25rem; }
-
-        .footer { padding:3rem 4vw; background:var(--bg-dark); border-top:1px solid rgba(212,165,116,0.08); margin-top:auto; }
-        .footer-content { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem; }
-        .footer-logo { font-family:var(--font-display); font-size:0.95rem; letter-spacing:0.15em; color:var(--gold); }
-        .footer-links { display:flex; gap:1.5rem; flex-wrap:wrap; }
-        .footer-links a { font-size:0.8rem; color:var(--text-muted); text-decoration:none; transition:color 0.3s; }
+        /* Footer */
+        .footer { background:var(--bg-dark); border-top:1px solid rgba(212,165,116,0.1); padding:3rem 2rem; margin-top:auto; }
+        .footer-content { max-width:1200px; margin:0 auto; display:flex; flex-direction:column; align-items:center; gap:1.5rem; text-align:center; }
+        .footer-logo { font-family:var(--font-display); font-size:1rem; letter-spacing:0.15em; color:var(--gold); }
+        .footer-links { display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem; }
+        .footer-links a { font-size:0.85rem; color:var(--text-secondary); text-decoration:none; transition:color 0.3s; }
         .footer-links a:hover { color:var(--gold); }
         .footer-copy { font-size:0.75rem; color:var(--text-muted); }
 
-        @media (max-width:768px) {
-            .nav-links { display:none; }
-            .page-header { padding:8rem 1.5rem 3rem; }
-            .section { padding:3rem 1.5rem; }
-            .contact-card { padding:2rem; }
-            .footer-content { flex-direction:column; text-align:center; }
-        }
+        /* Reveal Animation */
+        .reveal { opacity:0; transform:translateY(30px); transition:all 0.8s var(--ease); }
+        .reveal.visible { opacity:1; transform:translateY(0); }
     </style>
 </head>
 <body data-lang="zh-TW">
     <div class="ambient"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
 
+    <!-- Nav -->
     <nav class="nav">
-        <a href="index.html" class="nav-logo">Space Between</a>
+        <a href="index.html" class="nav-logo">SPACE BETWEEN</a>
         <div class="nav-right">
             <ul class="nav-links">
+                <li><a href="index.html"><span class="lang-content active" data-lang-content="zh-TW">首頁</span><span class="lang-content" data-lang-content="zh-CN">首页</span><span class="lang-content" data-lang-content="en">Home</span></a></li>
                 <li><a href="about.html"><span class="lang-content active" data-lang-content="zh-TW">關於</span><span class="lang-content" data-lang-content="zh-CN">关于</span><span class="lang-content" data-lang-content="en">About</span></a></li>
                 <li><a href="services.html"><span class="lang-content active" data-lang-content="zh-TW">服務</span><span class="lang-content" data-lang-content="zh-CN">服务</span><span class="lang-content" data-lang-content="en">Services</span></a></li>
-                <li><a href="portfolio.html"><span class="lang-content active" data-lang-content="zh-TW">作品</span><span class="lang-content" data-lang-content="zh-CN">作品</span><span class="lang-content" data-lang-content="en">Works</span></a></li>
-                <li><a href="lounge.html"><span class="lang-content active" data-lang-content="zh-TW">療癒實驗室</span><span class="lang-content" data-lang-content="zh-CN">疗愈实验室</span><span class="lang-content" data-lang-content="en">Healing Lab</span></a></li>
-                <li><a href="ai-assistant.html"><span class="lang-content active" data-lang-content="zh-TW">AI 智能分析助理</span><span class="lang-content" data-lang-content="zh-CN">AI 智能分析助理</span><span class="lang-content" data-lang-content="en">AI Assistant</span></a></li>
+                <li><a href="lounge.html"><span class="lang-content active" data-lang-content="zh-TW">免費資源</span><span class="lang-content" data-lang-content="zh-CN">免费资源</span><span class="lang-content" data-lang-content="en">Resources</span></a></li>
                 <li><a href="contact.html" class="active"><span class="lang-content active" data-lang-content="zh-TW">聯絡</span><span class="lang-content" data-lang-content="zh-CN">联络</span><span class="lang-content" data-lang-content="en">Contact</span></a></li>
             </ul>
             <div class="lang-selector">
                 <button class="lang-btn"><span class="current-lang">繁中</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
                 <div class="lang-dropdown">
-                    <button class="lang-option active" data-lang="zh-TW">🇭🇰 繁體中文</button>
-                    <button class="lang-option" data-lang="zh-CN">🇨🇳 简体中文</button>
-                    <button class="lang-option" data-lang="en">🌍 English</button>
+                    <button class="lang-option active" data-lang="zh-TW">繁體中文</button>
+                    <button class="lang-option" data-lang="zh-CN">简体中文</button>
+                    <button class="lang-option" data-lang="en">English</button>
                 </div>
             </div>
         </div>
+        <button class="menu-toggle"><span></span><span></span><span></span></button>
     </nav>
 
-    <header class="page-header">
-        <h1 class="page-title">Get in <span class="highlight">Touch</span></h1>
-        <div class="lang-content active" data-lang-content="zh-TW">
-            <p class="page-subtitle zh">開始一場關於品牌的對話</p>
-        </div>
-        <div class="lang-content" data-lang-content="zh-CN">
-            <p class="page-subtitle zh">开始一场关于品牌的对话</p>
-        </div>
-        <div class="lang-content" data-lang-content="en">
-            <p class="page-subtitle">Start a conversation about your brand</p>
-        </div>
-    </header>
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="index.html">首頁</a>
+        <a href="about.html">關於</a>
+        <a href="services.html">服務</a>
+        <a href="lounge.html">免費資源</a>
+        <a href="contact.html">聯絡</a>
+    </div>
 
-    <section class="section">
+    <main>
         <div class="container">
-            <div class="contact-intro">
-                <div class="lang-content active" data-lang-content="zh-TW">
-                    <p class="zh">無論你正在建立新品牌、重新定位現有品牌，還是單純想聊聊品牌的困惑，歡迎隨時與我們聯繫。</p>
-                    <p class="zh">我們相信每一次對話都是療癒的開始。</p>
+            <div class="contact-content">
+                <!-- Header -->
+                <div class="contact-header reveal">
+                    <div class="page-tag"><span class="page-tag-line"></span><span class="page-tag-text">Contact</span><span class="page-tag-line"></span></div>
+                    <h1 class="page-title">
+                        <span class="lang-content active" data-lang-content="zh-TW">傾下偈</span>
+                        <span class="lang-content" data-lang-content="zh-CN">聊一聊</span>
+                        <span class="lang-content" data-lang-content="en">Let's Talk</span>
+                    </h1>
+                    <p class="page-subtitle">
+                        <span class="lang-content active" data-lang-content="zh-TW" class="zh">唔使諗太多，有咩想問就問。<br>我哋通常會喺 24 小時內回覆你。</span>
+                        <span class="lang-content" data-lang-content="zh-CN" class="zh">不用想太多，有什么想问就问。<br>我们通常会在 24 小时内回复你。</span>
+                        <span class="lang-content" data-lang-content="en">Don't overthink it, just reach out.<br>We usually reply within 24 hours.</span>
+                    </p>
                 </div>
-                <div class="lang-content" data-lang-content="zh-CN">
-                    <p class="zh">无论你正在建立新品牌、重新定位现有品牌，还是单纯想聊聊品牌的困惑，欢迎随时与我们联系。</p>
-                    <p class="zh">我们相信每一次对话都是疗愈的开始。</p>
-                </div>
-                <div class="lang-content" data-lang-content="en">
-                    <p>Whether you're building a new brand, repositioning an existing one, or simply want to discuss your brand-related concerns, feel free to reach out.</p>
-                    <p>We believe every conversation is the beginning of healing.</p>
-                </div>
-            </div>
 
-            <div class="contact-grid">
-                <a href="https://wa.me/85294568231" target="_blank" rel="noopener" class="contact-card">
-                    <div class="contact-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                <!-- Contact Cards -->
+                <div class="contact-grid">
+                    <div class="contact-card reveal">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </div>
+                        <h3>WhatsApp</h3>
+                        <p>
+                            <span class="lang-content active" data-lang-content="zh-TW" class="zh">最快嘅方式，直接傾</span>
+                            <span class="lang-content" data-lang-content="zh-CN" class="zh">最快的方式，直接聊</span>
+                            <span class="lang-content" data-lang-content="en">Fastest way to reach us</span>
+                        </p>
+                        <a href="https://wa.me/85294568231" target="_blank" class="contact-link whatsapp">
+                            <span class="lang-content active" data-lang-content="zh-TW">開始對話</span>
+                            <span class="lang-content" data-lang-content="zh-CN">开始对话</span>
+                            <span class="lang-content" data-lang-content="en">Start Chat</span>
+                        </a>
                     </div>
-                    <h3>WhatsApp</h3>
-                    <div class="lang-content active" data-lang-content="zh-TW">
-                        <p class="zh">最快速的聯繫方式</p>
+                    <div class="contact-card reveal">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+                        </div>
+                        <h3>Email</h3>
+                        <p>
+                            <span class="lang-content active" data-lang-content="zh-TW" class="zh">想講多啲？寫封 email</span>
+                            <span class="lang-content" data-lang-content="zh-CN" class="zh">想说多点？写封 email</span>
+                            <span class="lang-content" data-lang-content="en">Want to say more? Email us</span>
+                        </p>
+                        <a href="mailto:hello@spacebetweenhealing.com" class="contact-link email">
+                            <span class="lang-content active" data-lang-content="zh-TW">發送郵件</span>
+                            <span class="lang-content" data-lang-content="zh-CN">发送邮件</span>
+                            <span class="lang-content" data-lang-content="en">Send Email</span>
+                        </a>
                     </div>
-                    <div class="lang-content" data-lang-content="zh-CN">
-                        <p class="zh">最快速的联系方式</p>
-                    </div>
-                    <div class="lang-content" data-lang-content="en">
-                        <p>The quickest way to reach us</p>
-                    </div>
-                    <span class="contact-link">
-                        +852 9456 8231
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </span>
-                </a>
+                </div>
 
-                <a href="mailto:hello@spacebetweenhealing.com" class="contact-card">
-                    <div class="contact-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
-                    </div>
-                    <h3>Email</h3>
-                    <div class="lang-content active" data-lang-content="zh-TW">
-                        <p class="zh">詳細諮詢或合作洽談</p>
-                    </div>
-                    <div class="lang-content" data-lang-content="zh-CN">
-                        <p class="zh">详细咨询或合作洽谈</p>
-                    </div>
-                    <div class="lang-content" data-lang-content="en">
-                        <p>For detailed inquiries or collaborations</p>
-                    </div>
-                    <span class="contact-link">
-                        hello@spacebetweenhealing.com
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </span>
-                </a>
-            </div>
+                <!-- Note -->
+                <div class="contact-note reveal">
+                    <h4>
+                        <span class="lang-content active" data-lang-content="zh-TW">💡 小提示</span>
+                        <span class="lang-content" data-lang-content="zh-CN">💡 小提示</span>
+                        <span class="lang-content" data-lang-content="en">💡 A Little Tip</span>
+                    </h4>
+                    <p>
+                        <span class="lang-content active" data-lang-content="zh-TW" class="zh">
+                            如果你已經知道自己想做咩，可以喺訊息入面講清楚：<br>
+                            你做咩行業？想解決咩問題？大概預算係幾多？<br>
+                            咁我哋可以俾你更實用嘅建議。
+                        </span>
+                        <span class="lang-content" data-lang-content="zh-CN" class="zh">
+                            如果你已经知道自己想做什么，可以在消息里说清楚：<br>
+                            你做什么行业？想解决什么问题？大概预算是多少？<br>
+                            这样我们可以给你更实用的建议。
+                        </span>
+                        <span class="lang-content" data-lang-content="en">
+                            If you already know what you want, try to include:<br>
+                            What industry are you in? What problem are you trying to solve? What's your rough budget?<br>
+                            This helps us give you more practical suggestions.
+                        </span>
+                    </p>
+                </div>
 
-            <div class="response-note">
-                <div class="lang-content active" data-lang-content="zh-TW">
-                    <h4 class="zh">回覆時間</h4>
-                    <p class="zh">我們通常會在 1-2 個工作天內回覆你的訊息。<br>若有緊急事項，建議透過 WhatsApp 聯繫。</p>
-                </div>
-                <div class="lang-content" data-lang-content="zh-CN">
-                    <h4 class="zh">回复时间</h4>
-                    <p class="zh">我们通常会在 1-2 个工作天内回复你的讯息。<br>若有紧急事项，建议透过 WhatsApp 联系。</p>
-                </div>
-                <div class="lang-content" data-lang-content="en">
-                    <h4>Response Time</h4>
-                    <p>We typically respond within 1-2 business days.<br>For urgent matters, we recommend reaching out via WhatsApp.</p>
-                </div>
-            </div>
-
-            <div class="divider"></div>
-
-            <div class="hours-section">
-                <div class="lang-content active" data-lang-content="zh-TW">
-                    <h3 class="hours-title zh">諮詢時段</h3>
-                    <div class="hours-info zh">
-                        <span>週一至週五：10:00 - 18:00 (HKT)</span>
-                        <span>週六：預約制</span>
-                        <span>週日及公眾假期休息</span>
+                <!-- AI Banner -->
+                <div class="ai-banner reveal">
+                    <div class="ai-banner-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a4 4 0 0 1 4 4v1a2 2 0 0 1 2 2v1a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V9a2 2 0 0 1 2-2V6a4 4 0 0 1 4-4z"/><circle cx="9" cy="9" r="1"/><circle cx="15" cy="9" r="1"/><path d="M9 13h6"/><path d="M12 14v8"/><path d="M8 22h8"/></svg>
                     </div>
-                </div>
-                <div class="lang-content" data-lang-content="zh-CN">
-                    <h3 class="hours-title zh">咨询时段</h3>
-                    <div class="hours-info zh">
-                        <span>周一至周五：10:00 - 18:00 (HKT)</span>
-                        <span>周六：预约制</span>
-                        <span>周日及公众假期休息</span>
-                    </div>
-                </div>
-                <div class="lang-content" data-lang-content="en">
-                    <h3 class="hours-title">Consultation Hours</h3>
-                    <div class="hours-info">
-                        <span>Monday - Friday: 10:00 - 18:00 (HKT)</span>
-                        <span>Saturday: By appointment</span>
-                        <span>Sunday & Public Holidays: Closed</span>
+                    <div class="ai-banner-content">
+                        <h4>
+                            <span class="lang-content active" data-lang-content="zh-TW">想即刻傾？試下我哋嘅 AI 助理</span>
+                            <span class="lang-content" data-lang-content="zh-CN">想马上聊？试试我们的 AI 助理</span>
+                            <span class="lang-content" data-lang-content="en">Want to chat now? Try our AI assistant</span>
+                        </h4>
+                        <p>
+                            <span class="lang-content active" data-lang-content="zh-TW" class="zh">「光光」24 小時都喺度，可以幫你做初步嘅品牌診斷。免費㗎！</span>
+                            <span class="lang-content" data-lang-content="zh-CN" class="zh">「光光」24 小时都在，可以帮你做初步的品牌诊断。免费的！</span>
+                            <span class="lang-content" data-lang-content="en">"Guangguang" is available 24/7 for a quick brand diagnosis. It's free!</span>
+                        </p>
+                        <a href="ai-assistant.html" class="ai-banner-link">
+                            <span class="lang-content active" data-lang-content="zh-TW">即刻試下</span>
+                            <span class="lang-content" data-lang-content="zh-CN">立即试试</span>
+                            <span class="lang-content" data-lang-content="en">Try Now</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </main>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
             <span class="footer-logo">Space Between Healing</span>
             <div class="footer-links">
-                <a href="about.html"><span class="lang-content active" data-lang-content="zh-TW">關於</span><span class="lang-content" data-lang-content="zh-CN">关于</span><span class="lang-content" data-lang-content="en">About</span></a>
-                <a href="services.html"><span class="lang-content active" data-lang-content="zh-TW">服務</span><span class="lang-content" data-lang-content="zh-CN">服务</span><span class="lang-content" data-lang-content="en">Services</span></a>
-                <a href="lounge.html"><span class="lang-content active" data-lang-content="zh-TW">療癒實驗室</span><span class="lang-content" data-lang-content="zh-CN">疗愈实验室</span><span class="lang-content" data-lang-content="en">Healing Lab</span></a>
-                <a href="contact.html"><span class="lang-content active" data-lang-content="zh-TW">聯絡</span><span class="lang-content" data-lang-content="zh-CN">联络</span><span class="lang-content" data-lang-content="en">Contact</span></a>
+                <a href="about.html"><span class="lang-content active" data-lang-content="zh-TW">關於我哋</span><span class="lang-content" data-lang-content="zh-CN">关于我们</span><span class="lang-content" data-lang-content="en">About</span></a>
+                <a href="services.html"><span class="lang-content active" data-lang-content="zh-TW">點樣幫到你</span><span class="lang-content" data-lang-content="zh-CN">服务内容</span><span class="lang-content" data-lang-content="en">Services</span></a>
+                <a href="lounge.html"><span class="lang-content active" data-lang-content="zh-TW">免費資源</span><span class="lang-content" data-lang-content="zh-CN">免费资源</span><span class="lang-content" data-lang-content="en">Free Resources</span></a>
                 <a href="privacy.html"><span class="lang-content active" data-lang-content="zh-TW">私隱政策</span><span class="lang-content" data-lang-content="zh-CN">隐私政策</span><span class="lang-content" data-lang-content="en">Privacy</span></a>
-                <a href="terms.html"><span class="lang-content active" data-lang-content="zh-TW">服務條款</span><span class="lang-content" data-lang-content="zh-CN">服务条款</span><span class="lang-content" data-lang-content="en">Terms</span></a>
             </div>
             <span class="footer-copy">© 2025 Space Between Healing</span>
         </div>
     </footer>
 
     <script>
+        // Mobile Menu
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
+            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Language
         const langLabels = {'zh-TW':'繁中','zh-CN':'简中','en':'EN'};
         let currentLang = localStorage.getItem('lang') || 'zh-TW';
         const langSelector = document.querySelector('.lang-selector');
@@ -285,4 +334,16 @@
             currentLangEl.textContent = langLabels[lang];
             langOptions.forEach(opt => opt.classList.toggle('active', opt.dataset.lang === lang));
             document.querySelectorAll('.lang-content').forEach(el => el.classList.toggle('active', el.dataset.langContent === lang));
-            lo
+            localStorage.setItem('lang', lang);
+            langSelector.classList.remove('open');
+        }
+        langOptions.forEach(opt => opt.addEventListener('click', () => setLanguage(opt.dataset.lang)));
+        setLanguage(currentLang);
+
+        // Reveal
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), {threshold:0.1});
+        reveals.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
