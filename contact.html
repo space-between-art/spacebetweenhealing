@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html lang="zh-HK">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>聯絡我哋 | Space Between Healing</title>
-    <meta name="description" content="想傾下？WhatsApp 我哋或者 Email 都得">
+    <title>聯絡我們 | Space Between Healing</title>
+    <meta name="description" content="與 Space Between Healing 聯絡，開始你的療癒之旅。">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&family=Noto+Serif+TC:wght@300;400;500;600&family=Noto+Serif+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/theme.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500&family=Noto+Serif+TC:wght@400;500&family=Noto+Serif+SC:wght@400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <!-- Loader -->
     <div class="loader">
         <div class="loader-content">
-            <div class="loader-text">Space Between</div>
+            <div class="loader-text">SPACE BETWEEN</div>
             <div class="loader-bar"><div class="loader-progress"></div></div>
         </div>
     </div>
@@ -28,21 +30,10 @@
         <div class="floating-orb orb-3"></div>
         <div class="breathing-overlay"></div>
         <div class="particle-field">
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
+            <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+            <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+            <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+            <div class="particle"></div><div class="particle"></div><div class="particle"></div>
         </div>
         <div class="noise-overlay"></div>
         <div class="vignette"></div>
@@ -51,21 +42,28 @@
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">Space Between</a>
+            <a href="index.html" class="nav-logo">SPACE BETWEEN</a>
             <div class="nav-links">
-                <a href="index.html" class="nav-link">主頁</a>
-                <a href="services.html" class="nav-link">服務</a>
-                <a href="about.html" class="nav-link">關於</a>
-                <a href="ai-assistant.html" class="nav-link">AI 助手</a>
-                <a href="contact.html" class="nav-link active">聯絡</a>
+                <a href="about.html" class="nav-link"><span class="lang-zh-TW">關於</span><span class="lang-zh-CN">关于</span><span class="lang-en">About</span></a>
+                <a href="services.html" class="nav-link"><span class="lang-zh-TW">服務</span><span class="lang-zh-CN">服务</span><span class="lang-en">Services</span></a>
+                <a href="portfolio.html" class="nav-link"><span class="lang-zh-TW">作品</span><span class="lang-zh-CN">作品</span><span class="lang-en">Works</span></a>
+                <a href="lounge.html" class="nav-link"><span class="lang-zh-TW">療癒實驗室</span><span class="lang-zh-CN">疗愈实验室</span><span class="lang-en">Healing Lab</span></a>
+                <a href="ai-assistant.html" class="nav-link"><span class="lang-zh-TW">AI 助理</span><span class="lang-zh-CN">AI 助理</span><span class="lang-en">AI Assistant</span></a>
+                <a href="contact.html" class="nav-link active"><span class="lang-zh-TW">聯絡</span><span class="lang-zh-CN">联络</span><span class="lang-en">Contact</span></a>
             </div>
             <div class="nav-actions">
-                <button class="lang-switch" data-lang="zh-HK">繁 / 简</button>
-                <button class="nav-toggle" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+                <div class="lang-switch">
+                    <button class="lang-switch-btn" aria-label="切換語言">
+                        <span class="lang-zh-TW">繁中</span><span class="lang-zh-CN">简中</span><span class="lang-en">EN</span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="lang-dropdown">
+                        <button class="lang-option" data-lang="zh-TW">🇭🇰 繁體中文</button>
+                        <button class="lang-option" data-lang="zh-CN">🇨🇳 简体中文</button>
+                        <button class="lang-option" data-lang="en">🌍 English</button>
+                    </div>
+                </div>
+                <button class="nav-toggle" aria-label="選單"><span></span><span></span><span></span></button>
             </div>
         </div>
     </nav>
@@ -73,145 +71,87 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu">
         <div class="mobile-menu-content">
-            <a href="index.html" class="mobile-link">主頁</a>
-            <a href="services.html" class="mobile-link">服務</a>
-            <a href="about.html" class="mobile-link">關於</a>
-            <a href="ai-assistant.html" class="mobile-link">AI 助手</a>
-            <a href="contact.html" class="mobile-link active">聯絡</a>
+            <a href="about.html" class="mobile-link"><span class="lang-zh-TW">關於</span><span class="lang-zh-CN">关于</span><span class="lang-en">About</span></a>
+            <a href="services.html" class="mobile-link"><span class="lang-zh-TW">服務</span><span class="lang-zh-CN">服务</span><span class="lang-en">Services</span></a>
+            <a href="portfolio.html" class="mobile-link"><span class="lang-zh-TW">作品</span><span class="lang-zh-CN">作品</span><span class="lang-en">Works</span></a>
+            <a href="lounge.html" class="mobile-link"><span class="lang-zh-TW">療癒實驗室</span><span class="lang-zh-CN">疗愈实验室</span><span class="lang-en">Healing Lab</span></a>
+            <a href="ai-assistant.html" class="mobile-link"><span class="lang-zh-TW">AI 助理</span><span class="lang-zh-CN">AI 助理</span><span class="lang-en">AI Assistant</span></a>
+            <a href="contact.html" class="mobile-link active"><span class="lang-zh-TW">聯絡</span><span class="lang-zh-CN">联络</span><span class="lang-en">Contact</span></a>
         </div>
     </div>
 
     <main>
         <!-- Contact Hero -->
         <section class="contact-hero">
-            <div class="container">
-                <div class="contact-hero-content">
-                    <span class="eyebrow scroll-reveal">聯絡我哋</span>
-                    <h1 class="contact-title scroll-reveal" style="--delay: 0.1s">
-                        想傾下？<br>
-                        我哋喺度。
-                    </h1>
-                    <p class="contact-subtitle scroll-reveal" style="--delay: 0.2s">
-                        唔使擔心問「蠢問題」，<br>
-                        任何關於品牌嘅困惑，都可以傾。
+            <div class="contact-hero-content">
+                <div class="eyebrow scroll-reveal">
+                    <span class="lang-zh-TW">聯絡我們</span>
+                    <span class="lang-zh-CN">联络我们</span>
+                    <span class="lang-en">Get in Touch</span>
+                </div>
+                
+                <h1 class="page-title scroll-reveal">
+                    <span class="lang-zh-TW">準備好開始傾談？</span>
+                    <span class="lang-zh-CN">准备好开始倾谈？</span>
+                    <span class="lang-en">Ready to Start Talking?</span>
+                </h1>
+                
+                <p class="page-subtitle scroll-reveal">
+                    <span class="lang-zh-TW">無論你係想了解服務、傾下困擾，定係純粹打個招呼，我哋都好樂意聽你講。</span>
+                    <span class="lang-zh-CN">无论你是想了解服务、聊聊困扰，还是纯粹打个招呼，我们都很乐意听你说。</span>
+                    <span class="lang-en">Whether you want to learn about services, share your concerns, or just say hi, we're happy to listen.</span>
+                </p>
+                
+                <div class="contact-grid scroll-reveal">
+                    <a href="https://wa.me/85294568231" class="contact-card whatsapp" target="_blank">
+                        <div class="contact-icon">💬</div>
+                        <h4>WhatsApp</h4>
+                        <p>+852 9456 8231</p>
+                    </a>
+                    <a href="mailto:hello@spacebetweenhealing.com" class="contact-card">
+                        <div class="contact-icon">✉️</div>
+                        <h4>Email</h4>
+                        <p>hello@spacebetweenhealing.com</p>
+                    </a>
+                </div>
+                
+                <!-- Tips -->
+                <div class="scroll-reveal" style="margin-top: var(--space-2xl); padding-top: var(--space-xl); border-top: 1px solid rgba(201, 168, 108, 0.1);">
+                    <h3 style="font-size: 1.2rem; color: var(--gold); margin-bottom: var(--space-md); text-align: center;">
+                        <span class="lang-zh-TW">📝 傾談前小提示</span>
+                        <span class="lang-zh-CN">📝 倾谈前小提示</span>
+                        <span class="lang-en">📝 Before We Talk</span>
+                    </h3>
+                    <p style="text-align: center; color: var(--text-secondary); max-width: 500px; margin: 0 auto;">
+                        <span class="lang-zh-TW">你可以簡單準備一下：你目前遇到咩困難？你理想中嘅狀態係點？冇準備都冇問題，我哋會慢慢傾。</span>
+                        <span class="lang-zh-CN">你可以简单准备一下：你目前遇到什么困难？你理想中的状态是什么？没准备也没问题，我们会慢慢聊。</span>
+                        <span class="lang-en">You can briefly prepare: What challenges are you facing? What's your ideal state? No preparation needed—we'll take it slow.</span>
                     </p>
                 </div>
-            </div>
-        </section>
-
-        <!-- Contact Methods -->
-        <section class="contact-methods">
-            <div class="container">
-                <div class="contact-grid">
-                    
-                    <!-- WhatsApp Card -->
-                    <a href="https://wa.me/85294568231" class="contact-card whatsapp scroll-reveal" target="_blank" rel="noopener">
-                        <div class="contact-card-icon">
-                            <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32">
-                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                            </svg>
+                
+                <!-- AI Banner -->
+                <div class="scroll-reveal" style="margin-top: var(--space-xl);">
+                    <div class="ai-promo-card" style="grid-template-columns: auto 1fr auto;">
+                        <div class="ai-avatar">⭐</div>
+                        <div class="ai-promo-content">
+                            <h3 style="font-size: 1.2rem;">
+                                <span class="lang-zh-TW">唔確定想傾咩？</span>
+                                <span class="lang-zh-CN">不确定想聊什么？</span>
+                                <span class="lang-en">Not Sure What to Discuss?</span>
+                            </h3>
+                            <p>
+                                <span class="lang-zh-TW">試下同我哋嘅 AI 助理光光傾下，佢會幫你理清思緒。</span>
+                                <span class="lang-zh-CN">试试和我们的 AI 助理光光聊聊，它会帮你理清思绪。</span>
+                                <span class="lang-en">Try chatting with our AI assistant 光光 to help organize your thoughts.</span>
+                            </p>
                         </div>
-                        <div class="contact-card-content">
-                            <h2 class="contact-card-title">WhatsApp</h2>
-                            <p class="contact-card-value">+852 9456 8231</p>
-                            <p class="contact-card-hint">最快嘅方式，通常幾個鐘內回覆</p>
+                        <div class="ai-promo-cta">
+                            <a href="ai-assistant.html" class="btn btn-secondary">
+                                <span class="lang-zh-TW">同光光傾計</span>
+                                <span class="lang-zh-CN">和光光聊天</span>
+                                <span class="lang-en">Chat with 光光</span>
+                            </a>
                         </div>
-                        <div class="contact-card-arrow">→</div>
-                    </a>
-
-                    <!-- Email Card -->
-                    <a href="mailto:hello@spacebetweenhealing.com" class="contact-card email scroll-reveal" style="--delay: 0.1s">
-                        <div class="contact-card-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="32" height="32">
-                                <rect x="2" y="4" width="20" height="16" rx="2"/>
-                                <path d="M22 6L12 13L2 6"/>
-                            </svg>
-                        </div>
-                        <div class="contact-card-content">
-                            <h2 class="contact-card-title">Email</h2>
-                            <p class="contact-card-value">hello@spacebetweenhealing.com</p>
-                            <p class="contact-card-hint">適合比較詳細嘅問題</p>
-                        </div>
-                        <div class="contact-card-arrow">→</div>
-                    </a>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Tips -->
-        <section class="contact-tips">
-            <div class="container">
-                <div class="tips-card scroll-reveal">
-                    <h2 class="tips-title">傾之前可以準備啲乜？</h2>
-                    <p class="tips-intro">其實乜都唔使準備，但如果你想傾得更有效率：</p>
-                    
-                    <div class="tips-list">
-                        <div class="tip-item">
-                            <span class="tip-icon">💭</span>
-                            <p>諗下你而家最困擾嘅係乜（例如：唔知點介紹自己）</p>
-                        </div>
-                        <div class="tip-item">
-                            <span class="tip-icon">🎯</span>
-                            <p>你理想中想達到嘅效果係點（例如：想有更多客人搵我）</p>
-                        </div>
-                        <div class="tip-item">
-                            <span class="tip-icon">📝</span>
-                            <p>如果有現有嘅網站或社交媒體，可以 share 俾我哋睇</p>
-                        </div>
-                    </div>
-                    
-                    <p class="tips-note">
-                        唔肯定都冇關係，我哋會慢慢傾。
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- AI Assistant Promo -->
-        <section class="ai-promo-section">
-            <div class="container">
-                <div class="ai-promo-banner scroll-reveal">
-                    <div class="ai-promo-content">
-                        <span class="ai-promo-badge">免費試用</span>
-                        <h2 class="ai-promo-title">唔想直接傾？</h2>
-                        <p class="ai-promo-desc">
-                            可以先同我哋嘅 AI 品牌助手「光光」傾下，<br>
-                            做個免費嘅品牌健康檢查。
-                        </p>
-                        <a href="ai-assistant.html" class="btn btn-primary">試下 AI 助手</a>
-                    </div>
-                    <div class="ai-promo-visual">
-                        <div class="ai-avatar">
-                            <span>🌟</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ Mini -->
-        <section class="faq-mini">
-            <div class="container">
-                <div class="section-header centered scroll-reveal">
-                    <span class="eyebrow">常見問題</span>
-                    <h2 class="section-title">你可能想知</h2>
-                </div>
-
-                <div class="faq-grid">
-                    <div class="faq-item scroll-reveal">
-                        <h3 class="faq-question">傾完一定要幫襯？</h3>
-                        <p class="faq-answer">完全唔使。初次傾談係免費嘅，傾完你可以慢慢考慮，冇壓力。</p>
-                    </div>
-                    
-                    <div class="faq-item scroll-reveal" style="--delay: 0.1s">
-                        <h3 class="faq-question">我唔係香港人，得唔得？</h3>
-                        <p class="faq-answer">當然得！我哋服務全球華人，普通話、英文都 OK。</p>
-                    </div>
-                    
-                    <div class="faq-item scroll-reveal" style="--delay: 0.2s">
-                        <h3 class="faq-question">幾耐會回覆？</h3>
-                        <p class="faq-answer">WhatsApp 通常幾個鐘，Email 24 小時內。週末可能會慢少少。</p>
                     </div>
                 </div>
             </div>
@@ -222,87 +162,43 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand">
-                    <span class="footer-logo">Space Between Healing</span>
-                    <p class="footer-tagline">你嘅品牌療癒師</p>
-                </div>
+                <div class="footer-brand">SPACE BETWEEN HEALING</div>
                 <div class="footer-links">
-                    <a href="index.html">主頁</a>
-                    <a href="services.html">服務</a>
-                    <a href="about.html">關於</a>
-                    <a href="contact.html">聯絡</a>
+                    <a href="privacy.html" class="footer-link"><span class="lang-zh-TW">私隱政策</span><span class="lang-zh-CN">隐私政策</span><span class="lang-en">Privacy</span></a>
+                    <a href="terms.html" class="footer-link"><span class="lang-zh-TW">服務條款</span><span class="lang-zh-CN">服务条款</span><span class="lang-en">Terms</span></a>
                 </div>
-                <div class="footer-contact">
-                    <a href="https://wa.me/85294568231" class="footer-whatsapp">WhatsApp</a>
-                    <a href="mailto:hello@spacebetweenhealing.com">hello@spacebetweenhealing.com</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2026 Space Between Studio. All rights reserved.</p>
+                <div class="footer-copy">© 2025 Space Between Healing</div>
             </div>
         </div>
     </footer>
 
     <script>
-        // Loader
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.querySelector('.loader').classList.add('loaded');
-            }, 1800);
-        });
-
-        // Mobile menu toggle
+        window.addEventListener('load', () => setTimeout(() => document.querySelector('.loader').classList.add('loaded'), 1800));
+        const nav = document.querySelector('.nav');
+        window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50));
         const navToggle = document.querySelector('.nav-toggle');
         const mobileMenu = document.querySelector('.mobile-menu');
         navToggle.addEventListener('click', () => {
             navToggle.classList.toggle('active');
             mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
         });
-
-        // Nav scroll effect
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('.nav');
-            if (window.scrollY > 100) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
-
-        // Scroll reveal
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('revealed');
-                }
+        const langOptions = document.querySelectorAll('.lang-option');
+        const savedLang = localStorage.getItem('site-lang') || 'zh-TW';
+        document.documentElement.lang = savedLang;
+        langOptions.forEach(option => {
+            if (option.dataset.lang === savedLang) option.classList.add('active');
+            option.addEventListener('click', () => {
+                document.documentElement.lang = option.dataset.lang;
+                localStorage.setItem('site-lang', option.dataset.lang);
+                langOptions.forEach(o => o.classList.remove('active'));
+                option.classList.add('active');
             });
-        }, observerOptions);
-
-        document.querySelectorAll('.scroll-reveal').forEach(el => {
-            observer.observe(el);
         });
-
-        // Language switch
-        const langSwitch = document.querySelector('.lang-switch');
-        langSwitch.addEventListener('click', () => {
-            const currentLang = langSwitch.dataset.lang;
-            const newLang = currentLang === 'zh-HK' ? 'zh-CN' : 'zh-HK';
-            langSwitch.dataset.lang = newLang;
-            document.documentElement.lang = newLang;
-            localStorage.setItem('preferred-lang', newLang);
-        });
-
-        // Load saved language preference
-        const savedLang = localStorage.getItem('preferred-lang');
-        if (savedLang) {
-            document.documentElement.lang = savedLang;
-            document.querySelector('.lang-switch').dataset.lang = savedLang;
-        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('revealed'); });
+        }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>

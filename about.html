@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html lang="zh-HK">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>關於我哋 | Space Between Healing</title>
-    <meta name="description" content="用金繼哲學，將品牌嘅裂痕變成獨特嘅金色紋理">
+    <title>關於我們 | Space Between Healing</title>
+    <meta name="description" content="了解 Space Between Healing 的品牌故事與核心理念。">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&family=Noto+Serif+TC:wght@300;400;500;600&family=Noto+Serif+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/theme.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500&family=Noto+Serif+TC:wght@400;500&family=Noto+Serif+SC:wght@400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <!-- Loader -->
     <div class="loader">
         <div class="loader-content">
-            <div class="loader-text">Space Between</div>
+            <div class="loader-text">SPACE BETWEEN</div>
             <div class="loader-bar"><div class="loader-progress"></div></div>
         </div>
     </div>
@@ -28,21 +30,10 @@
         <div class="floating-orb orb-3"></div>
         <div class="breathing-overlay"></div>
         <div class="particle-field">
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
+            <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+            <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+            <div class="particle"></div><div class="particle"></div><div class="particle"></div>
+            <div class="particle"></div><div class="particle"></div><div class="particle"></div>
         </div>
         <div class="noise-overlay"></div>
         <div class="vignette"></div>
@@ -51,20 +42,55 @@
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">Space Between</a>
+            <a href="index.html" class="nav-logo">SPACE BETWEEN</a>
             <div class="nav-links">
-                <a href="index.html" class="nav-link">主頁</a>
-                <a href="services.html" class="nav-link">服務</a>
-                <a href="about.html" class="nav-link active">關於</a>
-                <a href="ai-assistant.html" class="nav-link">AI 助手</a>
-                <a href="contact.html" class="nav-link">聯絡</a>
+                <a href="about.html" class="nav-link active">
+                    <span class="lang-zh-TW">關於</span>
+                    <span class="lang-zh-CN">关于</span>
+                    <span class="lang-en">About</span>
+                </a>
+                <a href="services.html" class="nav-link">
+                    <span class="lang-zh-TW">服務</span>
+                    <span class="lang-zh-CN">服务</span>
+                    <span class="lang-en">Services</span>
+                </a>
+                <a href="portfolio.html" class="nav-link">
+                    <span class="lang-zh-TW">作品</span>
+                    <span class="lang-zh-CN">作品</span>
+                    <span class="lang-en">Works</span>
+                </a>
+                <a href="lounge.html" class="nav-link">
+                    <span class="lang-zh-TW">療癒實驗室</span>
+                    <span class="lang-zh-CN">疗愈实验室</span>
+                    <span class="lang-en">Healing Lab</span>
+                </a>
+                <a href="ai-assistant.html" class="nav-link">
+                    <span class="lang-zh-TW">AI 助理</span>
+                    <span class="lang-zh-CN">AI 助理</span>
+                    <span class="lang-en">AI Assistant</span>
+                </a>
+                <a href="contact.html" class="nav-link">
+                    <span class="lang-zh-TW">聯絡</span>
+                    <span class="lang-zh-CN">联络</span>
+                    <span class="lang-en">Contact</span>
+                </a>
             </div>
             <div class="nav-actions">
-                <button class="lang-switch" data-lang="zh-HK">繁 / 简</button>
-                <button class="nav-toggle" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <div class="lang-switch">
+                    <button class="lang-switch-btn" aria-label="切換語言">
+                        <span class="lang-zh-TW">繁中</span>
+                        <span class="lang-zh-CN">简中</span>
+                        <span class="lang-en">EN</span>
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                    </button>
+                    <div class="lang-dropdown">
+                        <button class="lang-option" data-lang="zh-TW">🇭🇰 繁體中文</button>
+                        <button class="lang-option" data-lang="zh-CN">🇨🇳 简体中文</button>
+                        <button class="lang-option" data-lang="en">🌍 English</button>
+                    </div>
+                </div>
+                <button class="nav-toggle" aria-label="選單">
+                    <span></span><span></span><span></span>
                 </button>
             </div>
         </div>
@@ -73,235 +99,186 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu">
         <div class="mobile-menu-content">
-            <a href="index.html" class="mobile-link">主頁</a>
-            <a href="services.html" class="mobile-link">服務</a>
-            <a href="about.html" class="mobile-link active">關於</a>
-            <a href="ai-assistant.html" class="mobile-link">AI 助手</a>
-            <a href="contact.html" class="mobile-link">聯絡</a>
+            <a href="about.html" class="mobile-link active">
+                <span class="lang-zh-TW">關於</span>
+                <span class="lang-zh-CN">关于</span>
+                <span class="lang-en">About</span>
+            </a>
+            <a href="services.html" class="mobile-link">
+                <span class="lang-zh-TW">服務</span>
+                <span class="lang-zh-CN">服务</span>
+                <span class="lang-en">Services</span>
+            </a>
+            <a href="portfolio.html" class="mobile-link">
+                <span class="lang-zh-TW">作品</span>
+                <span class="lang-zh-CN">作品</span>
+                <span class="lang-en">Works</span>
+            </a>
+            <a href="lounge.html" class="mobile-link">
+                <span class="lang-zh-TW">療癒實驗室</span>
+                <span class="lang-zh-CN">疗愈实验室</span>
+                <span class="lang-en">Healing Lab</span>
+            </a>
+            <a href="ai-assistant.html" class="mobile-link">
+                <span class="lang-zh-TW">AI 助理</span>
+                <span class="lang-zh-CN">AI 助理</span>
+                <span class="lang-en">AI Assistant</span>
+            </a>
+            <a href="contact.html" class="mobile-link">
+                <span class="lang-zh-TW">聯絡</span>
+                <span class="lang-zh-CN">联络</span>
+                <span class="lang-en">Contact</span>
+            </a>
         </div>
     </div>
 
     <main>
-        <!-- Hero Section -->
+        <!-- Page Hero -->
         <section class="page-hero">
             <div class="container">
-                <span class="eyebrow scroll-reveal">關於我哋</span>
-                <h1 class="page-title scroll-reveal" style="--delay: 0.1s">
-                    <span lang="zh-HK">每一道裂痕，</span>
-                    <span lang="zh-HK">都係獨特嘅故事</span>
+                <div class="eyebrow scroll-reveal">
+                    <span class="lang-zh-TW">關於我們</span>
+                    <span class="lang-zh-CN">关于我们</span>
+                    <span class="lang-en">About Us</span>
+                </div>
+                <h1 class="page-title scroll-reveal">
+                    <span class="lang-zh-TW">在隙光之間，找到療癒</span>
+                    <span class="lang-zh-CN">在隙光之间，找到疗愈</span>
+                    <span class="lang-en">Finding Healing in the Space Between</span>
                 </h1>
-                <p class="page-subtitle scroll-reveal" style="--delay: 0.2s">
-                    我哋相信，品牌唔需要完美。<br>
-                    需要嘅係認識自己，然後好好咁表達出嚟。
+                <p class="page-subtitle scroll-reveal">
+                    <span class="lang-zh-TW">我們相信，真正可持續的轉化來自於清晰定位、內在秩序與敘事一致性。</span>
+                    <span class="lang-zh-CN">我们相信，真正可持续的转化来自于清晰定位、内在秩序与叙事一致性。</span>
+                    <span class="lang-en">We believe that truly sustainable transformation comes from clear positioning, inner order, and narrative consistency.</span>
                 </p>
             </div>
         </section>
 
         <!-- Story Section -->
-        <section class="story-section">
+        <section class="section">
             <div class="container">
                 <div class="story-grid">
-                    <div class="story-visual scroll-reveal">
-                        <div class="story-image-card">
-                            <div class="story-image-placeholder">
-                                <span class="story-emoji">🌿</span>
-                            </div>
-                            <div class="story-image-accent"></div>
-                        </div>
-                    </div>
-                    <div class="story-content scroll-reveal" style="--delay: 0.1s">
-                        <span class="eyebrow">我哋嘅故事</span>
-                        <h2 class="story-title">點解叫「Space Between」？</h2>
-                        <div class="story-text">
-                            <p>
-                                好多人覺得做品牌就係做靚啲 Logo、整個靚網站。
-                                但我哋發現，真正令品牌有生命力嘅，係嗰個「中間嘅空間」——
-                            </p>
-                            <p>
-                                係你同客人之間嘅理解，<br>
-                                係你想做嘅嘢同市場之間嘅平衡，<br>
-                                係過去嘅你同未來嘅你之間嘅連結。
-                            </p>
-                            <p>
-                                我哋叫自己做「品牌療癒師」，因為我哋做嘅嘢，
-                                唔只係設計，而係幫你搵到嗰個讓品牌可以呼吸嘅空間。
-                            </p>
-                        </div>
+                    <div class="story-visual scroll-reveal">🌿</div>
+                    <div class="story-content scroll-reveal">
+                        <h2>
+                            <span class="lang-zh-TW">我們的故事</span>
+                            <span class="lang-zh-CN">我们的故事</span>
+                            <span class="lang-en">Our Story</span>
+                        </h2>
+                        <p>
+                            <span class="lang-zh-TW">Space Between Healing 源於一個簡單的觀察：許多療癒工作者、教練和創作者擁有深厚的專業，卻常常在「如何表達自己」這件事上感到迷失。</span>
+                            <span class="lang-zh-CN">Space Between Healing 源于一个简单的观察：许多疗愈工作者、教练和创作者拥有深厚的专业，却常常在「如何表达自己」这件事上感到迷失。</span>
+                            <span class="lang-en">Space Between Healing was born from a simple observation: many healers, coaches, and creators possess deep expertise, yet often feel lost when it comes to expressing themselves.</span>
+                        </p>
+                        <p>
+                            <span class="lang-zh-TW">我們相信，品牌不只是一個商業工具，它是你與世界溝通的方式。當你的品牌敘事與內在價值一致時，你會感到更加自在，客戶也會更容易找到你。</span>
+                            <span class="lang-zh-CN">我们相信，品牌不只是一个商业工具，它是你与世界沟通的方式。当你的品牌叙事与内在价值一致时，你会感到更加自在，客户也会更容易找到你。</span>
+                            <span class="lang-en">We believe that a brand is not just a business tool—it's how you communicate with the world. When your brand narrative aligns with your inner values, you feel more comfortable, and clients can find you more easily.</span>
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Kintsugi Section -->
+        <!-- Kintsugi Philosophy -->
         <section class="kintsugi-section">
             <div class="container">
-                <div class="kintsugi-grid">
-                    <div class="kintsugi-content scroll-reveal">
-                        <span class="eyebrow">金繼哲學</span>
-                        <h2 class="kintsugi-title">用金修復裂痕</h2>
-                        <div class="kintsugi-text">
-                            <p>
-                                日本有一種古老嘅工藝叫「金繼」（Kintsugi），
-                                專門用金漆修復破碎嘅陶器。
-                            </p>
-                            <p>
-                                佢唔係要隱藏裂痕，而係用金色嘅線條將碎片重新連接，
-                                令每一件修復過嘅器物都變得更加獨特、更加珍貴。
-                            </p>
-                            <p>
-                                我哋相信，你嘅品牌都一樣。<br>
-                                你行過嘅路、跌過嘅跤、試過嘅錯，<br>
-                                都係你獨特故事嘅一部分。
-                            </p>
-                            <p class="kintsugi-highlight">
-                                我哋唔會幫你假裝完美，<br>
-                                而係幫你將呢啲經歷變成你品牌最閃亮嘅地方。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="kintsugi-visual scroll-reveal" style="--delay: 0.1s">
-                        <div class="kintsugi-bowl">
-                            <div class="bowl-inner">
-                                <span class="bowl-emoji">🥣</span>
-                            </div>
-                            <div class="bowl-glow"></div>
-                            <div class="gold-lines">
-                                <svg viewBox="0 0 200 200" class="gold-cracks">
-                                    <path d="M40 80 Q60 90 80 70 T120 80" stroke="url(#goldGradient)" fill="none" stroke-width="2"/>
-                                    <path d="M60 120 Q80 100 100 130 T140 110" stroke="url(#goldGradient)" fill="none" stroke-width="2"/>
-                                    <path d="M90 60 Q100 80 95 100" stroke="url(#goldGradient)" fill="none" stroke-width="1.5"/>
-                                    <defs>
-                                        <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" stop-color="#c9a86c"/>
-                                            <stop offset="50%" stop-color="#e8d5a3"/>
-                                            <stop offset="100%" stop-color="#c9a86c"/>
-                                        </linearGradient>
-                                    </defs>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
+                <div class="kintsugi-visual scroll-reveal">
+                    <div class="kintsugi-glow"></div>
+                    <div class="kintsugi-bowl">🥣</div>
+                </div>
+                <div class="kintsugi-text scroll-reveal">
+                    <h2>
+                        <span class="lang-zh-TW">金繼哲學</span>
+                        <span class="lang-zh-CN">金继哲学</span>
+                        <span class="lang-en">Kintsugi Philosophy</span>
+                    </h2>
+                    <p>
+                        <span class="lang-zh-TW">金繼（Kintsugi）是日本修復破損陶器的藝術，用金粉填補裂痕，讓修復的痕跡成為作品獨特的美。我們相信，每個品牌都有自己的「裂痕」——那些曾經的困惑、轉折、甚至失敗——這些並非需要隱藏的缺陷，而是值得被看見、被療癒的故事。</span>
+                        <span class="lang-zh-CN">金继（Kintsugi）是日本修复破损陶器的艺术，用金粉填补裂痕，让修复的痕迹成为作品独特的美。我们相信，每个品牌都有自己的「裂痕」——那些曾经的困惑、转折、甚至失败——这些并非需要隐藏的缺陷，而是值得被看见、被疗愈的故事。</span>
+                        <span class="lang-en">Kintsugi is the Japanese art of repairing broken pottery with gold, turning the repair lines into unique beauty. We believe every brand has its own "cracks"—past confusions, turning points, even failures—these are not flaws to hide, but stories worth seeing and healing.</span>
+                    </p>
                 </div>
             </div>
         </section>
 
         <!-- Values Section -->
-        <section class="values-section">
+        <section class="section">
             <div class="container">
                 <div class="section-header centered scroll-reveal">
-                    <span class="eyebrow">我哋相信</span>
-                    <h2 class="section-title">三個核心價值</h2>
+                    <div class="eyebrow">
+                        <span class="lang-zh-TW">核心價值</span>
+                        <span class="lang-zh-CN">核心价值</span>
+                        <span class="lang-en">Core Values</span>
+                    </div>
+                    <h2 class="section-title">
+                        <span class="lang-zh-TW">我們相信</span>
+                        <span class="lang-zh-CN">我们相信</span>
+                        <span class="lang-en">What We Believe</span>
+                    </h2>
                 </div>
-
+                
                 <div class="values-grid">
-                    <div class="value-card scroll-reveal">
-                        <div class="value-icon">
-                            <span>🐢</span>
-                        </div>
-                        <h3 class="value-title">慢慢嚟</h3>
-                        <p class="value-desc">
-                            唔使急，唔好比較。<br>
-                            每個品牌都有自己嘅節奏，<br>
-                            搵到啱嘅方向比行得快更重要。
-                        </p>
-                    </div>
-
                     <div class="value-card scroll-reveal" style="--delay: 0.1s">
-                        <div class="value-icon">
-                            <span>💬</span>
-                        </div>
-                        <h3 class="value-title">透過傾計</h3>
-                        <p class="value-desc">
-                            真正嘅品牌策略，<br>
-                            係傾出嚟嘅，唔係做出嚟嘅。<br>
-                            我哋會用心聆聽你嘅故事。
+                        <div class="value-icon">🐢</div>
+                        <h3>
+                            <span class="lang-zh-TW">慢慢嚟</span>
+                            <span class="lang-zh-CN">慢慢来</span>
+                            <span class="lang-en">Take It Slow</span>
+                        </h3>
+                        <p>
+                            <span class="lang-zh-TW">真正的轉化需要時間。我們不追求快速修復，而是陪伴你找到屬於自己的節奏。</span>
+                            <span class="lang-zh-CN">真正的转化需要时间。我们不追求快速修复，而是陪伴你找到属于自己的节奏。</span>
+                            <span class="lang-en">Real transformation takes time. We don't seek quick fixes, but accompany you to find your own rhythm.</span>
                         </p>
-                    </div>
-
-                    <div class="value-card scroll-reveal" style="--delay: 0.2s">
-                        <div class="value-icon">
-                            <span>✨</span>
-                        </div>
-                        <h3 class="value-title">做返自己</h3>
-                        <p class="value-desc">
-                            唔好扮嘢，唔好抄人。<br>
-                            最好嘅品牌，<br>
-                            係最真實嘅你。
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Audience Section -->
-        <section class="audience-section">
-            <div class="container">
-                <div class="audience-grid">
-                    <div class="audience-content scroll-reveal">
-                        <span class="eyebrow">我哋幫嘅人</span>
-                        <h2 class="audience-title">你可能係...</h2>
-                        
-                        <div class="audience-list">
-                            <div class="audience-item">
-                                <span class="audience-icon">🧘</span>
-                                <div class="audience-text">
-                                    <h3>身心靈工作者</h3>
-                                    <p>做緊療癒、瑜珈、冥想、塔羅，想搵到啱嘅方式介紹自己</p>
-                                </div>
-                            </div>
-                            
-                            <div class="audience-item">
-                                <span class="audience-icon">🎓</span>
-                                <div class="audience-text">
-                                    <h3>教練同導師</h3>
-                                    <p>有好多經驗想分享，但唔知點樣包裝成課程或服務</p>
-                                </div>
-                            </div>
-                            
-                            <div class="audience-item">
-                                <span class="audience-icon">🎨</span>
-                                <div class="audience-text">
-                                    <h3>自由創作者</h3>
-                                    <p>插畫師、攝影師、設計師，想建立自己嘅品牌</p>
-                                </div>
-                            </div>
-                            
-                            <div class="audience-item">
-                                <span class="audience-icon">💼</span>
-                                <div class="audience-text">
-                                    <h3>小型服務商</h3>
-                                    <p>開咗幾年公司，想重新整理品牌形象</p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     
-                    <div class="audience-visual scroll-reveal" style="--delay: 0.1s">
-                        <div class="audience-quote-card">
-                            <div class="quote-mark">"</div>
-                            <p class="audience-quote">
-                                如果你覺得自己做嘅嘢好有價值，
-                                但唔知點樣講俾人聽 ——
-                                你就係我哋想幫嘅人。
-                            </p>
-                        </div>
+                    <div class="value-card scroll-reveal" style="--delay: 0.2s">
+                        <div class="value-icon">💬</div>
+                        <h3>
+                            <span class="lang-zh-TW">透過傾計</span>
+                            <span class="lang-zh-CN">通过交流</span>
+                            <span class="lang-en">Through Dialogue</span>
+                        </h3>
+                        <p>
+                            <span class="lang-zh-TW">每一次對話都是療癒的開始。我們相信傾聽與理解的力量。</span>
+                            <span class="lang-zh-CN">每一次对话都是疗愈的开始。我们相信倾听与理解的力量。</span>
+                            <span class="lang-en">Every conversation is the beginning of healing. We believe in the power of listening and understanding.</span>
+                        </p>
+                    </div>
+                    
+                    <div class="value-card scroll-reveal" style="--delay: 0.3s">
+                        <div class="value-icon">✨</div>
+                        <h3>
+                            <span class="lang-zh-TW">做返自己</span>
+                            <span class="lang-zh-CN">做回自己</span>
+                            <span class="lang-en">Be Yourself</span>
+                        </h3>
+                        <p>
+                            <span class="lang-zh-TW">你的獨特性就是你最大的資產。我們幫助你找回並展現真實的自己。</span>
+                            <span class="lang-zh-CN">你的独特性就是你最大的资产。我们帮助你找回并展现真实的自己。</span>
+                            <span class="lang-en">Your uniqueness is your greatest asset. We help you rediscover and express your authentic self.</span>
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- CTA Section -->
-        <section class="cta-section">
+        <section class="section">
             <div class="container">
-                <div class="cta-content scroll-reveal">
-                    <h2 class="cta-title">想認識多啲？</h2>
-                    <p class="cta-desc">
-                        嚟傾下，或者試下我哋嘅 AI 品牌助手。<br>
-                        完全免費，冇壓力。
-                    </p>
-                    <div class="cta-actions">
-                        <a href="contact.html" class="btn btn-primary">同我哋傾下</a>
-                        <a href="ai-assistant.html" class="btn btn-secondary">試下 AI 助手</a>
+                <div class="section-header centered scroll-reveal">
+                    <h2 class="section-title">
+                        <span class="lang-zh-TW">準備好開始你的療癒之旅？</span>
+                        <span class="lang-zh-CN">准备好开始你的疗愈之旅？</span>
+                        <span class="lang-en">Ready to Begin Your Healing Journey?</span>
+                    </h2>
+                    <div style="margin-top: var(--space-lg);">
+                        <a href="contact.html" class="btn btn-primary">
+                            <span class="lang-zh-TW">聯絡我們</span>
+                            <span class="lang-zh-CN">联络我们</span>
+                            <span class="lang-en">Contact Us</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -312,23 +289,20 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand">
-                    <span class="footer-logo">Space Between Healing</span>
-                    <p class="footer-tagline">你嘅品牌療癒師</p>
-                </div>
+                <div class="footer-brand">SPACE BETWEEN HEALING</div>
                 <div class="footer-links">
-                    <a href="index.html">主頁</a>
-                    <a href="services.html">服務</a>
-                    <a href="about.html">關於</a>
-                    <a href="contact.html">聯絡</a>
+                    <a href="privacy.html" class="footer-link">
+                        <span class="lang-zh-TW">私隱政策</span>
+                        <span class="lang-zh-CN">隐私政策</span>
+                        <span class="lang-en">Privacy</span>
+                    </a>
+                    <a href="terms.html" class="footer-link">
+                        <span class="lang-zh-TW">服務條款</span>
+                        <span class="lang-zh-CN">服务条款</span>
+                        <span class="lang-en">Terms</span>
+                    </a>
                 </div>
-                <div class="footer-contact">
-                    <a href="https://wa.me/85294568231" class="footer-whatsapp">WhatsApp</a>
-                    <a href="mailto:hello@spacebetweenhealing.com">hello@spacebetweenhealing.com</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2026 Space Between Studio. All rights reserved.</p>
+                <div class="footer-copy">© 2025 Space Between Healing</div>
             </div>
         </div>
     </footer>
@@ -336,63 +310,45 @@
     <script>
         // Loader
         window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.querySelector('.loader').classList.add('loaded');
-            }, 1800);
+            setTimeout(() => document.querySelector('.loader').classList.add('loaded'), 1800);
         });
 
-        // Mobile menu toggle
+        // Navigation
+        const nav = document.querySelector('.nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Mobile menu
         const navToggle = document.querySelector('.nav-toggle');
         const mobileMenu = document.querySelector('.mobile-menu');
         navToggle.addEventListener('click', () => {
             navToggle.classList.toggle('active');
             mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
         });
 
-        // Nav scroll effect
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('.nav');
-            if (window.scrollY > 100) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
+        // Language
+        const langOptions = document.querySelectorAll('.lang-option');
+        const savedLang = localStorage.getItem('site-lang') || 'zh-TW';
+        document.documentElement.lang = savedLang;
+        langOptions.forEach(option => {
+            if (option.dataset.lang === savedLang) option.classList.add('active');
+            option.addEventListener('click', () => {
+                document.documentElement.lang = option.dataset.lang;
+                localStorage.setItem('site-lang', option.dataset.lang);
+                langOptions.forEach(o => o.classList.remove('active'));
+                option.classList.add('active');
+            });
         });
 
         // Scroll reveal
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('revealed');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('revealed');
             });
-        }, observerOptions);
-
-        document.querySelectorAll('.scroll-reveal').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Language switch
-        const langSwitch = document.querySelector('.lang-switch');
-        langSwitch.addEventListener('click', () => {
-            const currentLang = langSwitch.dataset.lang;
-            const newLang = currentLang === 'zh-HK' ? 'zh-CN' : 'zh-HK';
-            langSwitch.dataset.lang = newLang;
-            document.documentElement.lang = newLang;
-            localStorage.setItem('preferred-lang', newLang);
-        });
-
-        // Load saved language preference
-        const savedLang = localStorage.getItem('preferred-lang');
-        if (savedLang) {
-            document.documentElement.lang = savedLang;
-            document.querySelector('.lang-switch').dataset.lang = savedLang;
-        }
+        }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
