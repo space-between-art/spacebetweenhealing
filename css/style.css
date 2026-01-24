@@ -122,6 +122,7 @@ img {
 }
 
 /* === PAGE LOADER === */
+/* Loader - 自動消失（唔需要 JS） */
 .loader {
     position: fixed;
     inset: 0;
@@ -132,6 +133,16 @@ img {
     align-items: center;
     justify-content: center;
     transition: opacity 0.6s var(--ease-out), visibility 0.6s;
+    /* 自動消失動畫 - 2秒後開始淡出 */
+    animation: autoHideLoader 0.8s ease-out 2s forwards;
+}
+
+@keyframes autoHideLoader {
+    to {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
 }
 
 .loader.loaded {
