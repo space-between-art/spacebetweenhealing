@@ -1,317 +1,421 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-HK">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>光光 AI 品牌診斷 | Space Between Healing</title>
-    
-    <!-- SEO Meta -->
-    <meta name="description" content="免費 AI 品牌診斷，24 小時服務 | 同光光傾幾句，搵出你品牌嘅問題">
-    <link rel="canonical" href="https://spacebetweenhealing.com/ai-assistant.html">
+    <title>AI 品牌助手 | Space Between Healing</title>
+    <meta name="description" content="免費 AI 品牌健康檢查，同「光光」傾下你嘅品牌">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Outfit:wght@300;400;500;600&family=Noto+Serif+TC:wght@300;400;500&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg-deep: #0a0a0a;
-            --bg-dark: #111;
-            --bg-card: #161616;
-            --gold: #d4a574;
-            --gold-light: #e8c9a0;
-            --sage: #a0b89c;
-            --cream: #f5efe6;
-            --glow-gold: rgba(212,165,116,0.35);
-            --glow-sage: rgba(160,184,156,0.25);
-            --text-primary: #f5efe6;
-            --text-secondary: rgba(245,239,230,0.7);
-            --text-muted: rgba(245,239,230,0.45);
-            --font-display: 'Cormorant Garamond', serif;
-            --font-body: 'Outfit', sans-serif;
-            --font-zh: 'Noto Serif TC', serif;
-            --font-zh-sans: 'Noto Sans TC', sans-serif;
-            --ease: cubic-bezier(0.16,1,0.3,1);
-        }
-        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-        html, body { height:100%; }
-        body { font-family:var(--font-body); background:var(--bg-deep); color:var(--text-primary); line-height:1.6; overflow:hidden; display:flex; flex-direction:column; }
-        .zh { font-family:var(--font-zh-sans); }
-
-        /* Ambient */
-        .ambient { position:fixed; inset:0; z-index:-1; pointer-events:none; }
-        .orb { position:absolute; border-radius:50%; filter:blur(120px); opacity:0.3; }
-        .orb-1 { width:400px; height:400px; background:radial-gradient(circle,var(--glow-gold) 0%,transparent 70%); top:-10%; left:-5%; animation:float 30s ease-in-out infinite; }
-        .orb-2 { width:300px; height:300px; background:radial-gradient(circle,var(--glow-sage) 0%,transparent 70%); bottom:-5%; right:-3%; animation:float 35s ease-in-out infinite reverse; }
-        @keyframes float { 0%,100%{transform:translate(0,0)} 50%{transform:translate(20px,-15px)} }
-
-        /* Header */
-        .chat-header { background:rgba(10,10,10,0.95); backdrop-filter:blur(20px); border-bottom:1px solid rgba(212,165,116,0.1); padding:1rem 1.5rem; display:flex; align-items:center; justify-content:space-between; flex-shrink:0; }
-        .chat-header-left { display:flex; align-items:center; gap:1rem; }
-        .back-link { display:flex; align-items:center; gap:0.4rem; color:var(--text-secondary); text-decoration:none; font-size:0.85rem; transition:color 0.3s; }
-        .back-link:hover { color:var(--gold); }
-        .back-link svg { width:18px; height:18px; }
-        .chat-title { font-family:var(--font-display); font-size:1.1rem; color:var(--gold); letter-spacing:0.1em; }
-        .chat-status { display:flex; align-items:center; gap:0.4rem; font-size:0.75rem; color:var(--sage); }
-        .status-dot { width:6px; height:6px; border-radius:50%; background:var(--sage); animation:pulse 2s ease-in-out infinite; }
-        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
-
-        /* Chat Container */
-        .chat-container { flex:1; display:flex; flex-direction:column; max-width:800px; width:100%; margin:0 auto; padding:0 1rem; overflow:hidden; }
-        
-        /* Messages Area */
-        .messages { flex:1; overflow-y:auto; padding:1.5rem 0; display:flex; flex-direction:column; gap:1rem; }
-        .messages::-webkit-scrollbar { width:4px; }
-        .messages::-webkit-scrollbar-track { background:transparent; }
-        .messages::-webkit-scrollbar-thumb { background:rgba(212,165,116,0.2); border-radius:2px; }
-
-        /* Message Bubbles */
-        .message { display:flex; gap:0.75rem; max-width:85%; animation:fadeIn 0.3s var(--ease); }
-        @keyframes fadeIn { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
-        .message.user { align-self:flex-end; flex-direction:row-reverse; }
-        .message-avatar { width:36px; height:36px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:0.85rem; }
-        .message.bot .message-avatar { background:linear-gradient(135deg, var(--gold), var(--sage)); color:var(--bg-deep); }
-        .message.user .message-avatar { background:rgba(212,165,116,0.15); color:var(--gold); }
-        .message-content { background:var(--bg-card); border:1px solid rgba(212,165,116,0.1); border-radius:16px; padding:1rem 1.25rem; }
-        .message.user .message-content { background:rgba(212,165,116,0.1); border-color:rgba(212,165,116,0.2); }
-        .message-content p { color:var(--text-primary); line-height:1.7; }
-        .message-content p + p { margin-top:0.75rem; }
-
-        /* Typing Indicator */
-        .typing { display:flex; gap:4px; padding:0.5rem 0; }
-        .typing span { width:6px; height:6px; border-radius:50%; background:var(--gold); opacity:0.4; animation:typing 1.4s ease-in-out infinite; }
-        .typing span:nth-child(2) { animation-delay:0.2s; }
-        .typing span:nth-child(3) { animation-delay:0.4s; }
-        @keyframes typing { 0%,60%,100%{transform:translateY(0);opacity:0.4} 30%{transform:translateY(-6px);opacity:1} }
-
-        /* Quick Replies */
-        .quick-replies { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1rem; }
-        .quick-reply { background:rgba(212,165,116,0.08); border:1px solid rgba(212,165,116,0.2); border-radius:100px; padding:0.5rem 1rem; font-size:0.85rem; color:var(--gold); cursor:pointer; transition:all 0.3s var(--ease); }
-        .quick-reply:hover { background:rgba(212,165,116,0.15); border-color:var(--gold); }
-
-        /* Input Area */
-        .input-area { padding:1rem 0 1.5rem; flex-shrink:0; }
-        .input-wrapper { display:flex; gap:0.75rem; background:var(--bg-card); border:1px solid rgba(212,165,116,0.15); border-radius:16px; padding:0.5rem; transition:border-color 0.3s; }
-        .input-wrapper:focus-within { border-color:var(--gold); }
-        .chat-input { flex:1; background:transparent; border:none; color:var(--text-primary); font-family:var(--font-zh-sans); font-size:0.95rem; padding:0.75rem; resize:none; max-height:120px; line-height:1.5; }
-        .chat-input::placeholder { color:var(--text-muted); }
-        .chat-input:focus { outline:none; }
-        .send-btn { width:44px; height:44px; border-radius:12px; background:linear-gradient(135deg, var(--gold), var(--gold-light)); border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.3s var(--ease); flex-shrink:0; }
-        .send-btn:hover { transform:scale(1.05); }
-        .send-btn:disabled { opacity:0.5; cursor:not-allowed; transform:none; }
-        .send-btn svg { width:20px; height:20px; color:var(--bg-deep); }
-
-        /* Disclaimer */
-        .disclaimer { text-align:center; padding:0.75rem; font-size:0.7rem; color:var(--text-muted); }
-        .disclaimer a { color:var(--sage); text-decoration:none; }
-        .disclaimer a:hover { text-decoration:underline; }
-
-        /* Welcome Screen */
-        .welcome { text-align:center; padding:2rem 1rem; }
-        .welcome-avatar { width:80px; height:80px; border-radius:50%; background:linear-gradient(135deg, var(--gold), var(--sage)); margin:0 auto 1.5rem; display:flex; align-items:center; justify-content:center; box-shadow:0 10px 40px rgba(212,165,116,0.3); }
-        .welcome-avatar svg { width:40px; height:40px; color:var(--bg-deep); }
-        .welcome h2 { font-family:var(--font-display); font-size:1.75rem; color:var(--cream); margin-bottom:0.5rem; }
-        .welcome p { color:var(--text-secondary); max-width:400px; margin:0 auto 2rem; line-height:1.7; }
-        .welcome-features { display:flex; flex-direction:column; gap:0.75rem; max-width:350px; margin:0 auto; }
-        .feature-item { display:flex; align-items:center; gap:0.75rem; text-align:left; color:var(--text-secondary); font-size:0.9rem; }
-        .feature-item svg { width:18px; height:18px; color:var(--gold); flex-shrink:0; }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&family=Noto+Serif+TC:wght@300;400;500;600&family=Noto+Serif+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/theme.css">
 </head>
 <body>
-    <div class="ambient"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
-
-    <!-- Header -->
-    <header class="chat-header">
-        <div class="chat-header-left">
-            <a href="index.html" class="back-link">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-                <span>返回</span>
-            </a>
-        </div>
-        <div style="text-align:center;">
-            <div class="chat-title">光光</div>
-            <div class="chat-status">
-                <span class="status-dot"></span>
-                <span>AI 品牌助理</span>
-            </div>
-        </div>
-        <div style="width:60px;"></div>
-    </header>
-
-    <!-- Chat Container -->
-    <div class="chat-container">
-        <div class="messages" id="messages">
-            <!-- Welcome Screen -->
-            <div class="welcome" id="welcome">
-                <div class="welcome-avatar">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a4 4 0 0 1 4 4v1a2 2 0 0 1 2 2v1a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V9a2 2 0 0 1 2-2V6a4 4 0 0 1 4-4z"/><circle cx="9" cy="9" r="1"/><circle cx="15" cy="9" r="1"/><path d="M9 13h6"/><path d="M12 14v8"/><path d="M8 22h8"/></svg>
-                </div>
-                <h2 class="zh">你好！我係光光 ☀️</h2>
-                <p class="zh">我係 Space Between Healing 嘅 AI 品牌助理。<br>唔肯定你嘅品牌有咩問題？同我傾幾句，我幫你搵出「症狀」，俾你一啲方向。</p>
-                <div class="welcome-features">
-                    <div class="feature-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
-                        <span class="zh">免費使用，唔收錢</span>
-                    </div>
-                    <div class="feature-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-                        <span class="zh">24 小時都喺度</span>
-                    </div>
-                    <div class="feature-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        <span class="zh">對話內容會保密</span>
-                    </div>
-                </div>
-                <div class="quick-replies" style="justify-content:center;margin-top:2rem;">
-                    <button class="quick-reply" onclick="sendQuickReply('我想做品牌，但唔知從何入手')">🤔 唔知從何入手</button>
-                    <button class="quick-reply" onclick="sendQuickReply('我唔知點介紹自己嘅服務')">💬 唔知點介紹自己</button>
-                    <button class="quick-reply" onclick="sendQuickReply('我想知道我嘅品牌有咩問題')">🔍 想診斷我嘅品牌</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Input Area -->
-        <div class="input-area">
-            <div class="input-wrapper">
-                <textarea class="chat-input zh" id="chatInput" placeholder="有咩想問？打嚟呢度⋯" rows="1" onkeydown="handleKeyDown(event)"></textarea>
-                <button class="send-btn" id="sendBtn" onclick="sendMessage()">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2L15 22l-4-9-9-4L22 2z"/></svg>
-                </button>
-            </div>
-            <div class="disclaimer">
-                <span class="zh">光光係 AI，唔係真人顧問。如需專業意見，請</span>
-                <a href="contact.html" class="zh">聯絡我哋</a>
-            </div>
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-content">
+            <div class="loader-text">Space Between</div>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
         </div>
     </div>
 
-    <script>
-        const messagesEl = document.getElementById('messages');
-        const chatInput = document.getElementById('chatInput');
-        const sendBtn = document.getElementById('sendBtn');
-        const welcomeEl = document.getElementById('welcome');
-        
-        let conversationHistory = [];
-        let isWaiting = false;
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="gradient-mesh"></div>
+        <div class="floating-orb orb-1"></div>
+        <div class="floating-orb orb-2"></div>
+        <div class="floating-orb orb-3"></div>
+        <div class="breathing-overlay"></div>
+        <div class="particle-field">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        <div class="noise-overlay"></div>
+        <div class="vignette"></div>
+    </div>
 
-        // Auto-resize textarea
-        chatInput.addEventListener('input', function() {
-            this.style.height = 'auto';
-            this.style.height = Math.min(this.scrollHeight, 120) + 'px';
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Space Between</a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">主頁</a>
+                <a href="services.html" class="nav-link">服務</a>
+                <a href="about.html" class="nav-link">關於</a>
+                <a href="ai-assistant.html" class="nav-link active">AI 助手</a>
+                <a href="contact.html" class="nav-link">聯絡</a>
+            </div>
+            <div class="nav-actions">
+                <button class="lang-switch" data-lang="zh-HK">繁 / 简</button>
+                <button class="nav-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-content">
+            <a href="index.html" class="mobile-link">主頁</a>
+            <a href="services.html" class="mobile-link">服務</a>
+            <a href="about.html" class="mobile-link">關於</a>
+            <a href="ai-assistant.html" class="mobile-link active">AI 助手</a>
+            <a href="contact.html" class="mobile-link">聯絡</a>
+        </div>
+    </div>
+
+    <main>
+        <!-- AI Hero Section -->
+        <section class="ai-hero">
+            <div class="container">
+                <div class="ai-hero-content">
+                    <div class="ai-avatar-large scroll-reveal">
+                        <span class="ai-avatar-emoji">🌟</span>
+                        <div class="ai-avatar-glow"></div>
+                        <div class="ai-avatar-ring"></div>
+                    </div>
+                    <span class="eyebrow scroll-reveal" style="--delay: 0.1s">AI 品牌助手</span>
+                    <h1 class="ai-hero-title scroll-reveal" style="--delay: 0.2s">
+                        你好，我係<span class="highlight">光光</span>
+                    </h1>
+                    <p class="ai-hero-subtitle scroll-reveal" style="--delay: 0.3s">
+                        我係 Space Between 嘅 AI 品牌助手，<br>
+                        可以幫你做一個免費嘅品牌健康檢查。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Features -->
+        <section class="ai-features">
+            <div class="container">
+                <div class="ai-features-grid">
+                    <div class="ai-feature-card scroll-reveal">
+                        <span class="ai-feature-icon">💬</span>
+                        <h3 class="ai-feature-title">用廣東話傾計</h3>
+                        <p class="ai-feature-desc">我識講廣東話，你可以好自然咁同我傾你嘅品牌</p>
+                    </div>
+                    
+                    <div class="ai-feature-card scroll-reveal" style="--delay: 0.1s">
+                        <span class="ai-feature-icon">🔍</span>
+                        <h3 class="ai-feature-title">品牌診斷</h3>
+                        <p class="ai-feature-desc">我會問你幾條問題，幫你搵出品牌嘅強項同弱點</p>
+                    </div>
+                    
+                    <div class="ai-feature-card scroll-reveal" style="--delay: 0.2s">
+                        <span class="ai-feature-icon">📋</span>
+                        <h3 class="ai-feature-title">初步建議</h3>
+                        <p class="ai-feature-desc">傾完會俾你一份品牌健康報告，同埋改善建議</p>
+                    </div>
+                    
+                    <div class="ai-feature-card scroll-reveal" style="--delay: 0.3s">
+                        <span class="ai-feature-icon">🆓</span>
+                        <h3 class="ai-feature-title">完全免費</h3>
+                        <p class="ai-feature-desc">唔使註冊，唔使俾錢，傾幾耐都得</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chat Section -->
+        <section class="chat-section">
+            <div class="container">
+                <div class="chat-container scroll-reveal">
+                    <div class="chat-header">
+                        <div class="chat-header-info">
+                            <div class="chat-avatar">
+                                <span>🌟</span>
+                            </div>
+                            <div class="chat-header-text">
+                                <span class="chat-name">光光</span>
+                                <span class="chat-status">
+                                    <span class="status-dot"></span>
+                                    Online
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="chat-message assistant">
+                            <div class="message-avatar">🌟</div>
+                            <div class="message-content">
+                                <p>你好！我係光光，Space Between 嘅 AI 品牌助手 ✨</p>
+                                <p>我可以幫你做一個免費嘅品牌健康檢查。你想點開始呢？</p>
+                            </div>
+                        </div>
+                        
+                        <div class="chat-suggestions">
+                            <button class="suggestion-btn" data-message="我唔知點樣介紹自己嘅服務">我唔知點樣介紹自己</button>
+                            <button class="suggestion-btn" data-message="我想做品牌健康檢查">我想做品牌健康檢查</button>
+                            <button class="suggestion-btn" data-message="我想知道 Space Between 有咩服務">你哋有咩服務？</button>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-input-container">
+                        <input type="text" class="chat-input" id="chatInput" placeholder="輸入你嘅訊息..." />
+                        <button class="chat-send" id="chatSend">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                                <path d="M22 2L11 13"/>
+                                <path d="M22 2L15 22L11 13L2 9L22 2Z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <p class="chat-disclaimer scroll-reveal" style="--delay: 0.1s">
+                    光光係 AI 助手，佢嘅建議只供參考。<br>
+                    如果你想深入傾，可以直接 <a href="contact.html">聯絡我哋</a>。
+                </p>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="ai-how-it-works">
+            <div class="container">
+                <div class="section-header centered scroll-reveal">
+                    <span class="eyebrow">點樣運作</span>
+                    <h2 class="section-title">同光光傾計嘅流程</h2>
+                </div>
+
+                <div class="ai-steps">
+                    <div class="ai-step scroll-reveal">
+                        <div class="ai-step-number">1</div>
+                        <h3 class="ai-step-title">開始對話</h3>
+                        <p class="ai-step-desc">直接打字或者㩒建議按鈕開始</p>
+                    </div>
+                    
+                    <div class="ai-step scroll-reveal" style="--delay: 0.1s">
+                        <div class="ai-step-number">2</div>
+                        <h3 class="ai-step-title">回答問題</h3>
+                        <p class="ai-step-desc">光光會問你關於品牌嘅問題</p>
+                    </div>
+                    
+                    <div class="ai-step scroll-reveal" style="--delay: 0.2s">
+                        <div class="ai-step-number">3</div>
+                        <h3 class="ai-step-title">收到報告</h3>
+                        <p class="ai-step-desc">傾完會收到品牌健康檢查報告</p>
+                    </div>
+                    
+                    <div class="ai-step scroll-reveal" style="--delay: 0.3s">
+                        <div class="ai-step-number">4</div>
+                        <h3 class="ai-step-title">決定下一步</h3>
+                        <p class="ai-step-desc">可以自己改善或者搵我哋幫手</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content scroll-reveal">
+                    <h2 class="cta-title">想同真人傾？</h2>
+                    <p class="cta-desc">
+                        AI 助手好方便，但有時你可能需要更深入嘅對話。<br>
+                        我哋真人團隊隨時準備好幫你。
+                    </p>
+                    <div class="cta-actions">
+                        <a href="https://wa.me/85294568231" class="btn btn-whatsapp" target="_blank" rel="noopener">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                            WhatsApp 我哋
+                        </a>
+                        <a href="contact.html" class="btn btn-secondary">其他聯絡方式</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">Space Between Healing</span>
+                    <p class="footer-tagline">你嘅品牌療癒師</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">主頁</a>
+                    <a href="services.html">服務</a>
+                    <a href="about.html">關於</a>
+                    <a href="contact.html">聯絡</a>
+                </div>
+                <div class="footer-contact">
+                    <a href="https://wa.me/85294568231" class="footer-whatsapp">WhatsApp</a>
+                    <a href="mailto:hello@spacebetweenhealing.com">hello@spacebetweenhealing.com</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Space Between Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Loader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelector('.loader').classList.add('loaded');
+            }, 1800);
         });
 
-        function handleKeyDown(e) {
-            if (e.key === 'Enter' && !e.shiftKey) {
-                e.preventDefault();
-                sendMessage();
+        // Mobile menu toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Nav scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
             }
+        });
+
+        // Scroll reveal
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Language switch
+        const langSwitch = document.querySelector('.lang-switch');
+        langSwitch.addEventListener('click', () => {
+            const currentLang = langSwitch.dataset.lang;
+            const newLang = currentLang === 'zh-HK' ? 'zh-CN' : 'zh-HK';
+            langSwitch.dataset.lang = newLang;
+            document.documentElement.lang = newLang;
+            localStorage.setItem('preferred-lang', newLang);
+        });
+
+        // Load saved language preference
+        const savedLang = localStorage.getItem('preferred-lang');
+        if (savedLang) {
+            document.documentElement.lang = savedLang;
+            document.querySelector('.lang-switch').dataset.lang = savedLang;
         }
 
-        function sendQuickReply(text) {
-            chatInput.value = text;
-            sendMessage();
-        }
+        // Chat functionality (demo)
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+        const chatSend = document.getElementById('chatSend');
+        const suggestionBtns = document.querySelectorAll('.suggestion-btn');
 
         function addMessage(content, isUser = false) {
-            // Hide welcome screen on first message
-            if (welcomeEl) {
-                welcomeEl.style.display = 'none';
-            }
-
             const messageDiv = document.createElement('div');
-            messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+            messageDiv.className = `chat-message ${isUser ? 'user' : 'assistant'}`;
             
-            const avatar = document.createElement('div');
-            avatar.className = 'message-avatar';
-            avatar.textContent = isUser ? '你' : '☀️';
-            
-            const contentDiv = document.createElement('div');
-            contentDiv.className = 'message-content';
-            
-            // Handle markdown-style formatting
-            const formattedContent = content
-                .split('\n\n')
-                .map(p => `<p class="zh">${p}</p>`)
-                .join('');
-            contentDiv.innerHTML = formattedContent;
-            
-            messageDiv.appendChild(avatar);
-            messageDiv.appendChild(contentDiv);
-            messagesEl.appendChild(messageDiv);
-            
-            messagesEl.scrollTop = messagesEl.scrollHeight;
-            return messageDiv;
-        }
-
-        function showTyping() {
-            const typingDiv = document.createElement('div');
-            typingDiv.className = 'message bot';
-            typingDiv.id = 'typing';
-            typingDiv.innerHTML = `
-                <div class="message-avatar">☀️</div>
-                <div class="message-content">
-                    <div class="typing"><span></span><span></span><span></span></div>
-                </div>
-            `;
-            messagesEl.appendChild(typingDiv);
-            messagesEl.scrollTop = messagesEl.scrollHeight;
-        }
-
-        function hideTyping() {
-            const typing = document.getElementById('typing');
-            if (typing) typing.remove();
-        }
-
-        async function sendMessage() {
-            const message = chatInput.value.trim();
-            if (!message || isWaiting) return;
-
-            // Add user message
-            addMessage(message, true);
-            chatInput.value = '';
-            chatInput.style.height = 'auto';
-            
-            // Update conversation history
-            conversationHistory.push({ role: 'user', content: message });
-            
-            // Show typing indicator
-            isWaiting = true;
-            sendBtn.disabled = true;
-            showTyping();
-
-            try {
-                // Call your n8n webhook or AI endpoint
-                const response = await fetch('https://spacebetween.app.n8n.cloud/webhook/guangguang-chat', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        message: message,
-                        history: conversationHistory.slice(-10) // Last 10 messages for context
-                    })
-                });
-
-                hideTyping();
-                
-                if (response.ok) {
-                    const data = await response.json();
-                    const botReply = data.reply || data.response || data.message || '唔好意思，我暫時聽唔明，可以試下用另一個方式講？';
-                    addMessage(botReply);
-                    conversationHistory.push({ role: 'assistant', content: botReply });
-                } else {
-                    throw new Error('API error');
-                }
-            } catch (error) {
-                hideTyping();
-                addMessage('唔好意思，我依家有啲問題，麻煩你遲啲再試。如果有急事，可以直接 WhatsApp 我哋嘅真人顧問！');
-                console.error('Chat error:', error);
+            if (!isUser) {
+                messageDiv.innerHTML = `
+                    <div class="message-avatar">🌟</div>
+                    <div class="message-content"><p>${content}</p></div>
+                `;
+            } else {
+                messageDiv.innerHTML = `
+                    <div class="message-content"><p>${content}</p></div>
+                `;
             }
-
-            isWaiting = false;
-            sendBtn.disabled = false;
+            
+            // Remove suggestions after first message
+            const suggestions = chatMessages.querySelector('.chat-suggestions');
+            if (suggestions) {
+                suggestions.remove();
+            }
+            
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
-        // Focus input on load
-        chatInput.focus();
+        function simulateResponse(userMessage) {
+            // Show typing indicator
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'chat-message assistant typing';
+            typingDiv.innerHTML = `
+                <div class="message-avatar">🌟</div>
+                <div class="message-content"><p>...</p></div>
+            `;
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            // Simulate AI response after delay
+            setTimeout(() => {
+                typingDiv.remove();
+                
+                let response = '';
+                if (userMessage.includes('介紹') || userMessage.includes('服務')) {
+                    response = '好問題！好多人都有呢個困擾。首先，你可以話俾我聽你而家做緊咩嘢？例如係療癒師、教練、設計師，定係其他？';
+                } else if (userMessage.includes('健康檢查')) {
+                    response = '好呀！品牌健康檢查會幫你了解你品牌嘅強項同弱點。首先，你可以話俾我聽你而家做緊咩嘢？你嘅品牌叫咩名？';
+                } else if (userMessage.includes('服務') && userMessage.includes('你哋')) {
+                    response = 'Space Between 主要幫小型服務商同創作者整理品牌。我哋會幫你：理清思緒、搵到定位、包裝服務、設計網站。想了解更多可以去 <a href="services.html">服務頁面</a> 睇下！';
+                } else {
+                    response = '多謝你分享！可以話俾我聽多啲，你而家做緊咩嘢？你最想解決嘅問題係乜？';
+                }
+                
+                addMessage(response);
+            }, 1500);
+        }
+
+        function sendMessage() {
+            const message = chatInput.value.trim();
+            if (message) {
+                addMessage(message, true);
+                chatInput.value = '';
+                simulateResponse(message);
+            }
+        }
+
+        chatSend.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        suggestionBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const message = btn.dataset.message;
+                addMessage(btn.textContent, true);
+                simulateResponse(message);
+            });
+        });
     </script>
 </body>
 </html>
