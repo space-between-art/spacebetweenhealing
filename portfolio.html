@@ -3,457 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>作品案例 Works | Space Between Healing</title>
-    <meta name="description" content="品牌療癒實踐案例。真實的轉化故事，展現設計如何幫助身心靈創業者找回品牌的靈魂。">
-    <link rel="canonical" href="https://spacebetweenhealing.com/portfolio">
+    <title>過往作品 | Space Between Healing</title>
+    <meta name="description" content="Space Between Healing 嘅過往品牌設計及網站作品。">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Outfit:wght@300;400;500;600&family=Noto+Serif+TC:wght@300;400;500&family=Noto+Serif+SC:wght@300;400;500&family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Outfit:wght@300;400;500;600&family=Noto+Serif+TC:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg-deep: #0a0a0a;
-            --bg-dark: #111;
-            --bg-card: #161616;
-            --gold: #d4a574;
-            --gold-light: #e8c9a0;
-            --sage: #a0b89c;
-            --cream: #f5efe6;
-            --glow-gold: rgba(212,165,116,0.35);
-            --glow-sage: rgba(160,184,156,0.25);
-            --text-primary: #f5efe6;
-            --text-secondary: rgba(245,239,230,0.7);
-            --text-muted: rgba(245,239,230,0.45);
-            --font-display: 'Cormorant Garamond', serif;
-            --font-body: 'Outfit', sans-serif;
-            --font-zh: 'Noto Serif TC', serif;
-            --font-zh-sc: 'Noto Serif SC', serif;
-            --ease: cubic-bezier(0.16,1,0.3,1);
-        }
-        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-        html { scroll-behavior:smooth; }
-        body { font-family:var(--font-body); background:var(--bg-deep); color:var(--text-primary); line-height:1.7; overflow-x:hidden; }
-        [data-lang="zh-TW"] .zh { font-family:var(--font-zh); }
-        [data-lang="zh-CN"] .zh { font-family:var(--font-zh-sc); }
-        .lang-content { display:none; }
-        .lang-content.active { display:block; }
-        span.lang-content { display:none; }
-        span.lang-content.active { display:inline; }
-
-        .ambient { position:fixed; inset:0; z-index:-1; pointer-events:none; }
-        .orb { position:absolute; border-radius:50%; filter:blur(100px); opacity:0.4; }
-        .orb-1 { width:500px; height:500px; background:radial-gradient(circle,var(--glow-gold) 0%,transparent 70%); top:-15%; left:-10%; animation:float 25s ease-in-out infinite; }
-        .orb-2 { width:400px; height:400px; background:radial-gradient(circle,var(--glow-sage) 0%,transparent 70%); bottom:-10%; right:-5%; animation:float 30s ease-in-out infinite reverse; }
-        @keyframes float { 0%,100%{transform:translate(0,0)} 50%{transform:translate(30px,-20px)} }
-        .breathing { position:fixed; inset:0; background:radial-gradient(ellipse at 50% 50%,rgba(212,165,116,0.02) 0%,transparent 60%); animation:breathe 8s ease-in-out infinite; pointer-events:none; z-index:-1; }
-        @keyframes breathe { 0%,100%{opacity:0.3} 50%{opacity:0.7} }
-
-        .nav { position:fixed; top:0; left:0; right:0; z-index:1000; padding:1rem 4vw; display:flex; justify-content:space-between; align-items:center; background:rgba(10,10,10,0.95); backdrop-filter:blur(20px); border-bottom:1px solid rgba(212,165,116,0.1); }
-        .nav-logo { font-family:var(--font-display); font-size:1.1rem; letter-spacing:0.2em; color:var(--gold); text-decoration:none; font-weight:500; }
-        .nav-right { display:flex; align-items:center; gap:2rem; }
-        .nav-links { display:flex; gap:0.5rem; list-style:none; }
-        .nav-links li a { display:block; font-size:0.85rem; color:var(--text-secondary); text-decoration:none; transition:all 0.3s; padding:0.6rem 1rem; border-radius:8px; }
-        .nav-links li a:hover { color:var(--gold); background:rgba(212,165,116,0.1); }
-        .nav-links li a.active { color:var(--gold); background:rgba(212,165,116,0.15); }
-        .lang-selector { position:relative; }
-        .lang-btn { display:flex; align-items:center; gap:0.4rem; padding:0.5rem 1rem; background:rgba(212,165,116,0.1); border:1px solid rgba(212,165,116,0.25); border-radius:100px; color:var(--gold); font-size:0.8rem; cursor:pointer; transition:all 0.3s; font-weight:500; }
-        .lang-btn:hover { background:rgba(212,165,116,0.2); border-color:var(--gold); }
-        .lang-btn svg { width:12px; height:12px; transition:transform 0.3s; }
-        .lang-selector.open .lang-btn svg { transform:rotate(180deg); }
-        .lang-dropdown { position:absolute; top:calc(100% + 8px); right:0; min-width:140px; background:var(--bg-card); border:1px solid rgba(212,165,116,0.2); border-radius:12px; overflow:hidden; opacity:0; visibility:hidden; transform:translateY(-10px); transition:all 0.3s var(--ease); z-index:100; box-shadow:0 10px 40px rgba(0,0,0,0.4); }
-        .lang-selector.open .lang-dropdown { opacity:1; visibility:visible; transform:translateY(0); }
-        .lang-option { display:flex; align-items:center; gap:0.5rem; width:100%; padding:0.75rem 1rem; background:none; border:none; color:var(--text-secondary); font-size:0.85rem; text-align:left; cursor:pointer; transition:all 0.2s; }
-        .lang-option:hover { background:rgba(212,165,116,0.1); color:var(--gold); }
-        .lang-option.active { color:var(--gold); }
-
-        .mobile-toggle { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:5px; }
-        .mobile-toggle span { display:block; width:22px; height:2px; background:var(--gold); transition:all 0.3s; }
-        @media (max-width:900px) {
-            .nav-links { display:none; }
-            .mobile-toggle { display:flex; }
-        }
-
-        .page-header { padding:10rem 4vw 5rem; text-align:center; position:relative; }
-        .page-header::after { content:''; position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:60px; height:1px; background:var(--gold); opacity:0.3; }
-        .page-tag { display:inline-flex; align-items:center; gap:0.75rem; margin-bottom:1.5rem; }
-        .page-tag-line { width:30px; height:1px; background:var(--gold); }
-        .page-tag-text { font-size:0.7rem; font-weight:600; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold); }
-        .page-title { font-family:var(--font-display); font-size:clamp(2.5rem,6vw,4rem); font-weight:300; margin-bottom:1rem; }
-        .page-title .highlight { color:var(--gold); font-style:italic; }
-        .page-subtitle { font-size:1.1rem; color:var(--text-secondary); max-width:600px; margin:0 auto; }
-
-        .section { padding:5rem 4vw; position:relative; }
-        .container { max-width:1100px; margin:0 auto; }
-
-        .intro-box { background:rgba(212,165,116,0.05); border:1px solid rgba(212,165,116,0.1); border-radius:20px; padding:2.5rem; max-width:800px; margin:0 auto 4rem; text-align:center; position:relative; overflow:hidden; }
-        .intro-box::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); }
-        .intro-box p { color:var(--text-secondary); line-height:1.9; margin-bottom:1rem; }
-        .intro-box p:last-child { margin-bottom:0; }
-
-        .section-header { text-align:center; margin-bottom:3rem; }
-        .section-tag { display:inline-flex; align-items:center; gap:0.75rem; margin-bottom:1rem; }
-        .section-tag-line { width:30px; height:1px; background:var(--gold); }
-        .section-tag-text { font-size:0.65rem; font-weight:600; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold); }
-        .section-title { font-family:var(--font-display); font-size:2rem; font-weight:300; color:var(--cream); }
-
-        /* All cases in card grid */
-        .cases-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:2rem; }
-        
-        .case-card { background:var(--bg-card); border:1px solid rgba(212,165,116,0.08); border-radius:20px; overflow:hidden; transition:all 0.4s var(--ease); position:relative; }
-        .case-card:hover { transform:translateY(-8px); border-color:rgba(212,165,116,0.2); box-shadow:0 25px 60px rgba(0,0,0,0.4); }
-        
-        .case-card-visual { position:relative; height:220px; background:linear-gradient(135deg, rgba(212,165,116,0.1) 0%, rgba(160,184,156,0.08) 100%); display:flex; align-items:center; justify-content:center; overflow:hidden; }
-        .case-card-visual::before { content:''; position:absolute; bottom:0; left:0; right:0; height:80px; background:linear-gradient(to top, var(--bg-card), transparent); z-index:2; }
-        .case-card-visual img { width:100%; height:100%; object-fit:cover; transition:transform 0.5s var(--ease); }
-        .case-card:hover .case-card-visual img { transform:scale(1.08); }
-
-        .case-card-content { padding:2rem; }
-        .case-badge { display:inline-flex; align-items:center; gap:0.5rem; background:linear-gradient(135deg,rgba(160,184,156,0.15),rgba(160,184,156,0.05)); color:var(--sage); font-size:0.75rem; font-weight:500; padding:0.5rem 1rem; border-radius:100px; margin-bottom:1rem; width:fit-content; }
-        .case-badge svg { width:14px; height:14px; }
-        .case-badge.featured { background:linear-gradient(135deg,rgba(212,165,116,0.2),rgba(212,165,116,0.08)); color:var(--gold); }
-        .case-title { font-family:var(--font-display); font-size:1.4rem; color:var(--cream); margin-bottom:0.5rem; line-height:1.3; }
-        .case-subtitle { font-size:0.9rem; color:var(--gold); margin-bottom:1rem; font-style:italic; }
-        .case-desc { font-size:0.9rem; color:var(--text-secondary); line-height:1.8; margin-bottom:1.5rem; }
-        
-        .case-tags { display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:1.5rem; }
-        .case-tag { background:rgba(212,165,116,0.1); border:1px solid rgba(212,165,116,0.15); color:var(--gold-light); font-size:0.7rem; padding:0.35rem 0.75rem; border-radius:100px; transition:all 0.3s; }
-        .case-tag:hover { background:rgba(212,165,116,0.2); border-color:var(--gold); }
-
-        /* Case Card Buttons */
-        .case-card-buttons { display:flex; gap:0.75rem; flex-wrap:wrap; }
-        .case-btn { display:inline-flex; align-items:center; gap:0.5rem; padding:0.6rem 1.2rem; font-size:0.8rem; font-weight:500; text-decoration:none; border-radius:100px; transition:all 0.3s var(--ease); }
-        .case-btn svg { width:14px; height:14px; }
-        .case-btn-primary { background:linear-gradient(135deg,var(--gold) 0%,var(--gold-light) 100%); color:var(--bg-deep); }
-        .case-btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 20px var(--glow-gold); }
-        .case-btn-outline { background:transparent; border:1px solid rgba(212,165,116,0.3); color:var(--gold); }
-        .case-btn-outline:hover { background:rgba(212,165,116,0.1); border-color:var(--gold); }
-
-        .process-section { background:var(--bg-dark); padding:5rem 4vw; margin-top:2rem; }
-        .process-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.5rem; max-width:1000px; margin:0 auto; }
-        .process-step { text-align:center; padding:2.5rem 1.5rem; background:rgba(212,165,116,0.03); border:1px solid rgba(212,165,116,0.08); border-radius:20px; transition:all 0.4s var(--ease); position:relative; overflow:hidden; }
-        .process-step::before { content:''; position:absolute; top:0; left:50%; transform:translateX(-50%); width:40px; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); opacity:0; transition:opacity 0.3s; }
-        .process-step:hover { border-color:rgba(212,165,116,0.2); transform:translateY(-5px); }
-        .process-step:hover::before { opacity:1; }
-        .process-num { font-family:var(--font-display); font-size:3rem; font-weight:300; color:var(--gold); margin-bottom:1rem; opacity:0.5; }
-        .process-title { font-family:var(--font-display); font-size:1.3rem; margin-bottom:0.75rem; color:var(--cream); }
-        .process-desc { font-size:0.85rem; color:var(--text-muted); line-height:1.7; }
-
-        .cta-section { text-align:center; padding:6rem 4vw; }
-        .cta-box { background:linear-gradient(135deg,rgba(212,165,116,0.08) 0%,rgba(160,184,156,0.05) 100%); border:1px solid rgba(212,165,116,0.15); border-radius:24px; padding:4rem 3rem; max-width:700px; margin:0 auto; position:relative; overflow:hidden; }
-        .cta-box::before { content:''; position:absolute; top:-50%; left:-50%; width:200%; height:200%; background:radial-gradient(circle at center,rgba(212,165,116,0.05),transparent 50%); animation:rotate 30s linear infinite; }
-        @keyframes rotate { to { transform:rotate(360deg); } }
-        .cta-title { font-family:var(--font-display); font-size:clamp(1.8rem,4vw,2.5rem); font-weight:300; margin-bottom:1rem; position:relative; }
-        .cta-text { color:var(--text-secondary); margin-bottom:2rem; position:relative; }
-        
-        .btn { display:inline-flex; align-items:center; gap:0.6rem; padding:1rem 2rem; font-family:var(--font-body); font-size:0.85rem; font-weight:500; text-decoration:none; border-radius:100px; cursor:pointer; transition:all 0.4s var(--ease); border:none; position:relative; }
-        .btn svg { width:16px; height:16px; transition:transform 0.3s; }
-        .btn:hover svg { transform:translateX(3px); }
-        .btn-primary { background:linear-gradient(135deg,var(--gold) 0%,var(--gold-light) 100%); color:var(--bg-deep); }
-        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 15px 35px var(--glow-gold); }
-
-        footer { padding:4rem 4vw 2rem; border-top:1px solid rgba(212,165,116,0.1); }
-        .footer-content { max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:2rem; }
-        .footer-logo { font-family:var(--font-display); font-size:1rem; letter-spacing:0.2em; color:var(--gold); }
-        .footer-links { display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; }
-        .footer-links a { color:var(--text-muted); text-decoration:none; font-size:0.85rem; transition:color 0.3s; }
-        .footer-links a:hover { color:var(--gold); }
-        .footer-copy { font-size:0.8rem; color:var(--text-muted); }
-
-        @media (max-width:600px) {
-            .page-header { padding:8rem 1.5rem 3rem; }
-            .section { padding:3rem 1.5rem; }
-            .intro-box { padding:1.5rem; }
-            .footer-content { flex-direction:column; text-align:center; }
-            .cases-grid { grid-template-columns:1fr; }
-            .case-card-buttons { flex-direction:column; }
-            .case-btn { justify-content:center; }
-        }
+        :root{--bg-void:#050505;--bg-deep:#0a0a0a;--bg-dark:#111;--bg-card:#161616;--gold:#d4a574;--gold-light:#e8c9a0;--sage:#a0b89c;--cream:#f5efe6;--glow-gold:rgba(212,165,116,0.4);--glow-sage:rgba(160,184,156,0.3);--text-primary:#f5efe6;--text-secondary:rgba(245,239,230,0.72);--text-muted:rgba(245,239,230,0.45);--font-display:'Cormorant Garamond',serif;--font-body:'Outfit',sans-serif;--font-zh:'Noto Serif TC',serif;--ease:cubic-bezier(0.16,1,0.3,1)}*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--bg-void);color:var(--text-primary);line-height:1.7;overflow-x:hidden}[data-lang="zh-TW"] .zh{font-family:var(--font-zh)}.breathing-bg{position:fixed;inset:0;z-index:-1;pointer-events:none}.gradient-mesh{position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 20% 30%,var(--glow-gold) 0%,transparent 50%),radial-gradient(ellipse 60% 70% at 80% 70%,var(--glow-sage) 0%,transparent 50%);animation:meshShift 25s ease-in-out infinite;opacity:.5}@keyframes meshShift{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.05);opacity:.7}}.breath-pulse{position:absolute;inset:0;background:radial-gradient(ellipse 100% 100% at 50% 50%,rgba(212,165,116,0.05) 0%,transparent 50%);animation:breathe 8s ease-in-out infinite}@keyframes breathe{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:.8;transform:scale(1.08)}}.vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 0%,var(--bg-void) 100%);opacity:.5}.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.25rem 5vw;display:flex;justify-content:space-between;align-items:center;background:rgba(5,5,5,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,165,116,0.08)}.nav-logo{font-family:var(--font-display);font-size:1.1rem;letter-spacing:.2em;color:var(--gold);text-decoration:none}.nav-right{display:flex;align-items:center;gap:2rem}.nav-links{display:flex;gap:.25rem;list-style:none}.nav-links li a{display:block;font-size:.85rem;color:var(--text-secondary);text-decoration:none;padding:.6rem 1rem;border-radius:8px;transition:all .3s}.nav-links li a:hover,.nav-links li a.active{color:var(--gold);background:rgba(212,165,116,0.08)}.menu-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}.menu-toggle span{display:block;width:24px;height:2px;background:var(--gold);transition:all .3s}.menu-toggle.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}.menu-toggle.active span:nth-child(2){opacity:0}.menu-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}.mobile-menu{position:fixed;inset:0;background:rgba(5,5,5,0.98);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.25rem;opacity:0;visibility:hidden;transition:all .4s}.mobile-menu.open{opacity:1;visibility:visible}.mobile-menu a{font-family:var(--font-display);font-size:1.5rem;color:var(--text-secondary);text-decoration:none}.mobile-menu a:hover{color:var(--gold)}.page-header{padding:10rem 5vw 4rem;text-align:center}.page-tag{display:inline-flex;align-items:center;gap:.75rem;margin-bottom:1.5rem}.page-tag-line{width:35px;height:1px;background:var(--gold)}.page-tag-text{font-size:.7rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--gold)}.page-title{font-family:var(--font-display);font-size:clamp(2.5rem,6vw,4rem);font-weight:300;margin-bottom:1rem}.page-subtitle{font-size:1.1rem;color:var(--text-secondary);max-width:600px;margin:0 auto}.section{padding:4rem 5vw}.container{max-width:1100px;margin:0 auto}.coming-soon{text-align:center;padding:6rem 2rem;background:rgba(212,165,116,0.04);border:1px solid rgba(212,165,116,0.1);border-radius:24px}.coming-soon-icon{font-size:4rem;margin-bottom:1.5rem}.coming-soon h2{font-family:var(--font-display);font-size:2rem;color:var(--cream);margin-bottom:1rem}.coming-soon p{color:var(--text-secondary);max-width:500px;margin:0 auto 2rem}.btn-primary{display:inline-flex;padding:1rem 2rem;background:linear-gradient(135deg,var(--gold) 0%,var(--gold-light) 100%);color:var(--bg-void);font-weight:500;text-decoration:none;border-radius:100px;transition:all .4s}.btn-primary:hover{transform:translateY(-3px);box-shadow:0 20px 40px var(--glow-gold)}.footer{padding:3rem 5vw;background:var(--bg-deep);border-top:1px solid rgba(212,165,116,0.08)}.footer-content{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}.footer-logo{font-family:var(--font-display);font-size:.95rem;letter-spacing:.15em;color:var(--gold)}.footer-links{display:flex;gap:1.5rem}.footer-links a{font-size:.85rem;color:var(--text-muted);text-decoration:none}.footer-links a:hover{color:var(--gold)}.footer-copy{font-size:.75rem;color:rgba(245,239,230,0.28)}.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease),transform .8s var(--ease)}.reveal.visible{opacity:1;transform:translateY(0)}@media(max-width:768px){.nav-links{display:none}.menu-toggle{display:flex}.page-header{padding:8rem 1.5rem 3rem}.section{padding:3rem 1.5rem}.footer-content{flex-direction:column;text-align:center}}
     </style>
 </head>
 <body data-lang="zh-TW">
-    <div class="ambient"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
-    <div class="breathing"></div>
-
+    <div class="breathing-bg"><div class="gradient-mesh"></div><div class="breath-pulse"></div><div class="vignette"></div></div>
+    <div class="mobile-menu"><a href="about.html">關於我哋</a><a href="services.html">點樣幫到你</a><a href="portfolio.html">過往作品</a><a href="lounge.html">免費資源</a><a href="ai-assistant.html">AI 品牌診斷</a><a href="contact.html">傾下偈</a></div>
     <nav class="nav">
-        <a href="index.html" class="nav-logo">SPACE BETWEEN</a>
+        <a href="index.html" class="nav-logo">Space Between</a>
         <div class="nav-right">
-            <ul class="nav-links">
-                <li><a href="about.html"><span class="lang-content active" data-lang-content="zh-TW">關於</span><span class="lang-content" data-lang-content="zh-CN">关于</span><span class="lang-content" data-lang-content="en">About</span></a></li>
-                <li><a href="services.html"><span class="lang-content active" data-lang-content="zh-TW">服務</span><span class="lang-content" data-lang-content="zh-CN">服务</span><span class="lang-content" data-lang-content="en">Services</span></a></li>
-                <li><a href="portfolio.html" class="active"><span class="lang-content active" data-lang-content="zh-TW">作品</span><span class="lang-content" data-lang-content="zh-CN">作品</span><span class="lang-content" data-lang-content="en">Works</span></a></li>
-                <li><a href="lounge.html"><span class="lang-content active" data-lang-content="zh-TW">會客室</span><span class="lang-content" data-lang-content="zh-CN">会客室</span><span class="lang-content" data-lang-content="en">Lounge</span></a></li>
-                <li><a href="contact.html"><span class="lang-content active" data-lang-content="zh-TW">聯絡</span><span class="lang-content" data-lang-content="zh-CN">联络</span><span class="lang-content" data-lang-content="en">Contact</span></a></li>
-            </ul>
-            <div class="lang-selector">
-                <button class="lang-btn"><span class="current-lang">繁中</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
-                <div class="lang-dropdown">
-                    <button class="lang-option active" data-lang="zh-TW">🇭🇰 繁體中文</button>
-                    <button class="lang-option" data-lang="zh-CN">🇨🇳 简体中文</button>
-                    <button class="lang-option" data-lang="en">🌍 English</button>
-                </div>
-            </div>
-            <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+            <ul class="nav-links"><li><a href="about.html">關於我哋</a></li><li><a href="services.html">點樣幫到你</a></li><li><a href="portfolio.html" class="active">過往作品</a></li><li><a href="lounge.html">免費資源</a></li><li><a href="ai-assistant.html">AI 品牌診斷</a></li><li><a href="contact.html">傾下偈</a></li></ul>
+            <button class="menu-toggle"><span></span><span></span><span></span></button>
         </div>
     </nav>
-
     <header class="page-header">
         <div class="page-tag"><span class="page-tag-line"></span><span class="page-tag-text">Portfolio</span><span class="page-tag-line"></span></div>
-        <div class="lang-content active" data-lang-content="zh-TW">
-            <h1 class="page-title zh">作品 <span class="highlight">&</span> 案例</h1>
-            <p class="page-subtitle zh">每一個品牌背後，都有一個值得被療癒的故事。</p>
-        </div>
-        <div class="lang-content" data-lang-content="zh-CN">
-            <h1 class="page-title zh">作品 <span class="highlight">&</span> 案例</h1>
-            <p class="page-subtitle zh">每一个品牌背后，都有一个值得被疗愈的故事。</p>
-        </div>
-        <div class="lang-content" data-lang-content="en">
-            <h1 class="page-title">Works <span class="highlight">&</span> Cases</h1>
-            <p class="page-subtitle">Behind every brand, there's a story worth healing.</p>
-        </div>
+        <h1 class="page-title zh">過往作品</h1>
+        <p class="page-subtitle zh">我哋幫過嘅品牌故事</p>
     </header>
-
     <section class="section">
         <div class="container">
-            <div class="intro-box">
-                <div class="lang-content active" data-lang-content="zh-TW">
-                    <p class="zh">這裡記錄的，不只是設計成果，更是品牌轉化的旅程。</p>
-                    <p class="zh">每個案例都見證著創業者如何從迷惘中找到方向，讓品牌回歸本心。</p>
-                </div>
-                <div class="lang-content" data-lang-content="zh-CN">
-                    <p class="zh">这里记录的，不只是设计成果，更是品牌转化的旅程。</p>
-                    <p class="zh">每个案例都见证着创业者如何从迷惘中找到方向，让品牌回归本心。</p>
-                </div>
-                <div class="lang-content" data-lang-content="en">
-                    <p>What's recorded here isn't just design outcomes, but journeys of brand transformation.</p>
-                    <p>Each case witnesses how entrepreneurs found direction from confusion, letting their brands return to their essence.</p>
-                </div>
-            </div>
-
-            <!-- All Three Cases in Card Grid -->
-            <div class="cases-grid">
-                <!-- Case 1: 靈性療癒工作室 Inner Light -->
-                <div class="case-card">
-                    <div class="case-card-visual">
-                        <img src="demo-sites/innerlight/images/hero-portrait.png" alt="Inner Light Studio">
-                    </div>
-                    <div class="case-card-content">
-                        <div class="case-badge featured">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
-                            <span class="lang-content active" data-lang-content="zh-TW">精選案例</span>
-                            <span class="lang-content" data-lang-content="zh-CN">精选案例</span>
-                            <span class="lang-content" data-lang-content="en">Featured</span>
-                        </div>
-                        <div class="lang-content active" data-lang-content="zh-TW">
-                            <h3 class="case-title zh">靈性療癒工作室</h3>
-                            <p class="case-subtitle zh">從模糊定位到清晰願景</p>
-                            <p class="case-desc zh">一位資深靈性導師，擁有豐富經驗卻苦於品牌形象無法傳達內在深度。透過品牌療癒，重新定義核心價值。</p>
-                        </div>
-                        <div class="lang-content" data-lang-content="zh-CN">
-                            <h3 class="case-title zh">灵性疗愈工作室</h3>
-                            <p class="case-subtitle zh">从模糊定位到清晰愿景</p>
-                            <p class="case-desc zh">一位资深灵性导师，拥有丰富经验却苦于品牌形象无法传达内在深度。通过品牌疗愈，重新定义核心价值。</p>
-                        </div>
-                        <div class="lang-content" data-lang-content="en">
-                            <h3 class="case-title">Spiritual Healing Studio</h3>
-                            <p class="case-subtitle">From Unclear Positioning to Clear Vision</p>
-                            <p class="case-desc">A senior spiritual guide with rich experience struggled to convey inner depth through brand image. Through brand healing, redefined core values.</p>
-                        </div>
-                        <div class="case-tags">
-                            <span class="case-tag">Brand Strategy</span>
-                            <span class="case-tag">Visual Identity</span>
-                            <span class="case-tag">Website</span>
-                        </div>
-                        <div class="case-card-buttons">
-                            <a href="demo-sites/innerlight/index.html" class="case-btn case-btn-primary" target="_blank">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                <span class="lang-content active" data-lang-content="zh-TW">查看示範網站</span>
-                                <span class="lang-content" data-lang-content="zh-CN">查看示范网站</span>
-                                <span class="lang-content" data-lang-content="en">View Demo</span>
-                            </a>
-                            <a href="case-spiritual-healing.html" class="case-btn case-btn-outline">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                                <span class="lang-content active" data-lang-content="zh-TW">案例說明</span>
-                                <span class="lang-content" data-lang-content="zh-CN">案例说明</span>
-                                <span class="lang-content" data-lang-content="en">Case Study</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Case 2: 心渡 Wellness Consultant -->
-                <div class="case-card">
-                    <div class="case-card-visual">
-                        <img src="demo-sites/xindu-demo/images/hero-space.png" alt="心渡諮詢空間">
-                    </div>
-                    <div class="case-card-content">
-                        <div class="case-badge">
-                            <span class="lang-content active" data-lang-content="zh-TW">網站設計</span>
-                            <span class="lang-content" data-lang-content="zh-CN">网站设计</span>
-                            <span class="lang-content" data-lang-content="en">Web Design</span>
-                        </div>
-                        <div class="lang-content active" data-lang-content="zh-TW">
-                            <h3 class="case-title zh">心渡 身心諮詢師品牌</h3>
-                            <p class="case-subtitle zh">專業與溫度的平衡</p>
-                            <p class="case-desc zh">如何在保持專業形象的同時，讓網站散發溫暖的療癒氛圍？從「冰冷的證書牆」蛻變為「溫暖的對話邀請」。</p>
-                        </div>
-                        <div class="lang-content" data-lang-content="zh-CN">
-                            <h3 class="case-title zh">心渡 身心咨询师品牌</h3>
-                            <p class="case-subtitle zh">专业与温度的平衡</p>
-                            <p class="case-desc zh">如何在保持专业形象的同时，让网站散发温暖的疗愈氛围？从「冰冷的证书墙」蜕变为「温暖的对话邀请」。</p>
-                        </div>
-                        <div class="lang-content" data-lang-content="en">
-                            <h3 class="case-title">Xin Du Wellness Consultant</h3>
-                            <p class="case-subtitle">Balancing Professionalism and Warmth</p>
-                            <p class="case-desc">How to maintain a professional image while radiating a warm, healing atmosphere? From "cold certificate wall" to "warm conversation invitation".</p>
-                        </div>
-                        <div class="case-tags">
-                            <span class="case-tag">Web Design</span>
-                            <span class="case-tag">UX Strategy</span>
-                            <span class="case-tag">Brand Voice</span>
-                        </div>
-                        <div class="case-card-buttons">
-                            <a href="demo-sites/xindu-demo/index.html" class="case-btn case-btn-primary" target="_blank">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                <span class="lang-content active" data-lang-content="zh-TW">查看示範網站</span>
-                                <span class="lang-content" data-lang-content="zh-CN">查看示范网站</span>
-                                <span class="lang-content" data-lang-content="en">View Demo</span>
-                            </a>
-                            <a href="case-wellness-consultant.html" class="case-btn case-btn-outline">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                                <span class="lang-content active" data-lang-content="zh-TW">案例說明</span>
-                                <span class="lang-content" data-lang-content="zh-CN">案例说明</span>
-                                <span class="lang-content" data-lang-content="en">Case Study</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Case 3: 植覺 Aromatherapy Brand -->
-                <div class="case-card">
-                    <div class="case-card-visual">
-                        <img src="demo-sites/zhijue-demo/images/hero-workshop.png" alt="植覺調香工作室">
-                    </div>
-                    <div class="case-card-content">
-                        <div class="case-badge">
-                            <span class="lang-content active" data-lang-content="zh-TW">完整重建</span>
-                            <span class="lang-content" data-lang-content="zh-CN">完整重建</span>
-                            <span class="lang-content" data-lang-content="en">Full Rebuild</span>
-                        </div>
-                        <div class="lang-content active" data-lang-content="zh-TW">
-                            <h3 class="case-title zh">植覺 芳療品牌轉型</h3>
-                            <p class="case-subtitle zh">從代購到自有品牌</p>
-                            <p class="case-desc zh">一個芳療愛好者如何從代購轉型，建立屬於自己的品牌故事。從「中間人」蛻變為「品牌主理人」。</p>
-                        </div>
-                        <div class="lang-content" data-lang-content="zh-CN">
-                            <h3 class="case-title zh">植觉 芳疗品牌转型</h3>
-                            <p class="case-subtitle zh">从代购到自有品牌</p>
-                            <p class="case-desc zh">一个芳疗爱好者如何从代购转型，建立属于自己的品牌故事。从「中间人」蜕变为「品牌主理人」。</p>
-                        </div>
-                        <div class="lang-content" data-lang-content="en">
-                            <h3 class="case-title">Scent & Soul Brand Transformation</h3>
-                            <p class="case-subtitle">From Reseller to Own Brand</p>
-                            <p class="case-desc">How an aromatherapy enthusiast transformed from reselling to building their own brand story. From "middleman" to "brand founder".</p>
-                        </div>
-                        <div class="case-tags">
-                            <span class="case-tag">Brand Strategy</span>
-                            <span class="case-tag">Visual Identity</span>
-                        </div>
-                        <div class="case-card-buttons">
-                            <a href="demo-sites/zhijue-demo/index.html" class="case-btn case-btn-primary" target="_blank">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                                <span class="lang-content active" data-lang-content="zh-TW">查看示範網站</span>
-                                <span class="lang-content" data-lang-content="zh-CN">查看示范网站</span>
-                                <span class="lang-content" data-lang-content="en">View Demo</span>
-                            </a>
-                            <a href="case-aromatherapy-brand.html" class="case-btn case-btn-outline">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                                <span class="lang-content active" data-lang-content="zh-TW">案例說明</span>
-                                <span class="lang-content" data-lang-content="zh-CN">案例说明</span>
-                                <span class="lang-content" data-lang-content="en">Case Study</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <div class="coming-soon reveal">
+                <div class="coming-soon-icon">🎨</div>
+                <h2 class="zh">作品集準備中⋯⋯</h2>
+                <p class="zh">我哋正在整理過往嘅作品案例。如果你想了解我哋嘅設計風格，歡迎直接傾下偈！</p>
+                <a href="contact.html" class="btn-primary">聯絡我哋</a>
             </div>
         </div>
     </section>
-
-    <section class="process-section">
-        <div class="section-header">
-            <div class="section-tag" style="justify-content:center;display:flex;"><span class="section-tag-line"></span><span class="section-tag-text">Our Process</span><span class="section-tag-line"></span></div>
-            <h2 class="section-title"><span class="lang-content active" data-lang-content="zh-TW">療癒流程</span><span class="lang-content" data-lang-content="zh-CN">疗愈流程</span><span class="lang-content" data-lang-content="en">Healing Process</span></h2>
-        </div>
-        <div class="process-grid">
-            <div class="process-step">
-                <div class="process-num">01</div>
-                <div class="lang-content active" data-lang-content="zh-TW"><h4 class="process-title zh">聆聽與理解</h4><p class="process-desc zh">深度訪談，了解你的故事、願景與困惑</p></div>
-                <div class="lang-content" data-lang-content="zh-CN"><h4 class="process-title zh">聆听与理解</h4><p class="process-desc zh">深度访谈，了解你的故事、愿景与困惑</p></div>
-                <div class="lang-content" data-lang-content="en"><h4 class="process-title">Listen & Understand</h4><p class="process-desc">Deep interviews to understand your story, vision and challenges</p></div>
-            </div>
-            <div class="process-step">
-                <div class="process-num">02</div>
-                <div class="lang-content active" data-lang-content="zh-TW"><h4 class="process-title zh">診斷與定位</h4><p class="process-desc zh">找出品牌「症狀」，釐清核心問題</p></div>
-                <div class="lang-content" data-lang-content="zh-CN"><h4 class="process-title zh">诊断与定位</h4><p class="process-desc zh">找出品牌「症状」，厘清核心问题</p></div>
-                <div class="lang-content" data-lang-content="en"><h4 class="process-title">Diagnose & Position</h4><p class="process-desc">Identify brand "symptoms" and clarify core issues</p></div>
-            </div>
-            <div class="process-step">
-                <div class="process-num">03</div>
-                <div class="lang-content active" data-lang-content="zh-TW"><h4 class="process-title zh">創作與療癒</h4><p class="process-desc zh">設計視覺、文案與系統，注入療癒能量</p></div>
-                <div class="lang-content" data-lang-content="zh-CN"><h4 class="process-title zh">创作与疗愈</h4><p class="process-desc zh">设计视觉、文案与系统，注入疗愈能量</p></div>
-                <div class="lang-content" data-lang-content="en"><h4 class="process-title">Create & Heal</h4><p class="process-desc">Design visuals, copy and systems with healing energy</p></div>
-            </div>
-            <div class="process-step">
-                <div class="process-num">04</div>
-                <div class="lang-content active" data-lang-content="zh-TW"><h4 class="process-title zh">陪伴與成長</h4><p class="process-desc zh">持續支援，確保品牌健康成長</p></div>
-                <div class="lang-content" data-lang-content="zh-CN"><h4 class="process-title zh">陪伴与成长</h4><p class="process-desc zh">持续支援，确保品牌健康成长</p></div>
-                <div class="lang-content" data-lang-content="en"><h4 class="process-title">Support & Grow</h4><p class="process-desc">Continuous support ensuring healthy brand growth</p></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-section">
-        <div class="cta-box">
-            <div class="lang-content active" data-lang-content="zh-TW"><h2 class="cta-title zh">準備好開始你的品牌療癒之旅了嗎？</h2><p class="cta-text zh">讓我們一起，找回品牌最真實的樣子。</p></div>
-            <div class="lang-content" data-lang-content="zh-CN"><h2 class="cta-title zh">准备好开始你的品牌疗愈之旅了吗？</h2><p class="cta-text zh">让我们一起，找回品牌最真实的样子。</p></div>
-            <div class="lang-content" data-lang-content="en"><h2 class="cta-title">Ready to start your brand healing journey?</h2><p class="cta-text">Let's work together to rediscover your brand's authentic self.</p></div>
-            <a href="contact.html" class="btn btn-primary">
-                <span class="lang-content active" data-lang-content="zh-TW">預約諮詢</span><span class="lang-content" data-lang-content="zh-CN">预约咨询</span><span class="lang-content" data-lang-content="en">Book Consultation</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-        </div>
-    </section>
-
-    <footer>
+    <footer class="footer">
         <div class="footer-content">
-            <div class="footer-logo">SPACE BETWEEN HEALING</div>
-            <div class="footer-links"><a href="about.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
-            <p class="footer-copy">© 2025 Space Between Healing. All rights reserved.</p>
+            <span class="footer-logo">Space Between Healing</span>
+            <div class="footer-links"><a href="about.html">關於我哋</a><a href="services.html">服務</a><a href="contact.html">聯絡</a><a href="privacy.html">私隱政策</a></div>
+            <span class="footer-copy">© 2025 Space Between Healing</span>
         </div>
     </footer>
-
     <script>
-        const langSelector = document.querySelector('.lang-selector');
-        const langBtn = document.querySelector('.lang-btn');
-        const langOptions = document.querySelectorAll('.lang-option');
-        const currentLangSpan = document.querySelector('.current-lang');
-
-        langBtn?.addEventListener('click', () => langSelector.classList.toggle('open'));
-        document.addEventListener('click', (e) => { if (!langSelector?.contains(e.target)) langSelector?.classList.remove('open'); });
-
-        langOptions.forEach(option => {
-            option.addEventListener('click', () => {
-                const lang = option.dataset.lang;
-                document.body.dataset.lang = lang;
-                langOptions.forEach(o => o.classList.remove('active'));
-                option.classList.add('active');
-                currentLangSpan.textContent = lang === 'zh-TW' ? '繁中' : lang === 'zh-CN' ? '简中' : 'EN';
-                document.querySelectorAll('.lang-content').forEach(el => { el.classList.toggle('active', el.dataset.langContent === lang); });
-                langSelector.classList.remove('open');
-            });
-        });
-
-        const mobileToggle = document.querySelector('.mobile-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        mobileToggle?.addEventListener('click', () => { navLinks?.classList.toggle('show'); });
+        const menuToggle=document.querySelector('.menu-toggle'),mobileMenu=document.querySelector('.mobile-menu');menuToggle.addEventListener('click',()=>{menuToggle.classList.toggle('active');mobileMenu.classList.toggle('open');document.body.style.overflow=mobileMenu.classList.contains('open')?'hidden':''});mobileMenu.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{menuToggle.classList.remove('active');mobileMenu.classList.remove('open');document.body.style.overflow=''}));const reveals=document.querySelectorAll('.reveal'),observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:0.1});reveals.forEach(el=>observer.observe(el));
     </script>
 </body>
 </html>

@@ -1,349 +1,152 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>服務 | Space Between Healing</title>
-    <meta name="description" content="Space Between Healing 提供身心靈療癒、品牌定位、服務產品化等顧問服務。">
-    
+    <title>點樣幫到你 | Space Between Healing</title>
+    <meta name="description" content="品牌療癒服務：理清思緒、搵到定位、包裝服務、設計網站。">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500&family=Noto+Serif+TC:wght@400;500&family=Noto+Serif+SC:wght@400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
-    
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Outfit:wght@300;400;500;600&family=Noto+Serif+TC:wght@300;400;500&family=Noto+Serif+SC:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root{--bg-void:#050505;--bg-deep:#0a0a0a;--bg-dark:#111;--bg-card:#161616;--gold:#d4a574;--gold-light:#e8c9a0;--gold-dim:#b8956a;--sage:#a0b89c;--sage-light:#c4d4c0;--cream:#f5efe6;--whatsapp:#25D366;--glow-gold:rgba(212,165,116,0.4);--glow-sage:rgba(160,184,156,0.3);--text-primary:#f5efe6;--text-secondary:rgba(245,239,230,0.72);--text-muted:rgba(245,239,230,0.45);--font-display:'Cormorant Garamond',serif;--font-body:'Outfit',sans-serif;--font-zh:'Noto Serif TC',serif;--font-zh-sc:'Noto Serif SC',serif;--ease:cubic-bezier(0.16,1,0.3,1)}*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--bg-void);color:var(--text-primary);line-height:1.7;overflow-x:hidden}[data-lang="zh-TW"] .zh{font-family:var(--font-zh)}[data-lang="zh-CN"] .zh{font-family:var(--font-zh-sc)}.lang-content{display:none}.lang-content.active{display:block}span.lang-content{display:none}span.lang-content.active{display:inline}.breathing-bg{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}.gradient-mesh{position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 20% 30%,var(--glow-gold) 0%,transparent 50%),radial-gradient(ellipse 60% 70% at 80% 70%,var(--glow-sage) 0%,transparent 50%);animation:meshShift 25s ease-in-out infinite;opacity:.5}@keyframes meshShift{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.05);opacity:.7}}.breath-pulse{position:absolute;inset:0;background:radial-gradient(ellipse 100% 100% at 50% 50%,rgba(212,165,116,0.05) 0%,transparent 50%);animation:breathe 8s ease-in-out infinite}@keyframes breathe{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:.8;transform:scale(1.08)}}.vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 0%,var(--bg-void) 100%);opacity:.5}.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.25rem 5vw;display:flex;justify-content:space-between;align-items:center;background:rgba(5,5,5,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,165,116,0.08)}.nav-logo{font-family:var(--font-display);font-size:1.1rem;letter-spacing:.2em;color:var(--gold);text-decoration:none}.nav-right{display:flex;align-items:center;gap:2rem}.nav-links{display:flex;gap:.25rem;list-style:none}.nav-links li a{display:block;font-size:.85rem;color:var(--text-secondary);text-decoration:none;padding:.6rem 1rem;border-radius:8px;transition:all .3s}.nav-links li a:hover,.nav-links li a.active{color:var(--gold);background:rgba(212,165,116,0.08)}.lang-selector{position:relative}.lang-btn{display:flex;align-items:center;gap:.4rem;padding:.5rem 1rem;background:rgba(212,165,116,0.08);border:1px solid rgba(212,165,116,0.2);border-radius:100px;color:var(--gold);font-size:.8rem;cursor:pointer;transition:all .3s}.lang-btn:hover{background:rgba(212,165,116,0.15)}.lang-btn svg{width:12px;height:12px;transition:transform .3s}.lang-selector.open .lang-btn svg{transform:rotate(180deg)}.lang-dropdown{position:absolute;top:calc(100% + 8px);right:0;min-width:150px;background:var(--bg-card);border:1px solid rgba(212,165,116,0.15);border-radius:12px;overflow:hidden;opacity:0;visibility:hidden;transform:translateY(-10px);transition:all .3s var(--ease);z-index:100}.lang-selector.open .lang-dropdown{opacity:1;visibility:visible;transform:translateY(0)}.lang-option{display:flex;align-items:center;gap:.6rem;width:100%;padding:.8rem 1rem;background:none;border:none;color:var(--text-secondary);font-size:.85rem;text-align:left;cursor:pointer;transition:all .2s}.lang-option:hover{background:rgba(212,165,116,0.1);color:var(--gold)}.lang-option.active{color:var(--gold)}.menu-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}.menu-toggle span{display:block;width:24px;height:2px;background:var(--gold);transition:all .3s}.menu-toggle.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}.menu-toggle.active span:nth-child(2){opacity:0}.menu-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}.mobile-menu{position:fixed;inset:0;background:rgba(5,5,5,0.98);backdrop-filter:blur(30px);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.25rem;opacity:0;visibility:hidden;transition:all .4s var(--ease)}.mobile-menu.open{opacity:1;visibility:visible}.mobile-menu a{font-family:var(--font-display);font-size:1.5rem;color:var(--text-secondary);text-decoration:none;transition:color .3s}.mobile-menu a:hover{color:var(--gold)}.page-header{padding:10rem 5vw 4rem;text-align:center;position:relative}.page-tag{display:inline-flex;align-items:center;gap:.75rem;margin-bottom:1.5rem}.page-tag-line{width:35px;height:1px;background:var(--gold)}.page-tag-text{font-size:.7rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--gold)}.page-title{font-family:var(--font-display);font-size:clamp(2.5rem,6vw,4rem);font-weight:300;margin-bottom:1rem}.page-subtitle{font-size:1.1rem;color:var(--text-secondary);max-width:600px;margin:0 auto}.section{padding:5rem 5vw;position:relative}.container{max-width:1100px;margin:0 auto}.service-detail{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-bottom:5rem;padding-bottom:5rem;border-bottom:1px solid rgba(212,165,116,0.1)}.service-detail:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}.service-detail:nth-child(even){direction:rtl}.service-detail:nth-child(even)>*{direction:ltr}.service-detail-image{width:100%;aspect-ratio:1;border-radius:24px;overflow:hidden;position:relative}.service-detail-image img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease)}.service-detail:hover .service-detail-image img{transform:scale(1.05)}.service-detail-num{font-family:var(--font-display);font-size:5rem;font-weight:300;color:rgba(212,165,116,0.15);line-height:1;margin-bottom:1rem}.service-detail-title{font-family:var(--font-display);font-size:2rem;color:var(--cream);margin-bottom:1rem}.service-detail-desc{font-size:1.05rem;color:var(--text-secondary);line-height:1.9;margin-bottom:1.5rem}.service-includes{background:rgba(212,165,116,0.05);border:1px solid rgba(212,165,116,0.1);border-radius:12px;padding:1.25rem}.service-includes-title{font-size:.75rem;font-weight:600;letter-spacing:.15em;color:var(--gold);margin-bottom:.75rem}.service-includes ul{list-style:none}.service-includes li{font-size:.95rem;color:var(--text-muted);padding:.4rem 0;padding-left:1.5rem;position:relative}.service-includes li::before{content:'✓';position:absolute;left:0;color:var(--sage)}.pricing-section{background:var(--bg-dark);padding:5rem 5vw}.pricing-header{text-align:center;margin-bottom:3rem}.pricing-title{font-family:var(--font-display);font-size:clamp(2rem,4vw,2.5rem);margin-bottom:1rem}.pricing-subtitle{color:var(--text-secondary);max-width:600px;margin:0 auto}.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;max-width:900px;margin:0 auto}.pricing-card{background:rgba(212,165,116,0.04);border:1px solid rgba(212,165,116,0.12);border-radius:20px;padding:2.5rem;text-align:center;transition:all .4s var(--ease);position:relative}.pricing-card.featured{border-color:var(--gold);background:rgba(212,165,116,0.08)}.pricing-card.featured::before{content:'推薦';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--bg-void);font-size:.75rem;font-weight:600;padding:.25rem 1rem;border-radius:100px}.pricing-card:hover{transform:translateY(-5px)}.pricing-card-title{font-family:var(--font-display);font-size:1.5rem;color:var(--cream);margin-bottom:.5rem}.pricing-card-desc{font-size:.9rem;color:var(--text-muted);margin-bottom:1.5rem}.pricing-card-price{font-family:var(--font-display);font-size:2.5rem;color:var(--gold);margin-bottom:.25rem}.pricing-card-price span{font-size:1rem;color:var(--text-muted)}.pricing-card-note{font-size:.85rem;color:var(--text-muted);margin-bottom:1.5rem}.pricing-card ul{list-style:none;text-align:left;margin-bottom:2rem}.pricing-card li{font-size:.9rem;color:var(--text-secondary);padding:.5rem 0;padding-left:1.5rem;position:relative}.pricing-card li::before{content:'✓';position:absolute;left:0;color:var(--sage)}.btn{display:inline-flex;align-items:center;gap:.6rem;padding:1rem 2rem;font-family:var(--font-body);font-size:.9rem;font-weight:500;text-decoration:none;border-radius:100px;transition:all .4s var(--ease);border:none;cursor:pointer}.btn-primary{background:linear-gradient(135deg,var(--gold) 0%,var(--gold-light) 100%);color:var(--bg-void)}.btn-primary:hover{transform:translateY(-3px);box-shadow:0 20px 40px var(--glow-gold)}.btn-secondary{background:transparent;color:var(--gold);border:1px solid rgba(212,165,116,0.3)}.btn-secondary:hover{background:rgba(212,165,116,0.1);border-color:var(--gold)}.cta-section{text-align:center;padding:5rem 5vw}.cta-title{font-family:var(--font-display);font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:1rem}.cta-text{color:var(--text-secondary);margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto}.cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}.footer{padding:3rem 5vw;background:var(--bg-deep);border-top:1px solid rgba(212,165,116,0.08)}.footer-content{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}.footer-logo{font-family:var(--font-display);font-size:.95rem;letter-spacing:.15em;color:var(--gold)}.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap}.footer-links a{font-size:.85rem;color:var(--text-muted);text-decoration:none;transition:color .3s}.footer-links a:hover{color:var(--gold)}.footer-copy{font-size:.75rem;color:rgba(245,239,230,0.28)}.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease),transform .8s var(--ease)}.reveal.visible{opacity:1;transform:translateY(0)}@media(max-width:900px){.service-detail{grid-template-columns:1fr;gap:2rem}.service-detail:nth-child(even){direction:ltr}}@media(max-width:768px){.nav-links{display:none}.menu-toggle{display:flex}.page-header{padding:8rem 1.5rem 3rem}.section{padding:3rem 1.5rem}.pricing-section{padding:3rem 1.5rem}.cta-buttons{flex-direction:column;align-items:center}.btn{width:100%;max-width:300px;justify-content:center}.footer-content{flex-direction:column;text-align:center}}
+    </style>
 </head>
-<body>
-    <!-- Loader -->
-    <div class="loader">
-        <div class="loader-content">
-            <div class="loader-text">SPACE BETWEEN</div>
-            <div class="loader-bar"><div class="loader-progress"></div></div>
-        </div>
+<body data-lang="zh-TW">
+    <div class="breathing-bg"><div class="gradient-mesh"></div><div class="breath-pulse"></div><div class="vignette"></div></div>
+    <div class="mobile-menu">
+        <a href="about.html"><span class="lang-content active" data-lang-content="zh-TW">關於我哋</span><span class="lang-content" data-lang-content="zh-CN">关于我们</span><span class="lang-content" data-lang-content="en">About</span></a>
+        <a href="services.html"><span class="lang-content active" data-lang-content="zh-TW">點樣幫到你</span><span class="lang-content" data-lang-content="zh-CN">服务内容</span><span class="lang-content" data-lang-content="en">Services</span></a>
+        <a href="portfolio.html"><span class="lang-content active" data-lang-content="zh-TW">過往作品</span><span class="lang-content" data-lang-content="zh-CN">作品</span><span class="lang-content" data-lang-content="en">Works</span></a>
+        <a href="lounge.html"><span class="lang-content active" data-lang-content="zh-TW">免費資源</span><span class="lang-content" data-lang-content="zh-CN">免费资源</span><span class="lang-content" data-lang-content="en">Free Resources</span></a>
+        <a href="ai-assistant.html"><span class="lang-content active" data-lang-content="zh-TW">AI 品牌診斷</span><span class="lang-content" data-lang-content="zh-CN">AI 品牌诊断</span><span class="lang-content" data-lang-content="en">AI Diagnosis</span></a>
+        <a href="contact.html"><span class="lang-content active" data-lang-content="zh-TW">傾下偈</span><span class="lang-content" data-lang-content="zh-CN">联系我们</span><span class="lang-content" data-lang-content="en">Contact</span></a>
     </div>
-
-    <!-- Animated Background -->
-    <div class="animated-bg">
-        <div class="gradient-mesh"></div>
-        <div class="floating-orb orb-1"></div>
-        <div class="floating-orb orb-2"></div>
-        <div class="floating-orb orb-3"></div>
-        <div class="breathing-overlay"></div>
-        <div class="particle-field">
-            <div class="particle"></div><div class="particle"></div><div class="particle"></div>
-            <div class="particle"></div><div class="particle"></div><div class="particle"></div>
-            <div class="particle"></div><div class="particle"></div><div class="particle"></div>
-            <div class="particle"></div><div class="particle"></div><div class="particle"></div>
-        </div>
-        <div class="noise-overlay"></div>
-        <div class="vignette"></div>
-    </div>
-
-    <!-- Navigation -->
     <nav class="nav">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">SPACE BETWEEN</a>
-            <div class="nav-links">
-                <a href="about.html" class="nav-link">
-                    <span class="lang-zh-TW">關於</span>
-                    <span class="lang-zh-CN">关于</span>
-                    <span class="lang-en">About</span>
-                </a>
-                <a href="services.html" class="nav-link active">
-                    <span class="lang-zh-TW">服務</span>
-                    <span class="lang-zh-CN">服务</span>
-                    <span class="lang-en">Services</span>
-                </a>
-                <a href="portfolio.html" class="nav-link">
-                    <span class="lang-zh-TW">作品</span>
-                    <span class="lang-zh-CN">作品</span>
-                    <span class="lang-en">Works</span>
-                </a>
-                <a href="lounge.html" class="nav-link">
-                    <span class="lang-zh-TW">療癒實驗室</span>
-                    <span class="lang-zh-CN">疗愈实验室</span>
-                    <span class="lang-en">Healing Lab</span>
-                </a>
-                <a href="ai-assistant.html" class="nav-link">
-                    <span class="lang-zh-TW">AI 助理</span>
-                    <span class="lang-zh-CN">AI 助理</span>
-                    <span class="lang-en">AI Assistant</span>
-                </a>
-                <a href="contact.html" class="nav-link">
-                    <span class="lang-zh-TW">聯絡</span>
-                    <span class="lang-zh-CN">联络</span>
-                    <span class="lang-en">Contact</span>
-                </a>
-            </div>
-            <div class="nav-actions">
-                <div class="lang-switch">
-                    <button class="lang-switch-btn" aria-label="切換語言">
-                        <span class="lang-zh-TW">繁中</span>
-                        <span class="lang-zh-CN">简中</span>
-                        <span class="lang-en">EN</span>
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-                    </button>
-                    <div class="lang-dropdown">
-                        <button class="lang-option" data-lang="zh-TW">🇭🇰 繁體中文</button>
-                        <button class="lang-option" data-lang="zh-CN">🇨🇳 简体中文</button>
-                        <button class="lang-option" data-lang="en">🌍 English</button>
-                    </div>
+        <a href="index.html" class="nav-logo">Space Between</a>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="about.html"><span class="lang-content active" data-lang-content="zh-TW">關於我哋</span><span class="lang-content" data-lang-content="zh-CN">关于我们</span><span class="lang-content" data-lang-content="en">About</span></a></li>
+                <li><a href="services.html" class="active"><span class="lang-content active" data-lang-content="zh-TW">點樣幫到你</span><span class="lang-content" data-lang-content="zh-CN">服务内容</span><span class="lang-content" data-lang-content="en">Services</span></a></li>
+                <li><a href="portfolio.html"><span class="lang-content active" data-lang-content="zh-TW">過往作品</span><span class="lang-content" data-lang-content="zh-CN">作品</span><span class="lang-content" data-lang-content="en">Works</span></a></li>
+                <li><a href="lounge.html"><span class="lang-content active" data-lang-content="zh-TW">免費資源</span><span class="lang-content" data-lang-content="zh-CN">免费资源</span><span class="lang-content" data-lang-content="en">Free Resources</span></a></li>
+                <li><a href="ai-assistant.html"><span class="lang-content active" data-lang-content="zh-TW">AI 品牌診斷</span><span class="lang-content" data-lang-content="zh-CN">AI 品牌诊断</span><span class="lang-content" data-lang-content="en">AI Diagnosis</span></a></li>
+                <li><a href="contact.html"><span class="lang-content active" data-lang-content="zh-TW">傾下偈</span><span class="lang-content" data-lang-content="zh-CN">联系我们</span><span class="lang-content" data-lang-content="en">Contact</span></a></li>
+            </ul>
+            <div class="lang-selector">
+                <button class="lang-btn"><span class="current-lang">繁中</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="lang-dropdown">
+                    <button class="lang-option active" data-lang="zh-TW">🇭🇰 繁體中文</button>
+                    <button class="lang-option" data-lang="zh-CN">🇨🇳 简体中文</button>
+                    <button class="lang-option" data-lang="en">🌍 English</button>
                 </div>
-                <button class="nav-toggle" aria-label="選單">
-                    <span></span><span></span><span></span>
-                </button>
             </div>
+            <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
         </div>
     </nav>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu">
-        <div class="mobile-menu-content">
-            <a href="about.html" class="mobile-link"><span class="lang-zh-TW">關於</span><span class="lang-zh-CN">关于</span><span class="lang-en">About</span></a>
-            <a href="services.html" class="mobile-link active"><span class="lang-zh-TW">服務</span><span class="lang-zh-CN">服务</span><span class="lang-en">Services</span></a>
-            <a href="portfolio.html" class="mobile-link"><span class="lang-zh-TW">作品</span><span class="lang-zh-CN">作品</span><span class="lang-en">Works</span></a>
-            <a href="lounge.html" class="mobile-link"><span class="lang-zh-TW">療癒實驗室</span><span class="lang-zh-CN">疗愈实验室</span><span class="lang-en">Healing Lab</span></a>
-            <a href="ai-assistant.html" class="mobile-link"><span class="lang-zh-TW">AI 助理</span><span class="lang-zh-CN">AI 助理</span><span class="lang-en">AI Assistant</span></a>
-            <a href="contact.html" class="mobile-link"><span class="lang-zh-TW">聯絡</span><span class="lang-zh-CN">联络</span><span class="lang-en">Contact</span></a>
-        </div>
-    </div>
-
-    <main>
-        <!-- Page Hero -->
-        <section class="page-hero">
-            <div class="container">
-                <div class="eyebrow scroll-reveal">
-                    <span class="lang-zh-TW">我們的服務</span>
-                    <span class="lang-zh-CN">我们的服务</span>
-                    <span class="lang-en">Our Services</span>
-                </div>
-                <h1 class="page-title scroll-reveal">
-                    <span class="lang-zh-TW">顧問式服務</span>
-                    <span class="lang-zh-CN">顾问式服务</span>
-                    <span class="lang-en">Consulting Services</span>
-                </h1>
-                <p class="page-subtitle scroll-reveal">
-                    <span class="lang-zh-TW">所有服務均以「一對一顧問方式」進行，陪伴你找到屬於自己的方向。</span>
-                    <span class="lang-zh-CN">所有服务均以「一对一顾问方式」进行，陪伴你找到属于自己的方向。</span>
-                    <span class="lang-en">All services are conducted one-on-one, accompanying you to find your own direction.</span>
-                </p>
-            </div>
-        </section>
-
-        <!-- Services List -->
-        <section class="section">
-            <div class="container">
-                <div class="service-item scroll-reveal">
-                    <div class="service-icon-card">🧭</div>
-                    <div class="service-content">
-                        <h3>
-                            <span class="lang-zh-TW">理清思緒</span>
-                            <span class="lang-zh-CN">理清思绪</span>
-                            <span class="lang-en">Clarity Sessions</span>
-                        </h3>
-                        <p>
-                            <span class="lang-zh-TW">透過敘事式引導，協助你整理內在思緒，找回清晰與平靜。適合感到迷失、不知道下一步該怎麼走的創作者與療癒工作者。</span>
-                            <span class="lang-zh-CN">通过叙事式引导，协助你整理内在思绪，找回清晰与平静。适合感到迷失、不知道下一步该怎么走的创作者与疗愈工作者。</span>
-                            <span class="lang-en">Through narrative guidance, helping you organize inner thoughts and find clarity. Suitable for creators and healers who feel lost and unsure of their next step.</span>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="service-item scroll-reveal">
-                    <div class="service-icon-card">🎯</div>
-                    <div class="service-content">
-                        <h3>
-                            <span class="lang-zh-TW">搵到定位</span>
-                            <span class="lang-zh-CN">找到定位</span>
-                            <span class="lang-en">Brand Positioning</span>
-                        </h3>
-                        <p>
-                            <span class="lang-zh-TW">協助你釐清品牌核心價值，建立一致且有溫度的敘事。讓你的品牌不再模糊，而是清晰地傳達你是誰、你能幫助誰。</span>
-                            <span class="lang-zh-CN">协助你厘清品牌核心价值，建立一致且有温度的叙事。让你的品牌不再模糊，而是清晰地传达你是谁、你能帮助谁。</span>
-                            <span class="lang-en">Helping clarify your brand's core values and build consistent narratives. Making your brand clearly communicate who you are and who you can help.</span>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="service-item scroll-reveal">
-                    <div class="service-icon-card">✨</div>
-                    <div class="service-content">
-                        <h3>
-                            <span class="lang-zh-TW">包裝服務</span>
-                            <span class="lang-zh-CN">包装服务</span>
-                            <span class="lang-en">Service Packaging</span>
-                        </h3>
-                        <p>
-                            <span class="lang-zh-TW">將你的專業轉化為清晰的服務方案，讓客戶更容易理解與選擇。從定價到服務流程，建立專業且可持續的商業模式。</span>
-                            <span class="lang-zh-CN">将你的专业转化为清晰的服务方案，让客户更容易理解与选择。从定价到服务流程，建立专业且可持续的商业模式。</span>
-                            <span class="lang-en">Transform your expertise into clear service offerings. From pricing to service flow, building a professional and sustainable business model.</span>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="service-item scroll-reveal">
-                    <div class="service-icon-card">🏠</div>
-                    <div class="service-content">
-                        <h3>
-                            <span class="lang-zh-TW">設計網站</span>
-                            <span class="lang-zh-CN">设计网站</span>
-                            <span class="lang-en">Website Design</span>
-                        </h3>
-                        <p>
-                            <span class="lang-zh-TW">提供網站架構與內容策略建議，讓你的線上呈現更具吸引力。從視覺設計到文案撰寫，打造專屬於你的數位空間。</span>
-                            <span class="lang-zh-CN">提供网站架构与内容策略建议，让你的线上呈现更具吸引力。从视觉设计到文案撰写，打造专属于你的数位空间。</span>
-                            <span class="lang-en">Providing website structure and content strategy advice for a compelling online presence. From visual design to copywriting, creating your unique digital space.</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Process Section -->
-        <section class="section" style="background: linear-gradient(180deg, transparent 0%, rgba(18, 18, 18, 0.3) 50%, transparent 100%);">
-            <div class="container">
-                <div class="section-header centered scroll-reveal">
-                    <div class="eyebrow">
-                        <span class="lang-zh-TW">服務流程</span>
-                        <span class="lang-zh-CN">服务流程</span>
-                        <span class="lang-en">Our Process</span>
-                    </div>
-                    <h2 class="section-title">
-                        <span class="lang-zh-TW">四步走向清晰</span>
-                        <span class="lang-zh-CN">四步走向清晰</span>
-                        <span class="lang-en">Four Steps to Clarity</span>
-                    </h2>
-                </div>
-                
-                <div class="process-grid">
-                    <div class="process-step scroll-reveal" style="--delay: 0.1s">
-                        <div class="process-number">1</div>
-                        <h4>
-                            <span class="lang-zh-TW">初次傾談</span>
-                            <span class="lang-zh-CN">初次倾谈</span>
-                            <span class="lang-en">Initial Chat</span>
-                        </h4>
-                        <p>
-                            <span class="lang-zh-TW">了解你的狀況與需求</span>
-                            <span class="lang-zh-CN">了解你的状况与需求</span>
-                            <span class="lang-en">Understanding your situation</span>
-                        </p>
-                    </div>
-                    <div class="process-step scroll-reveal" style="--delay: 0.2s">
-                        <div class="process-number">2</div>
-                        <h4>
-                            <span class="lang-zh-TW">深度探索</span>
-                            <span class="lang-zh-CN">深度探索</span>
-                            <span class="lang-en">Deep Exploration</span>
-                        </h4>
-                        <p>
-                            <span class="lang-zh-TW">挖掘核心價值與方向</span>
-                            <span class="lang-zh-CN">挖掘核心价值与方向</span>
-                            <span class="lang-en">Discovering core values</span>
-                        </p>
-                    </div>
-                    <div class="process-step scroll-reveal" style="--delay: 0.3s">
-                        <div class="process-number">3</div>
-                        <h4>
-                            <span class="lang-zh-TW">策略規劃</span>
-                            <span class="lang-zh-CN">策略规划</span>
-                            <span class="lang-en">Strategy Planning</span>
-                        </h4>
-                        <p>
-                            <span class="lang-zh-TW">制定可執行的方案</span>
-                            <span class="lang-zh-CN">制定可执行的方案</span>
-                            <span class="lang-en">Creating actionable plans</span>
-                        </p>
-                    </div>
-                    <div class="process-step scroll-reveal" style="--delay: 0.4s">
-                        <div class="process-number">4</div>
-                        <h4>
-                            <span class="lang-zh-TW">陪伴執行</span>
-                            <span class="lang-zh-CN">陪伴执行</span>
-                            <span class="lang-en">Guided Execution</span>
-                        </h4>
-                        <p>
-                            <span class="lang-zh-TW">持續支援與調整</span>
-                            <span class="lang-zh-CN">持续支援与调整</span>
-                            <span class="lang-en">Ongoing support</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="section">
-            <div class="container">
-                <div class="section-header centered scroll-reveal">
-                    <h2 class="section-title">
-                        <span class="lang-zh-TW">準備好開始？</span>
-                        <span class="lang-zh-CN">准备好开始？</span>
-                        <span class="lang-en">Ready to Start?</span>
-                    </h2>
-                    <p class="section-subtitle">
-                        <span class="lang-zh-TW">無論你在哪個階段，我們都樂意與你傾談，一起找到最適合你的方向。</span>
-                        <span class="lang-zh-CN">无论你在哪个阶段，我们都乐意与你倾谈，一起找到最适合你的方向。</span>
-                        <span class="lang-en">Whatever stage you're at, we're happy to chat and find the right direction for you.</span>
-                    </p>
-                    <div style="margin-top: var(--space-lg); display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                        <a href="https://wa.me/85294568231" class="btn btn-whatsapp" target="_blank">
-                            <span class="lang-zh-TW">WhatsApp 聯絡</span>
-                            <span class="lang-zh-CN">WhatsApp 联络</span>
-                            <span class="lang-en">WhatsApp Us</span>
-                        </a>
-                        <a href="ai-assistant.html" class="btn btn-secondary">
-                            <span class="lang-zh-TW">先同 AI 傾下</span>
-                            <span class="lang-zh-CN">先和 AI 聊聊</span>
-                            <span class="lang-en">Chat with AI First</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
+    <header class="page-header">
+        <div class="page-tag"><span class="page-tag-line"></span><span class="page-tag-text">Our Services</span><span class="page-tag-line"></span></div>
+        <h1 class="page-title"><span class="lang-content active" data-lang-content="zh-TW" class="zh">點樣幫到你</span><span class="lang-content" data-lang-content="zh-CN" class="zh">怎么帮到你</span><span class="lang-content" data-lang-content="en">How We Help</span></h1>
+        <p class="page-subtitle"><span class="lang-content active" data-lang-content="zh-TW" class="zh">每個人嘅情況都唔同，我哋會根據你嘅需要，度身訂造最適合你嘅方案</span><span class="lang-content" data-lang-content="zh-CN" class="zh">每个人的情况都不同，我们会根据你的需要，量身定制最适合你的方案</span><span class="lang-content" data-lang-content="en">Everyone's situation is unique. We tailor our approach to your specific needs.</span></p>
+    </header>
+    <section class="section">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">SPACE BETWEEN HEALING</div>
-                <div class="footer-links">
-                    <a href="privacy.html" class="footer-link"><span class="lang-zh-TW">私隱政策</span><span class="lang-zh-CN">隐私政策</span><span class="lang-en">Privacy</span></a>
-                    <a href="terms.html" class="footer-link"><span class="lang-zh-TW">服務條款</span><span class="lang-zh-CN">服务条款</span><span class="lang-en">Terms</span></a>
+            <div class="service-detail reveal">
+                <div class="service-detail-image"><img src="images/service-01.png" alt="理清思緒"></div>
+                <div class="service-detail-content">
+                    <div class="service-detail-num">01</div>
+                    <h2 class="service-detail-title"><span class="lang-content active" data-lang-content="zh-TW" class="zh">幫你理清思緒</span><span class="lang-content" data-lang-content="zh-CN" class="zh">帮你理清思绪</span><span class="lang-content" data-lang-content="en">Clear Your Mind</span></h2>
+                    <div class="lang-content active" data-lang-content="zh-TW"><p class="service-detail-desc zh">諗法太多、唔知從何入手？我哋會陪你慢慢傾，將腦入面嘅嘢一樣樣攞出嚟睇清楚。</p></div>
+                    <div class="lang-content" data-lang-content="zh-CN"><p class="service-detail-desc zh">想法太多、不知从何下手？我们会陪你慢慢聊，把脑子里的东西一样样拿出来看清楚。</p></div>
+                    <div class="lang-content" data-lang-content="en"><p class="service-detail-desc">Too many ideas? We'll talk through everything slowly, organizing your thoughts piece by piece.</p></div>
+                    <div class="service-includes"><div class="service-includes-title">包括</div><ul><li>1 對 1 深度傾談（90 分鐘）</li><li>思緒整理筆記</li><li>下一步行動建議</li></ul></div>
                 </div>
-                <div class="footer-copy">© 2025 Space Between Healing</div>
             </div>
+            <div class="service-detail reveal">
+                <div class="service-detail-image"><img src="images/service-02.png" alt="搵到定位"></div>
+                <div class="service-detail-content">
+                    <div class="service-detail-num">02</div>
+                    <h2 class="service-detail-title"><span class="lang-content active" data-lang-content="zh-TW" class="zh">搵到你嘅定位</span><span class="lang-content" data-lang-content="zh-CN" class="zh">找到你的定位</span><span class="lang-content" data-lang-content="en">Find Your Position</span></h2>
+                    <div class="lang-content active" data-lang-content="zh-TW"><p class="service-detail-desc zh">你係邊個？你想幫邊啲人？點解佢哋要揀你？搵到呢啲答案，客人自然會搵到你。</p></div>
+                    <div class="lang-content" data-lang-content="zh-CN"><p class="service-detail-desc zh">你是谁？你想帮哪些人？为什么他们要选你？找到这些答案，客户自然会找到你。</p></div>
+                    <div class="lang-content" data-lang-content="en"><p class="service-detail-desc">Who are you? Who do you serve? Why should they choose you? Find these answers.</p></div>
+                    <div class="service-includes"><div class="service-includes-title">包括</div><ul><li>品牌定位工作坊（2 小時）</li><li>目標客群分析</li><li>品牌定位文件</li></ul></div>
+                </div>
+            </div>
+            <div class="service-detail reveal">
+                <div class="service-detail-image"><img src="images/service-03.png" alt="包裝服務"></div>
+                <div class="service-detail-content">
+                    <div class="service-detail-num">03</div>
+                    <h2 class="service-detail-title"><span class="lang-content active" data-lang-content="zh-TW" class="zh">包裝你嘅服務</span><span class="lang-content" data-lang-content="zh-CN" class="zh">包装你的服务</span><span class="lang-content" data-lang-content="en">Package Your Service</span></h2>
+                    <div class="lang-content active" data-lang-content="zh-TW"><p class="service-detail-desc zh">將你嘅專業變成人哋睇得明、買得落嘅服務方案。唔使再每次由頭解釋一次。</p></div>
+                    <div class="lang-content" data-lang-content="zh-CN"><p class="service-detail-desc zh">把你的专业变成别人看得懂、买得了的服务方案。不用每次都从头解释一遍。</p></div>
+                    <div class="lang-content" data-lang-content="en"><p class="service-detail-desc">Turn your expertise into services people can understand and buy.</p></div>
+                    <div class="service-includes"><div class="service-includes-title">包括</div><ul><li>服務方案設計</li><li>定價策略建議</li><li>服務流程圖</li></ul></div>
+                </div>
+            </div>
+            <div class="service-detail reveal">
+                <div class="service-detail-image"><img src="images/service-04.png" alt="設計網站"></div>
+                <div class="service-detail-content">
+                    <div class="service-detail-num">04</div>
+                    <h2 class="service-detail-title"><span class="lang-content active" data-lang-content="zh-TW" class="zh">設計你嘅網站</span><span class="lang-content" data-lang-content="zh-CN" class="zh">设计你的网站</span><span class="lang-content" data-lang-content="en">Design Your Website</span></h2>
+                    <div class="lang-content active" data-lang-content="zh-TW"><p class="service-detail-desc zh">唔只係靚，仲要讓人一睇就明白你做咩、點樣搵你。你嘅網站應該幫你做生意。</p></div>
+                    <div class="lang-content" data-lang-content="zh-CN"><p class="service-detail-desc zh">不只是好看，还要让人一看就明白你做什么、怎么找你。你的网站应该帮你做生意。</p></div>
+                    <div class="lang-content" data-lang-content="en"><p class="service-detail-desc">Not just pretty—your website should work for you.</p></div>
+                    <div class="service-includes"><div class="service-includes-title">包括</div><ul><li>響應式網站設計</li><li>文案撰寫協助</li><li>SEO 基礎設定</li><li>3 個月技術支援</li></ul></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pricing-section">
+        <div class="container">
+            <div class="pricing-header reveal">
+                <h2 class="pricing-title"><span class="lang-content active" data-lang-content="zh-TW" class="zh">收費參考</span><span class="lang-content" data-lang-content="zh-CN" class="zh">收费参考</span><span class="lang-content" data-lang-content="en">Pricing Guide</span></h2>
+                <p class="pricing-subtitle"><span class="lang-content active" data-lang-content="zh-TW" class="zh">每個項目都會根據你嘅實際需要報價</span><span class="lang-content" data-lang-content="zh-CN" class="zh">每个项目都会根据你的实际需要报价</span><span class="lang-content" data-lang-content="en">Each project is quoted based on your needs</span></p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card reveal">
+                    <h3 class="pricing-card-title">品牌諮詢</h3>
+                    <p class="pricing-card-desc">理清思緒 + 定位建議</p>
+                    <div class="pricing-card-price">HKD 2,800<span>/次</span></div>
+                    <p class="pricing-card-note">約 2 小時</p>
+                    <ul><li>深度傾談</li><li>思緒整理筆記</li><li>行動建議</li></ul>
+                    <a href="contact.html" class="btn btn-secondary">了解更多</a>
+                </div>
+                <div class="pricing-card featured reveal">
+                    <h3 class="pricing-card-title">品牌療癒套餐</h3>
+                    <p class="pricing-card-desc">定位 + 包裝 + 網站</p>
+                    <div class="pricing-card-price">HKD 18,000<span>起</span></div>
+                    <p class="pricing-card-note">約 4-6 週</p>
+                    <ul><li>品牌定位工作坊</li><li>服務方案設計</li><li>響應式網站</li><li>3 個月支援</li></ul>
+                    <a href="contact.html" class="btn btn-primary">預約諮詢</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title reveal"><span class="lang-content active" data-lang-content="zh-TW" class="zh">唔確定邊個適合你？</span><span class="lang-content" data-lang-content="zh-CN" class="zh">不确定哪个适合你？</span><span class="lang-content" data-lang-content="en">Not Sure Which Fits?</span></h2>
+            <p class="cta-text reveal"><span class="lang-content active" data-lang-content="zh-TW" class="zh">冇問題！我哋可以先傾下，了解你嘅情況再建議。</span><span class="lang-content" data-lang-content="zh-CN" class="zh">没问题！我们可以先聊聊，了解你的情况再建议。</span><span class="lang-content" data-lang-content="en">No problem! Let's chat first.</span></p>
+            <div class="cta-buttons reveal">
+                <a href="contact.html" class="btn btn-primary">免費傾下偈</a>
+                <a href="ai-assistant.html" class="btn btn-secondary">試下 AI 診斷</a>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <span class="footer-logo">Space Between Healing</span>
+            <div class="footer-links">
+                <a href="about.html">關於我哋</a>
+                <a href="services.html">服務</a>
+                <a href="contact.html">聯絡</a>
+                <a href="privacy.html">私隱政策</a>
+            </div>
+            <span class="footer-copy">© 2025 Space Between Healing</span>
         </div>
     </footer>
-
     <script>
-        window.addEventListener('load', () => setTimeout(() => document.querySelector('.loader').classList.add('loaded'), 1800));
-        const nav = document.querySelector('.nav');
-        window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50));
-        const navToggle = document.querySelector('.nav-toggle');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        navToggle.addEventListener('click', () => {
-            navToggle.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-        });
-        const langOptions = document.querySelectorAll('.lang-option');
-        const savedLang = localStorage.getItem('site-lang') || 'zh-TW';
-        document.documentElement.lang = savedLang;
-        langOptions.forEach(option => {
-            if (option.dataset.lang === savedLang) option.classList.add('active');
-            option.addEventListener('click', () => {
-                document.documentElement.lang = option.dataset.lang;
-                localStorage.setItem('site-lang', option.dataset.lang);
-                langOptions.forEach(o => o.classList.remove('active'));
-                option.classList.add('active');
-            });
-        });
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('revealed'); });
-        }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
-        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+        const menuToggle=document.querySelector('.menu-toggle'),mobileMenu=document.querySelector('.mobile-menu');menuToggle.addEventListener('click',()=>{menuToggle.classList.toggle('active');mobileMenu.classList.toggle('open');document.body.style.overflow=mobileMenu.classList.contains('open')?'hidden':''});mobileMenu.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{menuToggle.classList.remove('active');mobileMenu.classList.remove('open');document.body.style.overflow=''}));const langLabels={'zh-TW':'繁中','zh-CN':'简中','en':'EN'};let currentLang=localStorage.getItem('lang')||'zh-TW';const langSelector=document.querySelector('.lang-selector'),langBtn=document.querySelector('.lang-btn'),langOptions=document.querySelectorAll('.lang-option'),currentLangEl=document.querySelector('.current-lang');langBtn.addEventListener('click',()=>langSelector.classList.toggle('open'));document.addEventListener('click',e=>{if(!langSelector.contains(e.target))langSelector.classList.remove('open')});function setLanguage(lang){currentLang=lang;document.body.setAttribute('data-lang',lang);currentLangEl.textContent=langLabels[lang];langOptions.forEach(o=>o.classList.toggle('active',o.dataset.lang===lang));document.querySelectorAll('.lang-content').forEach(el=>el.classList.toggle('active',el.dataset.langContent===lang));localStorage.setItem('lang',lang);langSelector.classList.remove('open')}langOptions.forEach(o=>o.addEventListener('click',()=>setLanguage(o.dataset.lang)));setLanguage(currentLang);const reveals=document.querySelectorAll('.reveal'),observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:0.1});reveals.forEach(el=>observer.observe(el));
     </script>
 </body>
 </html>

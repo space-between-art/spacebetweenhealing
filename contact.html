@@ -1,199 +1,126 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>聯絡我們 | Space Between Healing</title>
-    <meta name="description" content="與 Space Between Healing 聯絡，開始你的療癒之旅。">
-    
+    <title>傾下偈 | Space Between Healing</title>
+    <meta name="description" content="同 Space Between Healing 傾下偈，了解我哋點樣幫到你建立品牌。">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Sans+TC:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500&family=Noto+Serif+TC:wght@400;500&family=Noto+Serif+SC:wght@400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
-    
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Outfit:wght@300;400;500;600&family=Noto+Serif+TC:wght@300;400;500&family=Noto+Serif+SC:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root{--bg-void:#050505;--bg-deep:#0a0a0a;--bg-dark:#111;--bg-card:#161616;--gold:#d4a574;--gold-light:#e8c9a0;--gold-dim:#b8956a;--sage:#a0b89c;--sage-light:#c4d4c0;--cream:#f5efe6;--whatsapp:#25D366;--glow-gold:rgba(212,165,116,0.4);--glow-sage:rgba(160,184,156,0.3);--text-primary:#f5efe6;--text-secondary:rgba(245,239,230,0.72);--text-muted:rgba(245,239,230,0.45);--font-display:'Cormorant Garamond',serif;--font-body:'Outfit',sans-serif;--font-zh:'Noto Serif TC',serif;--ease:cubic-bezier(0.16,1,0.3,1)}*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--font-body);background:var(--bg-void);color:var(--text-primary);line-height:1.7;overflow-x:hidden}[data-lang="zh-TW"] .zh{font-family:var(--font-zh)}.lang-content{display:none}.lang-content.active{display:block}span.lang-content{display:none}span.lang-content.active{display:inline}.breathing-bg{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}.hero-image-bg{position:absolute;inset:0;background:url('images/contact-bg.png') center center/cover no-repeat;opacity:.15}.gradient-mesh{position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 20% 30%,var(--glow-gold) 0%,transparent 50%),radial-gradient(ellipse 60% 70% at 80% 70%,var(--glow-sage) 0%,transparent 50%);animation:meshShift 25s ease-in-out infinite;opacity:.5}@keyframes meshShift{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.05);opacity:.7}}.breath-pulse{position:absolute;inset:0;background:radial-gradient(ellipse 100% 100% at 50% 50%,rgba(212,165,116,0.05) 0%,transparent 50%);animation:breathe 8s ease-in-out infinite}@keyframes breathe{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:.8;transform:scale(1.08)}}.vignette{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 0%,var(--bg-void) 100%);opacity:.5}.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.25rem 5vw;display:flex;justify-content:space-between;align-items:center;background:rgba(5,5,5,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,165,116,0.08)}.nav-logo{font-family:var(--font-display);font-size:1.1rem;letter-spacing:.2em;color:var(--gold);text-decoration:none}.nav-right{display:flex;align-items:center;gap:2rem}.nav-links{display:flex;gap:.25rem;list-style:none}.nav-links li a{display:block;font-size:.85rem;color:var(--text-secondary);text-decoration:none;padding:.6rem 1rem;border-radius:8px;transition:all .3s}.nav-links li a:hover,.nav-links li a.active{color:var(--gold);background:rgba(212,165,116,0.08)}.lang-selector{position:relative}.lang-btn{display:flex;align-items:center;gap:.4rem;padding:.5rem 1rem;background:rgba(212,165,116,0.08);border:1px solid rgba(212,165,116,0.2);border-radius:100px;color:var(--gold);font-size:.8rem;cursor:pointer}.lang-btn svg{width:12px;height:12px;transition:transform .3s}.lang-selector.open .lang-btn svg{transform:rotate(180deg)}.lang-dropdown{position:absolute;top:calc(100% + 8px);right:0;min-width:150px;background:var(--bg-card);border:1px solid rgba(212,165,116,0.15);border-radius:12px;overflow:hidden;opacity:0;visibility:hidden;transform:translateY(-10px);transition:all .3s var(--ease);z-index:100}.lang-selector.open .lang-dropdown{opacity:1;visibility:visible;transform:translateY(0)}.lang-option{display:flex;width:100%;padding:.8rem 1rem;background:none;border:none;color:var(--text-secondary);font-size:.85rem;text-align:left;cursor:pointer}.lang-option:hover{background:rgba(212,165,116,0.1);color:var(--gold)}.lang-option.active{color:var(--gold)}.menu-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}.menu-toggle span{display:block;width:24px;height:2px;background:var(--gold);transition:all .3s}.menu-toggle.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}.menu-toggle.active span:nth-child(2){opacity:0}.menu-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}.mobile-menu{position:fixed;inset:0;background:rgba(5,5,5,0.98);backdrop-filter:blur(30px);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.25rem;opacity:0;visibility:hidden;transition:all .4s var(--ease)}.mobile-menu.open{opacity:1;visibility:visible}.mobile-menu a{font-family:var(--font-display);font-size:1.5rem;color:var(--text-secondary);text-decoration:none}.mobile-menu a:hover{color:var(--gold)}.page-header{padding:10rem 5vw 4rem;text-align:center}.page-tag{display:inline-flex;align-items:center;gap:.75rem;margin-bottom:1.5rem}.page-tag-line{width:35px;height:1px;background:var(--gold)}.page-tag-text{font-size:.7rem;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--gold)}.page-title{font-family:var(--font-display);font-size:clamp(2.5rem,6vw,4rem);font-weight:300;margin-bottom:1rem}.page-subtitle{font-size:1.1rem;color:var(--text-secondary);max-width:600px;margin:0 auto}.section{padding:4rem 5vw}.container{max-width:900px;margin:0 auto}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}@media(max-width:768px){.contact-grid{grid-template-columns:1fr}}.contact-info h2{font-family:var(--font-display);font-size:1.8rem;color:var(--cream);margin-bottom:1.5rem}.contact-info p{color:var(--text-secondary);line-height:1.9;margin-bottom:2rem}.contact-methods{display:flex;flex-direction:column;gap:1rem}.contact-method{display:flex;align-items:center;gap:1rem;padding:1.25rem;background:rgba(212,165,116,0.04);border:1px solid rgba(212,165,116,0.1);border-radius:16px;text-decoration:none;color:var(--text-primary);transition:all .3s var(--ease)}.contact-method:hover{background:rgba(212,165,116,0.08);border-color:rgba(212,165,116,0.2);transform:translateX(5px)}.contact-method-icon{width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem}.contact-method-icon.email{background:rgba(212,165,116,0.15)}.contact-method-icon.whatsapp{background:rgba(37,211,102,0.15)}.contact-method-content h3{font-size:1rem;color:var(--cream);margin-bottom:.25rem}.contact-method-content p{font-size:.9rem;color:var(--text-muted)}.faq-section{background:var(--bg-dark);padding:5rem 5vw}.faq-title{font-family:var(--font-display);font-size:2rem;text-align:center;margin-bottom:3rem}.faq-list{max-width:700px;margin:0 auto}.faq-item{border-bottom:1px solid rgba(212,165,116,0.1);padding:1.5rem 0}.faq-question{font-size:1.1rem;color:var(--cream);margin-bottom:.75rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center}.faq-question::after{content:'+';color:var(--gold);font-size:1.5rem;transition:transform .3s}.faq-item.open .faq-question::after{transform:rotate(45deg)}.faq-answer{color:var(--text-secondary);line-height:1.8;max-height:0;overflow:hidden;transition:max-height .3s var(--ease)}.faq-item.open .faq-answer{max-height:200px}.footer{padding:3rem 5vw;background:var(--bg-deep);border-top:1px solid rgba(212,165,116,0.08)}.footer-content{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}.footer-logo{font-family:var(--font-display);font-size:.95rem;letter-spacing:.15em;color:var(--gold)}.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap}.footer-links a{font-size:.85rem;color:var(--text-muted);text-decoration:none}.footer-links a:hover{color:var(--gold)}.footer-copy{font-size:.75rem;color:rgba(245,239,230,0.28)}.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s var(--ease),transform .8s var(--ease)}.reveal.visible{opacity:1;transform:translateY(0)}@media(max-width:768px){.nav-links{display:none}.menu-toggle{display:flex}.page-header{padding:8rem 1.5rem 3rem}.section{padding:3rem 1.5rem}.footer-content{flex-direction:column;text-align:center}}
+    </style>
 </head>
-<body>
-    <!-- Loader -->
-    <div class="loader">
-        <div class="loader-content">
-            <div class="loader-text">SPACE BETWEEN</div>
-            <div class="loader-bar"><div class="loader-progress"></div></div>
-        </div>
+<body data-lang="zh-TW">
+    <div class="breathing-bg"><div class="hero-image-bg"></div><div class="gradient-mesh"></div><div class="breath-pulse"></div><div class="vignette"></div></div>
+    <div class="mobile-menu">
+        <a href="about.html">關於我哋</a>
+        <a href="services.html">點樣幫到你</a>
+        <a href="portfolio.html">過往作品</a>
+        <a href="lounge.html">免費資源</a>
+        <a href="ai-assistant.html">AI 品牌診斷</a>
+        <a href="contact.html">傾下偈</a>
     </div>
-
-    <!-- Animated Background -->
-    <div class="animated-bg">
-        <div class="gradient-mesh"></div>
-        <div class="floating-orb orb-1"></div>
-        <div class="floating-orb orb-2"></div>
-        <div class="floating-orb orb-3"></div>
-        <div class="breathing-overlay"></div>
-        <div class="particle-field">
-            <div class="particle"></div><div class="particle"></div><div class="particle"></div>
-            <div class="particle"></div><div class="particle"></div><div class="particle"></div>
-            <div class="particle"></div><div class="particle"></div><div class="particle"></div>
-            <div class="particle"></div><div class="particle"></div><div class="particle"></div>
-        </div>
-        <div class="noise-overlay"></div>
-        <div class="vignette"></div>
-    </div>
-
-    <!-- Navigation -->
     <nav class="nav">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">SPACE BETWEEN</a>
-            <div class="nav-links">
-                <a href="about.html" class="nav-link"><span class="lang-zh-TW">關於</span><span class="lang-zh-CN">关于</span><span class="lang-en">About</span></a>
-                <a href="services.html" class="nav-link"><span class="lang-zh-TW">服務</span><span class="lang-zh-CN">服务</span><span class="lang-en">Services</span></a>
-                <a href="portfolio.html" class="nav-link"><span class="lang-zh-TW">作品</span><span class="lang-zh-CN">作品</span><span class="lang-en">Works</span></a>
-                <a href="lounge.html" class="nav-link"><span class="lang-zh-TW">療癒實驗室</span><span class="lang-zh-CN">疗愈实验室</span><span class="lang-en">Healing Lab</span></a>
-                <a href="ai-assistant.html" class="nav-link"><span class="lang-zh-TW">AI 助理</span><span class="lang-zh-CN">AI 助理</span><span class="lang-en">AI Assistant</span></a>
-                <a href="contact.html" class="nav-link active"><span class="lang-zh-TW">聯絡</span><span class="lang-zh-CN">联络</span><span class="lang-en">Contact</span></a>
-            </div>
-            <div class="nav-actions">
-                <div class="lang-switch">
-                    <button class="lang-switch-btn" aria-label="切換語言">
-                        <span class="lang-zh-TW">繁中</span><span class="lang-zh-CN">简中</span><span class="lang-en">EN</span>
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-                    </button>
-                    <div class="lang-dropdown">
-                        <button class="lang-option" data-lang="zh-TW">🇭🇰 繁體中文</button>
-                        <button class="lang-option" data-lang="zh-CN">🇨🇳 简体中文</button>
-                        <button class="lang-option" data-lang="en">🌍 English</button>
-                    </div>
+        <a href="index.html" class="nav-logo">Space Between</a>
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="about.html">關於我哋</a></li>
+                <li><a href="services.html">點樣幫到你</a></li>
+                <li><a href="portfolio.html">過往作品</a></li>
+                <li><a href="lounge.html">免費資源</a></li>
+                <li><a href="ai-assistant.html">AI 品牌診斷</a></li>
+                <li><a href="contact.html" class="active">傾下偈</a></li>
+            </ul>
+            <div class="lang-selector">
+                <button class="lang-btn"><span class="current-lang">繁中</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="lang-dropdown">
+                    <button class="lang-option active" data-lang="zh-TW">🇭🇰 繁體中文</button>
+                    <button class="lang-option" data-lang="zh-CN">🇨🇳 简体中文</button>
+                    <button class="lang-option" data-lang="en">🌍 English</button>
                 </div>
-                <button class="nav-toggle" aria-label="選單"><span></span><span></span><span></span></button>
             </div>
+            <button class="menu-toggle"><span></span><span></span><span></span></button>
         </div>
     </nav>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu">
-        <div class="mobile-menu-content">
-            <a href="about.html" class="mobile-link"><span class="lang-zh-TW">關於</span><span class="lang-zh-CN">关于</span><span class="lang-en">About</span></a>
-            <a href="services.html" class="mobile-link"><span class="lang-zh-TW">服務</span><span class="lang-zh-CN">服务</span><span class="lang-en">Services</span></a>
-            <a href="portfolio.html" class="mobile-link"><span class="lang-zh-TW">作品</span><span class="lang-zh-CN">作品</span><span class="lang-en">Works</span></a>
-            <a href="lounge.html" class="mobile-link"><span class="lang-zh-TW">療癒實驗室</span><span class="lang-zh-CN">疗愈实验室</span><span class="lang-en">Healing Lab</span></a>
-            <a href="ai-assistant.html" class="mobile-link"><span class="lang-zh-TW">AI 助理</span><span class="lang-zh-CN">AI 助理</span><span class="lang-en">AI Assistant</span></a>
-            <a href="contact.html" class="mobile-link active"><span class="lang-zh-TW">聯絡</span><span class="lang-zh-CN">联络</span><span class="lang-en">Contact</span></a>
-        </div>
-    </div>
-
-    <main>
-        <!-- Contact Hero -->
-        <section class="contact-hero">
-            <div class="contact-hero-content">
-                <div class="eyebrow scroll-reveal">
-                    <span class="lang-zh-TW">聯絡我們</span>
-                    <span class="lang-zh-CN">联络我们</span>
-                    <span class="lang-en">Get in Touch</span>
-                </div>
-                
-                <h1 class="page-title scroll-reveal">
-                    <span class="lang-zh-TW">準備好開始傾談？</span>
-                    <span class="lang-zh-CN">准备好开始倾谈？</span>
-                    <span class="lang-en">Ready to Start Talking?</span>
-                </h1>
-                
-                <p class="page-subtitle scroll-reveal">
-                    <span class="lang-zh-TW">無論你係想了解服務、傾下困擾，定係純粹打個招呼，我哋都好樂意聽你講。</span>
-                    <span class="lang-zh-CN">无论你是想了解服务、聊聊困扰，还是纯粹打个招呼，我们都很乐意听你说。</span>
-                    <span class="lang-en">Whether you want to learn about services, share your concerns, or just say hi, we're happy to listen.</span>
-                </p>
-                
-                <div class="contact-grid scroll-reveal">
-                    <a href="https://wa.me/85294568231" class="contact-card whatsapp" target="_blank">
-                        <div class="contact-icon">💬</div>
-                        <h4>WhatsApp</h4>
-                        <p>+852 9456 8231</p>
-                    </a>
-                    <a href="/cdn-cgi/l/email-protection#3f575a5353507f4c4f5e5c5a5d5a4b485a5a51575a5e53565158115c5052" class="contact-card">
-                        <div class="contact-icon">✉️</div>
-                        <h4>Email</h4>
-                        <p><span class="__cf_email__" data-cfemail="0a626f6666654a797a6b696f686f7e7d6f6f64626f6b6663646d24696567">[email&#160;protected]</span></p>
-                    </a>
-                </div>
-                
-                <!-- Tips -->
-                <div class="scroll-reveal" style="margin-top: var(--space-2xl); padding-top: var(--space-xl); border-top: 1px solid rgba(201, 168, 108, 0.1);">
-                    <h3 style="font-size: 1.2rem; color: var(--gold); margin-bottom: var(--space-md); text-align: center;">
-                        <span class="lang-zh-TW">📝 傾談前小提示</span>
-                        <span class="lang-zh-CN">📝 倾谈前小提示</span>
-                        <span class="lang-en">📝 Before We Talk</span>
-                    </h3>
-                    <p style="text-align: center; color: var(--text-secondary); max-width: 500px; margin: 0 auto;">
-                        <span class="lang-zh-TW">你可以簡單準備一下：你目前遇到咩困難？你理想中嘅狀態係點？冇準備都冇問題，我哋會慢慢傾。</span>
-                        <span class="lang-zh-CN">你可以简单准备一下：你目前遇到什么困难？你理想中的状态是什么？没准备也没问题，我们会慢慢聊。</span>
-                        <span class="lang-en">You can briefly prepare: What challenges are you facing? What's your ideal state? No preparation needed—we'll take it slow.</span>
-                    </p>
-                </div>
-                
-                <!-- AI Banner -->
-                <div class="scroll-reveal" style="margin-top: var(--space-xl);">
-                    <div class="ai-promo-card" style="grid-template-columns: auto 1fr auto;">
-                        <div class="ai-avatar">⭐</div>
-                        <div class="ai-promo-content">
-                            <h3 style="font-size: 1.2rem;">
-                                <span class="lang-zh-TW">唔確定想傾咩？</span>
-                                <span class="lang-zh-CN">不确定想聊什么？</span>
-                                <span class="lang-en">Not Sure What to Discuss?</span>
-                            </h3>
-                            <p>
-                                <span class="lang-zh-TW">試下同我哋嘅 AI 助理光光傾下，佢會幫你理清思緒。</span>
-                                <span class="lang-zh-CN">试试和我们的 AI 助理光光聊聊，它会帮你理清思绪。</span>
-                                <span class="lang-en">Try chatting with our AI assistant 光光 to help organize your thoughts.</span>
-                            </p>
-                        </div>
-                        <div class="ai-promo-cta">
-                            <a href="ai-assistant.html" class="btn btn-secondary">
-                                <span class="lang-zh-TW">同光光傾計</span>
-                                <span class="lang-zh-CN">和光光聊天</span>
-                                <span class="lang-en">Chat with 光光</span>
-                            </a>
-                        </div>
+    <header class="page-header">
+        <div class="page-tag"><span class="page-tag-line"></span><span class="page-tag-text">Contact</span><span class="page-tag-line"></span></div>
+        <h1 class="page-title"><span class="lang-content active" data-lang-content="zh-TW" class="zh">傾下偈</span><span class="lang-content" data-lang-content="zh-CN" class="zh">聊聊</span><span class="lang-content" data-lang-content="en">Let's Talk</span></h1>
+        <p class="page-subtitle"><span class="lang-content active" data-lang-content="zh-TW" class="zh">唔使即刻決定要唔要用我哋嘅服務，我哋可以先傾下，了解吓你嘅情況</span><span class="lang-content" data-lang-content="zh-CN" class="zh">不用马上决定要不要用我们的服务，我们可以先聊聊，了解一下你的情况</span><span class="lang-content" data-lang-content="en">No pressure to decide now. Let's chat first and understand your situation.</span></p>
+    </header>
+    <section class="section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info reveal">
+                    <h2 class="zh"><span class="lang-content active" data-lang-content="zh-TW">點樣搵我哋？</span><span class="lang-content" data-lang-content="zh-CN">怎么找我们？</span><span class="lang-content" data-lang-content="en">How to Reach Us?</span></h2>
+                    <p class="zh"><span class="lang-content active" data-lang-content="zh-TW">你可以透過以下方式聯絡我哋。我哋會喺 24 小時內回覆你（工作日）。</span><span class="lang-content" data-lang-content="zh-CN">你可以通过以下方式联系我们。我们会在 24 小时内回复你（工作日）。</span><span class="lang-content" data-lang-content="en">You can reach us through the following channels. We'll respond within 24 hours (business days).</span></p>
+                    <div class="contact-methods">
+                        <a href="mailto:hello@spacebetweenhealing.com" class="contact-method">
+                            <div class="contact-method-icon email">✉️</div>
+                            <div class="contact-method-content">
+                                <h3>Email</h3>
+                                <p>hello@spacebetweenhealing.com</p>
+                            </div>
+                        </a>
+                        <a href="https://wa.me/85294568231" target="_blank" class="contact-method">
+                            <div class="contact-method-icon whatsapp">💬</div>
+                            <div class="contact-method-content">
+                                <h3>WhatsApp</h3>
+                                <p>+852 9456 8231</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">SPACE BETWEEN HEALING</div>
-                <div class="footer-links">
-                    <a href="privacy.html" class="footer-link"><span class="lang-zh-TW">私隱政策</span><span class="lang-zh-CN">隐私政策</span><span class="lang-en">Privacy</span></a>
-                    <a href="terms.html" class="footer-link"><span class="lang-zh-TW">服務條款</span><span class="lang-zh-CN">服务条款</span><span class="lang-en">Terms</span></a>
+                <div class="contact-info reveal">
+                    <h2 class="zh"><span class="lang-content active" data-lang-content="zh-TW">傾之前想了解多啲？</span><span class="lang-content" data-lang-content="zh-CN">聊之前想了解更多？</span><span class="lang-content" data-lang-content="en">Want to Know More First?</span></h2>
+                    <p class="zh"><span class="lang-content active" data-lang-content="zh-TW">你可以先試下我哋嘅 AI 品牌診斷，了解吓你嘅品牌現時有咩「症狀」。完全免費，24 小時都得。</span><span class="lang-content" data-lang-content="zh-CN">你可以先试试我们的 AI 品牌诊断，了解一下你的品牌现在有什么「症状」。完全免费，24 小时都可以。</span><span class="lang-content" data-lang-content="en">Try our AI Brand Diagnosis first to understand your brand's current "symptoms". Completely free, available 24/7.</span></p>
+                    <a href="ai-assistant.html" style="display:inline-flex;align-items:center;gap:.6rem;padding:1rem 2rem;background:linear-gradient(135deg,var(--gold) 0%,var(--gold-light) 100%);color:var(--bg-void);font-weight:500;text-decoration:none;border-radius:100px;margin-top:1rem;transition:all .4s var(--ease)">
+                        <span class="lang-content active" data-lang-content="zh-TW">試下 AI 診斷</span>
+                        <span class="lang-content" data-lang-content="zh-CN">试试 AI 诊断</span>
+                        <span class="lang-content" data-lang-content="en">Try AI Diagnosis</span>
+                    </a>
                 </div>
-                <div class="footer-copy">© 2025 Space Between Healing</div>
             </div>
         </div>
+    </section>
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="faq-title reveal"><span class="lang-content active" data-lang-content="zh-TW" class="zh">常見問題</span><span class="lang-content" data-lang-content="zh-CN" class="zh">常见问题</span><span class="lang-content" data-lang-content="en">FAQ</span></h2>
+            <div class="faq-list">
+                <div class="faq-item reveal">
+                    <div class="faq-question zh"><span class="lang-content active" data-lang-content="zh-TW">傾偈要收費嗎？</span><span class="lang-content" data-lang-content="zh-CN">聊天要收费吗？</span><span class="lang-content" data-lang-content="en">Is the initial chat free?</span></div>
+                    <div class="faq-answer zh"><span class="lang-content active" data-lang-content="zh-TW">初次傾偈係免費嘅！我哋會用大概 30 分鐘了解你嘅情況，睇下有咩可以幫到你。</span><span class="lang-content" data-lang-content="zh-CN">初次聊天是免费的！我们会用大概 30 分钟了解你的情况，看看有什么可以帮到你。</span><span class="lang-content" data-lang-content="en">The initial chat is free! We'll spend about 30 minutes understanding your situation.</span></div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question zh"><span class="lang-content active" data-lang-content="zh-TW">我唔係身心靈行業，你哋幫唔幫到？</span><span class="lang-content" data-lang-content="zh-CN">我不是身心灵行业，你们帮得了吗？</span><span class="lang-content" data-lang-content="en">I'm not in the wellness industry. Can you still help?</span></div>
+                    <div class="faq-answer zh"><span class="lang-content active" data-lang-content="zh-TW">可以！雖然我哋特別熟悉身心靈行業，但我哋嘅方法適用於任何服務型創業者。重點係你有冇用心做緊你嘅事。</span><span class="lang-content" data-lang-content="zh-CN">可以！虽然我们特别熟悉身心灵行业，但我们的方法适用于任何服务型创业者。重点是你有没有用心做你的事。</span><span class="lang-content" data-lang-content="en">Yes! While we're especially familiar with the wellness industry, our methods work for any service-based entrepreneur.</span></div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question zh"><span class="lang-content active" data-lang-content="zh-TW">要幾耐先完成一個項目？</span><span class="lang-content" data-lang-content="zh-CN">要多久才能完成一个项目？</span><span class="lang-content" data-lang-content="en">How long does a project take?</span></div>
+                    <div class="faq-answer zh"><span class="lang-content active" data-lang-content="zh-TW">視乎項目複雜度，一般 4-8 週。我哋唔會趕你，會按你嘅節奏嚟。</span><span class="lang-content" data-lang-content="zh-CN">视项目复杂度，一般 4-8 周。我们不会催你，会按你的节奏来。</span><span class="lang-content" data-lang-content="en">Depending on complexity, usually 4-8 weeks. We work at your pace.</span></div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question zh"><span class="lang-content active" data-lang-content="zh-TW">可以用廣東話傾嗎？</span><span class="lang-content" data-lang-content="zh-CN">可以用广东话聊吗？</span><span class="lang-content" data-lang-content="en">Can we communicate in Cantonese?</span></div>
+                    <div class="faq-answer zh"><span class="lang-content active" data-lang-content="zh-TW">當然可以！我哋嘅母語就係廣東話，用你最舒服嘅方式傾就得。</span><span class="lang-content" data-lang-content="zh-CN">当然可以！我们的母语就是广东话，用你最舒服的方式聊就行。</span><span class="lang-content" data-lang-content="en">Absolutely! Cantonese is our native language. Communicate however you're most comfortable.</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <span class="footer-logo">Space Between Healing</span>
+            <div class="footer-links">
+                <a href="about.html">關於我哋</a>
+                <a href="services.html">服務</a>
+                <a href="contact.html">聯絡</a>
+                <a href="privacy.html">私隱政策</a>
+            </div>
+            <span class="footer-copy">© 2025 Space Between Healing</span>
+        </div>
     </footer>
-
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        window.addEventListener('load', () => setTimeout(() => document.querySelector('.loader').classList.add('loaded'), 1800));
-        const nav = document.querySelector('.nav');
-        window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50));
-        const navToggle = document.querySelector('.nav-toggle');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        navToggle.addEventListener('click', () => {
-            navToggle.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-        });
-        const langOptions = document.querySelectorAll('.lang-option');
-        const savedLang = localStorage.getItem('site-lang') || 'zh-TW';
-        document.documentElement.lang = savedLang;
-        langOptions.forEach(option => {
-            if (option.dataset.lang === savedLang) option.classList.add('active');
-            option.addEventListener('click', () => {
-                document.documentElement.lang = option.dataset.lang;
-                localStorage.setItem('site-lang', option.dataset.lang);
-                langOptions.forEach(o => o.classList.remove('active'));
-                option.classList.add('active');
-            });
-        });
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(ent
+    <script>
+        const menuToggle=document.querySelector('.menu-toggle'),mobileMenu=document.querySelector('.mobile-menu');menuToggle.addEventListener('click',()=>{menuToggle.classList.toggle('active');mobileMenu.classList.toggle('open');document.body.style.overflow=mobileMenu.classList.contains('open')?'hidden':''});mobileMenu.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{menuToggle.classList.remove('active');mobileMenu.classList.remove('open');document.body.style.overflow=''}));const langLabels={'zh-TW':'繁中','zh-CN':'简中','en':'EN'};let currentLang=localStorage.getItem('lang')||'zh-TW';const langSelector=document.querySelector('.lang-selector'),langBtn=document.querySelector('.lang-btn'),langOptions=document.querySelectorAll('.lang-option'),currentLangEl=document.querySelector('.current-lang');langBtn.addEventListener('click',()=>langSelector.classList.toggle('open'));document.addEventListener('click',e=>{if(!langSelector.contains(e.target))langSelector.classList.remove('open')});function setLanguage(lang){currentLang=lang;document.body.setAttribute('data-lang',lang);currentLangEl.textContent=langLabels[lang];langOptions.forEach(o=>o.classList.toggle('active',o.dataset.lang===lang));document.querySelectorAll('.lang-content').forEach(el=>el.classList.toggle('active',el.dataset.langContent===lang));localStorage.setItem('lang',lang);langSelector.classList.remove('open')}langOptions.forEach(o=>o.addEventListener('click',()=>setLanguage(o.dataset.lang)));setLanguage(currentLang);const reveals=document.querySelectorAll('.reveal'),observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:0.1});reveals.forEach(el=>observer.observe(el));document.querySelectorAll('.faq-question').forEach(q=>q.addEventListener('click',()=>q.parentElement.classList.toggle('open')));
+    </script>
+</body>
+</html>
