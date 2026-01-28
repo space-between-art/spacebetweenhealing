@@ -597,6 +597,37 @@
             margin-top: 12px;
         }
         
+        /* ===== 快速回覆按鈕 ===== */
+        .quick-replies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+            justify-content: center;
+        }
+        
+        .quick-reply-btn {
+            padding: 10px 18px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 165, 116, 0.25);
+            border-radius: 20px;
+            color: rgba(232, 228, 220, 0.8);
+            font-family: 'Noto Serif TC', serif;
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .quick-reply-btn:hover {
+            background: rgba(212, 165, 116, 0.15);
+            border-color: rgba(212, 165, 116, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .quick-reply-btn:active {
+            transform: translateY(0);
+        }
+        
         /* ===== 洞察層 ===== */
         #layer-insight {
             text-align: center;
@@ -818,6 +849,7 @@
             </div>
             
             <div class="response-area">
+                <div class="quick-replies" id="quick-replies"></div>
                 <div class="free-input-area">
                     <textarea 
                         class="free-input" 
@@ -957,19 +989,37 @@
                 name: '光光',
                 filter: 'brightness(1.1) saturate(1.1)',
                 auraColor: 'rgba(212, 165, 116, 0.25)',
-                firstMessage: '你來了。在這裡，不需要假裝清醒。告訴我——此刻，什麼讓你感到困住？'
+                firstMessage: '你來了。在這裡，不需要假裝清醒。告訴我——此刻，什麼讓你感到困住？',
+                quickReplies: [
+                    '品牌失去了方向',
+                    '不知道自己是誰',
+                    '感覺很累但停不下來',
+                    '說不出哪裡不對'
+                ]
             },
             sumu: {
                 name: '蘇牧',
                 filter: 'brightness(1.05) saturate(0.9) hue-rotate(120deg)',
                 auraColor: 'rgba(125, 184, 168, 0.25)',
-                firstMessage: '你好。不用急著說什麼，先在這裡待一會兒。今天的你，感覺怎麼樣？'
+                firstMessage: '你好。不用急著說什麼，先在這裡待一會兒。今天的你，感覺怎麼樣？',
+                quickReplies: [
+                    '有點疲憊',
+                    '很混亂',
+                    '想要改變但不知道怎麼開始',
+                    '其實還好'
+                ]
             },
             guyan: {
                 name: '顧言',
                 filter: 'brightness(1) saturate(0.7) hue-rotate(180deg)',
                 auraColor: 'rgba(143, 164, 184, 0.25)',
-                firstMessage: '你來找我，通常不是因為好奇。是因為卡住了。說吧——你的品牌，現在最讓你不安的是什麼？'
+                firstMessage: '你來找我，通常不是因為好奇。是因為卡住了。說吧——你的品牌，現在最讓你不安的是什麼？',
+                quickReplies: [
+                    '沒人記得我們',
+                    '說的跟做的不一樣',
+                    '一直在模仿別人',
+                    '不敢說出真正的想法'
+                ]
             }
         };
         
@@ -993,19 +1043,47 @@
             name.textContent = config.name;
             
             document.getElementById('dialogue-messages').innerHTML = '';
+            document.getElementById('quick-replies').innerHTML = '';
             
             warpTo('layer-guides', 'layer-dialogue');
             
             setTimeout(() => {
-                showAIMessage(config.firstMessage);
+                showAIMessage(config.firstMessage, config.quickReplies);
                 conversationHistory.push({ role: 'assistant', content: config.firstMessage });
             }, 700);
         }
         
+        // 顯示快速回覆按鈕
+        function showQuickReplies(replies) {
+            const container = document.getElementById('quick-replies');
+            container.innerHTML = '';
+            
+            if (!replies || replies.length === 0) return;
+            
+            replies.forEach(text => {
+                const btn = document.createElement('button');
+                btn.className = 'quick-reply-btn';
+                btn.textContent = text;
+                btn.onclick = () => {
+                    document.getElementById('free-input').value = text;
+                    sendMessage();
+                };
+                container.appendChild(btn);
+            });
+        }
+        
+        // 隱藏快速回覆
+        function hideQuickReplies() {
+            document.getElementById('quick-replies').innerHTML = '';
+        }
+        
         // 顯示 AI 訊息
-        function showAIMessage(text) {
+        function showAIMessage(text, quickReplies = null) {
             const container = document.getElementById('dialogue-messages');
             const orbContainer = document.getElementById('ai-orb-container');
+            
+            // 隱藏快速回覆
+            hideQuickReplies();
             
             orbContainer.classList.add('speaking');
             
@@ -1028,6 +1106,11 @@
                 document.getElementById('free-input').disabled = false;
                 document.getElementById('send-btn').disabled = false;
                 document.getElementById('free-input').focus();
+                
+                // 顯示快速回覆（如果有）
+                if (quickReplies) {
+                    setTimeout(() => showQuickReplies(quickReplies), 300);
+                }
             }, 1000);
         }
         
@@ -1047,6 +1130,9 @@
             const text = input.value.trim();
             
             if (!text) return;
+            
+            // 隱藏快速回覆
+            hideQuickReplies();
             
             // 禁用輸入
             input.disabled = true;
