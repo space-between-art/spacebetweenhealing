@@ -1,1081 +1,708 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant" data-region="tw-hk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Space Between Healing | 品牌療癒工作室</title>
-    
-    <!-- SEO Meta -->
-    <meta name="description" content="為身心靈創業者而設的品牌療癒系統 | 幫你理清方向、建立品牌 | 一對一顧問服務">
-    <link rel="canonical" href="https://spacebetweenhealing.com">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Space Between Healing | 品牌療癒工作室">
-    <meta property="og:description" content="唔知點樣介紹自己嘅服務？客人總係搵唔到你？我哋幫你理清方向，建立屬於你嘅品牌。">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://spacebetweenhealing.com">
-    <meta property="og:image" content="https://spacebetweenhealing.com/images/og-image.jpg">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Outfit:wght@300;400;500;600&family=Noto+Serif+TC:wght@300;400;500&family=Noto+Serif+SC:wght@300;400;500&display=swap" rel="stylesheet">
-    
-    <style>
-        /* ============================================
-           SPACE BETWEEN HEALING v4.0
-           口語化文案 + 呼吸感設計 + 圖片整合
-           ============================================ */
-        
-        :root {
-            --bg-void: #050505;
-            --bg-deep: #0a0a0a;
-            --bg-dark: #111111;
-            --bg-card: #161616;
-            --gold: #d4a574;
-            --gold-light: #e8c9a0;
-            --gold-dim: #b8956a;
-            --sage: #a0b89c;
-            --sage-light: #c4d4c0;
-            --cream: #f5efe6;
-            --whatsapp: #25D366;
-            --glow-gold: rgba(212, 165, 116, 0.4);
-            --glow-sage: rgba(160, 184, 156, 0.3);
-            --glow-warm: rgba(232, 201, 160, 0.15);
-            --text-primary: #f5efe6;
-            --text-secondary: rgba(245, 239, 230, 0.72);
-            --text-muted: rgba(245, 239, 230, 0.45);
-            --font-display: 'Cormorant Garamond', serif;
-            --font-body: 'Outfit', sans-serif;
-            --font-zh: 'Noto Serif TC', serif;
-            --font-zh-sc: 'Noto Serif SC', serif;
-            --ease: cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-        }
-        html { scroll-behavior: smooth; }
-        body { font-family: var(--font-body); background: var(--bg-void); color: var(--text-primary); line-height: 1.7; overflow-x: hidden; }
-        [data-lang="zh-TW"] .zh { font-family: var(--font-zh); }
-        [data-lang="zh-CN"] .zh { font-family: var(--font-zh-sc); }
-        .lang-content { display: none; }
-        .lang-content.active { display: block; }
-        span.lang-content { display: none; }
-        span.lang-content.active { display: inline; }
-
-        /* ===== 呼吸感背景系統 ===== */
-        .breathing-bg {
-            position: fixed;
-            inset: 0;
-            z-index: -1;
-            pointer-events: none;
-            overflow: hidden;
-        }
-
-        .hero-image-bg {
-            position: absolute;
-            inset: 0;
-            background: url('images/hero-bg.png') center center / cover no-repeat;
-            opacity: 0.25;
-            animation: bgBreath 10s ease-in-out infinite;
-        }
-
-        @keyframes bgBreath {
-            0%, 100% { opacity: 0.2; transform: scale(1); }
-            50% { opacity: 0.35; transform: scale(1.02); }
-        }
-
-        .gradient-mesh {
-            position: absolute;
-            inset: 0;
-            background: 
-                radial-gradient(ellipse 80% 50% at 20% 30%, var(--glow-gold) 0%, transparent 50%),
-                radial-gradient(ellipse 60% 70% at 80% 70%, var(--glow-sage) 0%, transparent 50%);
-            animation: meshShift 25s ease-in-out infinite;
-        }
-
-        @keyframes meshShift {
-            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.6; }
-            50% { transform: scale(1.05) rotate(1deg); opacity: 0.8; }
-        }
-
-        .breath-pulse {
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse 100% 100% at 50% 50%, rgba(212, 165, 116, 0.05) 0%, transparent 50%);
-            animation: breathe 8s ease-in-out infinite;
-        }
-
-        @keyframes breathe {
-            0%, 100% { opacity: 0.3; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.08); }
-        }
-
-        .orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.4;
-        }
-
-        .orb-1 {
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, var(--glow-gold) 0%, transparent 70%);
-            top: -10%;
-            left: -5%;
-            animation: floatOrb1 20s ease-in-out infinite;
-        }
-
-        .orb-2 {
-            width: 350px;
-            height: 350px;
-            background: radial-gradient(circle, var(--glow-sage) 0%, transparent 70%);
-            bottom: -5%;
-            right: -5%;
-            animation: floatOrb2 25s ease-in-out infinite;
-        }
-
-        @keyframes floatOrb1 {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(30px, 20px); }
-        }
-
-        @keyframes floatOrb2 {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(-25px, -20px); }
-        }
-
-        .particles {
-            position: absolute;
-            inset: 0;
-        }
-
-        .particle {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: var(--gold);
-            border-radius: 50%;
-            opacity: 0;
-            animation: particleFloat 12s ease-in-out infinite;
-        }
-
-        .particle:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
-        .particle:nth-child(2) { left: 25%; top: 60%; animation-delay: 2s; }
-        .particle:nth-child(3) { left: 45%; top: 30%; animation-delay: 4s; }
-        .particle:nth-child(4) { left: 65%; top: 70%; animation-delay: 1s; }
-        .particle:nth-child(5) { left: 80%; top: 40%; animation-delay: 3s; }
-        .particle:nth-child(6) { left: 90%; top: 80%; animation-delay: 5s; }
-
-        @keyframes particleFloat {
-            0%, 100% { opacity: 0; transform: translateY(0); }
-            10% { opacity: 0.6; }
-            90% { opacity: 0.4; }
-            95% { opacity: 0; transform: translateY(-80px); }
-        }
-
-        .vignette {
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(ellipse at center, transparent 0%, var(--bg-void) 100%);
-            opacity: 0.5;
-        }
-
-        /* ===== Loader ===== */
-        .loader {
-            position: fixed;
-            inset: 0;
-            background: var(--bg-void);
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transition: opacity 0.6s var(--ease), visibility 0.6s;
-        }
-
-        .loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
-
-        .loader-logo {
-            font-family: var(--font-display);
-            font-size: 1.1rem;
-            letter-spacing: 0.35em;
-            color: var(--gold);
-            margin-bottom: 2rem;
-            opacity: 0;
-            animation: fadeIn 0.8s var(--ease) 0.2s forwards;
-        }
-
-        .loader-bar {
-            width: 120px;
-            height: 1px;
-            background: rgba(212, 165, 116, 0.2);
-            overflow: hidden;
-        }
-
-        .loader-progress {
-            height: 100%;
-            width: 0;
-            background: linear-gradient(90deg, var(--gold-dim), var(--gold), var(--gold-light));
-            animation: loadProgress 1.5s var(--ease) forwards;
-        }
-
-        @keyframes fadeIn { to { opacity: 1; } }
-        @keyframes loadProgress { to { width: 100%; } }
-
-        /* ===== Navigation ===== */
-        .nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: 1.25rem 5vw;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.4s var(--ease);
-            background: transparent;
-        }
-
-        .nav.scrolled {
-            padding: 1rem 5vw;
-            background: rgba(5, 5, 5, 0.92);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(212, 165, 116, 0.08);
-        }
-
-        .nav-logo {
-            font-family: var(--font-display);
-            font-size: 1.1rem;
-            letter-spacing: 0.2em;
-            color: var(--gold);
-            text-decoration: none;
-        }
-
-        .nav-right { display: flex; align-items: center; gap: 2rem; }
-        .nav-links { display: flex; gap: 0.25rem; list-style: none; }
-        .nav-links li a {
-            display: block;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            text-decoration: none;
-            padding: 0.6rem 1rem;
-            border-radius: 8px;
-            transition: all 0.3s;
-        }
-        .nav-links li a:hover { color: var(--gold); background: rgba(212, 165, 116, 0.08); }
-
-        .lang-selector { position: relative; }
-        .lang-btn {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            padding: 0.5rem 1rem;
-            background: rgba(212, 165, 116, 0.08);
-            border: 1px solid rgba(212, 165, 116, 0.2);
-            border-radius: 100px;
-            color: var(--gold);
-            font-size: 0.8rem;
-            font-family: var(--font-body);
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        .lang-btn:hover { background: rgba(212, 165, 116, 0.15); border-color: var(--gold); }
-        .lang-btn svg { width: 12px; height: 12px; transition: transform 0.3s; }
-        .lang-selector.open .lang-btn svg { transform: rotate(180deg); }
-
-        .lang-dropdown {
-            position: absolute;
-            top: calc(100% + 8px);
-            right: 0;
-            min-width: 150px;
-            background: var(--bg-card);
-            border: 1px solid rgba(212, 165, 116, 0.15);
-            border-radius: 12px;
-            overflow: hidden;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s var(--ease);
-            z-index: 100;
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
-        }
-        .lang-selector.open .lang-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
-
-        .lang-option {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            width: 100%;
-            padding: 0.8rem 1rem;
-            background: none;
-            border: none;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            font-family: var(--font-body);
-            text-align: left;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        .lang-option:hover { background: rgba(212, 165, 116, 0.1); color: var(--gold); }
-        .lang-option.active { color: var(--gold); }
-
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 8px;
-            z-index: 1001;
-        }
-        .menu-toggle span { display: block; width: 24px; height: 2px; background: var(--gold); transition: all 0.3s var(--ease); }
-        .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-        .menu-toggle.active span:nth-child(2) { opacity: 0; }
-        .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
-
-        .mobile-menu {
-            position: fixed;
-            inset: 0;
-            background: rgba(5, 5, 5, 0.98);
-            backdrop-filter: blur(30px);
-            z-index: 999;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 1.25rem;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.4s var(--ease);
-        }
-        .mobile-menu.open { opacity: 1; visibility: visible; }
-        .mobile-menu a {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-            text-decoration: none;
-            padding: 0.75rem 2rem;
-            transition: color 0.3s;
-        }
-        .mobile-menu a:hover { color: var(--gold); }
-
-        /* ===== Hero ===== */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            padding: 8rem 5vw 5rem;
-        }
-
-        .hero-content {
-            text-align: center;
-            max-width: 900px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            opacity: 0;
-            animation: fadeUp 0.8s var(--ease) 1.2s forwards;
-        }
-
-        .hero-eyebrow-line {
-            width: 50px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--gold), transparent);
-        }
-
-        .hero-eyebrow-text {
-            font-size: 0.7rem;
-            font-weight: 500;
-            letter-spacing: 0.35em;
-            text-transform: uppercase;
-            color: var(--gold);
-        }
-
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero-title {
-            font-family: var(--font-display);
-            font-size: clamp(2.8rem, 8vw, 5.5rem);
-            font-weight: 300;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            opacity: 0;
-            animation: fadeUp 1s var(--ease) 1.4s forwards;
-        }
-
-        .hero-title .highlight { color: var(--gold); font-style: italic; }
-
-        .hero-subtitle {
-            font-size: clamp(1rem, 2.5vw, 1.25rem);
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-            line-height: 1.8;
-        }
-
-        .hero-philosophy {
-            font-size: 1rem;
-            color: var(--sage);
-            font-style: italic;
-            margin-bottom: 2.5rem;
-            opacity: 0;
-            animation: fadeUp 0.8s var(--ease) 1.8s forwards;
-        }
-
-        .hero-cta {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            opacity: 0;
-            animation: fadeUp 0.8s var(--ease) 2s forwards;
-        }
-
-        /* ===== Buttons ===== */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.6rem;
-            padding: 1rem 2rem;
-            font-family: var(--font-body);
-            font-size: 0.9rem;
-            font-weight: 500;
-            text-decoration: none;
-            border-radius: 100px;
-            cursor: pointer;
-            transition: all 0.4s var(--ease);
-            border: none;
-        }
-        .btn svg { width: 18px; height: 18px; transition: transform 0.3s; }
-        .btn:hover svg { transform: translateX(3px); }
-
-        .btn-primary {
-            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
-            color: var(--bg-void);
-        }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 20px 40px var(--glow-gold); }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--gold);
-            border: 1px solid rgba(212, 165, 116, 0.3);
-        }
-        .btn-secondary:hover { background: rgba(212, 165, 116, 0.1); border-color: var(--gold); }
-
-        .btn-whatsapp { background: var(--whatsapp); color: white; }
-        .btn-whatsapp:hover { background: #20bd5a; transform: translateY(-3px); box-shadow: 0 15px 35px rgba(37, 211, 102, 0.35); }
-
-        /* ===== Section ===== */
-        .section { padding: 6rem 5vw; position: relative; }
-        .container { max-width: 1200px; margin: 0 auto; }
-        .section-header { margin-bottom: 3rem; }
-        .section-header.center { text-align: center; }
-        .section-tag { display: inline-flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
-        .section-tag-line { width: 35px; height: 1px; background: var(--gold); }
-        .section-tag-text { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); }
-        .section-title { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; line-height: 1.25; margin-bottom: 0.75rem; }
-        .section-subtitle { font-size: 1rem; color: var(--text-secondary); max-width: 600px; }
-        .section-header.center .section-subtitle { margin: 0 auto; }
-
-        /* ===== Problem Cards ===== */
-        .problem-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .problem-card {
-            background: rgba(212, 165, 116, 0.03);
-            border: 1px solid rgba(212, 165, 116, 0.1);
-            border-radius: 20px;
-            padding: 2rem;
-            transition: all 0.4s var(--ease);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .problem-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--gold), var(--sage));
-            transform: scaleX(0);
-            transition: transform 0.4s var(--ease);
-        }
-
-        .problem-card:hover { transform: translateY(-5px); border-color: rgba(212, 165, 116, 0.2); }
-        .problem-card:hover::before { transform: scaleX(1); }
-        .problem-icon { font-size: 2.5rem; margin-bottom: 1.25rem; }
-        .problem-card h3 { font-family: var(--font-display); font-size: 1.25rem; color: var(--cream); margin-bottom: 0.75rem; }
-        .problem-card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.8; }
-
-        /* ===== Services with Images ===== */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .service-card {
-            background: rgba(212, 165, 116, 0.03);
-            border: 1px solid rgba(212, 165, 116, 0.1);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.4s var(--ease);
-            position: relative;
-        }
-
-        .service-card:hover { transform: translateY(-5px); border-color: rgba(212, 165, 116, 0.2); box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25); }
-
-        .service-image {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            opacity: 0.85;
-            transition: all 0.4s var(--ease);
-        }
-
-        .service-card:hover .service-image { opacity: 1; transform: scale(1.03); }
-
-        .service-content { padding: 1.75rem; position: relative; }
-        .service-num {
-            font-family: var(--font-display);
-            font-size: 3.5rem;
-            font-weight: 300;
-            color: rgba(212, 165, 116, 0.1);
-            position: absolute;
-            top: -1rem;
-            right: 1.5rem;
-            line-height: 1;
-        }
-        .service-title { font-family: var(--font-display); font-size: 1.35rem; margin-bottom: 0.75rem; color: var(--cream); }
-        .service-desc { font-size: 0.95rem; color: var(--text-muted); line-height: 1.8; }
-
-        /* ===== Audience Grid ===== */
-        .audience-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.25rem;
-        }
-
-        .audience-card {
-            background: var(--bg-card);
-            border: 1px solid rgba(212, 165, 116, 0.08);
-            border-radius: 16px;
-            overflow: hidden;
-            text-align: center;
-            transition: all 0.4s var(--ease);
-        }
-
-        .audience-card:hover { transform: translateY(-5px); border-color: rgba(212, 165, 116, 0.15); }
-
-        .audience-image {
-            width: 100%;
-            height: 140px;
-            object-fit: cover;
-            opacity: 0.8;
-            transition: all 0.4s;
-        }
-
-        .audience-card:hover .audience-image { opacity: 1; }
-
-        .audience-content { padding: 1.25rem; }
-        .audience-card h3 { font-family: var(--font-display); font-size: 1.1rem; color: var(--cream); margin-bottom: 0.4rem; }
-        .audience-card p { font-size: 0.85rem; color: var(--text-muted); }
-
-        /* ===== AI Banner ===== */
-        .ai-banner {
-            background: linear-gradient(135deg, rgba(212, 165, 116, 0.1) 0%, rgba(160, 184, 156, 0.06) 100%);
-            border: 1px solid rgba(212, 165, 116, 0.15);
-            border-radius: 24px;
-            padding: 3rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .ai-banner::before {
-            content: '';
-            position: absolute;
-            top: -80px;
-            right: -80px;
-            width: 250px;
-            height: 250px;
-            background: radial-gradient(circle, rgba(212, 165, 116, 0.15) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .ai-banner-grid {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 2rem;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .ai-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(212, 165, 116, 0.15);
-            padding: 0.5rem 1rem;
-            border-radius: 100px;
-            margin-bottom: 1rem;
-        }
-        .ai-badge span { font-size: 0.75rem; color: var(--gold); font-weight: 600; letter-spacing: 0.1em; }
-
-        .ai-banner h3 { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2rem); color: var(--cream); margin-bottom: 1rem; }
-        .ai-banner p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem; }
-        .ai-banner-actions { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
-        .ai-banner-note { color: var(--text-muted); font-size: 0.85rem; }
-
-        .ai-visual { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
-
-        .ai-avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            overflow: hidden;
-            box-shadow: 0 15px 50px rgba(212, 165, 116, 0.35);
-        }
-
-        .ai-avatar img { width: 100%; height: 100%; object-fit: cover; }
-
-        .ai-powered { text-align: center; }
-        .ai-powered-label { font-size: 0.65rem; color: var(--text-muted); letter-spacing: 0.15em; display: block; }
-        .ai-powered-name { font-size: 0.9rem; color: var(--sage); font-weight: 500; }
-
-        /* ===== CTA Section ===== */
-        .cta-section {
-            text-align: center;
-            background: linear-gradient(180deg, var(--bg-void) 0%, var(--bg-dark) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-bg {
-            position: absolute;
-            inset: 0;
-            background: url('images/contact-bg.png') center center / cover no-repeat;
-            opacity: 0.08;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        /* ===== Footer ===== */
-        .footer {
-            padding: 3rem 5vw;
-            background: var(--bg-dark);
-            border-top: 1px solid rgba(212, 165, 116, 0.08);
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-        }
-
-        .footer-logo { font-family: var(--font-display); font-size: 0.95rem; letter-spacing: 0.15em; color: var(--gold); }
-        .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-        .footer-links a { font-size: 0.85rem; color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
-        .footer-links a:hover { color: var(--gold); }
-        .footer-copy { font-size: 0.75rem; color: rgba(245, 239, 230, 0.28); }
-
-        /* ===== Reveal Animation ===== */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
-        }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-
-        /* ===== Responsive ===== */
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .menu-toggle { display: flex; }
-            .hero { padding: 7rem 1.5rem 4rem; }
-            .section { padding: 4rem 1.5rem; }
-            .hero-cta, .cta-buttons { flex-direction: column; align-items: center; }
-            .btn { width: 100%; max-width: 300px; justify-content: center; }
-            .footer-content { flex-direction: column; text-align: center; }
-            .ai-banner-grid { grid-template-columns: 1fr; }
-            .ai-visual { display: none; }
-            .ai-banner { padding: 2rem; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ── SEO: Primary ── -->
+  <title>Space Between Studio | 品牌療癒・自我教練工具・台灣香港</title>
+  <meta name="description" content="Space Between Studio 提供品牌金線電子書、自我教練工具與光光工作坊，服務台灣與香港的療癒師、教練與創業者。找到屬於你的品牌聲音。">
+  <meta name="keywords" content="品牌療癒,自我教練,品牌金線,個人品牌,台灣品牌顧問,香港品牌設計,療癒師品牌,教練品牌,自我教練工具,品牌定位,Space Between Studio">
+  <meta name="author" content="Wins Tsang / 隙光">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://spacebetweenstudio.site/">
+
+  <!-- ── hreflang: Taiwan + Hong Kong ── -->
+  <link rel="alternate" hreflang="zh-TW" href="https://spacebetweenstudio.site/">
+  <link rel="alternate" hreflang="zh-HK" href="https://spacebetweenstudio.site/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://spacebetweenstudio.site/">
+
+  <!-- ── OG / Social ── -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://spacebetweenstudio.site/">
+  <meta property="og:title" content="Space Between Studio | 品牌療癒・自我教練">
+  <meta property="og:description" content="找到你的品牌金線。服務台灣與香港的療癒師、教練與創業者。">
+  <meta property="og:image" content="https://spacebetweenstudio.site/images/og-cover.jpg">
+  <meta property="og:locale" content="zh_TW">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Space Between Studio | 品牌療癒・自我教練">
+  <meta name="twitter:description" content="找到你的品牌金線。服務台灣與香港。">
+
+  <!-- ── Structured Data: Organization ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Space Between Studio",
+    "alternateName": "隙光",
+    "url": "https://spacebetweenstudio.site",
+    "logo": "https://spacebetweenstudio.site/images/logo.png",
+    "description": "品牌療癒顧問工作室，提供品牌金線工作坊、自我教練工具與數位產品，服務台灣與香港。",
+    "founder": {
+      "@type": "Person",
+      "name": "曾詠詩",
+      "alternateName": "Wins Tsang",
+      "jobTitle": "品牌療癒師"
+    },
+    "areaServed": ["TW", "HK"],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "hello@spacebetweenstudio.site",
+      "availableLanguage": ["zh-TW", "zh-HK"]
+    },
+    "sameAs": [
+      "https://spacebetweenhealing.com"
+    ]
+  }
+  </script>
+
+  <!-- ── Structured Data: ItemList (Products) ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Space Between Studio 數位產品",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Book",
+          "name": "賣雨的人",
+          "description": "一個調香師的品牌覺醒之旅，互動式電子書",
+          "offers": { "@type": "Offer", "price": "68", "priceCurrency": "HKD" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Book",
+          "name": "慢慢成為自己的品牌",
+          "description": "9章療癒旅程，63個反思練習",
+          "offers": { "@type": "Offer", "price": "168", "priceCurrency": "HKD" }
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+TC:wght@300;400&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #FAF7F2;
+      --warm: #F0E9DC;
+      --gold: #C9A962;
+      --gold-light: #E2C98A;
+      --earth: #3D3530;
+      --earth-mid: #6B5E54;
+      --earth-light: #9C8878;
+      --dark: #1C1815;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--cream);
+      color: var(--earth);
+      font-family: 'DM Sans', 'Noto Serif TC', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1.4rem 3rem;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(250, 247, 242, 0.93);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201, 169, 98, 0.15);
+    }
+    .nav-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem; letter-spacing: 0.12em;
+      color: var(--earth); text-decoration: none;
+    }
+    .nav-brand em { font-style: italic; color: var(--gold); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--earth-mid); text-decoration: none; transition: color 0.25s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .nav-cta {
+      padding: 0.5rem 1.2rem;
+      border: 1px solid var(--gold);
+      color: var(--gold) !important;
+      transition: all 0.25s !important;
+    }
+    .nav-cta:hover { background: var(--gold); color: var(--cream) !important; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 8rem 3rem 5rem;
+      position: relative; overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(201, 169, 98, 0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-glyph {
+      position: absolute;
+      font-family: 'Noto Serif TC', serif;
+      font-size: 40vw; font-weight: 300;
+      color: rgba(201, 169, 98, 0.045);
+      right: -6vw; top: 50%; transform: translateY(-50%);
+      line-height: 1; pointer-events: none; user-select: none;
+    }
+    .hero-inner { max-width: 680px; position: relative; z-index: 1; }
+    .hero-eyebrow {
+      font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 2rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .hero-eyebrow::before {
+      content: ''; width: 28px; height: 1px; background: var(--gold);
+    }
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6.5vw, 5.5rem);
+      font-weight: 300; line-height: 1.1;
+      margin-bottom: 2rem; letter-spacing: -0.01em;
+    }
+    h1 em { font-style: italic; color: var(--gold); }
+    .hero-sub {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1rem; line-height: 2;
+      color: var(--earth-mid); max-width: 500px;
+      margin-bottom: 3rem;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-dark {
+      padding: 0.9rem 2rem; background: var(--earth); color: var(--cream);
+      font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; transition: background 0.25s, transform 0.2s;
+    }
+    .btn-dark:hover { background: var(--gold); transform: translateY(-2px); }
+    .btn-outline {
+      padding: 0.9rem 2rem; border: 1px solid var(--earth-mid); color: var(--earth-mid);
+      font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; transition: all 0.25s;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+    /* ── MARQUEE ── */
+    .marquee-wrap {
+      overflow: hidden; border-top: 1px solid rgba(201,169,98,0.2);
+      border-bottom: 1px solid rgba(201,169,98,0.2);
+      padding: 0.8rem 0; background: var(--warm);
+    }
+    .marquee-track {
+      display: flex; gap: 3rem;
+      animation: marquee 28s linear infinite; width: max-content;
+    }
+    .marquee-track span {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--earth-light); white-space: nowrap;
+    }
+    .marquee-track span.dot { color: var(--gold); }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ── SECTION SHARED ── */
+    .section { padding: 7rem 3rem; }
+    .section-label {
+      font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--earth-light); margin-bottom: 1rem;
+    }
+    .section-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 300; line-height: 1.25; margin-bottom: 1.2rem;
+    }
+    .section-heading em { font-style: italic; color: var(--gold); }
+    .section-sub {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 0.92rem; line-height: 2; color: var(--earth-mid);
+      max-width: 560px;
+    }
+
+    /* ── PRODUCTS ── */
+    .products { max-width: 1100px; margin: 0 auto; }
+    .products-header { margin-bottom: 4rem; }
+    .product-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .product-card {
+      border: 1px solid rgba(201, 169, 98, 0.2);
+      background: white;
+      text-decoration: none; color: inherit;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      display: flex; flex-direction: column;
+    }
+    .product-card:hover {
+      border-color: rgba(201, 169, 98, 0.6);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(61, 53, 48, 0.08);
+    }
+    .product-cover {
+      height: 200px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 4rem;
+      background: var(--warm);
+      position: relative; overflow: hidden;
+    }
+    .product-cover::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(201,169,98,0.1), transparent);
+    }
+    .product-body { padding: 2rem; flex: 1; display: flex; flex-direction: column; }
+    .product-tag {
+      font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.8rem;
+    }
+    .product-name {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.15rem; font-weight: 400;
+      color: var(--earth); margin-bottom: 0.8rem;
+    }
+    .product-desc {
+      font-size: 0.85rem; line-height: 1.8; color: var(--earth-mid);
+      flex: 1; margin-bottom: 1.5rem;
+    }
+    .product-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      border-top: 1px solid rgba(201,169,98,0.15); padding-top: 1.2rem;
+    }
+    .product-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem; color: var(--earth);
+    }
+    .product-price span { font-size: 0.75rem; color: var(--earth-light); }
+    .product-cta {
+      font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--gold);
+    }
+    .product-badge {
+      position: absolute; top: 1rem; right: 1rem; z-index: 1;
+      padding: 0.3rem 0.7rem;
+      background: var(--earth); color: var(--gold);
+      font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
+    }
+    .badge-coming {
+      background: rgba(201,169,98,0.15); color: var(--earth-mid);
+      border: 1px solid rgba(201,169,98,0.3);
+    }
+
+    /* ── WORKSHOP STRIP ── */
+    .workshop {
+      background: var(--earth); color: var(--cream);
+      padding: 7rem 3rem;
+    }
+    .workshop-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+      align-items: center;
+    }
+    .workshop .section-label { color: rgba(226, 201, 138, 0.6); }
+    .workshop .section-heading { color: var(--cream); margin-bottom: 1.2rem; }
+    .workshop .section-sub { color: rgba(250, 247, 242, 0.65); margin-bottom: 2.5rem; }
+    .workshop-features { list-style: none; margin-bottom: 2.5rem; }
+    .workshop-features li {
+      padding: 0.7rem 0;
+      border-bottom: 1px solid rgba(201, 169, 98, 0.15);
+      font-family: 'Noto Serif TC', serif;
+      font-size: 0.88rem; color: rgba(250,247,242,0.75);
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .workshop-features li::before {
+      content: '—'; color: var(--gold); font-family: 'Cormorant Garamond', serif;
+    }
+    .btn-gold {
+      display: inline-block;
+      padding: 0.9rem 2rem; border: 1px solid var(--gold); color: var(--gold);
+      font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase;
+      text-decoration: none; transition: all 0.25s;
+    }
+    .btn-gold:hover { background: var(--gold); color: var(--earth); transform: translateY(-2px); }
+    .workshop-visual {
+      display: flex; flex-direction: column; gap: 1.2rem;
+    }
+    .workshop-stat {
+      padding: 1.8rem 2rem;
+      border: 1px solid rgba(201, 169, 98, 0.2);
+      background: rgba(250, 247, 242, 0.04);
+    }
+    .workshop-stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem; color: var(--gold); line-height: 1;
+    }
+    .workshop-stat-label {
+      font-size: 0.8rem; color: rgba(250,247,242,0.5);
+      letter-spacing: 0.08em; margin-top: 0.4rem;
+    }
+
+    /* ── MARKET: TW + HK ── */
+    .market {
+      padding: 7rem 3rem;
+      background: var(--warm);
+    }
+    .market-inner { max-width: 1100px; margin: 0 auto; }
+    .market-inner .section-heading { margin-bottom: 3.5rem; }
+    .market-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+    }
+    .market-card {
+      padding: 3rem;
+      background: var(--cream);
+      border: 1px solid rgba(201, 169, 98, 0.2);
+    }
+    .market-flag {
+      font-size: 2.5rem; margin-bottom: 1.2rem;
+    }
+    .market-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem; font-weight: 300; margin-bottom: 0.8rem;
+    }
+    .market-desc {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 0.88rem; line-height: 1.9; color: var(--earth-mid);
+      margin-bottom: 1.5rem;
+    }
+    .market-channels { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .market-channels span {
+      padding: 0.3rem 0.8rem;
+      background: rgba(201,169,98,0.1);
+      border: 1px solid rgba(201,169,98,0.25);
+      font-size: 0.72rem; letter-spacing: 0.08em; color: var(--earth-mid);
+    }
+
+    /* ── PHILOSOPHY ── */
+    .philosophy {
+      padding: 8rem 3rem; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .philosophy::before {
+      content: '裂';
+      position: absolute;
+      font-family: 'Noto Serif TC', serif;
+      font-size: 50vw; font-weight: 300;
+      color: rgba(201, 169, 98, 0.03);
+      left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    .philosophy-inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 1; }
+    .philosophy blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-style: italic; font-weight: 300;
+      line-height: 1.5; color: var(--earth);
+      margin-bottom: 1.5rem;
+    }
+    .philosophy cite {
+      font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--gold); font-style: normal;
+    }
+    .philosophy-line {
+      width: 50px; height: 1px; background: var(--gold);
+      margin: 2.5rem auto;
+    }
+    .philosophy-sub {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 0.92rem; line-height: 2; color: var(--earth-mid);
+      margin-bottom: 3rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark); color: rgba(250,247,242,0.65);
+      padding: 4rem 3rem 2.5rem;
+    }
+    .footer-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; letter-spacing: 0.1em; color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .footer-tagline {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 0.85rem; line-height: 1.9;
+      color: rgba(250,247,242,0.45); max-width: 280px;
+    }
+    .footer-col h4 {
+      font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold-light); margin-bottom: 1.2rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.6rem; }
+    .footer-col a {
+      font-size: 0.85rem; color: rgba(250,247,242,0.5);
+      text-decoration: none; transition: color 0.25s;
+    }
+    .footer-col a:hover { color: var(--gold); }
+    .footer-bottom {
+      max-width: 1100px; margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(201,169,98,0.1);
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-bottom p { font-size: 0.75rem; color: rgba(250,247,242,0.3); }
+    .footer-bottom a { color: rgba(201,169,98,0.6); text-decoration: none; }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 768px) {
+      nav { padding: 1.2rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero { padding: 7rem 1.5rem 4rem; }
+      .section { padding: 5rem 1.5rem; }
+      .workshop { padding: 5rem 1.5rem; }
+      .workshop-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .market { padding: 5rem 1.5rem; }
+      .market-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .philosophy { padding: 5rem 1.5rem; }
+      footer { padding: 3rem 1.5rem 2rem; }
+      .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
 </head>
-<body data-lang="zh-TW">
-    <!-- Breathing Background -->
-    <div class="breathing-bg">
-        <div class="hero-image-bg"></div>
-        <div class="gradient-mesh"></div>
-        <div class="breath-pulse"></div>
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="particles">
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-        </div>
-        <div class="vignette"></div>
+<body>
+
+  <nav>
+    <a href="./" class="nav-brand">Space Between <em>Studio</em></a>
+    <ul class="nav-links">
+      <li><a href="./" class="active">首頁</a></li>
+      <li><a href="about.html">關於</a></li>
+      <li><a href="shop/">商店</a></li>
+      <li><a href="workshop/">光光工作坊</a></li>
+      <li><a href="https://spacebetweenhealing.com" class="nav-cta">預約諮詢</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-glyph" aria-hidden="true">隙</div>
+    <div class="hero-inner">
+      <p class="hero-eyebrow">品牌療癒生態系 · 台灣 × 香港</p>
+      <h1>找到你的<br><em>品牌金線</em></h1>
+      <p class="hero-sub">那條連結你的故事、你的專業與你的受眾的核心敘事。<br>從一本書開始，慢慢成為你自己的品牌。</p>
+      <div class="hero-actions">
+        <a href="shop/" class="btn-dark">探索產品 →</a>
+        <a href="workshop/" class="btn-outline">光光工作坊</a>
+      </div>
     </div>
+  </section>
 
-    <!-- Loader -->
-    <div class="loader">
-        <p class="loader-logo">SPACE BETWEEN</p>
-        <div class="loader-bar"><div class="loader-progress"></div></div>
+  <!-- MARQUEE -->
+  <div class="marquee-wrap" aria-hidden="true">
+    <div class="marquee-track">
+      <span>品牌療癒</span><span class="dot">✦</span>
+      <span>自我教練</span><span class="dot">✦</span>
+      <span>品牌金線</span><span class="dot">✦</span>
+      <span>台灣 × 香港</span><span class="dot">✦</span>
+      <span>裂縫是金線進來的地方</span><span class="dot">✦</span>
+      <span>Brand Healing</span><span class="dot">✦</span>
+      <span>Self-Coaching</span><span class="dot">✦</span>
+      <span>Golden Thread</span><span class="dot">✦</span>
+      <!-- duplicate for seamless loop -->
+      <span>品牌療癒</span><span class="dot">✦</span>
+      <span>自我教練</span><span class="dot">✦</span>
+      <span>品牌金線</span><span class="dot">✦</span>
+      <span>台灣 × 香港</span><span class="dot">✦</span>
+      <span>裂縫是金線進來的地方</span><span class="dot">✦</span>
+      <span>Brand Healing</span><span class="dot">✦</span>
+      <span>Self-Coaching</span><span class="dot">✦</span>
+      <span>Golden Thread</span><span class="dot">✦</span>
     </div>
+  </div>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu">
-        <a href="about.html"><span class="lang-content active" data-lang-content="zh-TW">關於我哋</span><span class="lang-content" data-lang-content="zh-CN">关于我们</span><span class="lang-content" data-lang-content="en">About</span></a>
-        <a href="services.html"><span class="lang-content active" data-lang-content="zh-TW">點樣幫到你</span><span class="lang-content" data-lang-content="zh-CN">服务内容</span><span class="lang-content" data-lang-content="en">Services</span></a>
-        <a href="portfolio.html"><span class="lang-content active" data-lang-content="zh-TW">過往作品</span><span class="lang-content" data-lang-content="zh-CN">作品</span><span class="lang-content" data-lang-content="en">Works</span></a>
-        <a href="lounge.html"><span class="lang-content active" data-lang-content="zh-TW">免費資源</span><span class="lang-content" data-lang-content="zh-CN">免费资源</span><span class="lang-content" data-lang-content="en">Free Resources</span></a>
-        <a href="ai-assistant.html"><span class="lang-content active" data-lang-content="zh-TW">AI 品牌診斷</span><span class="lang-content" data-lang-content="zh-CN">AI 品牌诊断</span><span class="lang-content" data-lang-content="en">AI Diagnosis</span></a>
-        <a href="contact.html"><span class="lang-content active" data-lang-content="zh-TW">傾下偈</span><span class="lang-content" data-lang-content="zh-CN">联系我们</span><span class="lang-content" data-lang-content="en">Contact</span></a>
+  <!-- PRODUCTS -->
+  <section class="section reveal">
+    <div class="products">
+      <div class="products-header">
+        <p class="section-label">數位產品</p>
+        <h2 class="section-heading">從閱讀到<em>行動</em></h2>
+        <p class="section-sub">每一本書、每一個工具，都是幫你找到品牌金線的一步。</p>
+      </div>
+      <div class="product-grid">
+
+        <a href="shop/rain.html" class="product-card">
+          <div class="product-cover">📖</div>
+          <div class="product-body">
+            <p class="product-tag">互動式電子書</p>
+            <h3 class="product-name">賣雨的人</h3>
+            <p class="product-desc">一個調香師的品牌覺醒之旅。當你把自己最深的感受，變成品牌最有力量的語言。</p>
+            <div class="product-footer">
+              <p class="product-price">HKD 68 <span>/ TWD ~280</span></p>
+              <span class="product-cta">立即閱讀 →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="shop/brand.html" class="product-card">
+          <div class="product-cover">✍️</div>
+          <div class="product-body">
+            <p class="product-tag">品牌療癒工具書</p>
+            <h3 class="product-name">慢慢成為自己的品牌</h3>
+            <p class="product-desc">9章療癒旅程，63個反思練習。不是告訴你怎樣做，而是陪你找到自己的答案。</p>
+            <div class="product-footer">
+              <p class="product-price">HKD 168 <span>/ TWD ~680</span></p>
+              <span class="product-cta">開始練習 →</span>
+            </div>
+          </div>
+        </a>
+
+        <div class="product-card" style="opacity:0.75; cursor:default;">
+          <div class="product-cover" style="position:relative;">
+            🧭
+            <span class="product-badge badge-coming" style="position:absolute;">即將推出</span>
+          </div>
+          <div class="product-body">
+            <p class="product-tag">自我教練工具</p>
+            <h3 class="product-name">品牌金線自我教練卡</h3>
+            <p class="product-desc">結合 ACF Self-Coaching Cards® 方法論，為品牌主設計的數位自我教練工具。</p>
+            <div class="product-footer">
+              <p class="product-price" style="color:var(--earth-light);">敬請期待</p>
+              <span class="product-cta" style="color:var(--earth-light);">訂閱通知</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
+  </section>
 
-    <!-- Navigation -->
-    <nav class="nav">
-        <a href="index.html" class="nav-logo">Space Between</a>
-        <div class="nav-right">
-            <ul class="nav-links">
-                <li><a href="about.html"><span class="lang-content active" data-lang-content="zh-TW">關於我哋</span><span class="lang-content" data-lang-content="zh-CN">关于我们</span><span class="lang-content" data-lang-content="en">About</span></a></li>
-                <li><a href="services.html"><span class="lang-content active" data-lang-content="zh-TW">點樣幫到你</span><span class="lang-content" data-lang-content="zh-CN">服务内容</span><span class="lang-content" data-lang-content="en">Services</span></a></li>
-                <li><a href="portfolio.html"><span class="lang-content active" data-lang-content="zh-TW">過往作品</span><span class="lang-content" data-lang-content="zh-CN">作品</span><span class="lang-content" data-lang-content="en">Works</span></a></li>
-                <li><a href="lounge.html"><span class="lang-content active" data-lang-content="zh-TW">免費資源</span><span class="lang-content" data-lang-content="zh-CN">免费资源</span><span class="lang-content" data-lang-content="en">Free Resources</span></a></li>
-                <li><a href="ai-assistant.html"><span class="lang-content active" data-lang-content="zh-TW">AI 品牌診斷</span><span class="lang-content" data-lang-content="zh-CN">AI 品牌诊断</span><span class="lang-content" data-lang-content="en">AI Diagnosis</span></a></li>
-                <li><a href="contact.html"><span class="lang-content active" data-lang-content="zh-TW">傾下偈</span><span class="lang-content" data-lang-content="zh-CN">联系我们</span><span class="lang-content" data-lang-content="en">Contact</span></a></li>
-            </ul>
-            <div class="lang-selector">
-                <button class="lang-btn"><span class="current-lang">繁中</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
-                <div class="lang-dropdown">
-                    <button class="lang-option active" data-lang="zh-TW">🇭🇰 繁體中文</button>
-                    <button class="lang-option" data-lang="zh-CN">🇨🇳 简体中文</button>
-                    <button class="lang-option" data-lang="en">🌍 English</button>
-                </div>
-            </div>
-            <button class="menu-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  <!-- WORKSHOP -->
+  <section class="workshop reveal">
+    <div class="workshop-inner">
+      <div>
+        <p class="section-label">光光工作坊</p>
+        <h2 class="section-heading" style="color:var(--cream);">AI 時代的<br><em>自我領導力</em></h2>
+        <p class="section-sub">不是學 AI，是用 AI 重新認識自己。光光工作坊透過 AI 工具與教練引導，幫助你在變動中找到方向。</p>
+        <ul class="workshop-features">
+          <li>AI 與自我領導力工作坊</li>
+          <li>網站設計 AI 應用課程（12週）</li>
+          <li>企業客製化工作坊</li>
+        </ul>
+        <a href="workshop/" class="btn-gold">了解工作坊 →</a>
+      </div>
+      <div class="workshop-visual">
+        <div class="workshop-stat">
+          <p class="workshop-stat-num">12</p>
+          <p class="workshop-stat-label">週完整課程模組</p>
         </div>
-    </nav>
-
-    <!-- Hero -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-eyebrow">
-                <span class="hero-eyebrow-line"></span>
-                <span class="hero-eyebrow-text">Brand Therapy Studio</span>
-                <span class="hero-eyebrow-line"></span>
-            </div>
-            <h1 class="hero-title">Find Your <span class="highlight">Voice</span>,<br>Build Your Brand</h1>
-            <div class="lang-content active" data-lang-content="zh-TW" style="opacity:0;animation:fadeUp 0.8s var(--ease) 1.6s forwards;">
-                <p class="hero-subtitle zh">你嘅服務好有價值，但唔知點樣講俾人聽？<br>我哋幫你<strong style="color:var(--cream)">理清方向、搵到定位、建立品牌</strong>。</p>
-                <p class="hero-philosophy zh">慢慢嚟，唔使急。搵到啱嘅方向，自然會有人搵到你。</p>
-            </div>
-            <div class="lang-content" data-lang-content="zh-CN">
-                <p class="hero-subtitle zh">你的服务很有价值，但不知道怎么跟别人说？<br>我们帮你<strong style="color:var(--cream)">理清方向、找到定位、建立品牌</strong>。</p>
-                <p class="hero-philosophy zh">慢慢来，不着急。找到对的方向，自然会有人找到你。</p>
-            </div>
-            <div class="lang-content" data-lang-content="en">
-                <p class="hero-subtitle">Your service is valuable, but struggling to explain it?<br>We help you <strong style="color:var(--cream)">find clarity, position yourself, and build your brand</strong>.</p>
-                <p class="hero-philosophy">Take it slow. When you find the right direction, the right clients will find you.</p>
-            </div>
-            <div class="hero-cta">
-                <a href="#contact" class="btn btn-primary">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
-                    <span class="lang-content active" data-lang-content="zh-TW">免費傾下偈</span>
-                    <span class="lang-content" data-lang-content="zh-CN">免费聊聊</span>
-                    <span class="lang-content" data-lang-content="en">Free Chat</span>
-                </a>
-                <a href="#services" class="btn btn-secondary">
-                    <span class="lang-content active" data-lang-content="zh-TW">睇下點幫到你</span>
-                    <span class="lang-content" data-lang-content="zh-CN">看看怎么帮你</span>
-                    <span class="lang-content" data-lang-content="en">How We Help</span>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-                </a>
-            </div>
+        <div class="workshop-stat">
+          <p class="workshop-stat-num">ACF</p>
+          <p class="workshop-stat-label">認可教練技術融入</p>
         </div>
-    </section>
-
-    <!-- Problem Section -->
-    <section class="section" style="background:var(--bg-dark)">
-        <div class="container">
-            <div class="section-header center reveal">
-                <div class="section-tag" style="justify-content:center"><span class="section-tag-line"></span><span class="section-tag-text">Sound Familiar?</span><span class="section-tag-line"></span></div>
-                <h2 class="section-title">
-                    <span class="lang-content active" data-lang-content="zh-TW" class="zh">你係咪都有呢啲煩惱？</span>
-                    <span class="lang-content" data-lang-content="zh-CN" class="zh">你是不是也有这些烦恼？</span>
-                    <span class="lang-content" data-lang-content="en">Sound Familiar?</span>
-                </h2>
-            </div>
-            <div class="problem-grid">
-                <div class="problem-card reveal">
-                    <div class="problem-icon">🤔</div>
-                    <div class="lang-content active" data-lang-content="zh-TW"><h3 class="zh">「我做嘅嘢好難解釋」</h3><p class="zh">明明幫到好多人，但每次介紹自己嘅服務，對方都係一臉茫然。唔知點樣用簡單嘅方式講清楚。</p></div>
-                    <div class="lang-content" data-lang-content="zh-CN"><h3 class="zh">「我做的事很难解释」</h3><p class="zh">明明帮到很多人，但每次介绍自己的服务，对方都是一脸茫然。不知道怎么用简单的方式说清楚。</p></div>
-                    <div class="lang-content" data-lang-content="en"><h3>"What I do is hard to explain"</h3><p>You've helped many people, but when you describe your services, people look confused.</p></div>
-                </div>
-                <div class="problem-card reveal">
-                    <div class="problem-icon">😓</div>
-                    <div class="lang-content active" data-lang-content="zh-TW"><h3 class="zh">「客人總係搵唔到我」</h3><p class="zh">有開 IG、有 Facebook，但就係冇人嚟問。感覺好似喺大海入面叫緊，冇人聽到。</p></div>
-                    <div class="lang-content" data-lang-content="zh-CN"><h3 class="zh">「客户总是找不到我」</h3><p class="zh">有开 IG、有 Facebook，但就是没人来问。感觉好像在大海里喊，没人听到。</p></div>
-                    <div class="lang-content" data-lang-content="en"><h3>"Clients can't find me"</h3><p>You have IG, Facebook, but no one reaches out. It feels like shouting into the void.</p></div>
-                </div>
-                <div class="problem-card reveal">
-                    <div class="problem-icon">💭</div>
-                    <div class="lang-content active" data-lang-content="zh-TW"><h3 class="zh">「唔知應該收幾錢」</h3><p class="zh">定價太高怕冇人要，太低又覺得對唔住自己。成日喺度諗：我嘅服務到底值幾錢？</p></div>
-                    <div class="lang-content" data-lang-content="zh-CN"><h3 class="zh">「不知道该收多少钱」</h3><p class="zh">定价太高怕没人要，太低又觉得对不起自己。总是在想：我的服务到底值多少钱？</p></div>
-                    <div class="lang-content" data-lang-content="en"><h3>"I don't know how to price"</h3><p>Too high and no one buys; too low and it doesn't feel right.</p></div>
-                </div>
-                <div class="problem-card reveal">
-                    <div class="problem-icon">🌀</div>
-                    <div class="lang-content active" data-lang-content="zh-TW"><h3 class="zh">「做咗好多嘢但好亂」</h3><p class="zh">網站有、IG 有、課程有、一對一有⋯⋯咩都做，但就係冇一樣做得好。</p></div>
-                    <div class="lang-content" data-lang-content="zh-CN"><h3 class="zh">「做了很多但很乱」</h3><p class="zh">网站有、IG 有、课程有、一对一有……什么都做，但就是没一样做得好。</p></div>
-                    <div class="lang-content" data-lang-content="en"><h3>"Doing a lot but scattered"</h3><p>Website, IG, courses, 1-on-1... you're doing everything but nothing feels quite right.</p></div>
-                </div>
-            </div>
+        <div class="workshop-stat">
+          <p class="workshop-stat-num">TW × HK</p>
+          <p class="workshop-stat-label">台灣 · 香港同步服務</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Services Section -->
-    <section id="services" class="section">
-        <div class="container">
-            <div class="section-header center reveal">
-                <div class="section-tag" style="justify-content:center"><span class="section-tag-line"></span><span class="section-tag-text">How We Help</span><span class="section-tag-line"></span></div>
-                <h2 class="section-title">
-                    <span class="lang-content active" data-lang-content="zh-TW" class="zh">我哋可以點樣幫你</span>
-                    <span class="lang-content" data-lang-content="zh-CN" class="zh">我们可以怎么帮你</span>
-                    <span class="lang-content" data-lang-content="en">How We Can Help</span>
-                </h2>
-                <div class="lang-content active" data-lang-content="zh-TW"><p class="section-subtitle zh">每個人嘅情況都唔同，所以我哋用一對一傾談嘅方式，幫你搵到最適合嘅方向</p></div>
-                <div class="lang-content" data-lang-content="zh-CN"><p class="section-subtitle zh">每个人的情况都不同，所以我们用一对一对话的方式，帮你找到最适合的方向</p></div>
-                <div class="lang-content" data-lang-content="en"><p class="section-subtitle">Everyone's situation is different, so we work with you one-on-one to find your best direction</p></div>
-            </div>
-            <div class="services-grid">
-                <div class="service-card reveal">
-                    <img src="images/service-01.png" alt="理清思緒" class="service-image">
-                    <div class="service-content">
-                        <span class="service-num">01</span>
-                        <h3 class="service-title"><span class="lang-content active" data-lang-content="zh-TW">幫你理清思緒</span><span class="lang-content" data-lang-content="zh-CN">帮你理清思绪</span><span class="lang-content" data-lang-content="en">Clear Your Mind</span></h3>
-                        <p class="service-desc"><span class="lang-content active" data-lang-content="zh-TW" class="zh">諗法太多、唔知從何入手？我哋陪你慢慢傾，將腦入面嘅嘢一樣樣攞出嚟睇清楚。</span><span class="lang-content" data-lang-content="zh-CN" class="zh">想法太多、不知从何下手？我们陪你慢慢聊，把脑子里的东西一样样拿出来看清楚。</span><span class="lang-content" data-lang-content="en">Too many ideas? We'll help you sort through everything, one thing at a time.</span></p>
-                    </div>
-                </div>
-                <div class="service-card reveal">
-                    <img src="images/service-02.png" alt="搵到定位" class="service-image">
-                    <div class="service-content">
-                        <span class="service-num">02</span>
-                        <h3 class="service-title"><span class="lang-content active" data-lang-content="zh-TW">搵到你嘅定位</span><span class="lang-content" data-lang-content="zh-CN">找到你的定位</span><span class="lang-content" data-lang-content="en">Find Your Position</span></h3>
-                        <p class="service-desc"><span class="lang-content active" data-lang-content="zh-TW" class="zh">你係邊個？你想幫邊啲人？點解佢哋要揀你？搵到呢啲答案，客人自然會搵到你。</span><span class="lang-content" data-lang-content="zh-CN" class="zh">你是谁？你想帮哪些人？为什么他们要选你？找到这些答案，客户自然会找到你。</span><span class="lang-content" data-lang-content="en">Who are you? Who do you want to help? Find these answers, and clients will find you.</span></p>
-                    </div>
-                </div>
-                <div class="service-card reveal">
-                    <img src="images/service-03.png" alt="包裝服務" class="service-image">
-                    <div class="service-content">
-                        <span class="service-num">03</span>
-                        <h3 class="service-title"><span class="lang-content active" data-lang-content="zh-TW">包裝你嘅服務</span><span class="lang-content" data-lang-content="zh-CN">包装你的服务</span><span class="lang-content" data-lang-content="en">Package Your Service</span></h3>
-                        <p class="service-desc"><span class="lang-content active" data-lang-content="zh-TW" class="zh">將你嘅專業變成人哋睇得明、買得落嘅服務方案。唔使再每次由頭解釋一次。</span><span class="lang-content" data-lang-content="zh-CN" class="zh">把你的专业变成别人看得懂、买得了的服务方案。不用每次都从头解释一遍。</span><span class="lang-content" data-lang-content="en">Turn your expertise into services people can understand and buy.</span></p>
-                    </div>
-                </div>
-                <div class="service-card reveal">
-                    <img src="images/service-04.png" alt="設計網站" class="service-image">
-                    <div class="service-content">
-                        <span class="service-num">04</span>
-                        <h3 class="service-title"><span class="lang-content active" data-lang-content="zh-TW">設計你嘅網站</span><span class="lang-content" data-lang-content="zh-CN">设计你的网站</span><span class="lang-content" data-lang-content="en">Design Your Website</span></h3>
-                        <p class="service-desc"><span class="lang-content active" data-lang-content="zh-TW" class="zh">唔只係靚，仲要讓人一睇就明白你做咩、點樣搵你。你嘅網站應該幫你做生意。</span><span class="lang-content" data-lang-content="zh-CN" class="zh">不只是好看，还要让人一看就明白你做什么、怎么找你。你的网站应该帮你做生意。</span><span class="lang-content" data-lang-content="en">Not just pretty—your website should work for you.</span></p>
-                    </div>
-                </div>
-            </div>
+  <!-- MARKET -->
+  <section class="market reveal">
+    <div class="market-inner">
+      <p class="section-label">服務地區</p>
+      <h2 class="section-heading">台灣 × 香港<br><em>雙市場</em>服務</h2>
+      <div class="market-grid">
+        <div class="market-card">
+          <p class="market-flag">🇹🇼</p>
+          <h3 class="market-name">台灣市場</h3>
+          <p class="market-desc">台灣有豐富的獨立品牌、療癒工作者與創業文化。我們以台灣為長期發展重點，提供繁體中文全面支援與在地服務。</p>
+          <div class="market-channels">
+            <span>LINE 官方帳號</span>
+            <span>Zoom 線上服務</span>
+            <span>繁體中文</span>
+            <span>台幣計價</span>
+          </div>
         </div>
-    </section>
-
-    <!-- Audience Section -->
-    <section id="audience" class="section" style="background:var(--bg-dark)">
-        <div class="container">
-            <div class="section-header center reveal">
-                <div class="section-tag" style="justify-content:center"><span class="section-tag-line"></span><span class="section-tag-text">Who We Help</span><span class="section-tag-line"></span></div>
-                <h2 class="section-title">
-                    <span class="lang-content active" data-lang-content="zh-TW" class="zh">我哋特別幫到呢啲人</span>
-                    <span class="lang-content" data-lang-content="zh-CN" class="zh">我们特别能帮到这些人</span>
-                    <span class="lang-content" data-lang-content="en">We Especially Help</span>
-                </h2>
-            </div>
-            <div class="audience-grid">
-                <div class="audience-card reveal">
-                    <img src="images/audience-wellness.png" alt="身心靈工作者" class="audience-image">
-                    <div class="audience-content">
-                        <h3><span class="lang-content active" data-lang-content="zh-TW" class="zh">身心靈工作者</span><span class="lang-content" data-lang-content="zh-CN" class="zh">身心灵工作者</span><span class="lang-content" data-lang-content="en">Wellness Practitioners</span></h3>
-                        <p><span class="lang-content active" data-lang-content="zh-TW">頌缽、靈氣、塔羅、催眠⋯⋯</span><span class="lang-content" data-lang-content="zh-CN">颂钵、灵气、塔罗、催眠……</span><span class="lang-content" data-lang-content="en">Sound healing, Reiki, Tarot...</span></p>
-                    </div>
-                </div>
-                <div class="audience-card reveal">
-                    <img src="images/audience-coach.png" alt="教練同導師" class="audience-image">
-                    <div class="audience-content">
-                        <h3><span class="lang-content active" data-lang-content="zh-TW" class="zh">教練同導師</span><span class="lang-content" data-lang-content="zh-CN" class="zh">教练和导师</span><span class="lang-content" data-lang-content="en">Coaches & Mentors</span></h3>
-                        <p><span class="lang-content active" data-lang-content="zh-TW">人生教練、事業教練、關係輔導⋯⋯</span><span class="lang-content" data-lang-content="zh-CN">人生教练、事业教练、关系辅导……</span><span class="lang-content" data-lang-content="en">Life, career, relationship...</span></p>
-                    </div>
-                </div>
-                <div class="audience-card reveal">
-                    <img src="images/audience-creator.png" alt="自由創作者" class="audience-image">
-                    <div class="audience-content">
-                        <h3><span class="lang-content active" data-lang-content="zh-TW" class="zh">自由創作者</span><span class="lang-content" data-lang-content="zh-CN" class="zh">自由创作者</span><span class="lang-content" data-lang-content="en">Freelance Creators</span></h3>
-                        <p><span class="lang-content active" data-lang-content="zh-TW">插畫師、文字工作者、手作人⋯⋯</span><span class="lang-content" data-lang-content="zh-CN">插画师、文字工作者、手作人……</span><span class="lang-content" data-lang-content="en">Illustrators, writers, artisans...</span></p>
-                    </div>
-                </div>
-                <div class="audience-card reveal">
-                    <img src="images/audience-business.png" alt="小型服務商" class="audience-image">
-                    <div class="audience-content">
-                        <h3><span class="lang-content active" data-lang-content="zh-TW" class="zh">小型服務商</span><span class="lang-content" data-lang-content="zh-CN" class="zh">小型服务商</span><span class="lang-content" data-lang-content="en">Small Service Providers</span></h3>
-                        <p><span class="lang-content active" data-lang-content="zh-TW">攝影師、顧問、私人訂製服務⋯⋯</span><span class="lang-content" data-lang-content="zh-CN">摄影师、顾问、私人订制服务……</span><span class="lang-content" data-lang-content="en">Photographers, consultants...</span></p>
-                    </div>
-                </div>
-            </div>
+        <div class="market-card">
+          <p class="market-flag">🇭🇰</p>
+          <h3 class="market-name">香港市場</h3>
+          <p class="market-desc">Space Between Studio 根植香港，深度服務本地助人工作者、社福機構從業員與品牌主，是我們的起點與根。</p>
+          <div class="market-channels">
+            <span>WhatsApp 94568231</span>
+            <span>Zoom 線上服務</span>
+            <span>廣東話 / 繁中</span>
+            <span>港幣計價</span>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- AI Banner -->
-    <section class="section" style="background:var(--bg-void)">
-        <div class="container">
-            <div class="ai-banner reveal">
-                <div class="ai-banner-grid">
-                    <div>
-                        <div class="ai-badge"><span>免費試用 · 24 小時服務</span></div>
-                        <h3><span class="lang-content active" data-lang-content="zh-TW" class="zh">AI 品牌健康檢查</span><span class="lang-content" data-lang-content="zh-CN" class="zh">AI 品牌健康检查</span><span class="lang-content" data-lang-content="en">AI Brand Health Check</span></h3>
-                        <div class="lang-content active" data-lang-content="zh-TW"><p class="zh">唔確定自己嘅品牌有咩問題？<br>同我哋嘅 AI 助理「光光」傾幾句，佢會幫你搵出品牌嘅「症狀」，俾你一啲方向。</p></div>
-                        <div class="lang-content" data-lang-content="zh-CN"><p class="zh">不确定自己的品牌有什么问题？<br>和我们的 AI 助理「光光」聊几句，他会帮你找出品牌的「症状」，给你一些方向。</p></div>
-                        <div class="lang-content" data-lang-content="en"><p>Not sure what's wrong with your brand?<br>Chat with our AI assistant "Guangguang" to discover your brand's "symptoms".</p></div>
-                        <div class="ai-banner-actions">
-                            <a href="ai-assistant.html" class="btn btn-primary"><span class="lang-content active" data-lang-content="zh-TW">即刻試下</span><span class="lang-content" data-lang-content="zh-CN">立即试试</span><span class="lang-content" data-lang-content="en">Try Now</span></a>
-                            <span class="ai-banner-note"><span class="lang-content active" data-lang-content="zh-TW">唔使預約，隨時都得</span><span class="lang-content" data-lang-content="zh-CN">不用预约，随时可用</span><span class="lang-content" data-lang-content="en">No appointment needed</span></span>
-                        </div>
-                    </div>
-                    <div class="ai-visual">
-                        <div class="ai-avatar"><img src="images/ai-avatar.png" alt="AI 光光"></div>
-                        <div class="ai-powered"><span class="ai-powered-label">POWERED BY</span><span class="ai-powered-name">Claude AI</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- PHILOSOPHY -->
+  <section class="philosophy reveal">
+    <div class="philosophy-inner">
+      <blockquote>「裂縫，是金線進來的地方。」</blockquote>
+      <cite>— 金繼哲學 · Space Between Studio 核心信念</cite>
+      <div class="philosophy-line"></div>
+      <p class="philosophy-sub">我們不修補裂縫，我們讓它發光。你的故事、你的掙扎、你走過的路——這些不是你品牌的弱點，而是你最獨特的聲音。</p>
+      <a href="about.html" class="btn-dark">認識我們 →</a>
+    </div>
+  </section>
 
-    <!-- CTA Section -->
-    <section id="contact" class="section cta-section">
-        <div class="cta-bg"></div>
-        <div class="container" style="position:relative;z-index:1;">
-            <div class="section-header center reveal" style="max-width:700px;margin:0 auto;">
-                <div class="section-tag" style="justify-content:center"><span class="section-tag-line"></span><span class="section-tag-text">Let's Talk</span><span class="section-tag-line"></span></div>
-                <h2 class="section-title">
-                    <span class="lang-content active" data-lang-content="zh-TW" class="zh">傾下偈，睇下幫唔幫到你</span>
-                    <span class="lang-content" data-lang-content="zh-CN" class="zh">聊聊看，看能不能帮到你</span>
-                    <span class="lang-content" data-lang-content="en">Let's Chat and See If We Can Help</span>
-                </h2>
-                <div class="lang-content active" data-lang-content="zh-TW"><p class="section-subtitle zh" style="margin-bottom:2rem;">唔使即刻決定要唔要用我哋嘅服務。<br>我哋可以先傾下，了解吓你嘅情況，睇下有咩可以幫到你。</p></div>
-                <div class="lang-content" data-lang-content="zh-CN"><p class="section-subtitle zh" style="margin-bottom:2rem;">不用马上决定要不要用我们的服务。<br>我们可以先聊聊，了解一下你的情况，看看有什么可以帮到你。</p></div>
-                <div class="lang-content" data-lang-content="en"><p class="section-subtitle" style="margin-bottom:2rem;">No pressure to decide anything now.<br>Let's just chat, understand your situation, and see how we might help.</p></div>
-                <div class="cta-buttons">
-                    <a href="mailto:hello@spacebetweenhealing.com" class="btn btn-primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg><span>Email</span></a>
-                    <a href="https://wa.me/85294568231" target="_blank" class="btn btn-whatsapp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span>WhatsApp</span></a>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <p class="footer-brand">Space Between Studio</p>
+        <p class="footer-tagline">品牌療癒・自我教練・數位產品<br>台灣 × 香港</p>
+      </div>
+      <div class="footer-col">
+        <h4>產品與服務</h4>
+        <ul>
+          <li><a href="shop/">數位商店</a></li>
+          <li><a href="workshop/">光光工作坊</a></li>
+          <li><a href="https://spacebetweenhealing.com">品牌設計服務</a></li>
+          <li><a href="https://spacebetweenhealing.com">一對一諮詢</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>聯絡我們</h4>
+        <ul>
+          <li><a href="about.html">關於 Studio</a></li>
+          <li><a href="mailto:hello@spacebetweenstudio.site">電郵</a></li>
+          <li><a href="https://wa.me/85294568231">WhatsApp（香港）</a></li>
+          <li><a href="#">LINE（台灣）</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Space Between Studio · 品牌療癒生態系 · 台灣 × 香港</p>
+      <p><a href="https://spacebetweenhealing.com">spacebetweenhealing.com</a></p>
+    </div>
+  </footer>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <span class="footer-logo">Space Between Healing</span>
-            <div class="footer-links">
-                <a href="about.html"><span class="lang-content active" data-lang-content="zh-TW">關於我哋</span><span class="lang-content" data-lang-content="zh-CN">关于我们</span><span class="lang-content" data-lang-content="en">About</span></a>
-                <a href="services.html"><span class="lang-content active" data-lang-content="zh-TW">點樣幫到你</span><span class="lang-content" data-lang-content="zh-CN">服务内容</span><span class="lang-content" data-lang-content="en">Services</span></a>
-                <a href="lounge.html"><span class="lang-content active" data-lang-content="zh-TW">免費資源</span><span class="lang-content" data-lang-content="zh-CN">免费资源</span><span class="lang-content" data-lang-content="en">Free Resources</span></a>
-                <a href="contact.html"><span class="lang-content active" data-lang-content="zh-TW">傾下偈</span><span class="lang-content" data-lang-content="zh-CN">联系我们</span><span class="lang-content" data-lang-content="en">Contact</span></a>
-                <a href="privacy.html"><span class="lang-content active" data-lang-content="zh-TW">私隱政策</span><span class="lang-content" data-lang-content="zh-CN">隐私政策</span><span class="lang-content" data-lang-content="en">Privacy</span></a>
-                <a href="terms.html"><span class="lang-content active" data-lang-content="zh-TW">服務條款</span><span class="lang-content" data-lang-content="zh-CN">服务条款</span><span class="lang-content" data-lang-content="en">Terms</span></a>
-            </div>
-            <span class="footer-copy">© 2025 Space Between Healing</span>
-        </div>
-    </footer>
-
-    <script>
-        // Loader
-        function hideLoader() { const l = document.querySelector('.loader'); if (l && !l.classList.contains('hidden')) l.classList.add('hidden'); }
-        window.addEventListener('load', () => setTimeout(hideLoader, 1200));
-        setTimeout(hideLoader, 4000);
-
-        // Nav scroll
-        const nav = document.querySelector('.nav');
-        window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50));
-
-        // Mobile menu
-        const menuToggle = document.querySelector('.menu-toggle');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            mobileMenu.classList.toggle('open');
-            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
-        });
-        mobileMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => { menuToggle.classList.remove('active'); mobileMenu.classList.remove('open'); document.body.style.overflow = ''; }));
-
-        // Language
-        const langLabels = { 'zh-TW': '繁中', 'zh-CN': '简中', 'en': 'EN' };
-        let currentLang = localStorage.getItem('lang') || 'zh-TW';
-        const langSelector = document.querySelector('.lang-selector');
-        const langBtn = document.querySelector('.lang-btn');
-        const langOptions = document.querySelectorAll('.lang-option');
-        const currentLangEl = document.querySelector('.current-lang');
-        langBtn.addEventListener('click', () => langSelector.classList.toggle('open'));
-        document.addEventListener('click', e => { if (!langSelector.contains(e.target)) langSelector.classList.remove('open'); });
-        function setLanguage(lang) {
-            currentLang = lang;
-            document.body.setAttribute('data-lang', lang);
-            currentLangEl.textContent = langLabels[lang];
-            langOptions.forEach(o => o.classList.toggle('active', o.dataset.lang === lang));
-            document.querySelectorAll('.lang-content').forEach(el => el.classList.toggle('active', el.dataset.langContent === lang));
-            localStorage.setItem('lang', lang);
-            langSelector.classList.remove('open');
-        }
-        langOptions.forEach(o => o.addEventListener('click', () => setLanguage(o.dataset.lang)));
-        setLanguage(currentLang);
-
-        // Reveal
-        const reveals = document.querySelectorAll('.reveal');
-        const observer = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.1 });
-        reveals.forEach(el => observer.observe(el));
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', function(e) { e.preventDefault(); const t = document.querySelector(this.getAttribute('href')); if (t) t.scrollIntoView({ behavior: 'smooth' }); }));
-    </script>
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      { threshold: 0.08 }
+    );
+    reveals.forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
